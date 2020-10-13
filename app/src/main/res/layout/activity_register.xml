@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="tech.leson.yonstore.ui.register.RegisterViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imvLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_30sdp"
+                app:layout_constraintBottom_toTopOf="@id/edtFullName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/logo"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tvWelcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
+                android:text="@string/let_s_get_started"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imvLogo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/create_an_new_account"
+                android:textColor="@color/gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvWelcome" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edtFullName"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:hint="@string/full_name"
+                android:textAppearance="@font/poppins_regular"
+                android:textColorHint="@color/gray"
+                app:boxStrokeColor="@drawable/input_state_checked"
+                app:boxStrokeErrorColor="@color/red"
+                app:layout_constraintBottom_toTopOf="@id/edtPhone"
+                app:startIconDrawable="@drawable/ic_user"
+                app:startIconTint="@drawable/input_state_checked">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edtPhone"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:hint="@string/phone_number"
+                android:textAppearance="@font/poppins_regular"
+                android:textColorHint="@color/gray"
+                app:boxStrokeColor="@drawable/input_state_checked"
+                app:boxStrokeErrorColor="@color/red"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:startIconDrawable="@drawable/ic_phone"
+                app:startIconTint="@drawable/input_state_checked">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLength="10"
+                    android:inputType="number" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edtPassword"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:hint="@string/password"
+                android:textAppearance="@font/poppins_regular"
+                android:textColorHint="@color/gray"
+                app:boxStrokeColor="@drawable/input_state_checked"
+                app:boxStrokeErrorColor="@color/red"
+                app:endIconMode="password_toggle"
+                app:endIconTint="@drawable/input_state_checked"
+                app:layout_constraintTop_toBottomOf="@id/edtPhone"
+                app:startIconDrawable="@drawable/ic_password"
+                app:startIconTint="@drawable/input_state_checked">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edtPasswordAgain"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:hint="@string/password_again"
+                android:textAppearance="@font/poppins_regular"
+                android:textColorHint="@color/gray"
+                app:boxStrokeColor="@drawable/input_state_checked"
+                app:boxStrokeErrorColor="@color/red"
+                app:endIconMode="password_toggle"
+                app:endIconTint="@drawable/input_state_checked"
+                app:layout_constraintTop_toBottomOf="@id/edtPassword"
+                app:startIconDrawable="@drawable/ic_password"
+                app:startIconTint="@drawable/input_state_checked">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btnSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_48sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:fontFamily="@font/poppins_bold"
+                android:onClick="@{(View) -> viewModel.onClick(View)}"
+                android:text="@string/sign_up"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_13ssp"
+                app:backgroundTint="@color/blue"
+                app:layout_constraintTop_toBottomOf="@id/edtPasswordAgain" />
+
+            <TextView
+                android:id="@+id/tvSignIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_24sdp"
+                android:fontFamily="@font/poppins_regular"
+                android:paddingTop="@dimen/_2sdp"
+                android:text="@string/have_a_account"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/_11sdp"
+                app:layout_constraintBottom_toBottomOf="@id/btnSignIn"
+                app:layout_constraintEnd_toEndOf="@id/btnSignUp"
+                app:layout_constraintStart_toStartOf="@id/btnSignUp"
+                app:layout_constraintTop_toTopOf="@id/btnSignIn" />
+
+            <TextView
+                android:id="@+id/btnSignIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:text="@string/sign_in"
+                android:onClick="@{(View) -> viewModel.onClick(View)}"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintStart_toEndOf="@+id/tvSignIn"
+                app:layout_constraintTop_toBottomOf="@id/btnSignUp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/loading"
+            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE}">
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/address_looking_up"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminateDrawable="@drawable/custom_progressbar" />
+        </FrameLayout>
+
+    </FrameLayout>
+
+</layout>

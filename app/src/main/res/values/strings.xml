@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">YonStore</string>
+
+    <string name="sign_in">Sign In</string>
+    <string name="network_not_connected">Network not connected</string>
+    <string name="invalid_phone_password">Please provide a valid phone number and password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="don_t_have_a_account">Don\'t have a account?</string>
+    <string name="register">Register</string>
+    <string name="password">Password</string>
+    <string name="your_email">Your Email</string>
+    <string name="welcome_to_yonstore">Welcome to YonStore</string>
+    <string name="sign_in_to_continue">Sign in to continue</string>
+    <string name="let_s_get_started">Let\'s Get Started</string>
+    <string name="create_an_new_account">Create an new account</string>
+    <string name="have_a_account">Have a account?</string>
+    <string name="full_name">Full Name</string>
+    <string name="password_again">Password Again</string>
+    <string name="search_product">Search Product</string>
+    <string name="home">Home</string>
+    <string name="explore">Explore</string>
+    <string name="cart">Cart</string>
+    <string name="offer">Offer</string>
+    <string name="account">Account</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="category">Category</string>
+    <string name="more_category">More Category</string>
+    <string name="mega_sale">Mega Sale</string>
+    <string name="see_more">See More</string>
+    <string name="flash_sale">Flash Sale</string>
+    <string name="full_name_is_empty">Full Name is Empty!</string>
+    <string name="retype_password_fail">Retype password is incorrect</string>
+    <string name="phone_number">Phone Number</string>
+</resources>

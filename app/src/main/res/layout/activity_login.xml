@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="tech.leson.yonstore.ui.login.LoginViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imvLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_30sdp"
+                app:layout_constraintBottom_toTopOf="@id/edtPhone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/logo"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tvWelcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="@string/welcome_to_yonstore"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imvLogo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/sign_in_to_continue"
+                android:textColor="@color/gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvWelcome" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edtPhone"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:hint="@string/phone_number"
+                android:textAppearance="@font/poppins_regular"
+                android:textColorHint="@color/gray"
+                app:boxStrokeColor="@drawable/input_state_checked"
+                app:boxStrokeErrorColor="@color/red"
+                app:layout_constraintBottom_toTopOf="@id/edtPassword"
+                app:startIconDrawable="@drawable/ic_phone"
+                app:startIconTint="@drawable/input_state_checked">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLength="10"
+                    android:inputType="number" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edtPassword"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:hint="@string/password"
+                android:textAppearance="@font/poppins_regular"
+                android:textColorHint="@color/gray"
+                app:boxStrokeColor="@drawable/input_state_checked"
+                app:boxStrokeErrorColor="@color/red"
+                app:endIconMode="password_toggle"
+                app:endIconTint="@drawable/input_state_checked"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:startIconDrawable="@drawable/ic_password"
+                app:startIconTint="@drawable/input_state_checked">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btnSignIn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_48sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:fontFamily="@font/poppins_bold"
+                android:onClick="@{(View) -> viewModel.onClick(View)}"
+                android:text="@string/sign_in"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_13ssp"
+                app:backgroundTint="@color/blue"
+                app:layout_constraintTop_toBottomOf="@id/edtPassword" />
+
+            <TextView
+                android:id="@+id/btnForgotPass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/forgot_password"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnSignIn" />
+
+            <TextView
+                android:id="@+id/tvRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:paddingTop="@dimen/_2sdp"
+                android:text="@string/don_t_have_a_account"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/_11sdp"
+                app:layout_constraintBottom_toBottomOf="@id/btnRegister"
+                app:layout_constraintEnd_toStartOf="@id/btnRegister"
+                app:layout_constraintStart_toStartOf="@id/btnForgotPass"
+                app:layout_constraintTop_toTopOf="@id/btnRegister" />
+
+            <TextView
+                android:id="@+id/btnRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:onClick="@{(View) -> viewModel.onClick(View)}"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:text="@string/register"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="@id/btnForgotPass"
+                app:layout_constraintStart_toEndOf="@+id/tvRegister"
+                app:layout_constraintTop_toBottomOf="@id/btnForgotPass" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/loading"
+            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE}">
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/address_looking_up"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminateDrawable="@drawable/custom_progressbar" />
+        </FrameLayout>
+
+    </FrameLayout>
+
+</layout>
