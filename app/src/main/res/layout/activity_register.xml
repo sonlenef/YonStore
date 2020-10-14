@@ -100,8 +100,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:maxLength="10"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:maxLength="10" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -192,10 +192,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_10sdp"
+                android:onClick="@{(View) -> viewModel.onClick(View)}"
                 android:paddingStart="@dimen/_5sdp"
                 android:paddingEnd="@dimen/_5sdp"
                 android:text="@string/sign_in"
-                android:onClick="@{(View) -> viewModel.onClick(View)}"
                 android:textColor="@color/blue"
                 android:textSize="@dimen/_11ssp"
                 app:layout_constraintStart_toEndOf="@+id/tvSignIn"

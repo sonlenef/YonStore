@@ -7,6 +7,6 @@ import tech.leson.yonstore.utils.rx.SchedulerProvider
 
 class MainViewModel(dataManager: DataManager, schedulerProvider: SchedulerProvider) :
     BaseViewModel<MainNavigator>(dataManager, schedulerProvider) {
-    fun onClick(view: View) {
+    override fun onClick(view: View) {
     }
 }

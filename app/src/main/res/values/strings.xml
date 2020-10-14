@@ -31,4 +31,10 @@
     <string name="full_name_is_empty">Full Name is Empty!</string>
     <string name="retype_password_fail">Retype password is incorrect</string>
     <string name="phone_number">Phone Number</string>
+    <string name="verify_phone_number">Verify Phone Number</string>
+    <string name="please_type_code_we_sent_to_your_phone">Please type code we sent to your phone</string>
+    <string name="code">Code</string>
+    <string name="confirm">Confirm</string>
+    <string name="resend">Resend</string>
+    <string name="code_empty">Cannot be empty</string>
 </resources>

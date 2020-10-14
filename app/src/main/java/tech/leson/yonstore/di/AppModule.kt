@@ -22,6 +22,7 @@ import tech.leson.yonstore.ui.main.home.adapter.SlideShowAdapter
 import tech.leson.yonstore.ui.main.offer.OfferViewModel
 import tech.leson.yonstore.ui.register.RegisterViewModel
 import tech.leson.yonstore.ui.splash.SplashViewModel
+import tech.leson.yonstore.ui.verify.PhoneVerifyViewModel
 import tech.leson.yonstore.utils.rx.AppSchedulerProvider
 import tech.leson.yonstore.utils.rx.SchedulerProvider
 
@@ -36,6 +37,7 @@ val appModule = module {
     viewModel { LoginViewModel(get(), get()) }
     viewModel { RegisterViewModel(get(), get()) }
     viewModel { MainViewModel(get(), get()) }
+    viewModel { PhoneVerifyViewModel(get(), get()) }
 }
 
 val mainModule = module {

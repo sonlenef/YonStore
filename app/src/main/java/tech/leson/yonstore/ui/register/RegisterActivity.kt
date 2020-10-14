@@ -4,12 +4,13 @@ import android.content.Context
 import android.content.Intent
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_register.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import tech.leson.yonstore.BR
 import tech.leson.yonstore.R
 import tech.leson.yonstore.databinding.ActivityRegisterBinding
 import tech.leson.yonstore.ui.base.BaseActivity
-import org.koin.androidx.viewmodel.ext.android.viewModel
 import tech.leson.yonstore.ui.login.LoginActivity
+import tech.leson.yonstore.ui.verify.PhoneVerifyActivity
 import tech.leson.yonstore.utils.AppUtils
 
 class RegisterActivity :
@@ -17,6 +18,7 @@ class RegisterActivity :
     RegisterNavigator {
 
     companion object {
+        const val REQUEST_CODE = 3333
         const val RESULT_CODE = 2222
         private var instance: Intent? = null
 
@@ -36,6 +38,12 @@ class RegisterActivity :
         viewModel.setNavigator(this)
     }
 
+    override fun onRestart() {
+        super.onRestart()
+        edtPassword.editText?.setText("")
+        edtPasswordAgain.editText?.setText("")
+    }
+
     override fun signUpSuccess(email: String, password: String) {
         Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show()
         val intent = Intent()
@@ -47,9 +55,11 @@ class RegisterActivity :
 
     override fun onSignUp() {
         if (isNetworkConnected()) {
+            val fullName = edtFullName.editText?.text.toString().trim()
             val phone = edtPhone.editText?.text.toString().trim()
             val password = edtPassword.editText?.text.toString().trim()
             val passwordAgain = edtPasswordAgain.editText?.text.toString().trim()
+
             if (!AppUtils.isPhoneNumberValid(phone)) {
                 Toast.makeText(this, getString(R.string.invalid_phone_password), Toast.LENGTH_SHORT)
                     .show()
@@ -57,9 +67,15 @@ class RegisterActivity :
             }
             if (!phone.isBlank() && !password.isBlank()) {
                 if (password == passwordAgain) {
-                    viewModel.register(phone, password)
+                    val intent = PhoneVerifyActivity.getIntent(this)
+                    intent.putExtra("fullName", fullName)
+                    intent.putExtra("phoneNumber", phone)
+                    intent.putExtra("password", password)
+                    startActivityForResult(intent, REQUEST_CODE)
                 } else {
-                    Toast.makeText(this, getString(R.string.retype_password_fail), Toast.LENGTH_SHORT)
+                    Toast.makeText(this,
+                        getString(R.string.retype_password_fail),
+                        Toast.LENGTH_SHORT)
                         .show()
                 }
             } else {
@@ -79,5 +95,19 @@ class RegisterActivity :
 
     override fun onError(err: String) {
         Toast.makeText(this, err, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == REQUEST_CODE && resultCode == PhoneVerifyActivity.RESULT_CODE) {
+            data?.let {
+                val verified = it.getBooleanExtra("verified", false)
+                if (verified) {
+                    val phone = it.getStringExtra("phone")
+                    val password = it.getStringExtra("password")
+                    if (phone != null && password != null) viewModel.register(phone, password)
+                }
+            }
+        }
     }
 }

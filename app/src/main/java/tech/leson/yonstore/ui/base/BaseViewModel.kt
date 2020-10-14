@@ -1,5 +1,6 @@
 package tech.leson.yonstore.ui.base
 
+import android.view.View
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import io.reactivex.rxjava3.disposables.CompositeDisposable
@@ -27,6 +28,8 @@ abstract class BaseViewModel<N>(
 
     val dataManager: DataManager
         get() = mDataManager
+
+    abstract fun onClick(view: View)
 
     open fun getIsLoading(): MutableLiveData<Boolean>? {
         return mIsLoading

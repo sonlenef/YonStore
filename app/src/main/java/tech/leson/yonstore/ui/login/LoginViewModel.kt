@@ -26,7 +26,7 @@ class LoginViewModel(dataManager: DataManager, schedulerProvider: SchedulerProvi
         }
     }
 
-    fun onClick(view: View) {
+    override fun onClick(view: View) {
         when (view.id) {
             R.id.btnSignIn -> navigator?.onSignIn()
             R.id.btnRegister -> navigator?.onRegister()
