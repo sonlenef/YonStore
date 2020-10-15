@@ -38,16 +38,10 @@ class RegisterActivity :
         viewModel.setNavigator(this)
     }
 
-    override fun onRestart() {
-        super.onRestart()
-        edtPassword.editText?.setText("")
-        edtPasswordAgain.editText?.setText("")
-    }
-
-    override fun signUpSuccess(email: String, password: String) {
+    override fun signUpSuccess(phone: String, password: String) {
         Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show()
         val intent = Intent()
-        intent.putExtra("phone", email)
+        intent.putExtra("phone", phone)
         intent.putExtra("password", password)
         setResult(RESULT_CODE, intent)
         finish()

@@ -1,5 +1,6 @@
 package tech.leson.yonstore.di
 
+import com.google.firebase.auth.FirebaseAuth
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import tech.leson.yonstore.data.AppDataManager
@@ -32,12 +33,17 @@ val appModule = module {
     single<ApiHelper> { AppApiHelper() }
     single<DataManager> { AppDataManager() }
     single<SchedulerProvider> { AppSchedulerProvider() }
+    single {
+        val auth = FirebaseAuth.getInstance()
+        auth.setLanguageCode("vn")
+        return@single auth
+    }
 
     viewModel { SplashViewModel(get(), get()) }
-    viewModel { LoginViewModel(get(), get()) }
-    viewModel { RegisterViewModel(get(), get()) }
+    viewModel { LoginViewModel(get(), get(), get()) }
+    viewModel { RegisterViewModel(get(), get(), get()) }
     viewModel { MainViewModel(get(), get()) }
-    viewModel { PhoneVerifyViewModel(get(), get()) }
+    viewModel { PhoneVerifyViewModel(get(), get(), get()) }
 }
 
 val mainModule = module {

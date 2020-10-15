@@ -12,21 +12,26 @@ import tech.leson.yonstore.ui.base.BaseViewModel
 import tech.leson.yonstore.utils.rx.SchedulerProvider
 import java.util.concurrent.TimeUnit
 
-class PhoneVerifyViewModel(dataManager: DataManager, schedulerProvider: SchedulerProvider) :
+class PhoneVerifyViewModel(
+    dataManager: DataManager,
+    schedulerProvider: SchedulerProvider,
+    auth: FirebaseAuth,
+) :
     BaseViewModel<PhoneVerifyNavigator>(dataManager, schedulerProvider) {
 
-    private val mAuth: FirebaseAuth = FirebaseAuth.getInstance()
+    private val mAuth = auth
 
     fun verifyPhoneNumber(
         activity: Activity,
         phoneNumber: String,
         callbacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks,
     ) {
-        mAuth.setLanguageCode("vn")
+        setIsLoading(true)
         var phone = StringBuilder()
         phone = phone.append("+84").append(phoneNumber.substring(1))
         PhoneAuthProvider.getInstance()
             .verifyPhoneNumber(phone.toString(), 120, TimeUnit.SECONDS, activity, callbacks)
+        setIsLoading(false)
     }
 
     fun resendVerificationCode(
@@ -35,7 +40,7 @@ class PhoneVerifyViewModel(dataManager: DataManager, schedulerProvider: Schedule
         token: PhoneAuthProvider.ForceResendingToken?,
         callbacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks,
     ) {
-        mAuth.setLanguageCode("vn")
+        setIsLoading(true)
         var phone = StringBuilder()
         phone = phone.append("+84").append(phoneNumber.substring(1))
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
@@ -45,6 +50,7 @@ class PhoneVerifyViewModel(dataManager: DataManager, schedulerProvider: Schedule
             activity,
             callbacks,
             token)
+        setIsLoading(false)
     }
 
     fun verifyPhoneNumberWithCode(activity: Activity, verificationId: String?, code: String) {
@@ -53,6 +59,7 @@ class PhoneVerifyViewModel(dataManager: DataManager, schedulerProvider: Schedule
     }
 
     fun signInWithPhoneAuthCredential(activity: Activity, credential: PhoneAuthCredential) {
+        setIsLoading(true)
         mAuth.signInWithCredential(credential)
             .addOnCompleteListener(activity) { task ->
                 if (task.isSuccessful) {
@@ -62,6 +69,7 @@ class PhoneVerifyViewModel(dataManager: DataManager, schedulerProvider: Schedule
                         navigator?.onError("Invalid code")
                     }
                 }
+                setIsLoading(false)
             }
     }
 

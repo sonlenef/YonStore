@@ -33,7 +33,6 @@ class PhoneVerifyActivity :
     override val layoutId: Int
         get() = R.layout.activity_phone_verify
     override val viewModel: PhoneVerifyViewModel by viewModel()
-
     private var storedVerificationId: String? = ""
     private lateinit var resendToken: PhoneAuthProvider.ForceResendingToken
 
@@ -120,6 +119,7 @@ class PhoneVerifyActivity :
         i.putExtra("phone", intent.getStringExtra("phoneNumber"))
         i.putExtra("password", intent.getStringExtra("password"))
         setResult(RESULT_CODE, i)
+        finish()
     }
 
     override fun onError(msg: String) {

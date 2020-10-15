@@ -8,14 +8,18 @@ import tech.leson.yonstore.ui.base.BaseViewModel
 import tech.leson.yonstore.utils.rx.SchedulerProvider
 
 
-class LoginViewModel(dataManager: DataManager, schedulerProvider: SchedulerProvider) :
+class LoginViewModel(
+    dataManager: DataManager,
+    schedulerProvider: SchedulerProvider,
+    auth: FirebaseAuth,
+) :
     BaseViewModel<LoginNavigator>(dataManager, schedulerProvider) {
 
-    private val mAuth: FirebaseAuth = FirebaseAuth.getInstance()
+    private val mAuth: FirebaseAuth = auth
 
-    fun login(email: String, password: String) {
+    fun login(phone: String, password: String) {
         setIsLoading(true)
-        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
+        mAuth.signInWithEmailAndPassword("$phone@leson.tech", password).addOnCompleteListener {
             if (it.isSuccessful) {
                 setIsLoading(false)
                 navigator?.signInSuccess()
