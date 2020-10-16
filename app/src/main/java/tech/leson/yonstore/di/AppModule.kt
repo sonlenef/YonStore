@@ -39,7 +39,7 @@ val appModule = module {
         return@single auth
     }
 
-    viewModel { SplashViewModel(get(), get()) }
+    viewModel { SplashViewModel(get(), get(), get()) }
     viewModel { LoginViewModel(get(), get(), get()) }
     viewModel { RegisterViewModel(get(), get(), get()) }
     viewModel { MainViewModel(get(), get()) }

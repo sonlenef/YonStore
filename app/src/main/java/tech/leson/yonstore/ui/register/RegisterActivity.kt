@@ -97,9 +97,10 @@ class RegisterActivity :
             data?.let {
                 val verified = it.getBooleanExtra("verified", false)
                 if (verified) {
+                    val name = it.getStringExtra("fullName")
                     val phone = it.getStringExtra("phone")
                     val password = it.getStringExtra("password")
-                    if (phone != null && password != null) viewModel.register(phone, password)
+                    if (name != null && phone != null && password != null) viewModel.register(name, phone, password)
                 }
             }
         }

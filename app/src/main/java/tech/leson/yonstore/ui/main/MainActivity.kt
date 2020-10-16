@@ -3,14 +3,17 @@ package tech.leson.yonstore.ui.main
 import android.content.Context
 import android.content.Intent
 import android.graphics.PorterDuff
+import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.navigation_footer_main.*
-import kotlinx.android.synthetic.main.navigation_header_layout.*
+import kotlinx.android.synthetic.main.navigation_header_search.*
+import kotlinx.android.synthetic.main.navigation_header_title.*
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
@@ -97,18 +100,23 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainNavigator, MainViewMo
                 when (tab.position) {
                     0 -> {
                         tabCurrent = TAB.TAB_HOME
+                        onNavSearch()
                     }
                     1 -> {
                         tabCurrent = TAB.TAB_EXPLORE
+                        onNavSearch()
                     }
                     2 -> {
                         tabCurrent = TAB.TAB_CART
+                        onNavTitle(getString(R.string.your_cart))
                     }
                     3 -> {
                         tabCurrent = TAB.TAB_OFFER
+                        onNavTitle(getString(R.string.offer))
                     }
                     4 -> {
                         tabCurrent = TAB.TAB_ACCOUNT
+                        onNavTitle(getString(R.string.account))
                     }
                 }
             }
@@ -120,6 +128,8 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainNavigator, MainViewMo
 
             override fun onTabReselected(tab: TabLayout.Tab?) {}
         })
+
+        onNavSearch()
         tabMain.getTabAt(0)?.select()
         val tabIconColor = ContextCompat.getColor(this@MainActivity, R.color.blue)
         tabMain.getTabAt(0)?.icon!!.setColorFilter(tabIconColor, PorterDuff.Mode.SRC_IN)
@@ -131,5 +141,16 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainNavigator, MainViewMo
         tabMain.getTabAt(1)?.select()
         val tabIconColor = ContextCompat.getColor(this@MainActivity, R.color.blue)
         tabMain.getTabAt(1)?.icon!!.setColorFilter(tabIconColor, PorterDuff.Mode.SRC_IN)
+    }
+
+    fun onNavSearch() {
+        navTitle.visibility = View.GONE
+        navSearch.visibility = View.VISIBLE
+    }
+
+    fun onNavTitle(title: String) {
+        navSearch.visibility = View.GONE
+        navTitle.visibility = View.VISIBLE
+        tvTitle.text = title
     }
 }

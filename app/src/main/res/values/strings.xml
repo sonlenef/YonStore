@@ -37,4 +37,5 @@
     <string name="confirm">Confirm</string>
     <string name="resend">Resend</string>
     <string name="code_empty">Cannot be empty</string>
+    <string name="your_cart">Your Cart</string>
 </resources>

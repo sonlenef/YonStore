@@ -116,6 +116,7 @@ class PhoneVerifyActivity :
     override fun onSuccess() {
         val i = Intent()
         i.putExtra("verified", true)
+        i.putExtra("fullName", intent.getStringExtra("fullName"))
         i.putExtra("phone", intent.getStringExtra("phoneNumber"))
         i.putExtra("password", intent.getStringExtra("password"))
         setResult(RESULT_CODE, i)

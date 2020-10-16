@@ -63,6 +63,7 @@ class PhoneVerifyViewModel(
         mAuth.signInWithCredential(credential)
             .addOnCompleteListener(activity) { task ->
                 if (task.isSuccessful) {
+                    mAuth.signOut()
                     navigator?.onSuccess()
                 } else {
                     if (task.exception is FirebaseAuthInvalidCredentialsException) {
