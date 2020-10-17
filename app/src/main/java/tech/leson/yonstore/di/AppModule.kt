@@ -2,6 +2,7 @@ package tech.leson.yonstore.di
 
 import com.google.firebase.auth.FirebaseAuth
 import org.koin.androidx.viewmodel.dsl.viewModel
+import org.koin.core.qualifier.named
 import org.koin.dsl.module
 import tech.leson.yonstore.data.AppDataManager
 import tech.leson.yonstore.data.DataManager
@@ -19,6 +20,8 @@ import tech.leson.yonstore.ui.main.account.AccountViewModel
 import tech.leson.yonstore.ui.main.cart.CartViewModel
 import tech.leson.yonstore.ui.main.explore.ExploreViewModel
 import tech.leson.yonstore.ui.main.home.HomeViewModel
+import tech.leson.yonstore.ui.main.home.adapter.CategoryAdapter
+import tech.leson.yonstore.ui.main.home.adapter.ProductAdapter
 import tech.leson.yonstore.ui.main.home.adapter.SlideShowAdapter
 import tech.leson.yonstore.ui.main.offer.OfferViewModel
 import tech.leson.yonstore.ui.register.RegisterViewModel
@@ -48,6 +51,15 @@ val appModule = module {
 
 val mainModule = module {
     single { SlideShowAdapter(ArrayList()) }
+    single { CategoryAdapter(ArrayList()) }
+    single(named("vertical")) {
+        ProductAdapter(ArrayList(),
+            ProductAdapter.LAYOUT_VIEW_TYPE_VERTICAL)
+    }
+    single(named("horizontal")) {
+        ProductAdapter(ArrayList(),
+            ProductAdapter.LAYOUT_VIEW_TYPE_HORIZONTAL)
+    }
     single { (activity: MainActivity) -> MainTabAdapter(activity) }
 
     viewModel { AccountViewModel(get(), get()) }

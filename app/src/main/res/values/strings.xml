@@ -38,4 +38,9 @@
     <string name="resend">Resend</string>
     <string name="code_empty">Cannot be empty</string>
     <string name="your_cart">Your Cart</string>
+    <string name="recomended_nproduct">Recomended\nProduct</string>
+    <string name="we_recommend_the_best_for_you">We recommend the best for you</string>
+    <string name="name_product_demo">FS - Nike Air Max 270 React Sneakers</string>
+    <string name="price_demo">$299.43</string>
+    <string name="discount_demo">24% Off</string>
 </resources>

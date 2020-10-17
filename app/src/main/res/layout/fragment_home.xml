@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -70,7 +71,10 @@
                 android:id="@+id/rcvCategory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
                 android:overScrollMode="never"
+                android:paddingStart="@dimen/_16sdp"
+                android:paddingEnd="@dimen/_16sdp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btnCategoryMore" />
 
@@ -104,7 +108,10 @@
                 android:id="@+id/rcvFlashSale"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
                 android:overScrollMode="never"
+                android:paddingStart="@dimen/_16sdp"
+                android:paddingEnd="@dimen/_16sdp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btnFlashSaleMore" />
 
@@ -138,9 +145,58 @@
                 android:id="@+id/rcvMegaSale"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
                 android:overScrollMode="never"
+                android:paddingStart="@dimen/_16sdp"
+                android:paddingEnd="@dimen/_16sdp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btnMegaSaleMore" />
+
+            <ImageView
+                android:id="@+id/imvProduct"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_200sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:src="@drawable/banner"
+                app:layout_constraintTop_toBottomOf="@+id/rcvMegaSale"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tvRecProduct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="@string/recomended_nproduct"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_22ssp"
+                app:layout_constraintBottom_toBottomOf="@id/imvProduct"
+                app:layout_constraintStart_toStartOf="@id/imvProduct"
+                app:layout_constraintTop_toTopOf="@id/imvProduct" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="@string/we_recommend_the_best_for_you"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintStart_toStartOf="@id/tvRecProduct"
+                app:layout_constraintTop_toBottomOf="@id/tvRecProduct" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvRecProduct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_48sdp"
+                android:overScrollMode="never"
+                android:paddingStart="@dimen/_16sdp"
+                android:paddingEnd="@dimen/_16sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imvProduct" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

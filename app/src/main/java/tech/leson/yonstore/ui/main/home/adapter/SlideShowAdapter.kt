@@ -5,25 +5,24 @@ import android.view.ViewGroup
 import tech.leson.yonstore.R
 import tech.leson.yonstore.ui.base.BaseAdapter
 import tech.leson.yonstore.ui.main.home.model.Banner
+import tech.leson.yonstore.ui.main.home.viewholder.SlideShowViewHolder
 
 class SlideShowAdapter (data: MutableList<Banner>) :
     BaseAdapter<SlideShowViewHolder, Banner>(data) {
 
-    private var mData = data
-
     override fun addData(data: Banner) {
-        mData.add(data)
-        notifyItemChanged(mData.size - 1)
+        this.data.add(data)
+        notifyItemChanged(this.data.size - 1)
     }
 
     override fun addAllData(data: MutableList<Banner>) {
-        mData.clear()
-        mData.addAll(data)
+        this.data.clear()
+        this.data.addAll(data)
         notifyDataSetChanged()
     }
 
     override fun clearData() {
-        mData.clear()
+        this.data.clear()
         notifyDataSetChanged()
     }
 
@@ -35,5 +34,5 @@ class SlideShowAdapter (data: MutableList<Banner>) :
         holder.onBind(data[position])
     }
 
-    override fun getItemCount() = mData.size
+    override fun getItemCount() = this.data.size
 }
