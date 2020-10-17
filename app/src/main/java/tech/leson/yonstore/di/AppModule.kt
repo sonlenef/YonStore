@@ -51,12 +51,27 @@ val appModule = module {
 
 val mainModule = module {
     single { SlideShowAdapter(ArrayList()) }
-    single { CategoryAdapter(ArrayList()) }
-    single(named("vertical")) {
+    single(named("home")) {
+        CategoryAdapter(ArrayList(),
+            CategoryAdapter.LAYOUT_VIEW_TYPE_HOME)
+    }
+    single(named("manFashion")) {
+        CategoryAdapter(ArrayList(),
+            CategoryAdapter.LAYOUT_VIEW_TYPE_EXPLORE)
+    }
+    single(named("womanFashion")) {
+        CategoryAdapter(ArrayList(),
+            CategoryAdapter.LAYOUT_VIEW_TYPE_EXPLORE)
+    }
+    single(named("recProduct")) {
         ProductAdapter(ArrayList(),
             ProductAdapter.LAYOUT_VIEW_TYPE_VERTICAL)
     }
-    single(named("horizontal")) {
+    single(named("flashSale")) {
+        ProductAdapter(ArrayList(),
+            ProductAdapter.LAYOUT_VIEW_TYPE_HORIZONTAL)
+    }
+    single(named("megaSale")) {
         ProductAdapter(ArrayList(),
             ProductAdapter.LAYOUT_VIEW_TYPE_HORIZONTAL)
     }

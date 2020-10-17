@@ -43,4 +43,19 @@
     <string name="name_product_demo">FS - Nike Air Max 270 React Sneakers</string>
     <string name="price_demo">$299.43</string>
     <string name="discount_demo">24% Off</string>
+    <string name="man_fashion">Man Fashion</string>
+    <string name="woman_fashion">Woman Fashion</string>
+    <string name="man_shirt">Man Shirt</string>
+    <string name="man_work_equipment">Man Work Equipment</string>
+    <string name="man_t_shirt">Man T-Shirt</string>
+    <string name="man_shoes">Man Shoes</string>
+    <string name="man_pants">Man Pants</string>
+    <string name="man_underwear">Man Underwear</string>
+    <string name="woman_dress">Dress</string>
+    <string name="woman_skirt">Skirt</string>
+    <string name="woman_t_shirt">Woman T-Shirt</string>
+    <string name="woman_shoes">Man Shoes</string>
+    <string name="woman_pants">Woman Pants</string>
+    <string name="woman_bag">Woman Bag</string>
+    <string name="woman_bikini">Bikini</string>
 </resources>
