@@ -64,4 +64,7 @@
     <string name="select_color">Select Color</string>
     <string name="specification">Specification</string>
     <string name="review_product">Review Product</string>
+    <string name="_0_0_0_review">0.0 (0 review)</string>
+    <string name="you_might_also_like">You Might Also Like</string>
+    <string name="add_to_cart">Add To Cart</string>
 </resources>
