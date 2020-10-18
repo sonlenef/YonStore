@@ -2,7 +2,6 @@ package tech.leson.yonstore.ui.main
 
 import android.content.Context
 import android.content.Intent
-import android.graphics.PorterDuff
 import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -21,11 +20,13 @@ import tech.leson.yonstore.BR
 import tech.leson.yonstore.R
 import tech.leson.yonstore.databinding.ActivityMainBinding
 import tech.leson.yonstore.ui.base.BaseActivity
+import tech.leson.yonstore.ui.favorite.FavoriteActivity
 import tech.leson.yonstore.ui.main.account.AccountFragment
 import tech.leson.yonstore.ui.main.cart.CartFragment
 import tech.leson.yonstore.ui.main.explore.ExploreFragment
 import tech.leson.yonstore.ui.main.home.HomeFragment
 import tech.leson.yonstore.ui.main.offer.OfferFragment
+import tech.leson.yonstore.utils.AppUtils
 
 class MainActivity : BaseActivity<ActivityMainBinding, MainNavigator, MainViewModel>(),
     MainNavigator {
@@ -96,7 +97,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainNavigator, MainViewMo
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 viewTabs.currentItem = tab!!.position
                 val tabIconColor = ContextCompat.getColor(this@MainActivity, R.color.blue)
-                tab.icon!!.setColorFilter(tabIconColor, PorterDuff.Mode.SRC_IN)
+                AppUtils.setColorFilter(tab.icon!!, tabIconColor)
                 when (tab.position) {
                     0 -> {
                         tabCurrent = TAB.TAB_HOME
@@ -123,7 +124,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainNavigator, MainViewMo
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {
                 val tabIconColor = ContextCompat.getColor(this@MainActivity, R.color.gray)
-                tab?.icon!!.setColorFilter(tabIconColor, PorterDuff.Mode.SRC_IN)
+                AppUtils.setColorFilter(tab?.icon!!, tabIconColor)
             }
 
             override fun onTabReselected(tab: TabLayout.Tab?) {}
@@ -132,7 +133,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainNavigator, MainViewMo
         onNavSearch()
         tabMain.getTabAt(0)?.select()
         val tabIconColor = ContextCompat.getColor(this@MainActivity, R.color.blue)
-        tabMain.getTabAt(0)?.icon!!.setColorFilter(tabIconColor, PorterDuff.Mode.SRC_IN)
+        AppUtils.setColorFilter(tabMain.getTabAt(0)?.icon!!, tabIconColor)
         edtSearch.setOnFocusChangeListener { _, p1 -> if (p1) onSearch() }
         edtSearch.setOnClickListener { onSearch() }
     }
@@ -140,7 +141,11 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainNavigator, MainViewMo
     override fun onSearch() {
         tabMain.getTabAt(1)?.select()
         val tabIconColor = ContextCompat.getColor(this@MainActivity, R.color.blue)
-        tabMain.getTabAt(1)?.icon!!.setColorFilter(tabIconColor, PorterDuff.Mode.SRC_IN)
+        AppUtils.setColorFilter(tabMain.getTabAt(1)?.icon!!, tabIconColor)
+    }
+
+    override fun onFavorite() {
+        startActivity(FavoriteActivity.getIntent(this))
     }
 
     fun onNavSearch() {

@@ -13,7 +13,9 @@ import tech.leson.yonstore.BR
 import tech.leson.yonstore.R
 import tech.leson.yonstore.databinding.FragmentHomeBinding
 import tech.leson.yonstore.ui.base.BaseFragment
+import tech.leson.yonstore.ui.category.CategoryActivity
 import tech.leson.yonstore.ui.main.CATEGORY
+import tech.leson.yonstore.ui.main.MainActivity
 import tech.leson.yonstore.ui.main.home.adapter.CategoryAdapter
 import tech.leson.yonstore.ui.main.home.adapter.ProductAdapter
 import tech.leson.yonstore.ui.main.home.adapter.SlideShowAdapter
@@ -38,7 +40,7 @@ class HomeFragment :
     private val mCategoryAdapter: CategoryAdapter by inject(named("home"))
     private val mFlashSaleAdapter: ProductAdapter by inject(named("flashSale"))
     private val mMegaSaleAdapter: ProductAdapter by inject(named("megaSale"))
-    private val mRecProductAdapter: ProductAdapter by inject(named("recProduct"))
+    private val mRecProductAdapter: ProductAdapter by inject(named("vertical"))
 
     override val bindingVariable: Int
         get() = BR.viewModel
@@ -57,8 +59,6 @@ class HomeFragment :
     }
 
     private fun setBanner() {
-        mSlideShowAdapter.addData(Banner("Hahahah"))
-        mSlideShowAdapter.addData(Banner("Hahahah"))
         mSlideShowAdapter.addData(Banner("Hahahah"))
         mSlideShowAdapter.addData(Banner("Hahahah"))
         mSlideShowAdapter.addData(Banner("Hahahah"))
@@ -136,4 +136,14 @@ class HomeFragment :
         rcvRecProduct.layoutManager = layoutManager
         rcvRecProduct.adapter = mRecProductAdapter
     }
+
+    override fun onMoreCategory() {
+        activity?.let {
+            (it as MainActivity).onSearch()
+        }
+    }
+
+    override fun onMoreFlashSale() {}
+
+    override fun onMoreMegaSale() {}
 }

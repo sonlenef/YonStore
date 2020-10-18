@@ -9,7 +9,7 @@
 
         <variable
             name="viewModel"
-            type="tech.leson.yonstore.ui.main.MainViewModel" />
+            type="tech.leson.yonstore.ui.base.BaseViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,8 +22,8 @@
             android:layout_width="0dp"
             android:layout_height="@dimen/_32sdp"
             android:layout_marginStart="@dimen/_16sdp"
-            android:layout_marginEnd="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_8sdp"
             android:background="@drawable/bg_border"
             android:drawableStart="@drawable/ic_search"
@@ -45,7 +45,8 @@
             android:id="@+id/btnHeart"
             android:layout_width="@dimen/_40sdp"
             android:layout_height="@dimen/_40sdp"
-            android:background="@drawable/bg_btn"
+            android:background="@drawable/bg_btn_transparent"
+            android:onClick="@{(View) -> viewModel.onClick(View)}"
             android:padding="@dimen/_12sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/btnNotification"
@@ -57,7 +58,8 @@
             android:layout_width="@dimen/_40sdp"
             android:layout_height="@dimen/_40sdp"
             android:layout_marginEnd="@dimen/_4sdp"
-            android:background="@drawable/bg_btn"
+            android:background="@drawable/bg_btn_transparent"
+            android:onClick="@{(View) -> viewModel.onClick(View)}"
             android:padding="@dimen/_12sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

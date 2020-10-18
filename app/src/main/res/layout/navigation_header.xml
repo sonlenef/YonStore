@@ -14,27 +14,29 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_60sdp"
+        android:layout_height="@dimen/_48sdp"
         tools:ignore="ContentDescription">
 
         <ImageView
             android:id="@+id/btnBack"
-            android:layout_width="@dimen/_48sdp"
-            android:layout_height="@dimen/_48sdp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
             android:background="@drawable/bg_btn_transparent"
             android:onClick="@{(View) -> viewModel.onClick(View)}"
-            android:padding="@dimen/_14sdp"
+            android:padding="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:srcCompat="@drawable/ic_arrow_left" />
 
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:ellipsize="end"
             android:fontFamily="@font/poppins_bold"
             android:gravity="center_vertical"
+            android:maxLines="1"
             android:paddingTop="@dimen/_3sdp"
             android:textColor="@color/dark"
             android:textSize="@dimen/_14ssp"

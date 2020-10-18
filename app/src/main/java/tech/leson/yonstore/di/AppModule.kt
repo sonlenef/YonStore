@@ -12,6 +12,8 @@ import tech.leson.yonstore.data.local.prefs.AppPreferencesHelper
 import tech.leson.yonstore.data.local.prefs.PreferencesHelper
 import tech.leson.yonstore.data.remote.ApiHelper
 import tech.leson.yonstore.data.remote.AppApiHelper
+import tech.leson.yonstore.ui.category.CategoryViewModel
+import tech.leson.yonstore.ui.favorite.FavoriteViewModel
 import tech.leson.yonstore.ui.login.LoginViewModel
 import tech.leson.yonstore.ui.main.MainActivity
 import tech.leson.yonstore.ui.main.MainTabAdapter
@@ -63,7 +65,7 @@ val mainModule = module {
         CategoryAdapter(ArrayList(),
             CategoryAdapter.LAYOUT_VIEW_TYPE_EXPLORE)
     }
-    single(named("recProduct")) {
+    single(named("vertical")) {
         ProductAdapter(ArrayList(),
             ProductAdapter.LAYOUT_VIEW_TYPE_VERTICAL)
     }
@@ -75,6 +77,10 @@ val mainModule = module {
         ProductAdapter(ArrayList(),
             ProductAdapter.LAYOUT_VIEW_TYPE_HORIZONTAL)
     }
+    single(named("favorite")) {
+        ProductAdapter(ArrayList(),
+            ProductAdapter.LAYOUT_VIEW_TYPE_VERTICAL)
+    }
     single { (activity: MainActivity) -> MainTabAdapter(activity) }
 
     viewModel { AccountViewModel(get(), get()) }
@@ -82,4 +88,7 @@ val mainModule = module {
     viewModel { ExploreViewModel(get(), get()) }
     viewModel { HomeViewModel(get(), get()) }
     viewModel { OfferViewModel(get(), get()) }
+
+    viewModel { FavoriteViewModel(get(), get()) }
+    viewModel { CategoryViewModel(get(), get()) }
 }

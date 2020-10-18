@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:bind="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -32,12 +31,13 @@
                 android:layout_height="wrap_content">
 
                 <include
-                    android:id="@+id/navSearch"
-                    layout="@layout/navigation_header_search" />
-
-                <include
                     android:id="@+id/navTitle"
                     layout="@layout/navigation_header_title" />
+
+                <include
+                    android:id="@+id/navSearch"
+                    layout="@layout/navigation_header_search"
+                    app:viewModel="@{(tech.leson.yonstore.ui.base.BaseViewModel)viewModel}" />
             </FrameLayout>
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -59,7 +59,7 @@
 
             <include
                 layout="@layout/navigation_footer_main"
-                bind:viewModel="@{viewModel}" />
+                app:viewModel="@{viewModel}" />
         </com.google.android.material.bottomappbar.BottomAppBar>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
