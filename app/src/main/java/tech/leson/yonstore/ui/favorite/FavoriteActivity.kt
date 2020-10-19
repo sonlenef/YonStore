@@ -11,10 +11,10 @@ import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.qualifier.named
 import tech.leson.yonstore.R
+import tech.leson.yonstore.data.model.Product
 import tech.leson.yonstore.databinding.ActivityFavoriteBinding
 import tech.leson.yonstore.ui.base.BaseActivity
 import tech.leson.yonstore.ui.main.home.adapter.ProductAdapter
-import tech.leson.yonstore.ui.main.home.model.Product
 
 class FavoriteActivity :
     BaseActivity<ActivityFavoriteBinding, FavoriteNavigator, FavoriteViewModel>(),
@@ -44,14 +44,14 @@ class FavoriteActivity :
     }
 
     private fun setFevProduct() {
-        mFevProductAdapter.addData(Product())
-        mFevProductAdapter.addData(Product())
-        mFevProductAdapter.addData(Product())
-        mFevProductAdapter.addData(Product())
-        mFevProductAdapter.addData(Product())
-        mFevProductAdapter.addData(Product())
-        mFevProductAdapter.addData(Product())
-        mFevProductAdapter.addData(Product())
+        mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
+        mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
+        mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
+        mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
+        mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
+        mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
+        mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
+        mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
         val layoutManager = GridLayoutManager(this, 2, RecyclerView.VERTICAL, false)
         rcvFavorite.layoutManager = layoutManager
         rcvFavorite.adapter = mFevProductAdapter

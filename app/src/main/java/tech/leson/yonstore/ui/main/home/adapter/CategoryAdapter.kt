@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import tech.leson.yonstore.R
 import tech.leson.yonstore.ui.base.BaseAdapter
 import tech.leson.yonstore.ui.base.BaseViewHolder
-import tech.leson.yonstore.ui.main.home.model.Category
+import tech.leson.yonstore.data.model.Category
 import tech.leson.yonstore.ui.main.home.viewholder.CategoryHorizontalViewHolder
 import tech.leson.yonstore.ui.main.home.viewholder.CategoryVerticalViewHolder
 

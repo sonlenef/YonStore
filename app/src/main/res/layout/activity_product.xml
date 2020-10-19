@@ -9,7 +9,7 @@
 
         <variable
             name="viewModel"
-            type="tech.leson.yonstore.ui.base.BaseViewModel" />
+            type="tech.leson.yonstore.ui.product.ProductViewModel" />
     </data>
 
     <FrameLayout
@@ -107,12 +107,14 @@
                         android:layout_row="3"
                         android:layout_column="1"
                         android:layout_marginStart="@dimen/_16sdp"
-                        android:isIndicator="false"
+                        android:isIndicator="true"
                         android:max="5"
                         android:paddingTop="@dimen/_10sdp"
                         android:paddingBottom="@dimen/_10sdp"
+                        android:rating="3.5"
                         android:scaleX="0.5"
                         android:scaleY="0.5"
+                        android:theme="@style/RatingBar"
                         android:transformPivotX="0dp"
                         android:transformPivotY="0dp"
                         app:layout_constraintStart_toStartOf="parent"
@@ -239,12 +241,13 @@
                         android:layout_row="3"
                         android:layout_column="1"
                         android:layout_marginStart="@dimen/_16sdp"
-                        android:isIndicator="false"
+                        android:isIndicator="true"
                         android:max="5"
                         android:paddingTop="@dimen/_10sdp"
                         android:paddingBottom="@dimen/_10sdp"
                         android:scaleX="0.5"
                         android:scaleY="0.5"
+                        android:theme="@style/RatingBar"
                         android:transformPivotX="0dp"
                         android:transformPivotY="0dp"
                         app:layout_constraintStart_toStartOf="parent"

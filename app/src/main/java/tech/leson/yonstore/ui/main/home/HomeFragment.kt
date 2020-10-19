@@ -1,5 +1,6 @@
 package tech.leson.yonstore.ui.main.home
 
+import android.content.Intent
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -13,15 +14,15 @@ import tech.leson.yonstore.BR
 import tech.leson.yonstore.R
 import tech.leson.yonstore.databinding.FragmentHomeBinding
 import tech.leson.yonstore.ui.base.BaseFragment
-import tech.leson.yonstore.ui.category.CategoryActivity
 import tech.leson.yonstore.ui.main.CATEGORY
 import tech.leson.yonstore.ui.main.MainActivity
 import tech.leson.yonstore.ui.main.home.adapter.CategoryAdapter
 import tech.leson.yonstore.ui.main.home.adapter.ProductAdapter
 import tech.leson.yonstore.ui.main.home.adapter.SlideShowAdapter
-import tech.leson.yonstore.ui.main.home.model.Banner
-import tech.leson.yonstore.ui.main.home.model.Category
-import tech.leson.yonstore.ui.main.home.model.Product
+import tech.leson.yonstore.data.model.Banner
+import tech.leson.yonstore.data.model.Category
+import tech.leson.yonstore.data.model.Product
+import tech.leson.yonstore.ui.product.ProductActivity
 
 class HomeFragment :
     BaseFragment<FragmentHomeBinding, HomeNavigator, HomeViewModel>(),
@@ -104,36 +105,38 @@ class HomeFragment :
     }
 
     private fun setFlashSale() {
-        mFlashSaleAdapter.addData(Product())
-        mFlashSaleAdapter.addData(Product())
-        mFlashSaleAdapter.addData(Product())
-        mFlashSaleAdapter.addData(Product())
-        mFlashSaleAdapter.addData(Product())
-        mFlashSaleAdapter.addData(Product())
+        mFlashSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
+        mFlashSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
+        mFlashSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
+        mFlashSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
+        mFlashSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
+        mFlashSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
         val layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
         rcvFlashSale.layoutManager = layoutManager
+        mFlashSaleAdapter.homeNavigator = this
         rcvFlashSale.adapter = mFlashSaleAdapter
     }
 
     private fun setMegaSale() {
-        mMegaSaleAdapter.addData(Product())
-        mMegaSaleAdapter.addData(Product())
-        mMegaSaleAdapter.addData(Product())
-        mMegaSaleAdapter.addData(Product())
-        mMegaSaleAdapter.addData(Product())
-        mMegaSaleAdapter.addData(Product())
+        mMegaSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
+        mMegaSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
+        mMegaSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
+        mMegaSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
+        mMegaSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
         val layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
         rcvMegaSale.layoutManager = layoutManager
+        mMegaSaleAdapter.homeNavigator = this
         rcvMegaSale.adapter = mMegaSaleAdapter
     }
 
     private fun setRecProduct() {
-        mRecProductAdapter.addData(Product())
-        mRecProductAdapter.addData(Product())
-        mRecProductAdapter.addData(Product())
-        mRecProductAdapter.addData(Product())
+        mRecProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
+        mRecProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
+        mRecProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
+        mRecProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
         val layoutManager = GridLayoutManager(activity, 2, RecyclerView.VERTICAL, false)
         rcvRecProduct.layoutManager = layoutManager
+        mRecProductAdapter.homeNavigator = this
         rcvRecProduct.adapter = mRecProductAdapter
     }
 
@@ -146,4 +149,10 @@ class HomeFragment :
     override fun onMoreFlashSale() {}
 
     override fun onMoreMegaSale() {}
+
+    override fun onProductClick(product: Product) {
+        val intent = activity?.let { ProductActivity.getIntent(it) }
+        intent?.putExtra("product", product)
+        startActivity(intent)
+    }
 }

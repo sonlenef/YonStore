@@ -12,7 +12,7 @@ import tech.leson.yonstore.databinding.FragmentExploreBinding
 import tech.leson.yonstore.ui.base.BaseFragment
 import tech.leson.yonstore.ui.main.CATEGORY
 import tech.leson.yonstore.ui.main.home.adapter.CategoryAdapter
-import tech.leson.yonstore.ui.main.home.model.Category
+import tech.leson.yonstore.data.model.Category
 
 class ExploreFragment : BaseFragment<FragmentExploreBinding, ExploreNavigator, ExploreViewModel>(),
     ExploreNavigator {

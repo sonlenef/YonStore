@@ -26,6 +26,8 @@ import tech.leson.yonstore.ui.main.home.adapter.CategoryAdapter
 import tech.leson.yonstore.ui.main.home.adapter.ProductAdapter
 import tech.leson.yonstore.ui.main.home.adapter.SlideShowAdapter
 import tech.leson.yonstore.ui.main.offer.OfferViewModel
+import tech.leson.yonstore.ui.product.ProductViewModel
+import tech.leson.yonstore.ui.product.adapter.ProductImgAdapter
 import tech.leson.yonstore.ui.register.RegisterViewModel
 import tech.leson.yonstore.ui.splash.SplashViewModel
 import tech.leson.yonstore.ui.verify.PhoneVerifyViewModel
@@ -81,6 +83,7 @@ val mainModule = module {
         ProductAdapter(ArrayList(),
             ProductAdapter.LAYOUT_VIEW_TYPE_VERTICAL)
     }
+    single { ProductImgAdapter(ArrayList()) }
     single { (activity: MainActivity) -> MainTabAdapter(activity) }
 
     viewModel { AccountViewModel(get(), get()) }
@@ -91,4 +94,5 @@ val mainModule = module {
 
     viewModel { FavoriteViewModel(get(), get()) }
     viewModel { CategoryViewModel(get(), get()) }
+    viewModel { ProductViewModel(get(), get()) }
 }

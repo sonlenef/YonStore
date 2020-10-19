@@ -1,4 +1,4 @@
-package tech.leson.yonstore.ui.main.home.model
+package tech.leson.yonstore.data.model
 
 import tech.leson.yonstore.ui.main.CATEGORY
 

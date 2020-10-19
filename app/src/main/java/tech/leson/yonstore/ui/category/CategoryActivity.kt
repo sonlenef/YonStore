@@ -2,16 +2,12 @@ package tech.leson.yonstore.ui.category
 
 import android.content.Context
 import android.content.Intent
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.navigation_header_title.*
 import tech.leson.yonstore.BR
 import tech.leson.yonstore.R
 import tech.leson.yonstore.databinding.ActivityCategoryBinding
 import tech.leson.yonstore.ui.base.BaseActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import tech.leson.yonstore.ui.main.home.model.Product
 
 class CategoryActivity :
     BaseActivity<ActivityCategoryBinding, CategoryNavigator, CategoryViewModel>(),

@@ -48,6 +48,8 @@
             android:launchMode="singleTop" />
         <activity android:name=".ui.favorite.FavoriteActivity"
             android:launchMode="singleTop" />
+        <activity android:name=".ui.product.ProductActivity"
+            android:launchMode="singleTop" />
     </application>
 
 </manifest>
