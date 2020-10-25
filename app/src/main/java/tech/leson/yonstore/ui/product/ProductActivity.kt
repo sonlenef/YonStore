@@ -8,14 +8,14 @@ import com.rd.animation.type.AnimationType
 import kotlinx.android.synthetic.main.activity_product.*
 import kotlinx.android.synthetic.main.navigation_header.*
 import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import tech.leson.yonstore.BR
 import tech.leson.yonstore.R
-import tech.leson.yonstore.databinding.ActivityProductBinding
-import tech.leson.yonstore.ui.base.BaseActivity
-import org.koin.androidx.viewmodel.ext.android.viewModel
-import tech.leson.yonstore.ui.product.adapter.ProductImgAdapter
 import tech.leson.yonstore.data.model.Product
 import tech.leson.yonstore.data.model.ProductImage
+import tech.leson.yonstore.databinding.ActivityProductBinding
+import tech.leson.yonstore.ui.base.BaseActivity
+import tech.leson.yonstore.ui.product.adapter.ProductImgAdapter
 
 class ProductActivity : BaseActivity<ActivityProductBinding, ProductNavigator, ProductViewModel>(),
     ProductNavigator {
@@ -43,6 +43,7 @@ class ProductActivity : BaseActivity<ActivityProductBinding, ProductNavigator, P
         val product: Product = intent.getSerializableExtra("product") as Product
         product.let {
             tvTitle.text = it.name
+            tvProductName.text = it.name
             setImages(it.images)
         }
         dataDemo()

@@ -33,7 +33,7 @@
             android:inputType="text"
             android:paddingStart="@dimen/_10sdp"
             android:paddingEnd="@dimen/_10sdp"
-            android:textColorHint="@color/gray"
+            android:textColorHint="@color/grey"
             android:textSize="@dimen/_11ssp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/btnHeart"

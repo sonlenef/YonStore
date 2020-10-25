@@ -1,6 +1,7 @@
 package tech.leson.yonstore.di
 
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
@@ -10,10 +11,11 @@ import tech.leson.yonstore.data.local.db.AppDbHelper
 import tech.leson.yonstore.data.local.db.DbHelper
 import tech.leson.yonstore.data.local.prefs.AppPreferencesHelper
 import tech.leson.yonstore.data.local.prefs.PreferencesHelper
-import tech.leson.yonstore.data.remote.ApiHelper
-import tech.leson.yonstore.data.remote.AppApiHelper
+import tech.leson.yonstore.data.remote.AppFirebaseHelper
+import tech.leson.yonstore.data.remote.FirebaseHelper
 import tech.leson.yonstore.ui.category.CategoryViewModel
 import tech.leson.yonstore.ui.favorite.FavoriteViewModel
+import tech.leson.yonstore.ui.favorite.adapter.ProductFavoriteAdapter
 import tech.leson.yonstore.ui.login.LoginViewModel
 import tech.leson.yonstore.ui.main.MainActivity
 import tech.leson.yonstore.ui.main.MainTabAdapter
@@ -28,17 +30,21 @@ import tech.leson.yonstore.ui.main.home.adapter.SlideShowAdapter
 import tech.leson.yonstore.ui.main.offer.OfferViewModel
 import tech.leson.yonstore.ui.product.ProductViewModel
 import tech.leson.yonstore.ui.product.adapter.ProductImgAdapter
+import tech.leson.yonstore.ui.profile.ProfileViewModel
 import tech.leson.yonstore.ui.register.RegisterViewModel
 import tech.leson.yonstore.ui.splash.SplashViewModel
 import tech.leson.yonstore.ui.verify.PhoneVerifyViewModel
+import tech.leson.yonstore.utils.AppConstants
 import tech.leson.yonstore.utils.rx.AppSchedulerProvider
 import tech.leson.yonstore.utils.rx.SchedulerProvider
 
 val appModule = module {
+    single { @PreferenceInfo AppConstants.PREF_NAME }
     single<DbHelper> { AppDbHelper() }
-    single<PreferencesHelper> { AppPreferencesHelper() }
-    single<ApiHelper> { AppApiHelper() }
-    single<DataManager> { AppDataManager() }
+    single<PreferencesHelper> { AppPreferencesHelper(get(), get()) }
+    single { FirebaseFirestore.getInstance() }
+    single<FirebaseHelper> { AppFirebaseHelper(get()) }
+    single<DataManager> { AppDataManager(get(), get()) }
     single<SchedulerProvider> { AppSchedulerProvider() }
     single {
         val auth = FirebaseAuth.getInstance()
@@ -79,10 +85,7 @@ val mainModule = module {
         ProductAdapter(ArrayList(),
             ProductAdapter.LAYOUT_VIEW_TYPE_HORIZONTAL)
     }
-    single(named("favorite")) {
-        ProductAdapter(ArrayList(),
-            ProductAdapter.LAYOUT_VIEW_TYPE_VERTICAL)
-    }
+    single { ProductFavoriteAdapter(ArrayList()) }
     single { ProductImgAdapter(ArrayList()) }
     single { (activity: MainActivity) -> MainTabAdapter(activity) }
 
@@ -95,4 +98,5 @@ val mainModule = module {
     viewModel { FavoriteViewModel(get(), get()) }
     viewModel { CategoryViewModel(get(), get()) }
     viewModel { ProductViewModel(get(), get()) }
+    viewModel { ProfileViewModel(get(), get()) }
 }

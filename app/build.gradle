@@ -57,7 +57,7 @@ dependencies {
 
     // Firebase
     implementation "com.google.firebase:firebase-auth:$firebaseAuthVersion"
-    implementation "com.google.firebase:firebase-database:$firebaseDbVersion"
+    implementation "com.google.firebase:firebase-firestore:$firebaseDbVersion"
     implementation platform('com.google.firebase:firebase-bom:25.12.0')
     implementation 'com.google.firebase:firebase-analytics-ktx'
 
@@ -79,6 +79,9 @@ dependencies {
 
     // validate phone number
     implementation "com.googlecode.libphonenumber:libphonenumber:$libphonenumberVersion"
+
+    // JackSon
+    implementation "com.fasterxml.jackson.core:jackson-databind:$jackSonVersion"
 
     // database
     implementation "androidx.room:room-rxjava3:$roomDatabaseVersion"

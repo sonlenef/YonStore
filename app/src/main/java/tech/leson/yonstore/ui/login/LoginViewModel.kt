@@ -21,8 +21,9 @@ class LoginViewModel(
         setIsLoading(true)
         mAuth.signInWithEmailAndPassword("$phone@leson.tech", password).addOnCompleteListener {
             if (it.isSuccessful) {
-                setIsLoading(false)
+                dataManager.setUserUid(it.result?.user?.uid.toString())
                 navigator?.signInSuccess()
+                setIsLoading(false)
             } else {
                 navigator?.onError(it.exception.toString())
                 setIsLoading(false)

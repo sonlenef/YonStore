@@ -17,7 +17,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginNavigator, LoginVi
     LoginNavigator {
 
     companion object {
-        const val REQUEST_CODE = 1111
         private var instance: Intent? = null
 
         @JvmStatic
@@ -64,22 +63,11 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginNavigator, LoginVi
     }
 
     override fun onRegister() {
-        startActivityForResult(RegisterActivity.getIntent(this), REQUEST_CODE)
+        startActivity(RegisterActivity.getIntent(this))
+        finish()
     }
 
     override fun onError(err: String) {
         Toast.makeText(this, err, Toast.LENGTH_SHORT).show()
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == REQUEST_CODE) {
-            if (resultCode == RegisterActivity.RESULT_CODE) {
-                if (data != null) {
-                    edtPhone.editText?.setText(data.getStringExtra("phone"))
-                    edtPassword.editText?.setText(data.getStringExtra("password"))
-                }
-            }
-        }
     }
 }

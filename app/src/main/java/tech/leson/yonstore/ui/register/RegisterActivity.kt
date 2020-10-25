@@ -10,6 +10,7 @@ import tech.leson.yonstore.R
 import tech.leson.yonstore.databinding.ActivityRegisterBinding
 import tech.leson.yonstore.ui.base.BaseActivity
 import tech.leson.yonstore.ui.login.LoginActivity
+import tech.leson.yonstore.ui.main.MainActivity
 import tech.leson.yonstore.ui.verify.PhoneVerifyActivity
 import tech.leson.yonstore.utils.AppUtils
 
@@ -19,7 +20,6 @@ class RegisterActivity :
 
     companion object {
         const val REQUEST_CODE = 3333
-        const val RESULT_CODE = 2222
         private var instance: Intent? = null
 
         @JvmStatic
@@ -40,10 +40,7 @@ class RegisterActivity :
 
     override fun signUpSuccess(phone: String, password: String) {
         Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show()
-        val intent = Intent()
-        intent.putExtra("phone", phone)
-        intent.putExtra("password", password)
-        setResult(RESULT_CODE, intent)
+        startActivity(MainActivity.getIntent(this))
         finish()
     }
 
@@ -104,5 +101,9 @@ class RegisterActivity :
                 }
             }
         }
+    }
+
+    override fun onBackPressed() {
+        onSignIn()
     }
 }

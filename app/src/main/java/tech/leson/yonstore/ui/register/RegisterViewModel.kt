@@ -1,14 +1,12 @@
 package tech.leson.yonstore.ui.register
 
-import android.util.Log
 import android.view.View
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.UserProfileChangeRequest
 import tech.leson.yonstore.R
 import tech.leson.yonstore.data.DataManager
+import tech.leson.yonstore.data.model.User
 import tech.leson.yonstore.ui.base.BaseViewModel
 import tech.leson.yonstore.utils.rx.SchedulerProvider
-
 
 class RegisterViewModel(
     dataManager: DataManager,
@@ -23,20 +21,13 @@ class RegisterViewModel(
         setIsLoading(true)
         mAuth.createUserWithEmailAndPassword("$phone@leson.tech", password).addOnCompleteListener {
             if (it.isSuccessful) {
-                val user = it.result?.user
-
-                val profileUpdates = UserProfileChangeRequest.Builder()
-                    .setDisplayName(name).build()
-
-                user!!.updateProfile(profileUpdates)
-                    .addOnCompleteListener { task ->
-                        if (task.isSuccessful) {
-                            Log.d("TAG", "User profile updated.")
-                        }
-                    }
-                mAuth.signOut()
+                val user = User()
+                user.fullName = name
+                user.phoneNumber = phone
+                user.accountId = it.result?.user?.uid.toString()
+                dataManager.setUserUid(it.result?.user?.uid.toString())
+                registerUserInfo(user)
                 navigator?.signUpSuccess(phone, password)
-                setIsLoading(false)
             } else {
                 setIsLoading(false)
                 navigator?.onError(it.exception?.message.toString())
@@ -49,5 +40,13 @@ class RegisterViewModel(
             R.id.btnSignUp -> navigator?.onSignUp()
             R.id.btnSignIn -> navigator?.onSignIn()
         }
+    }
+
+    private fun registerUserInfo(user: User) {
+        dataManager.register(user).addOnSuccessListener { setIsLoading(false) }
+            .addOnFailureListener {
+                navigator?.onError(it.message.toString())
+                setIsLoading(false)
+            }
     }
 }

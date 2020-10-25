@@ -6,23 +6,23 @@
     android:viewportHeight="24">
 
     <path
-        android:pathData="M3 9.75L12 3L21 9.75"
+        android:pathData="M21 6.17676H3V20.9998H21V6.17676Z"
         android:strokeWidth="2"
-        android:strokeColor="@color/grey"
+        android:strokeColor="@color/blue"
         android:strokeLineCap="round"
         android:strokeLineJoin="round"
         android:strokeMiterLimit="10" />
     <path
-        android:pathData="M21 9.75V21H3V9.75"
+        android:pathData="M21 6.177H3L5.11725 3H18.8828L21 6.177Z"
         android:strokeWidth="2"
-        android:strokeColor="@color/grey"
+        android:strokeColor="@color/blue"
         android:strokeLineCap="round"
         android:strokeLineJoin="round"
         android:strokeMiterLimit="10" />
     <path
-        android:pathData="M14.25 14.25H9.75V21H14.25V14.25Z"
+        android:pathData="M14.3828 10.6768C14.3828 11.9919 13.3163 13.0584 12.0011 13.0584C10.686 13.0584 9.61951 11.9919 9.61951 10.6768"
         android:strokeWidth="2"
-        android:strokeColor="@color/grey"
+        android:strokeColor="@color/blue"
         android:strokeLineCap="round"
         android:strokeLineJoin="round"
         android:strokeMiterLimit="10" />

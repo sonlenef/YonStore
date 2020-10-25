@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="tech.leson.yonstore.ui.profile.ProfileViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarMain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                app:cardUseCompatPadding="false"
+                app:elevation="@dimen/_5sdp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <include
+                        layout="@layout/navigation_header"
+                        app:viewModel="@{(tech.leson.yonstore.ui.base.BaseViewModel)viewModel}" />
+                </FrameLayout>
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imvAvatar"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_margin="@dimen/_16sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/banner"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvFullName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/poppins_bold"
+                    android:maxLines="2"
+                    android:text="@{viewModel.user.fullName}"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintBottom_toTopOf="@id/tvUserName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/imvAvatar"
+                    app:layout_constraintTop_toTopOf="@id/imvAvatar" />
+
+                <TextView
+                    android:id="@+id/tvUserName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/poppins_regular"
+                    android:maxLines="2"
+                    android:text="@string/app_name"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_11ssp"
+                    app:layout_constraintBottom_toBottomOf="@id/imvAvatar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/imvAvatar"
+                    app:layout_constraintTop_toBottomOf="@id/tvFullName" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ctlGender"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_48sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:background="@drawable/bg_btn"
+                    android:onClick="@{(View) -> viewModel.onClick(View)}"
+                    android:paddingStart="@dimen/_16sdp"
+                    android:paddingEnd="@dimen/_16sdp"
+                    app:layout_constraintTop_toBottomOf="@id/imvAvatar">
+
+                    <TextView
+                        android:id="@+id/tvTitleGender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:gravity="center_vertical"
+                        android:text="@string/gender"
+                        android:textColor="@color/dark"
+                        android:textSize="@dimen/_11ssp"
+                        app:drawableStartCompat="@drawable/ic_gender"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvGender"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center_vertical|end"
+                        android:maxLines="1"
+                        android:text="@{viewModel.user.gender}"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/_11ssp"
+                        app:drawableEndCompat="@drawable/ic_arrow_right"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tvTitleGender"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ctlBirthday"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_48sdp"
+                    android:background="@drawable/bg_btn"
+                    android:onClick="@{(View) -> viewModel.onClick(View)}"
+                    android:paddingStart="@dimen/_16sdp"
+                    android:paddingEnd="@dimen/_16sdp"
+                    app:layout_constraintTop_toBottomOf="@id/ctlGender">
+
+                    <TextView
+                        android:id="@+id/tvTitleBirthday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:gravity="center_vertical"
+                        android:text="@string/birthday"
+                        android:textColor="@color/dark"
+                        android:textSize="@dimen/_11ssp"
+                        app:drawableStartCompat="@drawable/ic_date"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvBirthday"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center_vertical|end"
+                        android:maxLines="1"
+                        android:text="@{viewModel.user.dob}"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/_11ssp"
+                        app:drawableEndCompat="@drawable/ic_arrow_right"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tvTitleBirthday"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ctlEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_48sdp"
+                    android:background="@drawable/bg_btn"
+                    android:onClick="@{(View) -> viewModel.onClick(View)}"
+                    android:paddingStart="@dimen/_16sdp"
+                    android:paddingEnd="@dimen/_16sdp"
+                    app:layout_constraintTop_toBottomOf="@id/ctlBirthday">
+
+                    <TextView
+                        android:id="@+id/tvTitleEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/poppins_bold"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="@string/email"
+                        android:textColor="@color/dark"
+                        android:textSize="@dimen/_11ssp"
+                        app:drawableStartCompat="@drawable/ic_email"
+                        app:drawableTint="@color/blue"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvEmail"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center_vertical|end"
+                        android:maxLines="1"
+                        android:text="@{viewModel.user.email}"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/_11ssp"
+                        app:drawableEndCompat="@drawable/ic_arrow_right"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tvTitleEmail"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ctlPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_48sdp"
+                    android:background="@drawable/bg_btn"
+                    android:onClick="@{(View) -> viewModel.onClick(View)}"
+                    android:paddingStart="@dimen/_16sdp"
+                    android:paddingEnd="@dimen/_16sdp"
+                    app:layout_constraintTop_toBottomOf="@id/ctlEmail">
+
+                    <TextView
+                        android:id="@+id/tvTitlePhone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:gravity="center_vertical"
+                        android:text="@string/phone_number"
+                        android:textColor="@color/dark"
+                        android:textSize="@dimen/_11ssp"
+                        app:drawableStartCompat="@drawable/ic_phone"
+                        app:drawableTint="@color/blue"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvPhone"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center_vertical|end"
+                        android:maxLines="1"
+                        android:text="@{viewModel.user.phoneNumber}"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/_11ssp"
+                        app:drawableEndCompat="@drawable/ic_arrow_right"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tvTitlePhone"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ctlPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_48sdp"
+                    android:background="@drawable/bg_btn"
+                    android:onClick="@{(View) -> viewModel.onClick(View)}"
+                    android:paddingStart="@dimen/_16sdp"
+                    android:paddingEnd="@dimen/_16sdp"
+                    app:layout_constraintTop_toBottomOf="@id/ctlPhone">
+
+                    <TextView
+                        android:id="@+id/tvTitlePassword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:gravity="center_vertical"
+                        android:text="@string/password"
+                        android:textColor="@color/dark"
+                        android:textSize="@dimen/_11ssp"
+                        app:drawableStartCompat="@drawable/ic_password"
+                        app:drawableTint="@color/blue"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvPassword"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center_vertical|end"
+                        android:maxLines="1"
+                        android:text="@string/pass"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/_11ssp"
+                        app:drawableEndCompat="@drawable/ic_arrow_right"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tvTitlePassword"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE}" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/loading"
+            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE}">
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/address_looking_up"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminateDrawable="@drawable/custom_progressbar" />
+        </FrameLayout>
+
+    </FrameLayout>
+
+</layout>

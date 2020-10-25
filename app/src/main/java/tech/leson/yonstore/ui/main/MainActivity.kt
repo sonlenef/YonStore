@@ -123,7 +123,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainNavigator, MainViewMo
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {
-                val tabIconColor = ContextCompat.getColor(this@MainActivity, R.color.gray)
+                val tabIconColor = ContextCompat.getColor(this@MainActivity, R.color.grey)
                 AppUtils.setColorFilter(tab?.icon!!, tabIconColor)
             }
 
@@ -138,11 +138,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainNavigator, MainViewMo
         edtSearch.setOnClickListener { onSearch() }
     }
 
-    override fun onSearch() {
-        tabMain.getTabAt(1)?.select()
-        val tabIconColor = ContextCompat.getColor(this@MainActivity, R.color.blue)
-        AppUtils.setColorFilter(tabMain.getTabAt(1)?.icon!!, tabIconColor)
-    }
+    override fun onSearch() {}
 
     override fun onFavorite() {
         startActivity(FavoriteActivity.getIntent(this))

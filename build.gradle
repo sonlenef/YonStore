@@ -8,7 +8,7 @@ buildscript {
     buildToolsVersion = '30.0.1'
     coreKtxVersion = '1.3.2'
     firebaseAuthVersion = '19.4.0'
-    firebaseDbVersion = '19.5.0'
+    firebaseDbVersion = '21.7.1'
 
     // View
     constraintLayoutVersion = '2.0.2'
@@ -22,12 +22,13 @@ buildscript {
     // App
     supportLibraryVersion = '1.2.0'
     glideVersion = '4.11.0'
-    roomDatabaseVersion = '2.3.0-alpha02'
+    roomDatabaseVersion = '2.3.0-alpha03'
     retrofitVersion = '2.9.0'
     dataBindingVersion = '3.1.4'
     sdpAndroidVersion = '1.0.6'
     sspAndroidVersion = '1.0.6'
     libphonenumberVersion = '8.12.10'
+    jackSonVersion = '2.12.0-rc1'
 
     rxjava3Version = '3.0.6'
     rxandroidVersion = '3.0.0'

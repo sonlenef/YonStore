@@ -1,10 +1,11 @@
 package tech.leson.yonstore.ui.main.account
 
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import tech.leson.yonstore.BR
 import tech.leson.yonstore.R
 import tech.leson.yonstore.databinding.FragmentAccountBinding
 import tech.leson.yonstore.ui.base.BaseFragment
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import tech.leson.yonstore.ui.profile.ProfileActivity
 
 class AccountFragment : BaseFragment<FragmentAccountBinding, AccountNavigator, AccountViewModel>(),
     AccountNavigator {
@@ -26,5 +27,9 @@ class AccountFragment : BaseFragment<FragmentAccountBinding, AccountNavigator, A
 
     override fun init() {
         viewModel.setNavigator(this)
+    }
+
+    override fun onProfile() {
+        activity?.let { startActivity(ProfileActivity.getIntent(it)) }
     }
 }

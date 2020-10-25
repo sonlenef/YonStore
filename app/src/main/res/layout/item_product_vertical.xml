@@ -83,7 +83,7 @@
                 android:fontFamily="@font/poppins_regular"
                 android:maxLines="1"
                 android:text="@string/price_demo"
-                android:textColor="@color/gray"
+                android:textColor="@color/grey"
                 android:textSize="@dimen/_10ssp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

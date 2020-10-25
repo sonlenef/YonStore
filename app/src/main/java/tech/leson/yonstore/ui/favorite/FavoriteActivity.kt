@@ -14,7 +14,9 @@ import tech.leson.yonstore.R
 import tech.leson.yonstore.data.model.Product
 import tech.leson.yonstore.databinding.ActivityFavoriteBinding
 import tech.leson.yonstore.ui.base.BaseActivity
+import tech.leson.yonstore.ui.favorite.adapter.ProductFavoriteAdapter
 import tech.leson.yonstore.ui.main.home.adapter.ProductAdapter
+import tech.leson.yonstore.ui.product.ProductActivity
 
 class FavoriteActivity :
     BaseActivity<ActivityFavoriteBinding, FavoriteNavigator, FavoriteViewModel>(),
@@ -29,7 +31,7 @@ class FavoriteActivity :
         }
     }
 
-    private val mFevProductAdapter: ProductAdapter by inject(named("favorite"))
+    private val mFevProductAdapter: ProductFavoriteAdapter by inject()
 
     override val bindingVariable: Int
         get() = BR.viewModel
@@ -54,7 +56,14 @@ class FavoriteActivity :
         mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
         val layoutManager = GridLayoutManager(this, 2, RecyclerView.VERTICAL, false)
         rcvFavorite.layoutManager = layoutManager
+        mFevProductAdapter.favoriteNavigator = this
         rcvFavorite.adapter = mFevProductAdapter
+    }
+
+    override fun onProductClick(product: Product) {
+        val intent = ProductActivity.getIntent(this)
+        intent.putExtra("product", product)
+        startActivity(intent)
     }
 
     override fun onBack() {

@@ -19,8 +19,7 @@
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
-            tools:context=".ui.main.MainActivity">
+            android:fitsSystemWindows="true">
 
             <com.google.android.material.appbar.AppBarLayout
                 android:id="@+id/appBarMain"
@@ -54,7 +53,7 @@
                     android:layout_marginEnd="@dimen/_16sdp"
                     android:fontFamily="@font/poppins_regular"
                     android:text="@string/please_type_code_we_sent_to_your_phone"
-                    android:textColor="@color/gray"
+                    android:textColor="@color/grey"
                     android:textSize="@dimen/_13ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -69,7 +68,7 @@
                     android:layout_marginEnd="@dimen/_16sdp"
                     android:hint="@string/code"
                     android:textAppearance="@font/poppins_regular"
-                    android:textColorHint="@color/gray"
+                    android:textColorHint="@color/grey"
                     app:boxStrokeColor="@drawable/input_state_checked"
                     app:boxStrokeErrorColor="@color/red"
                     app:layout_constraintTop_toBottomOf="@id/tvCode"
