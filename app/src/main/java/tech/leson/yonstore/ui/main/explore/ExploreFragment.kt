@@ -42,6 +42,7 @@ class ExploreFragment : BaseFragment<FragmentExploreBinding, ExploreNavigator, E
     }
 
     private fun setWomanFashion() {
+        mWomanCateAdapter.clearData()
         mWomanCateAdapter.addData(Category(CATEGORY.WOMAN_DRESS,
             getString(R.string.woman_dress),
             R.drawable.ct_woman_dress))
@@ -69,6 +70,7 @@ class ExploreFragment : BaseFragment<FragmentExploreBinding, ExploreNavigator, E
     }
 
     private fun setManFashion() {
+        mManCateAdapter.clearData()
         mManCateAdapter.addData(Category(CATEGORY.MAN_SHIRT,
             getString(R.string.man_shirt),
             R.drawable.ct_man_shirt))

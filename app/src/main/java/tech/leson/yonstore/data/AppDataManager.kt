@@ -12,9 +12,16 @@ class AppDataManager(firebaseHelper: FirebaseHelper, preferencesHelper: Preferen
     private val mFirebaseHelper = firebaseHelper
     private val mPreferencesHelper = preferencesHelper
 
+    override fun logout() {
+        logoutFirebase()
+        setUserUid("")
+    }
+
     override fun register(registerData: User) = mFirebaseHelper.register(registerData)
 
     override fun getUser(uid: String): Task<QuerySnapshot> = mFirebaseHelper.getUser(uid)
+
+    override fun logoutFirebase() = mFirebaseHelper.logoutFirebase()
 
     override fun setUserUid(uid: String) {
         mPreferencesHelper.setUserUid(uid)

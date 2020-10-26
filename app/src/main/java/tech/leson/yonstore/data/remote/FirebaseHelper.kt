@@ -8,4 +8,5 @@ import tech.leson.yonstore.data.model.User
 interface FirebaseHelper {
     fun register(registerData: User): Task<DocumentReference>
     fun getUser(uid: String): Task<QuerySnapshot>
+    fun logoutFirebase()
 }

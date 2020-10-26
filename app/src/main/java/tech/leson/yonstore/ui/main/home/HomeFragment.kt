@@ -1,6 +1,5 @@
 package tech.leson.yonstore.ui.main.home
 
-import android.content.Intent
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -12,6 +11,9 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.qualifier.named
 import tech.leson.yonstore.BR
 import tech.leson.yonstore.R
+import tech.leson.yonstore.data.model.Banner
+import tech.leson.yonstore.data.model.Category
+import tech.leson.yonstore.data.model.Product
 import tech.leson.yonstore.databinding.FragmentHomeBinding
 import tech.leson.yonstore.ui.base.BaseFragment
 import tech.leson.yonstore.ui.main.CATEGORY
@@ -19,9 +21,6 @@ import tech.leson.yonstore.ui.main.MainActivity
 import tech.leson.yonstore.ui.main.home.adapter.CategoryAdapter
 import tech.leson.yonstore.ui.main.home.adapter.ProductAdapter
 import tech.leson.yonstore.ui.main.home.adapter.SlideShowAdapter
-import tech.leson.yonstore.data.model.Banner
-import tech.leson.yonstore.data.model.Category
-import tech.leson.yonstore.data.model.Product
 import tech.leson.yonstore.ui.product.ProductActivity
 
 class HomeFragment :
@@ -60,6 +59,7 @@ class HomeFragment :
     }
 
     private fun setBanner() {
+        mSlideShowAdapter.clearData()
         mSlideShowAdapter.addData(Banner("Hahahah"))
         mSlideShowAdapter.addData(Banner("Hahahah"))
         mSlideShowAdapter.addData(Banner("Hahahah"))
@@ -81,6 +81,7 @@ class HomeFragment :
     }
 
     private fun setCategory() {
+        mCategoryAdapter.clearData()
         mCategoryAdapter.addData(Category(CATEGORY.MAN_SHIRT,
             getString(R.string.man_shirt),
             R.drawable.ct_man_shirt))
@@ -105,6 +106,7 @@ class HomeFragment :
     }
 
     private fun setFlashSale() {
+        mFlashSaleAdapter.clearData()
         mFlashSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
         mFlashSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
         mFlashSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
@@ -118,6 +120,7 @@ class HomeFragment :
     }
 
     private fun setMegaSale() {
+        mMegaSaleAdapter.clearData()
         mMegaSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
         mMegaSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
         mMegaSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
@@ -130,6 +133,7 @@ class HomeFragment :
     }
 
     private fun setRecProduct() {
+        mRecProductAdapter.clearData()
         mRecProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
         mRecProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
         mRecProductAdapter.addData(Product(getString(R.string.name_product_demo), null))

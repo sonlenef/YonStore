@@ -1,10 +1,12 @@
 package tech.leson.yonstore.ui.main.account
 
+import android.widget.Toast
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import tech.leson.yonstore.BR
 import tech.leson.yonstore.R
 import tech.leson.yonstore.databinding.FragmentAccountBinding
 import tech.leson.yonstore.ui.base.BaseFragment
+import tech.leson.yonstore.ui.login.LoginActivity
 import tech.leson.yonstore.ui.profile.ProfileActivity
 
 class AccountFragment : BaseFragment<FragmentAccountBinding, AccountNavigator, AccountViewModel>(),
@@ -27,9 +29,21 @@ class AccountFragment : BaseFragment<FragmentAccountBinding, AccountNavigator, A
 
     override fun init() {
         viewModel.setNavigator(this)
+        viewModel.getUserRole()
     }
 
     override fun onProfile() {
         activity?.let { startActivity(ProfileActivity.getIntent(it)) }
+    }
+
+    override fun onLogout() {
+        activity?.let {
+            startActivity(LoginActivity.getIntent(it))
+            it.finish()
+        }
+    }
+
+    override fun onError(msg: String) {
+        Toast.makeText(activity, msg, Toast.LENGTH_SHORT).show()
     }
 }

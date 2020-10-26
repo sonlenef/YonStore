@@ -40,17 +40,17 @@ import tech.leson.yonstore.utils.rx.SchedulerProvider
 
 val appModule = module {
     single { @PreferenceInfo AppConstants.PREF_NAME }
-    single<DbHelper> { AppDbHelper() }
-    single<PreferencesHelper> { AppPreferencesHelper(get(), get()) }
-    single { FirebaseFirestore.getInstance() }
-    single<FirebaseHelper> { AppFirebaseHelper(get()) }
-    single<DataManager> { AppDataManager(get(), get()) }
-    single<SchedulerProvider> { AppSchedulerProvider() }
     single {
         val auth = FirebaseAuth.getInstance()
         auth.setLanguageCode("vn")
         return@single auth
     }
+    single<DbHelper> { AppDbHelper() }
+    single<PreferencesHelper> { AppPreferencesHelper(get(), get()) }
+    single { FirebaseFirestore.getInstance() }
+    single<FirebaseHelper> { AppFirebaseHelper(get(), get()) }
+    single<DataManager> { AppDataManager(get(), get()) }
+    single<SchedulerProvider> { AppSchedulerProvider() }
 
     viewModel { SplashViewModel(get(), get(), get()) }
     viewModel { LoginViewModel(get(), get(), get()) }

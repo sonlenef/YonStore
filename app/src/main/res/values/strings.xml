@@ -75,4 +75,6 @@
     <string name="birthday">Birthday</string>
     <string name="email">Email</string>
     <string name="pass">********</string>
+    <string name="manager">Manager</string>
+    <string name="logout">Logout</string>
 </resources>

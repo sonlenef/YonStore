@@ -11,86 +11,131 @@
             type="tech.leson.yonstore.ui.main.account.AccountViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/btnProfile"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_48sdp"
-            android:background="@drawable/bg_btn"
-            android:drawablePadding="@dimen/_10ssp"
-            android:fontFamily="@font/poppins_bold"
-            android:gravity="center_vertical"
-            android:onClick="@{(View) -> viewModel.onClick(View)}"
-            android:paddingStart="@dimen/_16ssp"
-            android:paddingEnd="@dimen/_16ssp"
-            android:text="@string/profile"
-            android:textColor="@color/dark"
-            android:textSize="@dimen/_11ssp"
-            app:drawableStartCompat="@drawable/ic_user"
-            app:drawableTint="@color/blue"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/btnOrder"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_48sdp"
-            android:background="@drawable/bg_btn"
-            android:drawablePadding="@dimen/_10ssp"
-            android:fontFamily="@font/poppins_bold"
-            android:gravity="center_vertical"
-            android:onClick="@{(View) -> viewModel.onClick(View)}"
-            android:paddingStart="@dimen/_16ssp"
-            android:paddingEnd="@dimen/_16ssp"
-            android:text="@string/order"
-            android:textColor="@color/dark"
-            android:textSize="@dimen/_11ssp"
-            app:drawableStartCompat="@drawable/ic_order"
-            app:drawableTint="@color/blue"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btnProfile" />
+            <TextView
+                android:id="@+id/btnProfile"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_48sdp"
+                android:background="@drawable/bg_btn"
+                android:drawablePadding="@dimen/_10ssp"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center_vertical"
+                android:onClick="@{(View) -> viewModel.onClick(View)}"
+                android:paddingStart="@dimen/_16ssp"
+                android:paddingEnd="@dimen/_16ssp"
+                android:text="@string/profile"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_11ssp"
+                app:drawableStartCompat="@drawable/ic_user"
+                app:drawableTint="@color/blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/btnAddress"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_48sdp"
-            android:background="@drawable/bg_btn"
-            android:drawablePadding="@dimen/_10ssp"
-            android:fontFamily="@font/poppins_bold"
-            android:gravity="center_vertical"
-            android:onClick="@{(View) -> viewModel.onClick(View)}"
-            android:paddingStart="@dimen/_16ssp"
-            android:paddingEnd="@dimen/_16ssp"
-            android:text="@string/address"
-            android:textColor="@color/dark"
-            android:textSize="@dimen/_11ssp"
-            app:drawableStartCompat="@drawable/ic_address"
-            app:drawableTint="@color/blue"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btnOrder" />
+            <TextView
+                android:id="@+id/btnOrder"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_48sdp"
+                android:background="@drawable/bg_btn"
+                android:drawablePadding="@dimen/_10ssp"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center_vertical"
+                android:onClick="@{(View) -> viewModel.onClick(View)}"
+                android:paddingStart="@dimen/_16ssp"
+                android:paddingEnd="@dimen/_16ssp"
+                android:text="@string/order"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_11ssp"
+                app:drawableStartCompat="@drawable/ic_order"
+                app:drawableTint="@color/blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnProfile" />
 
-        <TextView
-            android:id="@+id/btnPayment"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_48sdp"
-            android:background="@drawable/bg_btn"
-            android:drawablePadding="@dimen/_10ssp"
-            android:fontFamily="@font/poppins_bold"
-            android:gravity="center_vertical"
-            android:onClick="@{(View) -> viewModel.onClick(View)}"
-            android:paddingStart="@dimen/_16ssp"
-            android:paddingEnd="@dimen/_16ssp"
-            android:text="@string/payment"
-            android:textColor="@color/dark"
-            android:textSize="@dimen/_11ssp"
-            app:drawableStartCompat="@drawable/ic_payment"
-            app:drawableTint="@color/blue"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btnAddress" />
+            <TextView
+                android:id="@+id/btnAddress"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_48sdp"
+                android:background="@drawable/bg_btn"
+                android:drawablePadding="@dimen/_10ssp"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center_vertical"
+                android:onClick="@{(View) -> viewModel.onClick(View)}"
+                android:paddingStart="@dimen/_16ssp"
+                android:paddingEnd="@dimen/_16ssp"
+                android:text="@string/address"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_11ssp"
+                app:drawableStartCompat="@drawable/ic_address"
+                app:drawableTint="@color/blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnOrder" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/btnPayment"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_48sdp"
+                android:background="@drawable/bg_btn"
+                android:drawablePadding="@dimen/_10ssp"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center_vertical"
+                android:onClick="@{(View) -> viewModel.onClick(View)}"
+                android:paddingStart="@dimen/_16ssp"
+                android:paddingEnd="@dimen/_16ssp"
+                android:text="@string/payment"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_11ssp"
+                app:drawableStartCompat="@drawable/ic_payment"
+                app:drawableTint="@color/blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnAddress" />
+
+            <TextView
+                android:id="@+id/btnManager"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_48sdp"
+                android:background="@drawable/bg_btn"
+                android:drawablePadding="@dimen/_10ssp"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center_vertical"
+                android:onClick="@{(View) -> viewModel.onClick(View)}"
+                android:paddingStart="@dimen/_16ssp"
+                android:paddingEnd="@dimen/_16ssp"
+                android:text="@string/manager"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_11ssp"
+                android:visibility="@{viewModel.manager.booleanValue() ? View.VISIBLE : View.GONE}"
+                app:drawableStartCompat="@drawable/ic_manager"
+                app:drawableTint="@color/blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnPayment" />
+
+            <TextView
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_48sdp"
+                android:background="@drawable/bg_btn"
+                android:drawablePadding="@dimen/_10ssp"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center_vertical"
+                android:onClick="@{(View) -> viewModel.onClick(View)}"
+                android:paddingStart="@dimen/_16ssp"
+                android:paddingEnd="@dimen/_16ssp"
+                android:text="@string/logout"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_11ssp"
+                app:drawableStartCompat="@drawable/ic_sign_out"
+                app:drawableTint="@color/blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnManager" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </layout>
