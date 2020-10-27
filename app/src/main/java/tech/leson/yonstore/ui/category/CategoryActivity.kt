@@ -2,12 +2,19 @@ package tech.leson.yonstore.ui.category
 
 import android.content.Context
 import android.content.Intent
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.activity_category.*
 import kotlinx.android.synthetic.main.navigation_header_title.*
+import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.qualifier.named
 import tech.leson.yonstore.BR
 import tech.leson.yonstore.R
+import tech.leson.yonstore.data.model.Category
 import tech.leson.yonstore.databinding.ActivityCategoryBinding
+import tech.leson.yonstore.ui.adapter.CategoryAdapter
 import tech.leson.yonstore.ui.base.BaseActivity
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CategoryActivity :
     BaseActivity<ActivityCategoryBinding, CategoryNavigator, CategoryViewModel>(),
@@ -22,6 +29,8 @@ class CategoryActivity :
         }
     }
 
+    private val mCategoryAdapter: CategoryAdapter by inject(named("category"))
+
     override val bindingVariable: Int
         get() = BR.viewModel
     override val layoutId: Int
@@ -31,9 +40,22 @@ class CategoryActivity :
     override fun init() {
         viewModel.setNavigator(this)
         tvTitle.text = getText(R.string.category)
+        viewModel.getCategory()
+    }
+
+    override fun onGetDataSuccess(data: MutableList<Category>) {
+        mCategoryAdapter.clearData()
+        mCategoryAdapter.addAllData(data)
+        val layoutManager = LinearLayoutManager(this)
+        rcvCategory.layoutManager = layoutManager
+        rcvCategory.adapter = mCategoryAdapter
     }
 
     override fun onBack() {
         finish()
+    }
+
+    override fun onError(msg: String) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
     }
 }

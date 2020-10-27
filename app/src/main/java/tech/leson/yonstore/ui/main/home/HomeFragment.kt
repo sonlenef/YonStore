@@ -1,5 +1,6 @@
 package tech.leson.yonstore.ui.main.home
 
+import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,12 +16,11 @@ import tech.leson.yonstore.data.model.Banner
 import tech.leson.yonstore.data.model.Category
 import tech.leson.yonstore.data.model.Product
 import tech.leson.yonstore.databinding.FragmentHomeBinding
+import tech.leson.yonstore.ui.adapter.CategoryAdapter
+import tech.leson.yonstore.ui.adapter.ProductAdapter
+import tech.leson.yonstore.ui.adapter.SlideShowAdapter
 import tech.leson.yonstore.ui.base.BaseFragment
-import tech.leson.yonstore.ui.main.CATEGORY
-import tech.leson.yonstore.ui.main.MainActivity
-import tech.leson.yonstore.ui.main.home.adapter.CategoryAdapter
-import tech.leson.yonstore.ui.main.home.adapter.ProductAdapter
-import tech.leson.yonstore.ui.main.home.adapter.SlideShowAdapter
+import tech.leson.yonstore.ui.category.CategoryActivity
 import tech.leson.yonstore.ui.product.ProductActivity
 
 class HomeFragment :
@@ -52,10 +52,10 @@ class HomeFragment :
         viewModel.setNavigator(this)
 
         setBanner()
-        setCategory()
         setFlashSale()
         setMegaSale()
         setRecProduct()
+        viewModel.getData()
     }
 
     private fun setBanner() {
@@ -80,26 +80,9 @@ class HomeFragment :
         })
     }
 
-    private fun setCategory() {
+    override fun setCategory(categories: MutableList<Category>) {
         mCategoryAdapter.clearData()
-        mCategoryAdapter.addData(Category(CATEGORY.MAN_SHIRT,
-            getString(R.string.man_shirt),
-            R.drawable.ct_man_shirt))
-        mCategoryAdapter.addData(Category(CATEGORY.WOMAN_DRESS,
-            getString(R.string.woman_dress),
-            R.drawable.ct_woman_dress))
-        mCategoryAdapter.addData(Category(CATEGORY.MAN_WORD_EQUIPMENT,
-            getString(R.string.man_work_equipment),
-            R.drawable.ct_man_bag))
-        mCategoryAdapter.addData(Category(CATEGORY.WOMAN_BAG,
-            getString(R.string.woman_bag),
-            R.drawable.ct_woman_bag))
-        mCategoryAdapter.addData(Category(CATEGORY.MAN_SHOES,
-            getString(R.string.man_shoes),
-            R.drawable.ct_man_shoes))
-        mCategoryAdapter.addData(Category(CATEGORY.WOMAN_SHOES,
-            getString(R.string.woman_shoes),
-            R.drawable.ct_woman_shoes))
+        mCategoryAdapter.addAllData(categories)
         val layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
         rcvCategory.layoutManager = layoutManager
         rcvCategory.adapter = mCategoryAdapter
@@ -146,7 +129,7 @@ class HomeFragment :
 
     override fun onMoreCategory() {
         activity?.let {
-            (it as MainActivity).onSearch()
+            startActivity(CategoryActivity.getIntent(it))
         }
     }
 
@@ -158,5 +141,11 @@ class HomeFragment :
         val intent = activity?.let { ProductActivity.getIntent(it) }
         intent?.putExtra("product", product)
         startActivity(intent)
+    }
+
+    override fun onError(msg: String) {
+        activity?.let {
+            Toast.makeText(it, msg, Toast.LENGTH_SHORT).show()
+        }
     }
 }

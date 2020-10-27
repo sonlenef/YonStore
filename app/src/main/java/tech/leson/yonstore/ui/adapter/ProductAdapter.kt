@@ -1,4 +1,4 @@
-package tech.leson.yonstore.ui.main.home.adapter
+package tech.leson.yonstore.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,7 @@ import tech.leson.yonstore.R
 import tech.leson.yonstore.data.model.Product
 import tech.leson.yonstore.ui.base.BaseAdapter
 import tech.leson.yonstore.ui.main.home.HomeNavigator
-import tech.leson.yonstore.ui.main.home.viewholder.ProductViewHolder
+import tech.leson.yonstore.ui.adapter.viewholder.ProductViewHolder
 
 class ProductAdapter(data: MutableList<Product>, viewType: Int) :
     BaseAdapter<ProductViewHolder, Product>(data) {

@@ -1,4 +1,4 @@
-package tech.leson.yonstore.ui.main.home.viewholder
+package tech.leson.yonstore.ui.adapter.viewholder
 
 import android.view.View
 import tech.leson.yonstore.ui.base.BaseViewHolder

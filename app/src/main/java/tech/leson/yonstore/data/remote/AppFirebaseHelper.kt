@@ -9,9 +9,8 @@ import com.google.firebase.firestore.QuerySnapshot
 import tech.leson.yonstore.data.model.User
 
 @Suppress("UNCHECKED_CAST")
-class AppFirebaseHelper(auth: FirebaseAuth, db: FirebaseFirestore) : FirebaseHelper {
+class AppFirebaseHelper(private val auth: FirebaseAuth, db: FirebaseFirestore) : FirebaseHelper {
 
-    private val auth = auth
     private val database = db
 
     override fun register(registerData: User): Task<DocumentReference> {
@@ -20,9 +19,16 @@ class AppFirebaseHelper(auth: FirebaseAuth, db: FirebaseFirestore) : FirebaseHel
         return database.collection("users").add(user)
     }
 
-    override fun getUser(uid: String): Task<QuerySnapshot> {
-        return database.collection("users").whereEqualTo("accountId", uid).get()
-    }
+    override fun getUser(uid: String): Task<QuerySnapshot> =
+        database.collection("users").whereEqualTo("accountId", uid).get()
+
+    override fun getAllCategory(): Task<QuerySnapshot> = database.collection("categories").get()
+
+    override fun getLimitCategory(limit: Long): Task<QuerySnapshot> =
+        database.collection("categories").limit(limit).get()
+
+    override fun getCategoryByStyle(style: String): Task<QuerySnapshot> =
+        database.collection("categories").whereEqualTo("style", style).get()
 
     override fun logoutFirebase() {
         auth.signOut()

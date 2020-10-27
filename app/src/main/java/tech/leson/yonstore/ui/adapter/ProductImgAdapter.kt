@@ -1,11 +1,11 @@
-package tech.leson.yonstore.ui.product.adapter
+package tech.leson.yonstore.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import tech.leson.yonstore.R
 import tech.leson.yonstore.ui.base.BaseAdapter
 import tech.leson.yonstore.data.model.ProductImage
-import tech.leson.yonstore.ui.product.viewholder.ProductImgViewHolder
+import tech.leson.yonstore.ui.adapter.viewholder.ProductImgViewHolder
 
 class ProductImgAdapter(data: MutableList<ProductImage>) :
     BaseAdapter<ProductImgViewHolder, ProductImage>(data) {

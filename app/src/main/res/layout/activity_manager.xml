@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="tech.leson.yonstore.ui.base.BaseViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:cardUseCompatPadding="false"
+            app:elevation="@dimen/_5sdp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <include
+                    layout="@layout/navigation_header"
+                    app:viewModel="@{(tech.leson.yonstore.ui.base.BaseViewModel)viewModel}" />
+            </FrameLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <TextView
+                android:id="@+id/btnEvent"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_48sdp"
+                android:background="@drawable/bg_btn"
+                android:drawablePadding="@dimen/_10ssp"
+                android:gravity="center_vertical"
+                android:onClick="@{(View) -> viewModel.onClick(View)}"
+                android:paddingStart="@dimen/_16ssp"
+                android:paddingEnd="@dimen/_16ssp"
+                android:text="@string/khuy_n_m_i"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_11ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/btnProduct"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_48sdp"
+                android:background="@drawable/bg_btn"
+                android:drawablePadding="@dimen/_10ssp"
+                android:gravity="center_vertical"
+                android:onClick="@{(View) -> viewModel.onClick(View)}"
+                android:paddingStart="@dimen/_16ssp"
+                android:paddingEnd="@dimen/_16ssp"
+                android:text="@string/s_n_ph_m"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_11ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnEvent"/>
+
+            <TextView
+                android:id="@+id/btnStatistic"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_48sdp"
+                android:background="@drawable/bg_btn"
+                android:drawablePadding="@dimen/_10ssp"
+                android:gravity="center_vertical"
+                android:onClick="@{(View) -> viewModel.onClick(View)}"
+                android:paddingStart="@dimen/_16ssp"
+                android:paddingEnd="@dimen/_16ssp"
+                android:text="@string/th_ng_k"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_11ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnProduct" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

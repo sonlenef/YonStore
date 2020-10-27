@@ -15,7 +15,7 @@ import tech.leson.yonstore.data.model.Product
 import tech.leson.yonstore.data.model.ProductImage
 import tech.leson.yonstore.databinding.ActivityProductBinding
 import tech.leson.yonstore.ui.base.BaseActivity
-import tech.leson.yonstore.ui.product.adapter.ProductImgAdapter
+import tech.leson.yonstore.ui.adapter.ProductImgAdapter
 
 class ProductActivity : BaseActivity<ActivityProductBinding, ProductNavigator, ProductViewModel>(),
     ProductNavigator {

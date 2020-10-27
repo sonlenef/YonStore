@@ -7,6 +7,7 @@ import tech.leson.yonstore.R
 import tech.leson.yonstore.databinding.FragmentAccountBinding
 import tech.leson.yonstore.ui.base.BaseFragment
 import tech.leson.yonstore.ui.login.LoginActivity
+import tech.leson.yonstore.ui.manager.ManagerActivity
 import tech.leson.yonstore.ui.profile.ProfileActivity
 
 class AccountFragment : BaseFragment<FragmentAccountBinding, AccountNavigator, AccountViewModel>(),
@@ -34,6 +35,10 @@ class AccountFragment : BaseFragment<FragmentAccountBinding, AccountNavigator, A
 
     override fun onProfile() {
         activity?.let { startActivity(ProfileActivity.getIntent(it)) }
+    }
+
+    override fun onManager() {
+        activity?.let { startActivity(ManagerActivity.getIntent(it)) }
     }
 
     override fun onLogout() {

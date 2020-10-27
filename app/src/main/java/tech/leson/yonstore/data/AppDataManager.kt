@@ -21,6 +21,14 @@ class AppDataManager(firebaseHelper: FirebaseHelper, preferencesHelper: Preferen
 
     override fun getUser(uid: String): Task<QuerySnapshot> = mFirebaseHelper.getUser(uid)
 
+    override fun getAllCategory(): Task<QuerySnapshot> = mFirebaseHelper.getAllCategory()
+
+    override fun getLimitCategory(limit: Long): Task<QuerySnapshot> =
+        mFirebaseHelper.getLimitCategory(limit)
+
+    override fun getCategoryByStyle(style: String): Task<QuerySnapshot> =
+        mFirebaseHelper.getCategoryByStyle(style)
+
     override fun logoutFirebase() = mFirebaseHelper.logoutFirebase()
 
     override fun setUserUid(uid: String) {

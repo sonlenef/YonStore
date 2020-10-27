@@ -13,9 +13,7 @@ import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.navigation_footer_main.*
 import kotlinx.android.synthetic.main.navigation_header_search.*
 import kotlinx.android.synthetic.main.navigation_header_title.*
-import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import org.koin.core.parameter.parametersOf
 import tech.leson.yonstore.BR
 import tech.leson.yonstore.R
 import tech.leson.yonstore.databinding.ActivityMainBinding
@@ -47,7 +45,8 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainNavigator, MainViewMo
         }
     }
 
-    private val mainTabAdapter by inject<MainTabAdapter> { parametersOf(this) }
+    private val mainTabAdapter = MainTabAdapter(this)
+    //private val mainTabAdapter by inject<MainTabAdapter> { parametersOf(this) }
 
     private var mTabs: ArrayList<Fragment> = ArrayList()
 

@@ -77,4 +77,7 @@
     <string name="pass">********</string>
     <string name="manager">Manager</string>
     <string name="logout">Logout</string>
+    <string name="s_n_ph_m">Sản Phẩm</string>
+    <string name="th_ng_k">Thống kê</string>
+    <string name="khuy_n_m_i">Khuyến Mãi</string>
 </resources>

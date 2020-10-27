@@ -78,20 +78,18 @@
                     android:layout_marginStart="@dimen/_16sdp"
                     android:layout_marginEnd="@dimen/_16sdp"
                     android:layout_marginBottom="@dimen/_10sdp"
-                    android:drawablePadding="@dimen/_5sdp"
                     android:ellipsize="end"
                     android:fontFamily="@font/poppins_regular"
                     android:gravity="center_vertical"
                     android:maxLines="2"
-                    android:text="@{Integer.toString(viewModel.user.yonCoin)}"
+                    android:text="@{Integer.toString(viewModel.user.yonCoin) + ` Ycoin`}"
                     android:textColor="@color/grey"
                     android:textSize="@dimen/_11ssp"
-                    app:drawableStartCompat="@drawable/ic_coin"
                     app:layout_constraintBottom_toBottomOf="@id/imvAvatar"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/imvAvatar"
                     app:layout_constraintTop_toBottomOf="@id/tvFullName"
-                    tool:text="10000" />
+                    tool:text="10000 Ycoin" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/ctlGender"

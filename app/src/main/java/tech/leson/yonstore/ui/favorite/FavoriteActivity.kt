@@ -9,13 +9,11 @@ import kotlinx.android.synthetic.main.activity_favorite.*
 import kotlinx.android.synthetic.main.navigation_header.*
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import org.koin.core.qualifier.named
 import tech.leson.yonstore.R
 import tech.leson.yonstore.data.model.Product
 import tech.leson.yonstore.databinding.ActivityFavoriteBinding
 import tech.leson.yonstore.ui.base.BaseActivity
 import tech.leson.yonstore.ui.favorite.adapter.ProductFavoriteAdapter
-import tech.leson.yonstore.ui.main.home.adapter.ProductAdapter
 import tech.leson.yonstore.ui.product.ProductActivity
 
 class FavoriteActivity :

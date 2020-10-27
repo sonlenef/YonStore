@@ -24,12 +24,13 @@ import tech.leson.yonstore.ui.main.account.AccountViewModel
 import tech.leson.yonstore.ui.main.cart.CartViewModel
 import tech.leson.yonstore.ui.main.explore.ExploreViewModel
 import tech.leson.yonstore.ui.main.home.HomeViewModel
-import tech.leson.yonstore.ui.main.home.adapter.CategoryAdapter
-import tech.leson.yonstore.ui.main.home.adapter.ProductAdapter
-import tech.leson.yonstore.ui.main.home.adapter.SlideShowAdapter
+import tech.leson.yonstore.ui.adapter.CategoryAdapter
+import tech.leson.yonstore.ui.adapter.ProductAdapter
+import tech.leson.yonstore.ui.adapter.SlideShowAdapter
 import tech.leson.yonstore.ui.main.offer.OfferViewModel
+import tech.leson.yonstore.ui.manager.ManagerViewModel
 import tech.leson.yonstore.ui.product.ProductViewModel
-import tech.leson.yonstore.ui.product.adapter.ProductImgAdapter
+import tech.leson.yonstore.ui.adapter.ProductImgAdapter
 import tech.leson.yonstore.ui.profile.ProfileViewModel
 import tech.leson.yonstore.ui.register.RegisterViewModel
 import tech.leson.yonstore.ui.splash.SplashViewModel
@@ -61,6 +62,10 @@ val appModule = module {
 
 val mainModule = module {
     single { SlideShowAdapter(ArrayList()) }
+    single(named("category")) {
+        CategoryAdapter(ArrayList(),
+            CategoryAdapter.LAYOUT_VIEW_TYPE_CATEGORY)
+    }
     single(named("home")) {
         CategoryAdapter(ArrayList(),
             CategoryAdapter.LAYOUT_VIEW_TYPE_HOME)
@@ -99,4 +104,5 @@ val mainModule = module {
     viewModel { CategoryViewModel(get(), get()) }
     viewModel { ProductViewModel(get(), get()) }
     viewModel { ProfileViewModel(get(), get()) }
+    viewModel { ManagerViewModel(get(), get()) }
 }
