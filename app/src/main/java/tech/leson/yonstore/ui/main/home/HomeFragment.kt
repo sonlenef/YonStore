@@ -22,10 +22,11 @@ import tech.leson.yonstore.ui.adapter.SlideShowAdapter
 import tech.leson.yonstore.ui.base.BaseFragment
 import tech.leson.yonstore.ui.category.CategoryActivity
 import tech.leson.yonstore.ui.product.ProductActivity
+import tech.leson.yonstore.utils.OnItemClickListener
 
 class HomeFragment :
     BaseFragment<FragmentHomeBinding, HomeNavigator, HomeViewModel>(),
-    HomeNavigator {
+    HomeNavigator, OnItemClickListener<Product> {
 
     companion object {
         private var instance: HomeFragment? = null
@@ -98,7 +99,7 @@ class HomeFragment :
         mFlashSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
         val layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
         rcvFlashSale.layoutManager = layoutManager
-        mFlashSaleAdapter.homeNavigator = this
+        mFlashSaleAdapter.onItemClickListener = this
         rcvFlashSale.adapter = mFlashSaleAdapter
     }
 
@@ -111,7 +112,7 @@ class HomeFragment :
         mMegaSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
         val layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
         rcvMegaSale.layoutManager = layoutManager
-        mMegaSaleAdapter.homeNavigator = this
+        mMegaSaleAdapter.onItemClickListener = this
         rcvMegaSale.adapter = mMegaSaleAdapter
     }
 
@@ -123,7 +124,7 @@ class HomeFragment :
         mRecProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
         val layoutManager = GridLayoutManager(activity, 2, RecyclerView.VERTICAL, false)
         rcvRecProduct.layoutManager = layoutManager
-        mRecProductAdapter.homeNavigator = this
+        mRecProductAdapter.onItemClickListener = this
         rcvRecProduct.adapter = mRecProductAdapter
     }
 
@@ -137,15 +138,15 @@ class HomeFragment :
 
     override fun onMoreMegaSale() {}
 
-    override fun onProductClick(product: Product) {
-        val intent = activity?.let { ProductActivity.getIntent(it) }
-        intent?.putExtra("product", product)
-        startActivity(intent)
-    }
-
     override fun onError(msg: String) {
         activity?.let {
             Toast.makeText(it, msg, Toast.LENGTH_SHORT).show()
         }
+    }
+
+    override fun onClick(item: Product) {
+        val intent = activity?.let { ProductActivity.getIntent(it) }
+        intent?.putExtra("product", item)
+        startActivity(intent)
     }
 }

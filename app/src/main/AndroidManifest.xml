@@ -52,6 +52,7 @@
             android:launchMode="singleTop" />
         <activity android:name=".ui.profile.ProfileActivity" />
         <activity android:name=".ui.manager.ManagerActivity" />
+        <activity android:name=".ui.addproduct.AddProductActivity" />
     </application>
 
 </manifest>

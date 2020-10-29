@@ -77,7 +77,16 @@
     <string name="pass">********</string>
     <string name="manager">Manager</string>
     <string name="logout">Logout</string>
-    <string name="s_n_ph_m">Sản Phẩm</string>
-    <string name="th_ng_k">Thống kê</string>
-    <string name="khuy_n_m_i">Khuyến Mãi</string>
+    <string name="product_name">Product Name</string>
+    <string name="name">Name</string>
+    <string name="write_something">Write something…</string>
+    <string name="style">Style</string>
+    <string name="image">Image</string>
+    <string name="product_code">Product Code</string>
+    <string name="add_product">Add Product</string>
+    <string name="event">Event</string>
+    <string name="statistic">Statistic</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="cancel">Cancel</string>
+    <string name="choose_from_gallery">Choose from Gallery</string>
 </resources>

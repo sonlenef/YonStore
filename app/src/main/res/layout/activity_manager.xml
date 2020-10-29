@@ -45,11 +45,12 @@
                 android:layout_height="@dimen/_48sdp"
                 android:background="@drawable/bg_btn"
                 android:drawablePadding="@dimen/_10ssp"
+                android:fontFamily="@font/poppins_bold"
                 android:gravity="center_vertical"
                 android:onClick="@{(View) -> viewModel.onClick(View)}"
                 android:paddingStart="@dimen/_16ssp"
                 android:paddingEnd="@dimen/_16ssp"
-                android:text="@string/khuy_n_m_i"
+                android:text="@string/event"
                 android:textColor="@color/dark"
                 android:textSize="@dimen/_11ssp"
                 android:textStyle="bold"
@@ -57,21 +58,22 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/btnProduct"
+                android:id="@+id/btnAddProduct"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_48sdp"
                 android:background="@drawable/bg_btn"
                 android:drawablePadding="@dimen/_10ssp"
+                android:fontFamily="@font/poppins_bold"
                 android:gravity="center_vertical"
                 android:onClick="@{(View) -> viewModel.onClick(View)}"
                 android:paddingStart="@dimen/_16ssp"
                 android:paddingEnd="@dimen/_16ssp"
-                android:text="@string/s_n_ph_m"
+                android:text="@string/add_product"
                 android:textColor="@color/dark"
                 android:textSize="@dimen/_11ssp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnEvent"/>
+                app:layout_constraintTop_toBottomOf="@+id/btnEvent" />
 
             <TextView
                 android:id="@+id/btnStatistic"
@@ -79,16 +81,17 @@
                 android:layout_height="@dimen/_48sdp"
                 android:background="@drawable/bg_btn"
                 android:drawablePadding="@dimen/_10ssp"
+                android:fontFamily="@font/poppins_bold"
                 android:gravity="center_vertical"
                 android:onClick="@{(View) -> viewModel.onClick(View)}"
                 android:paddingStart="@dimen/_16ssp"
                 android:paddingEnd="@dimen/_16ssp"
-                android:text="@string/th_ng_k"
+                android:text="@string/statistic"
                 android:textColor="@color/dark"
                 android:textSize="@dimen/_11ssp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btnProduct" />
+                app:layout_constraintTop_toBottomOf="@id/btnAddProduct" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

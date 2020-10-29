@@ -8,6 +8,5 @@ interface HomeNavigator {
     fun onMoreFlashSale()
     fun setCategory(categories: MutableList<Category>)
     fun onMoreMegaSale()
-    fun onProductClick(product: Product)
     fun onError(msg: String)
 }

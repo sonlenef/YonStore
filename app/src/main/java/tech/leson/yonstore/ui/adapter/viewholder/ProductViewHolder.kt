@@ -4,13 +4,14 @@ import android.view.View
 import tech.leson.yonstore.data.model.Product
 import tech.leson.yonstore.ui.base.BaseViewHolder
 import tech.leson.yonstore.ui.main.home.HomeNavigator
+import tech.leson.yonstore.utils.OnItemClickListener
 
-class ProductViewHolder(itemView: View, homeNavigator: HomeNavigator) :
+class ProductViewHolder(itemView: View, onItemClickListener: OnItemClickListener<Product>) :
     BaseViewHolder<Product>(itemView) {
 
-    private val mHomeNavigator = homeNavigator
+    private val mItemClickListener = onItemClickListener
 
     override fun onBind(data: Product) {
-        itemView.setOnClickListener { mHomeNavigator.onProductClick(data) }
+        itemView.setOnClickListener { mItemClickListener.onClick(data) }
     }
 }

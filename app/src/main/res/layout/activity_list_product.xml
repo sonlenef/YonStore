@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -9,7 +8,7 @@
 
         <variable
             name="viewModel"
-            type="tech.leson.yonstore.ui.category.CategoryViewModel" />
+            type="tech.leson.yonstore.ui.listproduct.ListProductViewModel" />
     </data>
 
     <FrameLayout
@@ -45,9 +44,9 @@
                 app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rcvCategory"
+                    android:id="@+id/rcvProduct"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent" />
 
             </androidx.core.widget.NestedScrollView>
 
@@ -69,4 +68,5 @@
         </FrameLayout>
 
     </FrameLayout>
+
 </layout>

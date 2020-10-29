@@ -10,6 +10,9 @@ class ManagerViewModel(dataManager: DataManager, schedulerProvider: SchedulerPro
     BaseViewModel<ManagerNavigator>(dataManager, schedulerProvider) {
     override fun onClick(view: View) {
         when (view.id) {
+            R.id.btnEvent -> navigator?.onEvent()
+            R.id.btnAddProduct -> navigator?.onAddProduct()
+            R.id.btnStatistic -> navigator?.onStatistic()
             R.id.btnBack -> navigator?.onBack()
         }
     }

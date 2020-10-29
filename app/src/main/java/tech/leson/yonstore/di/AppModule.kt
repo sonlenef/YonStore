@@ -31,6 +31,9 @@ import tech.leson.yonstore.ui.main.offer.OfferViewModel
 import tech.leson.yonstore.ui.manager.ManagerViewModel
 import tech.leson.yonstore.ui.product.ProductViewModel
 import tech.leson.yonstore.ui.adapter.ProductImgAdapter
+import tech.leson.yonstore.ui.addproduct.AddProductViewModel
+import tech.leson.yonstore.ui.addproduct.dialog.AddImageViewModel
+import tech.leson.yonstore.ui.listproduct.ListProductViewModel
 import tech.leson.yonstore.ui.profile.ProfileViewModel
 import tech.leson.yonstore.ui.register.RegisterViewModel
 import tech.leson.yonstore.ui.splash.SplashViewModel
@@ -105,4 +108,8 @@ val mainModule = module {
     viewModel { ProductViewModel(get(), get()) }
     viewModel { ProfileViewModel(get(), get()) }
     viewModel { ManagerViewModel(get(), get()) }
+    viewModel { ListProductViewModel(get(), get()) }
+    viewModel { AddProductViewModel(get(), get()) }
+
+    viewModel { AddImageViewModel(get(), get()) }
 }

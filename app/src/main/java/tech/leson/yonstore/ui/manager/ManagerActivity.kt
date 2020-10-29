@@ -7,6 +7,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import tech.leson.yonstore.BR
 import tech.leson.yonstore.R
 import tech.leson.yonstore.databinding.ActivityManagerBinding
+import tech.leson.yonstore.ui.addproduct.AddProductActivity
 import tech.leson.yonstore.ui.base.BaseActivity
 
 class ManagerActivity : BaseActivity<ActivityManagerBinding, ManagerNavigator, ManagerViewModel>(),
@@ -31,6 +32,14 @@ class ManagerActivity : BaseActivity<ActivityManagerBinding, ManagerNavigator, M
         viewModel.setNavigator(this)
         tvTitle.text = getString(R.string.manager)
     }
+
+    override fun onEvent() {}
+
+    override fun onAddProduct() {
+        startActivity(AddProductActivity.getIntent(this))
+    }
+
+    override fun onStatistic() {}
 
     override fun onBack() {
         finish()

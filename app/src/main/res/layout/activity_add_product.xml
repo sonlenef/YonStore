@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="tech.leson.yonstore.ui.addproduct.AddProductViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:cardUseCompatPadding="false"
+            app:elevation="@dimen/_5sdp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <include
+                    layout="@layout/navigation_header"
+                    app:viewModel="@{(tech.leson.yonstore.ui.base.BaseViewModel)viewModel}" />
+            </FrameLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/_16sdp">
+
+                <TextView
+                    android:id="@+id/tvProductName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/product_name"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_11ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtProductName"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/name"
+                    android:textAppearance="@font/poppins_regular"
+                    android:textColorHint="@color/grey"
+                    app:boxStrokeColor="@drawable/input_state_checked"
+                    app:boxStrokeErrorColor="@color/red"
+                    app:layout_constraintTop_toBottomOf="@id/tvProductName"
+                    app:startIconTint="@drawable/input_state_checked">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapWords" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/tvProductCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/product_code"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_11ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/edtProductName" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtProductCode"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/code"
+                    android:textAppearance="@font/poppins_regular"
+                    android:textColorHint="@color/grey"
+                    app:boxStrokeColor="@drawable/input_state_checked"
+                    app:boxStrokeErrorColor="@color/red"
+                    app:layout_constraintTop_toBottomOf="@id/tvProductCode"
+                    app:startIconTint="@drawable/input_state_checked">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapWords" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/tvListCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/category"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_11ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/edtProductCode" />
+
+                <TextView
+                    android:id="@+id/listCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/bg_border"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    app:drawableEndCompat="@drawable/ic_arrow_down"
+                    app:layout_constraintTop_toBottomOf="@id/tvListCategory"
+                    tool:text="@string/man_shirt" />
+
+                <TextView
+                    android:id="@+id/tvSpecification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/specification"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_11ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/listCategory" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtSpecification"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/write_something"
+                    android:textAppearance="@font/poppins_regular"
+                    android:textColorHint="@color/grey"
+                    app:boxStrokeColor="@drawable/input_state_checked"
+                    app:boxStrokeErrorColor="@color/red"
+                    app:layout_constraintTop_toBottomOf="@id/tvSpecification"
+                    app:startIconTint="@drawable/input_state_checked">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_120sdp"
+                        android:inputType="textMultiLine" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/tvImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/bg_btn"
+                    android:fontFamily="@font/poppins_regular"
+                    android:onClick="@{(View) -> viewModel.onClick(View)}"
+                    android:text="@string/image"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_11ssp"
+                    app:drawableEndCompat="@drawable/ic_plus"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/edtSpecification" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:layout_constraintTop_toBottomOf="@id/tvImage" />
+
+                <TextView
+                    android:id="@+id/tvStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/bg_btn"
+                    android:fontFamily="@font/poppins_regular"
+                    android:onClick="@{(View) -> viewModel.onClick(View)}"
+                    android:text="@string/style"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_11ssp"
+                    app:drawableEndCompat="@drawable/ic_plus"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rcvImage" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:layout_constraintTop_toBottomOf="@id/tvStyle" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>
