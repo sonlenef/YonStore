@@ -80,4 +80,11 @@ abstract class BaseActivity<T : ViewDataBinding, N, V : BaseViewModel<N>> : AppC
         mViewDataBinding.lifecycleOwner = this
         mViewDataBinding.executePendingBindings()
     }
+
+    @TargetApi(Build.VERSION_CODES.M)
+    open fun requestPermissionsSafely(permissions: Array<String?>?, requestCode: Int) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            requestPermissions(permissions!!, requestCode)
+        }
+    }
 }

@@ -2,6 +2,7 @@ package tech.leson.yonstore.ui.addproduct
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Bitmap
 import kotlinx.android.synthetic.main.navigation_header.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import tech.leson.yonstore.BR
@@ -36,12 +37,15 @@ class AddProductActivity :
 
     override fun onImage() {
         val addImageAdapter = AddImageDialog.getInstance()
+        addImageAdapter.addProductNavigator = this
         if (supportFragmentManager.findFragmentByTag("addImage") == null) {
             addImageAdapter.show(supportFragmentManager, "addImage")
         }
     }
 
     override fun onStyle() {}
+
+    override fun addImageProduct(img: Bitmap) {}
 
     override fun onBack() {
         finish()
