@@ -7,11 +7,12 @@ buildscript {
     compileSdkVersion = 30
     buildToolsVersion = '30.0.1'
     coreKtxVersion = '1.3.2'
-    firebaseAuthVersion = '19.4.0'
-    firebaseDbVersion = '21.7.1'
+    firebaseAuthVersion = '20.0.0'
+    firebaseDbVersion = '22.0.0'
+    firebaseStoreVersion = '19.2.0'
 
     // View
-    constraintLayoutVersion = '2.0.2'
+    constraintLayoutVersion = '2.0.4'
     recyclerViewVersion = '1.2.0-alpha06'
     koin_version = '2.2.0-rc-2'
     circleimageviewVersion = '3.1.0'

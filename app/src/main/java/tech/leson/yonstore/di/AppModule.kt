@@ -32,6 +32,7 @@ import tech.leson.yonstore.ui.manager.ManagerViewModel
 import tech.leson.yonstore.ui.product.ProductViewModel
 import tech.leson.yonstore.ui.adapter.ProductImgAdapter
 import tech.leson.yonstore.ui.addproduct.AddProductViewModel
+import tech.leson.yonstore.ui.addproduct.adapter.ImageAdapter
 import tech.leson.yonstore.ui.addproduct.dialog.AddImageViewModel
 import tech.leson.yonstore.ui.listproduct.ListProductViewModel
 import tech.leson.yonstore.ui.profile.ProfileViewModel
@@ -96,6 +97,7 @@ val mainModule = module {
     single { ProductFavoriteAdapter(ArrayList()) }
     single { ProductImgAdapter(ArrayList()) }
     single { (activity: MainActivity) -> MainTabAdapter(activity) }
+    single { ImageAdapter(ArrayList()) }
 
     viewModel { AccountViewModel(get(), get()) }
     viewModel { CartViewModel(get(), get()) }
