@@ -80,11 +80,4 @@ abstract class BaseFragmentDialog<T : ViewDataBinding, N, V : BaseViewModel<N>> 
     open fun hasPermission(permission: String?): Boolean {
         return mActivity!!.hasPermission(permission)
     }
-
-    @TargetApi(Build.VERSION_CODES.M)
-    open fun requestPermissionsSafely(permissions: Array<String?>?, requestCode: Int) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            requestPermissions(permissions!!, requestCode)
-        }
-    }
 }

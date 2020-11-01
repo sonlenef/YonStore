@@ -1,4 +1,4 @@
-package tech.leson.yonstore.ui.addproduct.dialog
+package tech.leson.yonstore.ui.addproduct.dialog.addImage
 
 import android.view.View
 import tech.leson.yonstore.R

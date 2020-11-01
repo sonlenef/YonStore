@@ -39,8 +39,8 @@ class HomeFragment :
 
     private val mSlideShowAdapter: SlideShowAdapter by inject()
     private val mCategoryAdapter: CategoryAdapter by inject(named("home"))
-    private val mFlashSaleAdapter: ProductAdapter by inject(named("flashSale"))
-    private val mMegaSaleAdapter: ProductAdapter by inject(named("megaSale"))
+    private val mFlashSaleAdapter: ProductAdapter by inject(named("horizontal"))
+    private val mMegaSaleAdapter: ProductAdapter by inject(named("horizontal"))
     private val mRecProductAdapter: ProductAdapter by inject(named("vertical"))
 
     override val bindingVariable: Int
@@ -82,7 +82,6 @@ class HomeFragment :
     }
 
     override fun setCategory(categories: MutableList<Category>) {
-        mCategoryAdapter.clearData()
         mCategoryAdapter.addAllData(categories)
         val layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
         rcvCategory.layoutManager = layoutManager
@@ -90,7 +89,6 @@ class HomeFragment :
     }
 
     private fun setFlashSale() {
-        mFlashSaleAdapter.clearData()
         mFlashSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
         mFlashSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
         mFlashSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
@@ -104,7 +102,6 @@ class HomeFragment :
     }
 
     private fun setMegaSale() {
-        mMegaSaleAdapter.clearData()
         mMegaSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
         mMegaSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
         mMegaSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
@@ -117,7 +114,6 @@ class HomeFragment :
     }
 
     private fun setRecProduct() {
-        mRecProductAdapter.clearData()
         mRecProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
         mRecProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
         mRecProductAdapter.addData(Product(getString(R.string.name_product_demo), null))

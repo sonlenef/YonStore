@@ -33,7 +33,11 @@ import tech.leson.yonstore.ui.product.ProductViewModel
 import tech.leson.yonstore.ui.adapter.ProductImgAdapter
 import tech.leson.yonstore.ui.addproduct.AddProductViewModel
 import tech.leson.yonstore.ui.addproduct.adapter.ImageAdapter
-import tech.leson.yonstore.ui.addproduct.dialog.AddImageViewModel
+import tech.leson.yonstore.ui.addproduct.adapter.StyleAdapter
+import tech.leson.yonstore.ui.addproduct.dialog.addImage.AddImageViewModel
+import tech.leson.yonstore.ui.addproduct.dialog.addStyle.AddStyleDialog
+import tech.leson.yonstore.ui.addproduct.dialog.addStyle.AddStyleViewModel
+import tech.leson.yonstore.ui.addproduct.popup.ColorPopup
 import tech.leson.yonstore.ui.listproduct.ListProductViewModel
 import tech.leson.yonstore.ui.profile.ProfileViewModel
 import tech.leson.yonstore.ui.register.RegisterViewModel
@@ -65,39 +69,33 @@ val appModule = module {
 }
 
 val mainModule = module {
-    single { SlideShowAdapter(ArrayList()) }
-    single(named("category")) {
+    factory { (activity: MainActivity) -> MainTabAdapter(activity) }
+    factory { SlideShowAdapter(ArrayList()) }
+    factory(named("category")) {
         CategoryAdapter(ArrayList(),
             CategoryAdapter.LAYOUT_VIEW_TYPE_CATEGORY)
     }
-    single(named("home")) {
+    factory(named("home")) {
         CategoryAdapter(ArrayList(),
             CategoryAdapter.LAYOUT_VIEW_TYPE_HOME)
     }
-    single(named("manFashion")) {
+    factory(named("explore")) {
         CategoryAdapter(ArrayList(),
             CategoryAdapter.LAYOUT_VIEW_TYPE_EXPLORE)
     }
-    single(named("womanFashion")) {
-        CategoryAdapter(ArrayList(),
-            CategoryAdapter.LAYOUT_VIEW_TYPE_EXPLORE)
-    }
-    single(named("vertical")) {
+    factory(named("vertical")) {
         ProductAdapter(ArrayList(),
             ProductAdapter.LAYOUT_VIEW_TYPE_VERTICAL)
     }
-    single(named("flashSale")) {
+    factory(named("horizontal")) {
         ProductAdapter(ArrayList(),
             ProductAdapter.LAYOUT_VIEW_TYPE_HORIZONTAL)
     }
-    single(named("megaSale")) {
-        ProductAdapter(ArrayList(),
-            ProductAdapter.LAYOUT_VIEW_TYPE_HORIZONTAL)
-    }
-    single { ProductFavoriteAdapter(ArrayList()) }
-    single { ProductImgAdapter(ArrayList()) }
-    single { (activity: MainActivity) -> MainTabAdapter(activity) }
-    single { ImageAdapter(ArrayList()) }
+    factory { ProductFavoriteAdapter(ArrayList()) }
+    factory { ProductImgAdapter(ArrayList()) }
+    factory { ImageAdapter(ArrayList()) }
+    factory { StyleAdapter(ArrayList()) }
+    factory { ColorPopup(get()) }
 
     viewModel { AccountViewModel(get(), get()) }
     viewModel { CartViewModel(get(), get()) }
@@ -114,4 +112,5 @@ val mainModule = module {
     viewModel { AddProductViewModel(get(), get()) }
 
     viewModel { AddImageViewModel(get(), get()) }
+    viewModel { AddStyleViewModel(get(), get()) }
 }

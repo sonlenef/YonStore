@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/_200sdp"
+    android:overScrollMode="never">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/lnWhite"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/bg_btn"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@color/white"
+                app:civ_border_color="@color/light"
+                app:civ_border_width="1dp" />
+
+            <TextView
+                android:id="@+id/tvWhite"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_btn"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center"
+                android:paddingStart="@dimen/_20sdp"
+                android:paddingEnd="@dimen/_20sdp"
+                android:text="@string/white"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_11sdp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/line0"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/light"
+            app:layout_constraintEnd_toEndOf="@id/lnWhite"
+            app:layout_constraintStart_toStartOf="@id/lnWhite"
+            app:layout_constraintTop_toBottomOf="@id/lnWhite" />
+
+        <LinearLayout
+            android:id="@+id/lnYellow"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/bg_btn"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/line0">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@color/yellow"
+                app:civ_border_color="@color/light"
+                app:civ_border_width="1dp" />
+
+            <TextView
+                android:id="@+id/tvYellow"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_btn"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center"
+                android:paddingStart="@dimen/_20sdp"
+                android:paddingEnd="@dimen/_20sdp"
+                android:text="@string/yellow"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_11sdp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/light"
+            app:layout_constraintEnd_toEndOf="@id/lnWhite"
+            app:layout_constraintStart_toStartOf="@id/lnWhite"
+            app:layout_constraintTop_toBottomOf="@id/lnYellow" />
+
+        <LinearLayout
+            android:id="@+id/lnOrange"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/bg_btn"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line1">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@color/orange"
+                app:civ_border_color="@color/light"
+                app:civ_border_width="1dp" />
+
+            <TextView
+                android:id="@+id/tvOrange"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_btn"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center"
+                android:paddingStart="@dimen/_20sdp"
+                android:paddingEnd="@dimen/_20sdp"
+                android:text="@string/orange"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_11sdp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/line2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/light"
+            app:layout_constraintEnd_toEndOf="@id/lnWhite"
+            app:layout_constraintStart_toStartOf="@id/lnWhite"
+            app:layout_constraintTop_toBottomOf="@id/lnOrange" />
+
+        <LinearLayout
+            android:id="@+id/lnRed"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/bg_btn"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line2">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@color/red"
+                app:civ_border_color="@color/light"
+                app:civ_border_width="1dp" />
+
+            <TextView
+                android:id="@+id/tvRed"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_btn"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center"
+                android:paddingStart="@dimen/_20sdp"
+                android:paddingEnd="@dimen/_20sdp"
+                android:text="@string/red"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_11sdp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/line3"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/light"
+            app:layout_constraintEnd_toEndOf="@id/lnWhite"
+            app:layout_constraintStart_toStartOf="@id/lnWhite"
+            app:layout_constraintTop_toBottomOf="@id/lnRed" />
+
+        <LinearLayout
+            android:id="@+id/lnGreen"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/bg_btn"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line3">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@color/green"
+                app:civ_border_color="@color/light"
+                app:civ_border_width="1dp" />
+
+            <TextView
+                android:id="@+id/tvGreen"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_btn"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center"
+                android:paddingStart="@dimen/_20sdp"
+                android:paddingEnd="@dimen/_20sdp"
+                android:text="@string/green"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_11sdp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/line4"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/light"
+            app:layout_constraintEnd_toEndOf="@id/lnWhite"
+            app:layout_constraintStart_toStartOf="@id/lnWhite"
+            app:layout_constraintTop_toBottomOf="@id/lnGreen" />
+
+        <LinearLayout
+            android:id="@+id/lnBlue"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/bg_btn"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line4">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@color/blue"
+                app:civ_border_color="@color/light"
+                app:civ_border_width="1dp" />
+
+            <TextView
+                android:id="@+id/tvBlue"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_btn"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center"
+                android:paddingStart="@dimen/_20sdp"
+                android:paddingEnd="@dimen/_20sdp"
+                android:text="@string/blue"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_11sdp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/line5"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/light"
+            app:layout_constraintEnd_toEndOf="@id/lnWhite"
+            app:layout_constraintStart_toStartOf="@id/lnWhite"
+            app:layout_constraintTop_toBottomOf="@id/lnBlue" />
+
+        <LinearLayout
+            android:id="@+id/lnBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/bg_btn"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line5">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@color/black"
+                app:civ_border_color="@color/light"
+                app:civ_border_width="1dp" />
+
+            <TextView
+                android:id="@+id/tvBlack"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_btn"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center"
+                android:paddingStart="@dimen/_20sdp"
+                android:paddingEnd="@dimen/_20sdp"
+                android:text="@string/black"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_11sdp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

@@ -1,4 +1,4 @@
-package tech.leson.yonstore.ui.addproduct.dialog
+package tech.leson.yonstore.ui.addproduct.dialog.addImage
 
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import tech.leson.yonstore.BR

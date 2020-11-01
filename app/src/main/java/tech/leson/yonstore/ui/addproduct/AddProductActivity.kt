@@ -19,8 +19,11 @@ import tech.leson.yonstore.BR
 import tech.leson.yonstore.R
 import tech.leson.yonstore.databinding.ActivityAddProductBinding
 import tech.leson.yonstore.ui.addproduct.adapter.ImageAdapter
-import tech.leson.yonstore.ui.addproduct.dialog.AddImageDialog
+import tech.leson.yonstore.ui.addproduct.adapter.StyleAdapter
+import tech.leson.yonstore.ui.addproduct.dialog.addImage.AddImageDialog
+import tech.leson.yonstore.ui.addproduct.dialog.addStyle.AddStyleDialog
 import tech.leson.yonstore.ui.addproduct.model.Image
+import tech.leson.yonstore.ui.addproduct.model.Style
 import tech.leson.yonstore.ui.base.BaseActivity
 import tech.leson.yonstore.utils.OnItemClickListener
 import java.io.File
@@ -46,7 +49,8 @@ class AddProductActivity :
     }
 
     private val mImageAdapter: ImageAdapter by inject()
-    lateinit var currentPhotoPath: String
+    private val mStyleAdapter: StyleAdapter by inject()
+    private lateinit var currentPhotoPath: String
 
     override val bindingVariable: Int
         get() = BR.viewModel
@@ -62,6 +66,10 @@ class AddProductActivity :
         mImageAdapter.clearData()
         rcvImage.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         rcvImage.adapter = mImageAdapter
+
+        mStyleAdapter.clearData()
+        rcvStyle.layoutManager = LinearLayoutManager(this)
+        rcvStyle.adapter = mStyleAdapter
     }
 
     override fun onImage() {
@@ -72,7 +80,11 @@ class AddProductActivity :
         }
     }
 
-    override fun onStyle() {}
+    override fun onStyle() {
+        val addStyleDialog = AddStyleDialog.newInstance()
+        addStyleDialog.addProductNavigator = this
+        addStyleDialog.show(supportFragmentManager)
+    }
 
     override fun onTakePhoto() {
         if (hasPermission(Manifest.permission.CAMERA)) {
@@ -81,6 +93,10 @@ class AddProductActivity :
             requestPermissionsSafely(Array(1) { Manifest.permission.CAMERA },
                 REQUEST_PERMISSIONS_CAMERA)
         }
+    }
+
+    override fun addStyle(style: Style) {
+        mStyleAdapter.addData(style)
     }
 
     override fun onOpenGallery() {

@@ -44,6 +44,7 @@
     <string name="price_demo">$299.43</string>
     <string name="discount_demo">24% Off</string>
     <string name="favorite_product">Favorite Product</string>
+    <string name="pls_enter_complete_info">Please enter complete information</string>
 
     <string name="man_fashion">Man Fashion</string>
     <string name="woman_fashion">Woman Fashion</string>
@@ -89,4 +90,24 @@
     <string name="take_photo">Take Photo</string>
     <string name="cancel">Cancel</string>
     <string name="choose_from_gallery">Choose from Gallery</string>
+    <string name="title_style">#Style</string>
+    <string name="product_size">Product Size:</string>
+    <string name="product_color">Product Color:</string>
+    <string name="quantity">Quantity:</string>
+    <string name="add_style">Add Style</string>
+    <string name="add">Add</string>
+    <string name="white">white</string>
+    <string name="black">black</string>
+    <string name="yellow">yellow</string>
+    <string name="green">green</string>
+    <string name="blue">blue</string>
+    <string name="red">red</string>
+    <string name="orange">orange</string>
+    <string name="_0">0</string>
+    <string name="size">size</string>
+    <string name="color">color</string>
+    <string name="price">Price</string>
+    <string name="product_price">Product Price</string>
+    <string name="product_discount">Product Discount</string>
+    <string name="discount">Discount</string>
 </resources>

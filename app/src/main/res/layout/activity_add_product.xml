@@ -211,6 +211,70 @@
                     android:overScrollMode="never"
                     app:layout_constraintTop_toBottomOf="@id/tvStyle" />
 
+                <TextView
+                    android:id="@+id/tvProductPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/product_price"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_11ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rcvStyle" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtProductPrice"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/price"
+                    android:textAppearance="@font/poppins_regular"
+                    android:textColorHint="@color/grey"
+                    app:boxStrokeColor="@drawable/input_state_checked"
+                    app:boxStrokeErrorColor="@color/red"
+                    app:layout_constraintTop_toBottomOf="@id/tvProductPrice"
+                    app:startIconTint="@drawable/input_state_checked">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number|numberDecimal" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/tvProductDiscount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/product_discount"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_11ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/edtProductPrice" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edtProductDiscount"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/discount"
+                    android:textAppearance="@font/poppins_regular"
+                    android:textColorHint="@color/grey"
+                    app:boxStrokeColor="@drawable/input_state_checked"
+                    app:boxStrokeErrorColor="@color/red"
+                    app:layout_constraintTop_toBottomOf="@id/tvProductDiscount"
+                    app:startIconTint="@drawable/input_state_checked">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number|numberDecimal" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.core.widget.NestedScrollView>

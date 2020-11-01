@@ -7,12 +7,14 @@
     <color name="blue">#40BFFF</color>
     <color name="red">#FB7181</color>
     <color name="yellow">#FFC833</color>
+    <color name="orange">#e67e22</color>
     <color name="green">#53D1B6</color>
     <color name="purple">#5C61F4</color>
     <color name="dark">#223263</color>
     <color name="grey">#9098B1</color>
     <color name="light">#EBF0FF</color>
     <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
 
     <color name="loading">#80000000</color>
     <color name="blueTransparent">#6540BFFF</color>

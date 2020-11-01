@@ -26,8 +26,8 @@ class ExploreFragment : BaseFragment<FragmentExploreBinding, ExploreNavigator, E
         }
     }
 
-    private val mManCateAdapter: CategoryAdapter by inject((named("manFashion")))
-    private val mWomanCateAdapter: CategoryAdapter by inject((named("womanFashion")))
+    private val mManCateAdapter: CategoryAdapter by inject((named("explore")))
+    private val mWomanCateAdapter: CategoryAdapter by inject((named("explore")))
 
     override val bindingVariable: Int
         get() = BR.viewModel
