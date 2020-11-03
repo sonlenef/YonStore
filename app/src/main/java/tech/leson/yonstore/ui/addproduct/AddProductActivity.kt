@@ -17,6 +17,7 @@ import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import tech.leson.yonstore.BR
 import tech.leson.yonstore.R
+import tech.leson.yonstore.data.model.Category
 import tech.leson.yonstore.databinding.ActivityAddProductBinding
 import tech.leson.yonstore.ui.addproduct.adapter.ImageAdapter
 import tech.leson.yonstore.ui.addproduct.adapter.StyleAdapter
@@ -93,6 +94,19 @@ class AddProductActivity :
             requestPermissionsSafely(Array(1) { Manifest.permission.CAMERA },
                 REQUEST_PERMISSIONS_CAMERA)
         }
+    }
+
+    override fun onAddProduct() {
+        val name = edtProductName.editText?.text.toString().trim()
+        val serial = edtSerialNumber.editText?.text.toString().trim()
+    }
+
+    override fun onCategory() {
+        //
+    }
+
+    override fun categorySelect(category: Category) {
+        //
     }
 
     override fun addStyle(style: Style) {

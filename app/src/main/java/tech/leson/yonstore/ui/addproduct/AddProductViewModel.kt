@@ -12,6 +12,8 @@ class AddProductViewModel(dataManager: DataManager, schedulerProvider: Scheduler
         when (view.id) {
             R.id.tvImage -> navigator?.onImage()
             R.id.tvStyle -> navigator?.onStyle()
+            R.id.listCategory -> navigator?.onCategory()
+            R.id.btnAddProduct -> navigator?.onAddProduct()
             R.id.btnBack -> navigator?.onBack()
         }
     }

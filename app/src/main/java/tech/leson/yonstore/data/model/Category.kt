@@ -3,7 +3,7 @@ package tech.leson.yonstore.data.model
 import tech.leson.yonstore.R
 import java.io.Serializable
 
-class Category(var uid: String, val name: String, val description: String, val style: String) :
+data class Category(var uid: String, val name: String, val description: String, val group: String) :
     Serializable {
 
     constructor() : this("", "", "", "")

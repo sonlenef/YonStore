@@ -107,7 +107,9 @@
     <string name="size">size</string>
     <string name="color">color</string>
     <string name="price">Price</string>
-    <string name="product_price">Product Price</string>
-    <string name="product_discount">Product Discount</string>
+    <string name="product_price">Product Price(VNĐ)</string>
+    <string name="product_discount">Product Discount(%)</string>
     <string name="discount">Discount</string>
+    <string name="product_serial">Product Serial</string>
+    <string name="serial">Serial</string>
 </resources>
