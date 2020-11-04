@@ -32,10 +32,11 @@ import tech.leson.yonstore.ui.manager.ManagerViewModel
 import tech.leson.yonstore.ui.product.ProductViewModel
 import tech.leson.yonstore.ui.adapter.ProductImgAdapter
 import tech.leson.yonstore.ui.addproduct.AddProductViewModel
+import tech.leson.yonstore.ui.addproduct.adapter.AddCategoryAdapter
 import tech.leson.yonstore.ui.addproduct.adapter.ImageAdapter
 import tech.leson.yonstore.ui.addproduct.adapter.StyleAdapter
+import tech.leson.yonstore.ui.addproduct.dialog.addCategory.AddCategoryViewModel
 import tech.leson.yonstore.ui.addproduct.dialog.addImage.AddImageViewModel
-import tech.leson.yonstore.ui.addproduct.dialog.addStyle.AddStyleDialog
 import tech.leson.yonstore.ui.addproduct.dialog.addStyle.AddStyleViewModel
 import tech.leson.yonstore.ui.addproduct.popup.ColorPopup
 import tech.leson.yonstore.ui.listproduct.ListProductViewModel
@@ -93,6 +94,7 @@ val mainModule = module {
     }
     factory { ProductFavoriteAdapter(ArrayList()) }
     factory { ProductImgAdapter(ArrayList()) }
+    factory { AddCategoryAdapter(ArrayList()) }
     factory { ImageAdapter(ArrayList()) }
     factory { StyleAdapter(ArrayList()) }
     factory { ColorPopup(get()) }
@@ -111,6 +113,7 @@ val mainModule = module {
     viewModel { ListProductViewModel(get(), get()) }
     viewModel { AddProductViewModel(get(), get()) }
 
+    viewModel { AddCategoryViewModel(get(), get()) }
     viewModel { AddImageViewModel(get(), get()) }
     viewModel { AddStyleViewModel(get(), get()) }
 }

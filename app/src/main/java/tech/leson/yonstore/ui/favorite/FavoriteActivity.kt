@@ -44,14 +44,14 @@ class FavoriteActivity :
     }
 
     private fun setFevProduct() {
-        mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
-        mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
-        mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
-        mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
-        mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
-        mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
-        mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
-        mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
+//        mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
+//        mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
+//        mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
+//        mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
+//        mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
+//        mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
+//        mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
+//        mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
         val layoutManager = GridLayoutManager(this, 2, RecyclerView.VERTICAL, false)
         rcvFavorite.layoutManager = layoutManager
         mFevProductAdapter.favoriteNavigator = this

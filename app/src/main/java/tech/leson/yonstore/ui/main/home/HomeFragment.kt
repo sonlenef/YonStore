@@ -89,12 +89,12 @@ class HomeFragment :
     }
 
     private fun setFlashSale() {
-        mFlashSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
-        mFlashSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
-        mFlashSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
-        mFlashSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
-        mFlashSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
-        mFlashSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
+//        mFlashSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
+//        mFlashSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
+//        mFlashSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
+//        mFlashSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
+//        mFlashSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
+//        mFlashSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
         val layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
         rcvFlashSale.layoutManager = layoutManager
         mFlashSaleAdapter.onItemClickListener = this
@@ -102,11 +102,11 @@ class HomeFragment :
     }
 
     private fun setMegaSale() {
-        mMegaSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
-        mMegaSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
-        mMegaSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
-        mMegaSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
-        mMegaSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
+//        mMegaSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
+//        mMegaSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
+//        mMegaSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
+//        mMegaSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
+//        mMegaSaleAdapter.addData(Product(getString(R.string.name_product_demo), null))
         val layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
         rcvMegaSale.layoutManager = layoutManager
         mMegaSaleAdapter.onItemClickListener = this
@@ -114,10 +114,10 @@ class HomeFragment :
     }
 
     private fun setRecProduct() {
-        mRecProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
-        mRecProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
-        mRecProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
-        mRecProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
+//        mRecProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
+//        mRecProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
+//        mRecProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
+//        mRecProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
         val layoutManager = GridLayoutManager(activity, 2, RecyclerView.VERTICAL, false)
         rcvRecProduct.layoutManager = layoutManager
         mRecProductAdapter.onItemClickListener = this

@@ -1,6 +1,7 @@
 package tech.leson.yonstore.ui.addproduct
 
 import android.view.View
+import kotlinx.android.synthetic.main.activity_add_product.*
 import tech.leson.yonstore.R
 import tech.leson.yonstore.data.DataManager
 import tech.leson.yonstore.ui.base.BaseViewModel

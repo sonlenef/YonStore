@@ -131,6 +131,7 @@
                         android:layout_marginTop="@dimen/_5sdp"
                         android:background="@drawable/bg_border"
                         android:gravity="center_vertical"
+                        android:onClick="@{(View) -> viewModel.onClick(View)}"
                         android:paddingStart="@dimen/_10sdp"
                         android:paddingEnd="@dimen/_10sdp"
                         app:drawableEndCompat="@drawable/ic_arrow_down"

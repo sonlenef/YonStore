@@ -21,6 +21,7 @@ import tech.leson.yonstore.data.model.Category
 import tech.leson.yonstore.databinding.ActivityAddProductBinding
 import tech.leson.yonstore.ui.addproduct.adapter.ImageAdapter
 import tech.leson.yonstore.ui.addproduct.adapter.StyleAdapter
+import tech.leson.yonstore.ui.addproduct.dialog.addCategory.AddCategoryDialog
 import tech.leson.yonstore.ui.addproduct.dialog.addImage.AddImageDialog
 import tech.leson.yonstore.ui.addproduct.dialog.addStyle.AddStyleDialog
 import tech.leson.yonstore.ui.addproduct.model.Image
@@ -96,17 +97,16 @@ class AddProductActivity :
         }
     }
 
-    override fun onAddProduct() {
-        val name = edtProductName.editText?.text.toString().trim()
-        val serial = edtSerialNumber.editText?.text.toString().trim()
-    }
+    override fun onAddProduct() {}
 
     override fun onCategory() {
-        //
+        val addCategoryDialog = AddCategoryDialog.newInstance()
+        addCategoryDialog.mAddProductNavigator = this
+        addCategoryDialog.show(supportFragmentManager)
     }
 
     override fun categorySelect(category: Category) {
-        //
+        listCategory.text = category.name
     }
 
     override fun addStyle(style: Style) {

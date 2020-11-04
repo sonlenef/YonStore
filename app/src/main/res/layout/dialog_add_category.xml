@@ -8,7 +8,7 @@
 
         <variable
             name="viewModel"
-            type="tech.leson.yonstore.ui.base.BaseViewModel" />
+            type="tech.leson.yonstore.ui.addproduct.dialog.addCategory.AddCategoryViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
