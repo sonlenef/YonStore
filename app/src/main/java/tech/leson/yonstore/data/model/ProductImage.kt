@@ -1,3 +1,5 @@
 package tech.leson.yonstore.data.model
 
-class ProductImage
+import java.io.Serializable
+
+data class ProductImage(val imgUrl: String) : Serializable

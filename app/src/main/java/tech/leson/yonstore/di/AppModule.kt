@@ -2,6 +2,7 @@ package tech.leson.yonstore.di
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
@@ -55,10 +56,11 @@ val appModule = module {
         auth.setLanguageCode("vn")
         return@single auth
     }
+    single { FirebaseStorage.getInstance() }
     single<DbHelper> { AppDbHelper() }
     single<PreferencesHelper> { AppPreferencesHelper(get(), get()) }
     single { FirebaseFirestore.getInstance() }
-    single<FirebaseHelper> { AppFirebaseHelper(get(), get()) }
+    single<FirebaseHelper> { AppFirebaseHelper(get(), get(), get()) }
     single<DataManager> { AppDataManager(get(), get()) }
     single<SchedulerProvider> { AppSchedulerProvider() }
 

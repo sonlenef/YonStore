@@ -54,8 +54,8 @@ class ProductActivity : BaseActivity<ActivityProductBinding, ProductNavigator, P
     }
 
     private fun setImages(images: MutableList<ProductImage>?) {
-        mProductImgAdapter.addData(ProductImage())
-        mProductImgAdapter.addData(ProductImage())
+//        mProductImgAdapter.addData(ProductImage())
+//        mProductImgAdapter.addData(ProductImage())
 
         slideProduct.adapter = mProductImgAdapter
 

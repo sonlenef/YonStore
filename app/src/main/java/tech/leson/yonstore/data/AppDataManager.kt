@@ -1,5 +1,6 @@
 package tech.leson.yonstore.data
 
+import android.net.Uri
 import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.QuerySnapshot
 import tech.leson.yonstore.data.local.prefs.PreferencesHelper
@@ -28,6 +29,10 @@ class AppDataManager(firebaseHelper: FirebaseHelper, preferencesHelper: Preferen
 
     override fun getCategoryByStyle(style: String): Task<QuerySnapshot> =
         mFirebaseHelper.getCategoryByStyle(style)
+
+    override fun saveImage(file: Uri): Task<Uri> = mFirebaseHelper.saveImage(file)
+
+    override fun deleteImage(url: String): Task<Void> = mFirebaseHelper.deleteImage(url)
 
     override fun logoutFirebase() = mFirebaseHelper.logoutFirebase()
 

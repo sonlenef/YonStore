@@ -18,13 +18,13 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import tech.leson.yonstore.BR
 import tech.leson.yonstore.R
 import tech.leson.yonstore.data.model.Category
+import tech.leson.yonstore.data.model.ProductImage
 import tech.leson.yonstore.databinding.ActivityAddProductBinding
 import tech.leson.yonstore.ui.addproduct.adapter.ImageAdapter
 import tech.leson.yonstore.ui.addproduct.adapter.StyleAdapter
 import tech.leson.yonstore.ui.addproduct.dialog.addCategory.AddCategoryDialog
 import tech.leson.yonstore.ui.addproduct.dialog.addImage.AddImageDialog
 import tech.leson.yonstore.ui.addproduct.dialog.addStyle.AddStyleDialog
-import tech.leson.yonstore.ui.addproduct.model.Image
 import tech.leson.yonstore.ui.addproduct.model.Style
 import tech.leson.yonstore.ui.base.BaseActivity
 import tech.leson.yonstore.utils.OnItemClickListener
@@ -32,6 +32,7 @@ import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.ArrayList
 
 class AddProductActivity :
     BaseActivity<ActivityAddProductBinding, AddProductNavigator, AddProductViewModel>(),
@@ -95,6 +96,15 @@ class AddProductActivity :
             requestPermissionsSafely(Array(1) { Manifest.permission.CAMERA },
                 REQUEST_PERMISSIONS_CAMERA)
         }
+    }
+
+    override fun onAddImage(image: ProductImage) {
+        mImageAdapter.addData(image)
+    }
+
+    override fun onRemoveImageSuccess(position: Int) {
+        viewModel.product.value?.images?.remove(mImageAdapter.data[position])
+        mImageAdapter.removeItem(position)
     }
 
     override fun onAddProduct() {}
@@ -199,17 +209,23 @@ class AddProductActivity :
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == REQUEST_TAKE_PHOTO && resultCode == RESULT_OK) {
             val imageUri = Uri.fromFile(File(currentPhotoPath))
-            mImageAdapter.addData(Image(imageUri))
+            val imagesUri = ArrayList<Uri>()
+            imagesUri.add(imageUri)
+            viewModel.saveImages(imagesUri)
         } else if (requestCode == PICK_IMAGE && resultCode == RESULT_OK) {
             if (data?.clipData != null) {
                 val count: Int = data.clipData!!.itemCount
+                val imagesUri = ArrayList<Uri>()
                 for (i in 0 until count) {
                     val imageUri: Uri = data.clipData!!.getItemAt(i).uri
-                    mImageAdapter.addData(Image(imageUri))
+                    imagesUri.add(imageUri)
                 }
+                viewModel.saveImages(imagesUri)
             } else if (data?.data != null) {
                 val imageUri: Uri = data.data!!
-                mImageAdapter.addData(Image(imageUri))
+                val imagesUri = ArrayList<Uri>()
+                imagesUri.add(imageUri)
+                viewModel.saveImages(imagesUri)
             }
         }
     }
@@ -218,7 +234,11 @@ class AddProductActivity :
         finish()
     }
 
+    override fun onError(msg: String) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+    }
+
     override fun onClick(item: Int) {
-        mImageAdapter.removeItem(item)
+        viewModel.removeImage(item, mImageAdapter.data[item].imgUrl)
     }
 }

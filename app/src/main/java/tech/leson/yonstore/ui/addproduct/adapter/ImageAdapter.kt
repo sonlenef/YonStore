@@ -3,16 +3,17 @@ package tech.leson.yonstore.ui.addproduct.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import tech.leson.yonstore.R
-import tech.leson.yonstore.ui.addproduct.model.Image
+import tech.leson.yonstore.data.model.ProductImage
 import tech.leson.yonstore.ui.addproduct.viewholder.ImageViewHolder
 import tech.leson.yonstore.ui.base.BaseAdapter
 import tech.leson.yonstore.utils.OnItemClickListener
 
-class ImageAdapter(data: MutableList<Image>) : BaseAdapter<ImageViewHolder, Image>(data) {
+class ImageAdapter(data: MutableList<ProductImage>) :
+    BaseAdapter<ImageViewHolder, ProductImage>(data) {
 
     lateinit var onItemClickListener: OnItemClickListener<Int>
 
-    override fun addData(data: Image) {
+    override fun addData(data: ProductImage) {
         for (item in this.data) {
             if (data == item) {
                 return
@@ -22,7 +23,7 @@ class ImageAdapter(data: MutableList<Image>) : BaseAdapter<ImageViewHolder, Imag
         notifyItemChanged(this.data.size - 1)
     }
 
-    override fun addAllData(data: MutableList<Image>) {
+    override fun addAllData(data: MutableList<ProductImage>) {
         this.data.clear()
         this.data.addAll(data)
         notifyDataSetChanged()
