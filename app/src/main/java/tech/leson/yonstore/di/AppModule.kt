@@ -40,6 +40,7 @@ import tech.leson.yonstore.ui.addproduct.dialog.addCategory.AddCategoryViewModel
 import tech.leson.yonstore.ui.addproduct.dialog.addImage.AddImageViewModel
 import tech.leson.yonstore.ui.addproduct.dialog.addStyle.AddStyleViewModel
 import tech.leson.yonstore.ui.addproduct.popup.ColorPopup
+import tech.leson.yonstore.ui.addevent.AddEventViewModel
 import tech.leson.yonstore.ui.listproduct.ListProductViewModel
 import tech.leson.yonstore.ui.profile.ProfileViewModel
 import tech.leson.yonstore.ui.register.RegisterViewModel
@@ -118,4 +119,5 @@ val mainModule = module {
     viewModel { AddCategoryViewModel(get(), get()) }
     viewModel { AddImageViewModel(get(), get()) }
     viewModel { AddStyleViewModel(get(), get()) }
+    viewModel { AddEventViewModel(get(), get()) }
 }

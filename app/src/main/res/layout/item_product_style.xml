@@ -13,6 +13,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/titleStyle"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:fontFamily="@font/poppins_regular"
@@ -22,13 +23,13 @@
             android:text="@string/title_style"
             android:textColor="@color/dark"
             android:textSize="@dimen/_11ssp"
-            app:layout_constraintBottom_toBottomOf="@id/btnClose"
-            app:layout_constraintEnd_toStartOf="@id/btnClose"
+            app:layout_constraintBottom_toBottomOf="@id/btnRemove"
+            app:layout_constraintEnd_toStartOf="@id/btnRemove"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/btnClose"
+            android:id="@+id/btnRemove"
             android:layout_width="@dimen/_26sdp"
             android:layout_height="@dimen/_26sdp"
             android:layout_marginEnd="@dimen/_5sdp"
@@ -43,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="gone"
-            app:layout_constraintTop_toBottomOf="@id/btnClose">
+            app:layout_constraintTop_toBottomOf="@id/btnRemove">
 
             <View
                 android:layout_width="match_parent"

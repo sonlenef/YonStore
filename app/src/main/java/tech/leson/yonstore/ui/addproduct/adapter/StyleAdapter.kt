@@ -3,11 +3,15 @@ package tech.leson.yonstore.ui.addproduct.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import tech.leson.yonstore.R
-import tech.leson.yonstore.ui.addproduct.model.Style
+import tech.leson.yonstore.data.model.Style
+import tech.leson.yonstore.ui.addproduct.AddProductNavigator
 import tech.leson.yonstore.ui.addproduct.viewholder.StyleViewHolder
 import tech.leson.yonstore.ui.base.BaseAdapter
 
 class StyleAdapter(data: MutableList<Style>) : BaseAdapter<StyleViewHolder, Style>(data) {
+
+    lateinit var addProductNavigator: AddProductNavigator
+
     override fun addData(data: Style) {
         for (item in this.data) {
             if (data == item) {
@@ -26,6 +30,11 @@ class StyleAdapter(data: MutableList<Style>) : BaseAdapter<StyleViewHolder, Styl
         notifyDataSetChanged()
     }
 
+    fun removeItem(position: Int) {
+        data.removeAt(position)
+        notifyItemRemoved(position)
+    }
+
     override fun clearData() {
         data.clear()
         notifyDataSetChanged()
@@ -33,7 +42,7 @@ class StyleAdapter(data: MutableList<Style>) : BaseAdapter<StyleViewHolder, Styl
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         StyleViewHolder(LayoutInflater.from(parent.context).inflate(
-            R.layout.item_product_style, parent, false))
+            R.layout.item_product_style, parent, false), addProductNavigator)
 
     override fun onBindViewHolder(holder: StyleViewHolder, position: Int) {
         holder.onBind(data[position])

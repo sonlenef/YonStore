@@ -9,10 +9,11 @@ class User(
     var email: String,
     var gender: String,
     var dob: String,
+    var address: Address,
     var role: String,
     var avatar: String,
     var yonCoin: Int,
     var status: UserStatus,
 ) : Serializable {
-    constructor() : this("", "", "", "", "", "", "user", "", 0, UserStatus())
+    constructor() : this("", "", "", "", "", "", Address(), "user", "", 0, UserStatus())
 }

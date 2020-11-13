@@ -12,9 +12,9 @@ import kotlinx.android.synthetic.main.dialog_add_style.*
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import tech.leson.yonstore.R
+import tech.leson.yonstore.data.model.Style
 import tech.leson.yonstore.databinding.DialogAddStyleBinding
 import tech.leson.yonstore.ui.addproduct.AddProductNavigator
-import tech.leson.yonstore.ui.addproduct.model.Style
 import tech.leson.yonstore.ui.addproduct.popup.ColorPopup
 import tech.leson.yonstore.ui.base.BaseDialog
 import tech.leson.yonstore.utils.OnItemClickListener
@@ -70,9 +70,13 @@ class AddStyleDialog : BaseDialog(), AddStyleNavigator, OnItemClickListener<Stri
         val size = edtSize.text.toString().trim().toUpperCase(Locale.getDefault())
         val color = tvColor.text.toString()
         val quantityStr = edtQuantity.text.toString().trim()
-        if (size != "" && color != getString(R.string.color) && quantityStr != ""
+        if (size != "" && color != getString(R.string.color) && quantityStr != "" && quantityStr != "0"
         ) {
-            addProductNavigator.addStyle(Style(size, color, quantityStr.toInt()))
+            addProductNavigator.addStyle(Style(size,
+                color,
+                quantityStr.toInt(),
+                quantityStr.toInt()))
+            hideKeyboard()
             dismiss()
         } else {
             activity?.let {

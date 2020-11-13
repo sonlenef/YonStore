@@ -5,6 +5,7 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.storage.UploadTask
+import tech.leson.yonstore.data.model.Product
 import tech.leson.yonstore.data.model.User
 
 interface FirebaseHelper {
@@ -15,5 +16,8 @@ interface FirebaseHelper {
     fun getCategoryByStyle(style: String): Task<QuerySnapshot>
     fun saveImage(file: Uri): Task<Uri>
     fun deleteImage(url: String): Task<Void>
+    fun createProduct(product: Product): Task<DocumentReference>
+    fun getAllProduct(): Task<QuerySnapshot>
+    fun getProductByCode(code: String): Task<QuerySnapshot>
     fun logoutFirebase()
 }

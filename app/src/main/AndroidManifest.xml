@@ -73,6 +73,7 @@
         <activity
             android:name=".ui.addproduct.AddProductActivity"
             android:launchMode="singleTop" />
+        <activity android:name=".ui.addevent.AddEventActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

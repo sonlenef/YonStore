@@ -4,6 +4,7 @@ import android.net.Uri
 import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.QuerySnapshot
 import tech.leson.yonstore.data.local.prefs.PreferencesHelper
+import tech.leson.yonstore.data.model.Product
 import tech.leson.yonstore.data.model.User
 import tech.leson.yonstore.data.remote.FirebaseHelper
 
@@ -20,19 +21,23 @@ class AppDataManager(firebaseHelper: FirebaseHelper, preferencesHelper: Preferen
 
     override fun register(registerData: User) = mFirebaseHelper.register(registerData)
 
-    override fun getUser(uid: String): Task<QuerySnapshot> = mFirebaseHelper.getUser(uid)
+    override fun getUser(uid: String) = mFirebaseHelper.getUser(uid)
 
-    override fun getAllCategory(): Task<QuerySnapshot> = mFirebaseHelper.getAllCategory()
+    override fun getAllCategory() = mFirebaseHelper.getAllCategory()
 
-    override fun getLimitCategory(limit: Long): Task<QuerySnapshot> =
-        mFirebaseHelper.getLimitCategory(limit)
+    override fun getLimitCategory(limit: Long) = mFirebaseHelper.getLimitCategory(limit)
 
-    override fun getCategoryByStyle(style: String): Task<QuerySnapshot> =
-        mFirebaseHelper.getCategoryByStyle(style)
+    override fun getCategoryByStyle(style: String) = mFirebaseHelper.getCategoryByStyle(style)
 
-    override fun saveImage(file: Uri): Task<Uri> = mFirebaseHelper.saveImage(file)
+    override fun saveImage(file: Uri) = mFirebaseHelper.saveImage(file)
 
-    override fun deleteImage(url: String): Task<Void> = mFirebaseHelper.deleteImage(url)
+    override fun deleteImage(url: String) = mFirebaseHelper.deleteImage(url)
+
+    override fun createProduct(product: Product) = mFirebaseHelper.createProduct(product)
+
+    override fun getAllProduct() = mFirebaseHelper.getAllProduct()
+
+    override fun getProductByCode(code: String) = mFirebaseHelper.getProductByCode(code)
 
     override fun logoutFirebase() = mFirebaseHelper.logoutFirebase()
 

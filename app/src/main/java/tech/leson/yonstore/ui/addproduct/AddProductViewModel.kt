@@ -49,6 +49,31 @@ class AddProductViewModel(dataManager: DataManager, schedulerProvider: Scheduler
             }
     }
 
+    fun saveProduct() {
+        setIsLoading(true)
+        dataManager.getProductByCode(product.value!!.code)
+            .addOnSuccessListener {
+                if (it.isEmpty) {
+                    dataManager.createProduct(product.value!!)
+                        .addOnCompleteListener {
+                            navigator?.onAddProductSuccess()
+                            setIsLoading(false)
+                        }
+                        .addOnFailureListener { response ->
+                            navigator?.onError(response.message.toString())
+                            setIsLoading(false)
+                        }
+                } else {
+                    navigator?.onError("Product code already exists")
+                    setIsLoading(false)
+                }
+            }
+            .addOnFailureListener {
+                navigator?.onError(it.message.toString())
+                setIsLoading(false)
+            }
+    }
+
     override fun onClick(view: View) {
         when (view.id) {
             R.id.tvImage -> navigator?.onImage()

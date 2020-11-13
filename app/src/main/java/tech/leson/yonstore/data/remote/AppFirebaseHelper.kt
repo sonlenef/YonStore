@@ -8,6 +8,7 @@ import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.storage.FirebaseStorage
+import tech.leson.yonstore.data.model.Product
 import tech.leson.yonstore.data.model.User
 
 @Suppress("UNCHECKED_CAST")
@@ -17,17 +18,15 @@ class AppFirebaseHelper(
     private val storage: FirebaseStorage,
 ) : FirebaseHelper {
 
-
     override fun register(registerData: User): Task<DocumentReference> {
-        val user: Map<String, Any> =
-            ObjectMapper().convertValue(registerData, Map::class.java) as Map<String, Any>
+        val user = ObjectMapper().convertValue(registerData, Map::class.java) as Map<String, Any>
         return database.collection("users").add(user)
     }
 
     override fun getUser(uid: String): Task<QuerySnapshot> =
         database.collection("users").whereEqualTo("accountId", uid).get()
 
-    override fun getAllCategory(): Task<QuerySnapshot> = database.collection("categories").get()
+    override fun getAllCategory() = database.collection("categories").get()
 
     override fun getLimitCategory(limit: Long): Task<QuerySnapshot> =
         database.collection("categories").limit(limit).get()
@@ -48,6 +47,16 @@ class AppFirebaseHelper(
     }
 
     override fun deleteImage(url: String) = storage.getReferenceFromUrl(url).delete()
+
+    override fun createProduct(product: Product): Task<DocumentReference> {
+        val data = ObjectMapper().convertValue(product, Map::class.java) as Map<String, Any>
+        return database.collection("products").add(data)
+    }
+
+    override fun getAllProduct() = database.collection("products").get()
+
+    override fun getProductByCode(code: String) =
+        database.collection("products").whereEqualTo("code", code).get()
 
     override fun logoutFirebase() {
         auth.signOut()

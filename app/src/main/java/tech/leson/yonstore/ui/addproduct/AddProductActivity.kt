@@ -19,13 +19,13 @@ import tech.leson.yonstore.BR
 import tech.leson.yonstore.R
 import tech.leson.yonstore.data.model.Category
 import tech.leson.yonstore.data.model.ProductImage
+import tech.leson.yonstore.data.model.Style
 import tech.leson.yonstore.databinding.ActivityAddProductBinding
 import tech.leson.yonstore.ui.addproduct.adapter.ImageAdapter
 import tech.leson.yonstore.ui.addproduct.adapter.StyleAdapter
 import tech.leson.yonstore.ui.addproduct.dialog.addCategory.AddCategoryDialog
 import tech.leson.yonstore.ui.addproduct.dialog.addImage.AddImageDialog
 import tech.leson.yonstore.ui.addproduct.dialog.addStyle.AddStyleDialog
-import tech.leson.yonstore.ui.addproduct.model.Style
 import tech.leson.yonstore.ui.base.BaseActivity
 import tech.leson.yonstore.utils.OnItemClickListener
 import java.io.File
@@ -71,6 +71,7 @@ class AddProductActivity :
         rcvImage.adapter = mImageAdapter
 
         mStyleAdapter.clearData()
+        mStyleAdapter.addProductNavigator = this
         rcvStyle.layoutManager = LinearLayoutManager(this)
         rcvStyle.adapter = mStyleAdapter
     }
@@ -107,7 +108,56 @@ class AddProductActivity :
         mImageAdapter.removeItem(position)
     }
 
-    override fun onAddProduct() {}
+    override fun onAddProduct() {
+        when {
+            edtProductName.editText!!.text.toString().trim() == "" -> {
+                Toast.makeText(this, getString(R.string.product_name_is_empty), Toast.LENGTH_SHORT)
+                    .show()
+                return
+            }
+            edtSerialNumber.editText!!.text.toString().trim() == "" -> {
+                Toast.makeText(this, getString(R.string.product_code_is_empty), Toast.LENGTH_SHORT)
+                    .show()
+                return
+            }
+            listCategory.text.toString().trim() == "" -> {
+                Toast.makeText(this, getString(R.string.category_is_empty), Toast.LENGTH_SHORT)
+                    .show()
+                return
+            }
+            viewModel.product.value!!.images.size == 0 -> {
+                Toast.makeText(this,
+                    getString(R.string.pls_enter_complete_info),
+                    Toast.LENGTH_SHORT).show()
+                return
+            }
+            viewModel.product.value!!.style.size == 0 -> {
+                Toast.makeText(this,
+                    getString(R.string.pls_enter_complete_info),
+                    Toast.LENGTH_SHORT).show()
+                return
+            }
+            edtProductPrice.editText!!.text.toString().trim() == "" -> {
+                Toast.makeText(this,
+                    getString(R.string.pls_enter_complete_info),
+                    Toast.LENGTH_SHORT).show()
+                return
+            }
+        }
+        val name = edtProductName.editText!!.text.toString().trim()
+        val code = edtSerialNumber.editText!!.text.toString().trim()
+        val price = edtProductPrice.editText!!.text.toString().trim()
+        viewModel.product.value!!.name = name
+        viewModel.product.value!!.code = code
+        viewModel.product.value!!.price = price.toDouble()
+
+        viewModel.saveProduct()
+    }
+
+    override fun onAddProductSuccess() {
+        Toast.makeText(this, getString(R.string.success), Toast.LENGTH_SHORT).show()
+        finish()
+    }
 
     override fun onCategory() {
         val addCategoryDialog = AddCategoryDialog.newInstance()
@@ -116,11 +166,23 @@ class AddProductActivity :
     }
 
     override fun categorySelect(category: Category) {
+        viewModel.product.value!!.category = category
         listCategory.text = category.name
     }
 
     override fun addStyle(style: Style) {
+        for (item in viewModel.product.value!!.style) {
+            if (item == style) {
+                return
+            }
+        }
+        viewModel.product.value!!.style.add(style)
         mStyleAdapter.addData(style)
+    }
+
+    override fun onRemoveStyle(position: Int) {
+        viewModel.product.value!!.style.remove(mStyleAdapter.data[position])
+        mStyleAdapter.removeItem(position)
     }
 
     override fun onOpenGallery() {

@@ -4,20 +4,23 @@ import java.io.Serializable
 
 data class Product(
     var name: String,
-    val serial: String,
-    val category: Category,
-    val specification: String,
-    val images: MutableList<ProductImage>,
-    val style: MutableList<Style>,
-    val price: Double,
-    val discount: Int,
+    var code: String,
+    var category: Category,
+    var specification: String,
+    var images: MutableList<ProductImage>,
+    var style: MutableList<Style>,
+    var price: Double,
+    var event: Event?,
+    var reviews: MutableList<Review>
 ) : Serializable {
     constructor() : this("",
         "",
         Category(),
         "From YonStore with love^.^",
-        ArrayList<ProductImage>(),
-        ArrayList<Style>(),
+        ArrayList(),
+        ArrayList(),
         0.0,
-        0)
+        null,
+        ArrayList()
+    )
 }

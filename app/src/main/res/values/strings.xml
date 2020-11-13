@@ -24,6 +24,7 @@
     <string name="account">Account</string>
     <string name="sign_up">Sign Up</string>
     <string name="category">Category</string>
+    <string name="category_is_empty">Category is empty!</string>
     <string name="more_category">More Category</string>
     <string name="mega_sale">Mega Sale</string>
     <string name="see_more">See More</string>
@@ -79,13 +80,16 @@
     <string name="manager">Manager</string>
     <string name="logout">Logout</string>
     <string name="product_name">Product Name</string>
+    <string name="product_name_is_empty">Product name is empty!</string>
     <string name="name">Name</string>
     <string name="write_something">Write something…</string>
     <string name="style">Style</string>
     <string name="image">Image</string>
     <string name="product_code">Product Code</string>
+    <string name="product_code_is_empty">Product Code is empty!</string>
     <string name="add_product">Add Product</string>
     <string name="event">Event</string>
+    <string name="add_event">Add Event</string>
     <string name="statistic">Statistic</string>
     <string name="take_photo">Take Photo</string>
     <string name="cancel">Cancel</string>
@@ -107,9 +111,13 @@
     <string name="size">size</string>
     <string name="color">color</string>
     <string name="price">Price</string>
-    <string name="product_price">Product Price(VNĐ)</string>
+    <string name="product_price">Product Price(USD)</string>
     <string name="product_discount">Product Discount(%)</string>
     <string name="discount">Discount</string>
-    <string name="product_serial">Product Serial</string>
-    <string name="serial">Serial</string>
+    <string name="success">Success</string>
+    <string name="title">Title</string>
+    <string name="title_event">Event Title</string>
+    <string name="start_time">Start Time</string>
+    <string name="end_time">End Time</string>
+    <string name="description">Description</string>
 </resources>
