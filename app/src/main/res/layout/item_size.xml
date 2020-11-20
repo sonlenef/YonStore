@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/_50sdp"
+    android:layout_height="@dimen/_50sdp">
+
+    <TextView
+        android:id="@+id/tvSize"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_border_category"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="center"
+        android:paddingTop="@dimen/_2sdp"
+        android:textColor="@color/dark"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription"
+        tools:text="XL" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/itemSelected"
+        android:layout_width="@dimen/_5sdp"
+        android:layout_height="@dimen/_5sdp"
+        android:src="@color/blue"
+        android:visibility="invisible"
+        app:civ_border_color="@color/light"
+        app:civ_border_width="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/tvSize"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSize" />
+</androidx.constraintlayout.widget.ConstraintLayout>

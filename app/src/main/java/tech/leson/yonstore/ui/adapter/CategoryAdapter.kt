@@ -8,11 +8,15 @@ import tech.leson.yonstore.ui.adapter.viewholder.CategoryHorizontalViewHolder
 import tech.leson.yonstore.ui.adapter.viewholder.CategoryViewHolder
 import tech.leson.yonstore.ui.base.BaseAdapter
 import tech.leson.yonstore.ui.base.BaseViewHolder
+import tech.leson.yonstore.ui.main.home.HomeNavigator
+import tech.leson.yonstore.utils.OnCategoryClickListener
+import tech.leson.yonstore.utils.OnItemClickListener
 
 class CategoryAdapter(data: MutableList<Category>, viewType: Int) :
     BaseAdapter<BaseViewHolder<Category>, Category>(data) {
 
     private val layoutViewType = viewType
+    lateinit var listener: OnCategoryClickListener
 
     override fun addData(data: Category) {
         this.data.add(data)
@@ -32,12 +36,10 @@ class CategoryAdapter(data: MutableList<Category>, viewType: Int) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<Category> {
         return when (viewType) {
-            LAYOUT_VIEW_TYPE_HOME ->
+            LAYOUT_VIEW_TYPE_HOME, LAYOUT_VIEW_TYPE_EXPLORE -> {
                 CategoryHorizontalViewHolder(LayoutInflater.from(parent.context).inflate(
-                    R.layout.item_category_home, parent, false))
-            LAYOUT_VIEW_TYPE_EXPLORE ->
-                CategoryHorizontalViewHolder(LayoutInflater.from(parent.context).inflate(
-                    R.layout.item_category_home, parent, false))
+                    R.layout.item_category_home, parent, false), listener)
+            }
             else -> CategoryViewHolder(LayoutInflater.from(parent.context).inflate(
                 R.layout.item_category, parent, false))
         }

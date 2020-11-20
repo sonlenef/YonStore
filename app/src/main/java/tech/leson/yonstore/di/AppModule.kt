@@ -14,24 +14,8 @@ import tech.leson.yonstore.data.local.prefs.AppPreferencesHelper
 import tech.leson.yonstore.data.local.prefs.PreferencesHelper
 import tech.leson.yonstore.data.remote.AppFirebaseHelper
 import tech.leson.yonstore.data.remote.FirebaseHelper
-import tech.leson.yonstore.ui.category.CategoryViewModel
-import tech.leson.yonstore.ui.favorite.FavoriteViewModel
-import tech.leson.yonstore.ui.favorite.adapter.ProductFavoriteAdapter
-import tech.leson.yonstore.ui.login.LoginViewModel
-import tech.leson.yonstore.ui.main.MainActivity
-import tech.leson.yonstore.ui.main.MainTabAdapter
-import tech.leson.yonstore.ui.main.MainViewModel
-import tech.leson.yonstore.ui.main.account.AccountViewModel
-import tech.leson.yonstore.ui.main.cart.CartViewModel
-import tech.leson.yonstore.ui.main.explore.ExploreViewModel
-import tech.leson.yonstore.ui.main.home.HomeViewModel
-import tech.leson.yonstore.ui.adapter.CategoryAdapter
-import tech.leson.yonstore.ui.adapter.ProductAdapter
-import tech.leson.yonstore.ui.adapter.SlideShowAdapter
-import tech.leson.yonstore.ui.main.offer.OfferViewModel
-import tech.leson.yonstore.ui.manager.ManagerViewModel
-import tech.leson.yonstore.ui.product.ProductViewModel
-import tech.leson.yonstore.ui.adapter.ProductImgAdapter
+import tech.leson.yonstore.ui.adapter.*
+import tech.leson.yonstore.ui.addevent.AddEventViewModel
 import tech.leson.yonstore.ui.addproduct.AddProductViewModel
 import tech.leson.yonstore.ui.addproduct.adapter.AddCategoryAdapter
 import tech.leson.yonstore.ui.addproduct.adapter.ImageAdapter
@@ -40,8 +24,21 @@ import tech.leson.yonstore.ui.addproduct.dialog.addCategory.AddCategoryViewModel
 import tech.leson.yonstore.ui.addproduct.dialog.addImage.AddImageViewModel
 import tech.leson.yonstore.ui.addproduct.dialog.addStyle.AddStyleViewModel
 import tech.leson.yonstore.ui.addproduct.popup.ColorPopup
-import tech.leson.yonstore.ui.addevent.AddEventViewModel
-import tech.leson.yonstore.ui.listproduct.ListProductViewModel
+import tech.leson.yonstore.ui.category.CategoryViewModel
+import tech.leson.yonstore.ui.favorite.FavoriteViewModel
+import tech.leson.yonstore.ui.favorite.adapter.ProductFavoriteAdapter
+import tech.leson.yonstore.ui.listproducts.ListProductsViewModel
+import tech.leson.yonstore.ui.login.LoginViewModel
+import tech.leson.yonstore.ui.main.MainActivity
+import tech.leson.yonstore.ui.main.MainTabAdapter
+import tech.leson.yonstore.ui.main.MainViewModel
+import tech.leson.yonstore.ui.main.account.AccountViewModel
+import tech.leson.yonstore.ui.main.cart.CartViewModel
+import tech.leson.yonstore.ui.main.explore.ExploreViewModel
+import tech.leson.yonstore.ui.main.home.HomeViewModel
+import tech.leson.yonstore.ui.main.offer.OfferViewModel
+import tech.leson.yonstore.ui.manager.ManagerViewModel
+import tech.leson.yonstore.ui.product.ProductViewModel
 import tech.leson.yonstore.ui.profile.ProfileViewModel
 import tech.leson.yonstore.ui.register.RegisterViewModel
 import tech.leson.yonstore.ui.splash.SplashViewModel
@@ -101,6 +98,8 @@ val mainModule = module {
     factory { ImageAdapter(ArrayList()) }
     factory { StyleAdapter(ArrayList()) }
     factory { ColorPopup(get()) }
+    factory { ProductSizeAdapter(ArrayList()) }
+    factory { ProductColorAdapter(ArrayList()) }
 
     viewModel { AccountViewModel(get(), get()) }
     viewModel { CartViewModel(get(), get()) }
@@ -113,7 +112,7 @@ val mainModule = module {
     viewModel { ProductViewModel(get(), get()) }
     viewModel { ProfileViewModel(get(), get()) }
     viewModel { ManagerViewModel(get(), get()) }
-    viewModel { ListProductViewModel(get(), get()) }
+    viewModel { ListProductsViewModel(get(), get()) }
     viewModel { AddProductViewModel(get(), get()) }
 
     viewModel { AddCategoryViewModel(get(), get()) }

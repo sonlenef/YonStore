@@ -15,7 +15,6 @@ import tech.leson.yonstore.R
 import tech.leson.yonstore.data.model.Banner
 import tech.leson.yonstore.data.model.Category
 import tech.leson.yonstore.data.model.Product
-import tech.leson.yonstore.data.model.Style
 import tech.leson.yonstore.databinding.FragmentHomeBinding
 import tech.leson.yonstore.ui.adapter.CategoryAdapter
 import tech.leson.yonstore.ui.adapter.ProductAdapter
@@ -23,11 +22,12 @@ import tech.leson.yonstore.ui.adapter.SlideShowAdapter
 import tech.leson.yonstore.ui.base.BaseFragment
 import tech.leson.yonstore.ui.category.CategoryActivity
 import tech.leson.yonstore.ui.product.ProductActivity
-import tech.leson.yonstore.utils.OnItemClickListener
+import tech.leson.yonstore.utils.OnCategoryClickListener
+import tech.leson.yonstore.utils.OnProductClickListener
 
 class HomeFragment :
     BaseFragment<FragmentHomeBinding, HomeNavigator, HomeViewModel>(),
-    HomeNavigator, OnItemClickListener<Product> {
+    HomeNavigator, OnProductClickListener, OnCategoryClickListener {
 
     companion object {
         private var instance: HomeFragment? = null
@@ -84,6 +84,7 @@ class HomeFragment :
 
     override fun setCategory(categories: MutableList<Category>) {
         mCategoryAdapter.addAllData(categories)
+        mCategoryAdapter.listener = this
         val layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
         rcvCategory.layoutManager = layoutManager
         rcvCategory.adapter = mCategoryAdapter
@@ -101,7 +102,7 @@ class HomeFragment :
         mFlashSaleAdapter.addData(product)
         val layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
         rcvFlashSale.layoutManager = layoutManager
-        mFlashSaleAdapter.onItemClickListener = this
+        mFlashSaleAdapter.listener = this
         rcvFlashSale.adapter = mFlashSaleAdapter
     }
 
@@ -115,7 +116,7 @@ class HomeFragment :
         mMegaSaleAdapter.addData(product)
         val layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
         rcvMegaSale.layoutManager = layoutManager
-        mMegaSaleAdapter.onItemClickListener = this
+        mMegaSaleAdapter.listener = this
         rcvMegaSale.adapter = mMegaSaleAdapter
     }
 
@@ -128,7 +129,7 @@ class HomeFragment :
         mRecProductAdapter.addData(product)
         val layoutManager = GridLayoutManager(activity, 2, RecyclerView.VERTICAL, false)
         rcvRecProduct.layoutManager = layoutManager
-        mRecProductAdapter.onItemClickListener = this
+        mRecProductAdapter.listener = this
         rcvRecProduct.adapter = mRecProductAdapter
     }
 
@@ -148,9 +149,11 @@ class HomeFragment :
         }
     }
 
-    override fun onClick(item: Product) {
+    override fun onClick(product: Product) {
         val intent = activity?.let { ProductActivity.getIntent(it) }
-        intent?.putExtra("product", item)
+        intent?.putExtra("product", product)
         startActivity(intent)
     }
+
+    override fun onClick(category: Category) {}
 }

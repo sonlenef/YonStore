@@ -5,7 +5,7 @@
     android:layout_width="@dimen/_70sdp"
     android:layout_height="wrap_content">
 
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/itemCategory"
         android:layout_width="@dimen/_60sdp"
         android:layout_height="@dimen/_60sdp"
@@ -18,9 +18,14 @@
             android:layout_width="@dimen/_24sdp"
             android:layout_height="@dimen/_24sdp"
             android:layout_gravity="center"
-            tools:srcCompat="@drawable/ct_man_shirt"
-            tools:ignore="ContentDescription" />
-    </FrameLayout>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription"
+            tools:srcCompat="@drawable/ct_man_shirt" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/tvCategoryName"

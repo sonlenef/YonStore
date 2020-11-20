@@ -6,14 +6,15 @@
     android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutProduct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_border"
         android:layout_marginEnd="@dimen/_8sdp"
-        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/bg_border"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cvProduct"
@@ -79,6 +80,7 @@
                 android:id="@+id/tvOldPrice"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:background="@drawable/strikethrough_shape"
                 android:ellipsize="end"
                 android:fontFamily="@font/poppins_regular"
                 android:maxLines="1"

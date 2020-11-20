@@ -16,6 +16,10 @@ class StyleAdapter(data: MutableList<Style>) : BaseAdapter<StyleViewHolder, Styl
         for (item in this.data) {
             if (data == item) {
                 return
+            } else if (item.size == data.size && item.color == data.color) {
+                item.quantity += data.quantity
+                notifyItemChanged(this.data.indexOf(item))
+                return
             }
         }
         this.data.add(data)

@@ -8,6 +8,7 @@ import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.storage.FirebaseStorage
+import tech.leson.yonstore.data.model.Category
 import tech.leson.yonstore.data.model.Product
 import tech.leson.yonstore.data.model.User
 
@@ -57,6 +58,9 @@ class AppFirebaseHelper(
 
     override fun getProductByCode(code: String) =
         database.collection("products").whereEqualTo("code", code).get()
+
+    override fun getProductByCategory(category: Category) =
+        database.collection("products").whereEqualTo("category", category).get()
 
     override fun logoutFirebase() {
         auth.signOut()

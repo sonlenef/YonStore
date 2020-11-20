@@ -4,16 +4,17 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import tech.leson.yonstore.R
 import tech.leson.yonstore.data.model.Product
+import tech.leson.yonstore.ui.adapter.viewholder.ProductHorizontalViewHolder
+import tech.leson.yonstore.ui.adapter.viewholder.ProductVerticalViewHolder
 import tech.leson.yonstore.ui.base.BaseAdapter
-import tech.leson.yonstore.ui.main.home.HomeNavigator
-import tech.leson.yonstore.ui.adapter.viewholder.ProductViewHolder
-import tech.leson.yonstore.utils.OnItemClickListener
+import tech.leson.yonstore.ui.base.BaseViewHolder
+import tech.leson.yonstore.utils.OnProductClickListener
 
 class ProductAdapter(data: MutableList<Product>, viewType: Int) :
-    BaseAdapter<ProductViewHolder, Product>(data) {
+    BaseAdapter<BaseViewHolder<Product>, Product>(data) {
 
     private val layoutViewType = viewType
-    lateinit var onItemClickListener: OnItemClickListener<Product>
+    lateinit var listener: OnProductClickListener
 
     override fun addData(data: Product) {
         this.data.add(data)
@@ -32,12 +33,13 @@ class ProductAdapter(data: MutableList<Product>, viewType: Int) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-        if (viewType == LAYOUT_VIEW_TYPE_HORIZONTAL) ProductViewHolder(LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_product_horizontal, parent, false), onItemClickListener)
-        else ProductViewHolder(LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_product_vertical, parent, false), onItemClickListener)
+        if (viewType == LAYOUT_VIEW_TYPE_HORIZONTAL) ProductHorizontalViewHolder(LayoutInflater.from(
+            parent.context)
+            .inflate(R.layout.item_product_horizontal, parent, false), listener)
+        else ProductVerticalViewHolder(LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_product_vertical, parent, false), listener)
 
-    override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: BaseViewHolder<Product>, position: Int) {
         holder.onBind(data[position])
     }
 

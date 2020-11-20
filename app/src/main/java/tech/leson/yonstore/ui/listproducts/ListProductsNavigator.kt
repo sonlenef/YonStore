@@ -1,8 +1,9 @@
-package tech.leson.yonstore.ui.listproduct
+package tech.leson.yonstore.ui.listproducts
 
 import tech.leson.yonstore.data.model.Product
 
-interface ListProductNavigator {
+interface ListProductsNavigator {
     fun onGetProductSuccess(data: MutableList<Product>)
+    fun onError(msg: String)
     fun onBack()
 }

@@ -11,11 +11,13 @@ import tech.leson.yonstore.BR
 import tech.leson.yonstore.R
 import tech.leson.yonstore.data.model.Category
 import tech.leson.yonstore.databinding.FragmentExploreBinding
-import tech.leson.yonstore.ui.base.BaseFragment
 import tech.leson.yonstore.ui.adapter.CategoryAdapter
+import tech.leson.yonstore.ui.base.BaseFragment
+import tech.leson.yonstore.ui.listproducts.ListProductsActivity
+import tech.leson.yonstore.utils.OnCategoryClickListener
 
 class ExploreFragment : BaseFragment<FragmentExploreBinding, ExploreNavigator, ExploreViewModel>(),
-    ExploreNavigator {
+    ExploreNavigator, OnCategoryClickListener {
 
     companion object {
         private var instance: ExploreFragment? = null
@@ -41,6 +43,7 @@ class ExploreFragment : BaseFragment<FragmentExploreBinding, ExploreNavigator, E
     }
 
     override fun onManFashion(data: MutableList<Category>) {
+        mManCateAdapter.listener = this
         mManCateAdapter.clearData()
         mManCateAdapter.addAllData(data)
         val layoutManager = GridLayoutManager(activity, 4, RecyclerView.VERTICAL, false)
@@ -49,6 +52,7 @@ class ExploreFragment : BaseFragment<FragmentExploreBinding, ExploreNavigator, E
     }
 
     override fun onWomanFashion(data: MutableList<Category>) {
+        mWomanCateAdapter.listener = this
         mWomanCateAdapter.clearData()
         mWomanCateAdapter.addAllData(data)
         val layoutManager = GridLayoutManager(activity, 4, RecyclerView.VERTICAL, false)
@@ -59,6 +63,15 @@ class ExploreFragment : BaseFragment<FragmentExploreBinding, ExploreNavigator, E
     override fun onError(msg: String) {
         activity?.let {
             Toast.makeText(it, msg, Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun onClick(category: Category) {
+        activity?.let {
+            val intent = ListProductsActivity.getIntent(it)
+            intent.putExtra("type", ListProductsActivity.CATEGORY)
+            intent.putExtra(ListProductsActivity.CATEGORY, category)
+            startActivity(intent)
         }
     }
 }

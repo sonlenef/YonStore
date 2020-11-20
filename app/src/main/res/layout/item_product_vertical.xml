@@ -6,6 +6,7 @@
     android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutProduct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/_8sdp"
@@ -79,6 +80,7 @@
                 android:id="@+id/tvOldPrice"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:background="@drawable/strikethrough_shape"
                 android:ellipsize="end"
                 android:fontFamily="@font/poppins_regular"
                 android:maxLines="1"

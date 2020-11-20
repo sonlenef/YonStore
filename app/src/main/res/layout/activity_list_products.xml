@@ -8,7 +8,7 @@
 
         <variable
             name="viewModel"
-            type="tech.leson.yonstore.ui.listproduct.ListProductViewModel" />
+            type="tech.leson.yonstore.ui.listproducts.ListProductsViewModel" />
     </data>
 
     <FrameLayout
@@ -41,12 +41,18 @@
             <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:overScrollMode="never"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rcvProduct"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:overScrollMode="never" />
 
             </androidx.core.widget.NestedScrollView>
 

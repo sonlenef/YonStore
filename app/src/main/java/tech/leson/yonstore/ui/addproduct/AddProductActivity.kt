@@ -174,6 +174,10 @@ class AddProductActivity :
         for (item in viewModel.product.value!!.style) {
             if (item == style) {
                 return
+            } else if (item.size == style.size && item.color == style.color) {
+                item.quantity += style.quantity
+                mStyleAdapter.addData(style)
+                return
             }
         }
         viewModel.product.value!!.style.add(style)

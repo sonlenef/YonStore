@@ -60,7 +60,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:layout_marginTop="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/slideProduct"
@@ -75,7 +75,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_16sdp"
-                        android:layout_marginTop="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
                         android:ellipsize="end"
                         android:fontFamily="@font/poppins_bold"
                         android:maxLines="2"
@@ -133,6 +133,46 @@
                         app:layout_constraintEnd_toEndOf="@id/tvProductName"
                         app:layout_constraintStart_toStartOf="@id/tvProductName" />
 
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutDiscount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_12sdp"
+                        app:layout_constraintEnd_toEndOf="@id/tvProductPrice"
+                        app:layout_constraintStart_toStartOf="@id/tvProductPrice"
+                        app:layout_constraintTop_toBottomOf="@id/tvProductPrice">
+
+                        <TextView
+                            android:id="@+id/tvOldPrice"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/poppins_regular"
+                            android:maxLines="1"
+                            android:text="@string/price_demo"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/_10ssp"
+                            android:background="@drawable/strikethrough_shape"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvDiscount"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/poppins_bold"
+                            android:maxLines="1"
+                            android:text="@string/discount_demo"
+                            android:textColor="@color/red"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tvOldPrice"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
                     <TextView
                         android:id="@+id/tvSelectSize"
                         android:layout_width="wrap_content"
@@ -144,7 +184,7 @@
                         android:textColor="@color/dark"
                         android:textSize="@dimen/_13ssp"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tvProductPrice" />
+                        app:layout_constraintTop_toBottomOf="@id/layoutDiscount" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rcvSize"
@@ -253,11 +293,11 @@
                         tools:ignore="MissingConstraints,RtlHardcoded,RtlSymmetry" />
 
                     <TextView
+                        android:id="@+id/tvProductReview"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_7sdp"
                         android:fontFamily="@font/poppins_regular"
-                        android:text="@string/_0_0_0_review"
                         app:layout_constraintEnd_toEndOf="@id/rtProductReview"
                         app:layout_constraintTop_toTopOf="@id/rtProductReview" />
 
