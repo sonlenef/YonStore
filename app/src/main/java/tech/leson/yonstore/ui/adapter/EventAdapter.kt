@@ -3,13 +3,11 @@ package tech.leson.yonstore.ui.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import tech.leson.yonstore.R
-import tech.leson.yonstore.ui.base.BaseAdapter
-import tech.leson.yonstore.data.model.Banner
 import tech.leson.yonstore.data.model.Event
-import tech.leson.yonstore.ui.adapter.viewholder.SlideShowViewHolder
+import tech.leson.yonstore.ui.adapter.viewholder.EventViewHolder
+import tech.leson.yonstore.ui.base.BaseAdapter
 
-class SlideShowAdapter (data: MutableList<Event>) :
-    BaseAdapter<SlideShowViewHolder, Event>(data) {
+class EventAdapter(data: MutableList<Event>) : BaseAdapter<EventViewHolder, Event>(data) {
 
     override fun addData(data: Event) {
         this.data.add(data)
@@ -28,12 +26,12 @@ class SlideShowAdapter (data: MutableList<Event>) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-        SlideShowViewHolder(LayoutInflater.from(parent.context).inflate(
-            R.layout.item_slide, parent, false))
+        EventViewHolder(LayoutInflater.from(parent.context).inflate(
+            R.layout.item_event, parent, false))
 
-    override fun onBindViewHolder(holder: SlideShowViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: EventViewHolder, position: Int) {
         holder.onBind(data[position])
     }
 
-    override fun getItemCount() = this.data.size
+    override fun getItemCount() = data.size
 }

@@ -5,6 +5,7 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.QuerySnapshot
 import tech.leson.yonstore.data.model.Category
+import tech.leson.yonstore.data.model.Event
 import tech.leson.yonstore.data.model.Product
 import tech.leson.yonstore.data.model.User
 
@@ -20,5 +21,7 @@ interface FirebaseHelper {
     fun getAllProduct(): Task<QuerySnapshot>
     fun getProductByCode(code: String): Task<QuerySnapshot>
     fun getProductByCategory(category: Category): Task<QuerySnapshot>
+    fun createEvent(event: Event): Task<DocumentReference>
+    fun getAllEvent(): Task<QuerySnapshot>
     fun logoutFirebase()
 }

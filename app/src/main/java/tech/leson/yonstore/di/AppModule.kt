@@ -25,6 +25,7 @@ import tech.leson.yonstore.ui.addproduct.dialog.addImage.AddImageViewModel
 import tech.leson.yonstore.ui.addproduct.dialog.addStyle.AddStyleViewModel
 import tech.leson.yonstore.ui.addproduct.popup.ColorPopup
 import tech.leson.yonstore.ui.category.CategoryViewModel
+import tech.leson.yonstore.ui.event.EventViewModel
 import tech.leson.yonstore.ui.favorite.FavoriteViewModel
 import tech.leson.yonstore.ui.favorite.adapter.ProductFavoriteAdapter
 import tech.leson.yonstore.ui.listproducts.ListProductsViewModel
@@ -100,6 +101,7 @@ val mainModule = module {
     factory { ColorPopup(get()) }
     factory { ProductSizeAdapter(ArrayList()) }
     factory { ProductColorAdapter(ArrayList()) }
+    factory { EventAdapter(ArrayList()) }
 
     viewModel { AccountViewModel(get(), get()) }
     viewModel { CartViewModel(get(), get()) }
@@ -119,4 +121,5 @@ val mainModule = module {
     viewModel { AddImageViewModel(get(), get()) }
     viewModel { AddStyleViewModel(get(), get()) }
     viewModel { AddEventViewModel(get(), get()) }
+    viewModel { EventViewModel(get(), get()) }
 }

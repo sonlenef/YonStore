@@ -36,7 +36,7 @@ import kotlin.collections.ArrayList
 
 class AddProductActivity :
     BaseActivity<ActivityAddProductBinding, AddProductNavigator, AddProductViewModel>(),
-    AddProductNavigator, OnItemClickListener<Int> {
+    AddProductNavigator, OnItemClickListener<Int>, AddImageDialog.OnSelectImage {
 
     companion object {
         const val REQUEST_PERMISSIONS_CAMERA = 1111
@@ -78,7 +78,7 @@ class AddProductActivity :
 
     override fun onImage() {
         val addImageAdapter = AddImageDialog.getInstance()
-        addImageAdapter.addProductNavigator = this
+        addImageAdapter.mOnSelectImage = this
         if (supportFragmentManager.findFragmentByTag("addImage") == null) {
             addImageAdapter.show(supportFragmentManager, "addImage")
         }

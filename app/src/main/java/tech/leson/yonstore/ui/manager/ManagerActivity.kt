@@ -10,6 +10,7 @@ import tech.leson.yonstore.databinding.ActivityManagerBinding
 import tech.leson.yonstore.ui.addproduct.AddProductActivity
 import tech.leson.yonstore.ui.base.BaseActivity
 import tech.leson.yonstore.ui.addevent.AddEventActivity
+import tech.leson.yonstore.ui.event.EventActivity
 
 class ManagerActivity : BaseActivity<ActivityManagerBinding, ManagerNavigator, ManagerViewModel>(),
     ManagerNavigator {
@@ -35,7 +36,7 @@ class ManagerActivity : BaseActivity<ActivityManagerBinding, ManagerNavigator, M
     }
 
     override fun onEvent() {
-        startActivity(AddEventActivity.getIntent(this))
+        startActivity(EventActivity.getIntent(this))
     }
 
     override fun onAddProduct() {

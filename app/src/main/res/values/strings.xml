@@ -120,4 +120,7 @@
     <string name="start_time">Start Time</string>
     <string name="end_time">End Time</string>
     <string name="description">Description</string>
+    <string name="create_new_event">Create New Event</string>
+    <string name="apply_for">Apply For</string>
+    <string name="time_error">Please enter a valid time!</string>
 </resources>

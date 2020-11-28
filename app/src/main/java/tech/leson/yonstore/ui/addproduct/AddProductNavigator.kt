@@ -7,7 +7,6 @@ import tech.leson.yonstore.data.model.Style
 interface AddProductNavigator {
     fun onImage()
     fun onStyle()
-    fun onTakePhoto()
     fun onAddImage(image: ProductImage)
     fun onRemoveImageSuccess(position: Int)
     fun onAddProduct()
@@ -16,7 +15,6 @@ interface AddProductNavigator {
     fun categorySelect(category: Category)
     fun addStyle(style: Style)
     fun onRemoveStyle(position: Int)
-    fun onOpenGallery()
     fun onBack()
     fun onError(msg: String)
 }

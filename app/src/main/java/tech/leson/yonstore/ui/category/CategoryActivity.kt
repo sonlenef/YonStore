@@ -15,10 +15,12 @@ import tech.leson.yonstore.data.model.Category
 import tech.leson.yonstore.databinding.ActivityCategoryBinding
 import tech.leson.yonstore.ui.adapter.CategoryAdapter
 import tech.leson.yonstore.ui.base.BaseActivity
+import tech.leson.yonstore.ui.listproducts.ListProductsActivity
+import tech.leson.yonstore.utils.OnCategoryClickListener
 
 class CategoryActivity :
     BaseActivity<ActivityCategoryBinding, CategoryNavigator, CategoryViewModel>(),
-    CategoryNavigator {
+    CategoryNavigator, OnCategoryClickListener {
 
     companion object {
         private var instance: Intent? = null
@@ -46,6 +48,7 @@ class CategoryActivity :
     override fun onGetDataSuccess(data: MutableList<Category>) {
         mCategoryAdapter.clearData()
         mCategoryAdapter.addAllData(data)
+        mCategoryAdapter.listener = this
         val layoutManager = LinearLayoutManager(this)
         rcvCategory.layoutManager = layoutManager
         rcvCategory.adapter = mCategoryAdapter
@@ -57,5 +60,12 @@ class CategoryActivity :
 
     override fun onError(msg: String) {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onClick(category: Category) {
+        val intent = ListProductsActivity.getIntent(this)
+        intent.putExtra("type", ListProductsActivity.CATEGORY)
+        intent.putExtra(ListProductsActivity.CATEGORY, category)
+        startActivity(intent)
     }
 }

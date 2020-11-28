@@ -41,7 +41,7 @@ class CategoryAdapter(data: MutableList<Category>, viewType: Int) :
                     R.layout.item_category_home, parent, false), listener)
             }
             else -> CategoryViewHolder(LayoutInflater.from(parent.context).inflate(
-                R.layout.item_category, parent, false))
+                R.layout.item_category, parent, false), listener)
         }
     }
 

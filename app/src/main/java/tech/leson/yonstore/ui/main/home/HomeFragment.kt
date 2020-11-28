@@ -14,6 +14,7 @@ import tech.leson.yonstore.BR
 import tech.leson.yonstore.R
 import tech.leson.yonstore.data.model.Banner
 import tech.leson.yonstore.data.model.Category
+import tech.leson.yonstore.data.model.Event
 import tech.leson.yonstore.data.model.Product
 import tech.leson.yonstore.databinding.FragmentHomeBinding
 import tech.leson.yonstore.ui.adapter.CategoryAdapter
@@ -21,6 +22,7 @@ import tech.leson.yonstore.ui.adapter.ProductAdapter
 import tech.leson.yonstore.ui.adapter.SlideShowAdapter
 import tech.leson.yonstore.ui.base.BaseFragment
 import tech.leson.yonstore.ui.category.CategoryActivity
+import tech.leson.yonstore.ui.listproducts.ListProductsActivity
 import tech.leson.yonstore.ui.product.ProductActivity
 import tech.leson.yonstore.utils.OnCategoryClickListener
 import tech.leson.yonstore.utils.OnProductClickListener
@@ -53,18 +55,15 @@ class HomeFragment :
     override fun init() {
         viewModel.setNavigator(this)
 
-        setBanner()
         setFlashSale()
         setMegaSale()
         setRecProduct()
         viewModel.getData()
     }
 
-    private fun setBanner() {
+    override fun setEvent(events: MutableList<Event>) {
         mSlideShowAdapter.clearData()
-        mSlideShowAdapter.addData(Banner("Hahahah"))
-        mSlideShowAdapter.addData(Banner("Hahahah"))
-        mSlideShowAdapter.addData(Banner("Hahahah"))
+        mSlideShowAdapter.addAllData(events)
         pageIndicatorView.setAnimationType(AnimationType.WORM)
         slideShow.adapter = mSlideShowAdapter
 
@@ -155,5 +154,12 @@ class HomeFragment :
         startActivity(intent)
     }
 
-    override fun onClick(category: Category) {}
+    override fun onClick(category: Category) {
+        activity?.let {
+            val intent = ListProductsActivity.getIntent(it)
+            intent.putExtra("type", ListProductsActivity.CATEGORY)
+            intent.putExtra(ListProductsActivity.CATEGORY, category)
+            startActivity(intent)
+        }
+    }
 }

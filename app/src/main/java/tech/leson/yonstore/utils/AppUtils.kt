@@ -24,7 +24,7 @@ class AppUtils {
                 val swissNumberProto = phoneUtil.parse(phoneNumber, "VN")
                 isValid = phoneUtil.isValidNumber(swissNumberProto)
             } catch (e: NumberParseException) {
-                Log.e("chitchat", "NumberParseException was thrown: $e")
+                Log.e("yonstore", "NumberParseException was thrown: $e")
             }
             return isValid
         }

@@ -9,6 +9,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.storage.FirebaseStorage
 import tech.leson.yonstore.data.model.Category
+import tech.leson.yonstore.data.model.Event
 import tech.leson.yonstore.data.model.Product
 import tech.leson.yonstore.data.model.User
 
@@ -61,6 +62,13 @@ class AppFirebaseHelper(
 
     override fun getProductByCategory(category: Category) =
         database.collection("products").whereEqualTo("category", category).get()
+
+    override fun createEvent(event: Event): Task<DocumentReference> {
+        val data = ObjectMapper().convertValue(event, Map::class.java) as Map<String, Any>
+        return database.collection("events").add(data)
+    }
+
+    override fun getAllEvent(): Task<QuerySnapshot> = database.collection("events").get()
 
     override fun logoutFirebase() {
         auth.signOut()

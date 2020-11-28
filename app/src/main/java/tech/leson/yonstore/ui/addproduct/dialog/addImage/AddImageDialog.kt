@@ -21,7 +21,7 @@ class AddImageDialog :
         }
     }
 
-    lateinit var addProductNavigator: AddProductNavigator
+    lateinit var mOnSelectImage: OnSelectImage
 
     override val bindingVariable: Int
         get() = BR.viewModel
@@ -34,16 +34,21 @@ class AddImageDialog :
     }
 
     override fun onTakePhoto() {
-        addProductNavigator.onTakePhoto()
+        mOnSelectImage.onTakePhoto()
         dismiss()
     }
 
     override fun onOpenGallery() {
-        addProductNavigator.onOpenGallery()
+        mOnSelectImage.onOpenGallery()
         dismiss()
     }
 
     override fun onCancel() {
         dismiss()
+    }
+
+    interface OnSelectImage {
+        fun onTakePhoto()
+        fun onOpenGallery()
     }
 }

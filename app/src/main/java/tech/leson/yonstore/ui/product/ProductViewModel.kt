@@ -26,7 +26,7 @@ class ProductViewModel(dataManager: DataManager, schedulerProvider: SchedulerPro
                 var colors: MutableList<ProductColor> = ArrayList()
                 var rest = 0
 
-                productStyles.forEachIndexed {i, style ->
+                productStyles.forEachIndexed { i, style ->
                     if (style.size == x.size) {
                         position = i
                         colors = style.colors
@@ -42,7 +42,7 @@ class ProductViewModel(dataManager: DataManager, schedulerProvider: SchedulerPro
                     productStyles.add(ProductStyle(x.size, colors, x.rest))
                 }
             }
-            navigator?.setSize(productStyles)
+            if (productStyles.size > 0) navigator?.setSize(productStyles)
         }
     }
 
