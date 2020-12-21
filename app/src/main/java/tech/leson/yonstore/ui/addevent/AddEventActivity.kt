@@ -99,25 +99,15 @@ class AddEventActivity :
                     Toast.LENGTH_SHORT).show()
                 return
             }
-            edtProductDiscount.editText?.text?.toString()?.trim() == "" -> {
-                Toast.makeText(this,
-                    getString(R.string.pls_enter_complete_info),
-                    Toast.LENGTH_SHORT).show()
-                return
-            }
             else -> {
                 viewModel.event.value?.title =
                     edtProductName.editText?.text?.toString()?.trim()!!
                 viewModel.event.value?.description =
                     edtDescription.editText?.text?.toString()?.trim()!!
-                viewModel.event.value?.discount =
-                    (Integer.parseInt(edtProductDiscount.editText?.text?.toString()
-                        ?.trim()!!) / 100).toDouble()
 
                 viewModel.addEvent()
             }
         }
-
     }
 
     @SuppressLint("SimpleDateFormat")

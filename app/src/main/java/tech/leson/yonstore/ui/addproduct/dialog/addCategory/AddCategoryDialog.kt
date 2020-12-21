@@ -14,7 +14,6 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import tech.leson.yonstore.R
 import tech.leson.yonstore.data.model.Category
 import tech.leson.yonstore.databinding.DialogAddCategoryBinding
-import tech.leson.yonstore.ui.addproduct.AddProductNavigator
 import tech.leson.yonstore.ui.addproduct.adapter.AddCategoryAdapter
 import tech.leson.yonstore.ui.addproduct.dialog.addStyle.AddStyleDialog
 import tech.leson.yonstore.ui.base.BaseDialog
@@ -36,13 +35,13 @@ class AddCategoryDialog : BaseDialog(), AddCategoryNavigator {
 
     private val mAddCategoryViewModel: AddCategoryViewModel by viewModel()
     private val mAddCategoryAdapter: AddCategoryAdapter by inject()
-    lateinit var mAddProductNavigator: AddProductNavigator
+    lateinit var mOnCategory: OnCategory
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         val binding: DialogAddCategoryBinding =
             DataBindingUtil.inflate(inflater, R.layout.dialog_add_category, container, false)
         val view = binding.root
@@ -69,9 +68,9 @@ class AddCategoryDialog : BaseDialog(), AddCategoryNavigator {
         mAddCategoryAdapter.addAllData(data)
     }
 
-    override fun onCategorySelection(category: Category) {
+    override fun onCategorySelected(category: Category) {
         dismiss()
-        mAddProductNavigator.categorySelect(category)
+        mOnCategory.onSelected(category)
     }
 
     override fun onError(msg: String) {
@@ -79,5 +78,9 @@ class AddCategoryDialog : BaseDialog(), AddCategoryNavigator {
         activity?.let {
             Toast.makeText(it, msg, Toast.LENGTH_SHORT).show()
         }
+    }
+
+    interface OnCategory {
+        fun onSelected(category: Category)
     }
 }

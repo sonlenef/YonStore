@@ -45,6 +45,10 @@ class AppDataManager(firebaseHelper: FirebaseHelper, preferencesHelper: Preferen
     override fun getProductByCategory(category: Category) =
         mFirebaseHelper.getProductByCategory(category)
 
+    override fun updateProduct(product: Product) = mFirebaseHelper.updateProduct(product)
+
+    override fun removeProduct(product: Product) = mFirebaseHelper.removeProduct(product)
+
     override fun createEvent(event: Event) = mFirebaseHelper.createEvent(event)
 
     override fun getAllEvent() = mFirebaseHelper.getAllEvent()

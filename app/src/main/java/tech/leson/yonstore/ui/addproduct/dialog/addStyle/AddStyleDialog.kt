@@ -14,7 +14,6 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import tech.leson.yonstore.R
 import tech.leson.yonstore.data.model.Style
 import tech.leson.yonstore.databinding.DialogAddStyleBinding
-import tech.leson.yonstore.ui.addproduct.AddProductNavigator
 import tech.leson.yonstore.ui.addproduct.popup.ColorPopup
 import tech.leson.yonstore.ui.base.BaseDialog
 import tech.leson.yonstore.utils.OnItemClickListener
@@ -38,13 +37,13 @@ class AddStyleDialog : BaseDialog(), AddStyleNavigator, OnItemClickListener<Stri
 
     private val mAddStyleViewModel: AddStyleViewModel by viewModel()
     private val mColorPopup: ColorPopup by inject()
-    lateinit var addProductNavigator: AddProductNavigator
+    lateinit var addOnStyleListener: OnStyleListener
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         val binding: DialogAddStyleBinding =
             DataBindingUtil.inflate(inflater, R.layout.dialog_add_style, container, false)
         val view = binding.root
@@ -72,7 +71,7 @@ class AddStyleDialog : BaseDialog(), AddStyleNavigator, OnItemClickListener<Stri
         val quantityStr = edtQuantity.text.toString().trim()
         if (size != "" && color != getString(R.string.color) && quantityStr != "" && quantityStr != "0"
         ) {
-            addProductNavigator.addStyle(Style(size,
+            addOnStyleListener.addStyle(Style(size,
                 color,
                 quantityStr.toInt(),
                 quantityStr.toInt()))
@@ -99,5 +98,9 @@ class AddStyleDialog : BaseDialog(), AddStyleNavigator, OnItemClickListener<Stri
         mColorPopup.showAsDropDown(tvColor, 2 * resources.displayMetrics.widthPixels / 3
                 - resources.getDimensionPixelOffset(R.dimen._40sdp),
             -resources.getDimensionPixelOffset(R.dimen._32sdp))
+    }
+
+    interface OnStyleListener {
+        fun addStyle(style: Style)
     }
 }

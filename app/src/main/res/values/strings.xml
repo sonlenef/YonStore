@@ -93,6 +93,8 @@
     <string name="statistic">Statistic</string>
     <string name="take_photo">Take Photo</string>
     <string name="cancel">Cancel</string>
+    <string name="yes">Yes</string>
+    <string name="dialog_remove_product">Remove this product?</string>
     <string name="choose_from_gallery">Choose from Gallery</string>
     <string name="title_style">#Style</string>
     <string name="product_size">Product Size:</string>
@@ -123,4 +125,14 @@
     <string name="create_new_event">Create New Event</string>
     <string name="apply_for">Apply For</string>
     <string name="time_error">Please enter a valid time!</string>
+    <string name="product">Product</string>
+    <string name="scan_barcode">Move the camera to the code container barcode to scan</string>
+    <string name="input">Input</string>
+    <string name="new_product">New Product</string>
+    <string name="search">Search</string>
+    <string name="product_manager">Product Manager</string>
+    <string name="product_code_not_exists">Product code don\'t exists</string>
+    <string name="product_code_exists">Product code already exists</string>
+    <string name="product_not_found">Product not found</string>
+    <string name="save_product">Save Product</string>
 </resources>

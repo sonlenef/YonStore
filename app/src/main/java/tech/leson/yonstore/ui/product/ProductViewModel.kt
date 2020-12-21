@@ -16,12 +16,12 @@ import tech.leson.yonstore.utils.rx.SchedulerProvider
 class ProductViewModel(dataManager: DataManager, schedulerProvider: SchedulerProvider) :
     BaseViewModel<ProductNavigator>(dataManager, schedulerProvider) {
 
-    val averageRating = MutableLiveData(0.0F)
+    val averageRating = MutableLiveData(5.0F)
     val productStyles: MutableList<ProductStyle> = ArrayList()
 
     fun setProductStyle(product: Product) {
         viewModelScope.launch(Dispatchers.IO) {
-            for (x in product.style) {
+            for (x in product.styles) {
                 var position = -1
                 var colors: MutableList<ProductColor> = ArrayList()
                 var rest = 0
@@ -47,7 +47,7 @@ class ProductViewModel(dataManager: DataManager, schedulerProvider: SchedulerPro
     }
 
     fun setAverageRating(product: Product) {
-        var average = 0.0F
+        var average = 5.0F
         viewModelScope.launch(Dispatchers.IO) {
             if (product.reviews.size > 0) {
                 for (review in product.reviews) {

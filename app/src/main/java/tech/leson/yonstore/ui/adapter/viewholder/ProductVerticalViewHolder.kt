@@ -21,10 +21,10 @@ class ProductVerticalViewHolder(itemView: View, onItemClickListener: OnProductCl
                 .placeholder(R.drawable.default_image)
                 .into(itemView.imvProduct)
         itemView.tvProductName.text = data.name
-        if (data.event != null && data.event!!.discount >= 0.0) {
-            itemView.tvProductPrice.text = "$${data.price / data.event!!.discount}"
+        if (data.discount > 0.0) {
+            itemView.tvProductPrice.text = "$${data.price * (1 - data.discount)}"
             itemView.tvOldPrice.text = "$${data.price}"
-            itemView.tvDiscount.text = "${data.event!!.discount * 100}% Off"
+            itemView.tvDiscount.text = "${data.discount * 100}% Off"
             itemView.layoutDiscount.visibility = View.VISIBLE
         } else {
             itemView.layoutDiscount.visibility = View.INVISIBLE

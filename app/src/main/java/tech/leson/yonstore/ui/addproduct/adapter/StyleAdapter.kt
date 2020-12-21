@@ -10,7 +10,7 @@ import tech.leson.yonstore.ui.base.BaseAdapter
 
 class StyleAdapter(data: MutableList<Style>) : BaseAdapter<StyleViewHolder, Style>(data) {
 
-    lateinit var addProductNavigator: AddProductNavigator
+    lateinit var addOnStyleClickListener: OnStyleClickListener
 
     override fun addData(data: Style) {
         for (item in this.data) {
@@ -46,11 +46,15 @@ class StyleAdapter(data: MutableList<Style>) : BaseAdapter<StyleViewHolder, Styl
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         StyleViewHolder(LayoutInflater.from(parent.context).inflate(
-            R.layout.item_product_style, parent, false), addProductNavigator)
+            R.layout.item_product_style, parent, false), addOnStyleClickListener)
 
     override fun onBindViewHolder(holder: StyleViewHolder, position: Int) {
         holder.onBind(data[position])
     }
 
     override fun getItemCount() = data.size
+
+    interface OnStyleClickListener {
+        fun onRemoveStyle(position: Int)
+    }
 }

@@ -1,0 +1,193 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.google.mlkit.md"
+4    android:installLocation="auto"
+5    android:versionCode="1"
+6    android:versionName="1.0" >
+7
+8    <uses-sdk
+9        android:minSdkVersion="19"
+9-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml
+10        android:targetSdkVersion="29" />
+10-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml
+11
+12    <uses-feature android:name="android.hardware.camera" />
+12-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:7:3-57
+12-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:7:17-55
+13
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:9:3-64
+14-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:9:20-62
+15    <uses-permission android:name="android.permission.CAMERA" />
+15-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:10:3-62
+15-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:10:20-60
+16
+17    <application
+17-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:12:3-65:17
+18        android:name="androidx.multidex.MultiDexApplication"
+19        android:allowBackup="false"
+19-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:13:7-34
+20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+20-->[androidx.core:core:1.3.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/e53fc43734c2854b89ac592e12c0fa84/core-1.3.1/AndroidManifest.xml:24:18-86
+21        android:debuggable="true"
+22        android:icon="@drawable/logo_mlkit"
+22-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:14:7-42
+23        android:label="@string/app_name"
+23-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:15:7-39
+24        android:supportsRtl="true"
+24-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:16:7-33
+25        android:theme="@style/AppTheme" >
+25-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:17:7-38
+26        <meta-data
+26-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:20:5-22:64
+27            android:name="com.google.android.gms.version"
+27-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:21:9-54
+28            android:value="@integer/google_play_services_version" />
+28-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:22:9-62
+29
+30        <activity
+30-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:24:5-32:16
+31            android:name="com.google.mlkit.md.MainActivity"
+31-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:25:9-56
+32            android:exported="true"
+32-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:26:9-32
+33            android:screenOrientation="portrait" >
+33-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:27:9-45
+34            <intent-filter>
+34-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:28:7-31:23
+35                <action android:name="android.intent.action.MAIN" />
+35-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:29:9-60
+35-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:29:17-58
+36
+37                <category android:name="android.intent.category.LAUNCHER" />
+37-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:30:9-68
+37-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:30:19-66
+38            </intent-filter>
+39        </activity>
+40        <activity
+40-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:34:5-38:16
+41            android:name="com.google.mlkit.md.LiveObjectDetectionActivity"
+41-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:35:9-71
+42            android:exported="false"
+42-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:36:9-33
+43            android:screenOrientation="portrait" >
+43-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:37:9-45
+44        </activity>
+45        <activity
+45-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:40:5-44:16
+46            android:name="com.google.mlkit.md.LiveBarcodeScanningActivity"
+46-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:41:9-71
+47            android:exported="false"
+47-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:42:9-33
+48            android:screenOrientation="portrait" >
+48-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:43:9-45
+49        </activity>
+50        <activity
+50-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:46:5-50:16
+51            android:name="com.google.mlkit.md.StaticObjectDetectionActivity"
+51-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:47:9-73
+52            android:exported="false"
+52-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:48:9-33
+53            android:screenOrientation="portrait" >
+53-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:49:9-45
+54        </activity>
+55        <activity
+55-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:52:5-56:16
+56            android:name="com.google.mlkit.md.CustomModelObjectDetectionActivity"
+56-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:53:9-78
+57            android:exported="false"
+57-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:54:9-33
+58            android:screenOrientation="portrait" >
+58-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:55:9-45
+59        </activity>
+60        <activity
+60-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:58:5-63:16
+61            android:name="com.google.mlkit.md.settings.SettingsActivity"
+61-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:59:9-69
+62            android:exported="false"
+62-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:60:9-33
+63            android:label="@string/settings_title"
+63-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:61:9-47
+64            android:screenOrientation="portrait" >
+64-->/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:62:9-45
+65        </activity>
+66
+67        <service
+67-->[com.google.mlkit:object-detection:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/4e00c06c05bac83fd72ef6e4cac346a5/jetified-object-detection-16.2.1/AndroidManifest.xml:8:9-14:19
+68            android:name="com.google.mlkit.common.internal.MlKitComponentDiscoveryService"
+68-->[com.google.mlkit:object-detection:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/4e00c06c05bac83fd72ef6e4cac346a5/jetified-object-detection-16.2.1/AndroidManifest.xml:9:13-91
+69            android:directBootAware="true"
+69-->[com.google.mlkit:common:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/53e719a7c9e6aef5a7cc206f7756d030/jetified-common-17.0.0/AndroidManifest.xml:17:13-43
+70            android:exported="false" >
+70-->[com.google.mlkit:object-detection:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/4e00c06c05bac83fd72ef6e4cac346a5/jetified-object-detection-16.2.1/AndroidManifest.xml:10:13-37
+71            <meta-data
+71-->[com.google.mlkit:object-detection:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/4e00c06c05bac83fd72ef6e4cac346a5/jetified-object-detection-16.2.1/AndroidManifest.xml:11:13-13:85
+72                android:name="com.google.firebase.components:com.google.mlkit.vision.objects.defaults.internal.DefaultObjectsRegistrar"
+72-->[com.google.mlkit:object-detection:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/4e00c06c05bac83fd72ef6e4cac346a5/jetified-object-detection-16.2.1/AndroidManifest.xml:12:17-136
+73                android:value="com.google.firebase.components.ComponentRegistrar" />
+73-->[com.google.mlkit:object-detection:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/4e00c06c05bac83fd72ef6e4cac346a5/jetified-object-detection-16.2.1/AndroidManifest.xml:13:17-82
+74            <meta-data
+74-->[com.google.mlkit:object-detection-custom:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/286ed8e4321b3404c63a15eae10c4768/jetified-object-detection-custom-16.2.1/AndroidManifest.xml:11:13-13:85
+75                android:name="com.google.firebase.components:com.google.mlkit.vision.objects.custom.internal.CustomObjectsRegistrar"
+75-->[com.google.mlkit:object-detection-custom:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/286ed8e4321b3404c63a15eae10c4768/jetified-object-detection-custom-16.2.1/AndroidManifest.xml:12:17-133
+76                android:value="com.google.firebase.components.ComponentRegistrar" />
+76-->[com.google.mlkit:object-detection-custom:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/286ed8e4321b3404c63a15eae10c4768/jetified-object-detection-custom-16.2.1/AndroidManifest.xml:13:17-82
+77            <meta-data
+77-->[com.google.android.gms:play-services-mlkit-barcode-scanning:16.1.2] /Users/leson/.gradle/caches/transforms-2/files-2.1/cad7cbcc3c2bb35de95e692b399f0356/jetified-play-services-mlkit-barcode-scanning-16.1.2/AndroidManifest.xml:12:13-14:85
+78                android:name="com.google.firebase.components:com.google.mlkit.vision.barcode.internal.BarcodeRegistrar"
+78-->[com.google.android.gms:play-services-mlkit-barcode-scanning:16.1.2] /Users/leson/.gradle/caches/transforms-2/files-2.1/cad7cbcc3c2bb35de95e692b399f0356/jetified-play-services-mlkit-barcode-scanning-16.1.2/AndroidManifest.xml:13:17-120
+79                android:value="com.google.firebase.components.ComponentRegistrar" />
+79-->[com.google.android.gms:play-services-mlkit-barcode-scanning:16.1.2] /Users/leson/.gradle/caches/transforms-2/files-2.1/cad7cbcc3c2bb35de95e692b399f0356/jetified-play-services-mlkit-barcode-scanning-16.1.2/AndroidManifest.xml:14:17-82
+80            <meta-data
+80-->[com.google.mlkit:vision-internal-vkp:17.0.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/9bfbbb6c53925eee5eb69df7aea61404/jetified-vision-internal-vkp-17.0.1/AndroidManifest.xml:11:13-13:85
+81                android:name="com.google.firebase.components:com.google.mlkit.vision.vkp.VkpRegistrar"
+81-->[com.google.mlkit:vision-internal-vkp:17.0.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/9bfbbb6c53925eee5eb69df7aea61404/jetified-vision-internal-vkp-17.0.1/AndroidManifest.xml:12:17-103
+82                android:value="com.google.firebase.components.ComponentRegistrar" />
+82-->[com.google.mlkit:vision-internal-vkp:17.0.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/9bfbbb6c53925eee5eb69df7aea61404/jetified-vision-internal-vkp-17.0.1/AndroidManifest.xml:13:17-82
+83            <meta-data
+83-->[com.google.mlkit:vision-common:16.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/13384cf9faf4709602da58728a3435a9/jetified-vision-common-16.1.0/AndroidManifest.xml:12:13-14:85
+84                android:name="com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar"
+84-->[com.google.mlkit:vision-common:16.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/13384cf9faf4709602da58728a3435a9/jetified-vision-common-16.1.0/AndroidManifest.xml:13:17-124
+85                android:value="com.google.firebase.components.ComponentRegistrar" />
+85-->[com.google.mlkit:vision-common:16.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/13384cf9faf4709602da58728a3435a9/jetified-vision-common-16.1.0/AndroidManifest.xml:14:17-82
+86            <meta-data
+86-->[com.google.mlkit:common:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/53e719a7c9e6aef5a7cc206f7756d030/jetified-common-17.0.0/AndroidManifest.xml:20:13-22:85
+87                android:name="com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar"
+87-->[com.google.mlkit:common:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/53e719a7c9e6aef5a7cc206f7756d030/jetified-common-17.0.0/AndroidManifest.xml:21:17-120
+88                android:value="com.google.firebase.components.ComponentRegistrar" />
+88-->[com.google.mlkit:common:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/53e719a7c9e6aef5a7cc206f7756d030/jetified-common-17.0.0/AndroidManifest.xml:22:17-82
+89        </service>
+90
+91        <provider
+91-->[com.google.mlkit:common:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/53e719a7c9e6aef5a7cc206f7756d030/jetified-common-17.0.0/AndroidManifest.xml:9:9-13:38
+92            android:name="com.google.mlkit.common.internal.MlKitInitProvider"
+92-->[com.google.mlkit:common:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/53e719a7c9e6aef5a7cc206f7756d030/jetified-common-17.0.0/AndroidManifest.xml:10:13-78
+93            android:authorities="com.google.mlkit.md.mlkitinitprovider"
+93-->[com.google.mlkit:common:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/53e719a7c9e6aef5a7cc206f7756d030/jetified-common-17.0.0/AndroidManifest.xml:11:13-69
+94            android:exported="false"
+94-->[com.google.mlkit:common:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/53e719a7c9e6aef5a7cc206f7756d030/jetified-common-17.0.0/AndroidManifest.xml:12:13-37
+95            android:initOrder="99" />
+95-->[com.google.mlkit:common:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/53e719a7c9e6aef5a7cc206f7756d030/jetified-common-17.0.0/AndroidManifest.xml:13:13-35
+96
+97        <activity
+97-->[com.google.android.gms:play-services-base:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/3b0d1e609b40c4717bfdcd59ff80381e/jetified-play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
+98            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+98-->[com.google.android.gms:play-services-base:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/3b0d1e609b40c4717bfdcd59ff80381e/jetified-play-services-base-17.0.0/AndroidManifest.xml:24:13-79
+99            android:exported="false"
+99-->[com.google.android.gms:play-services-base:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/3b0d1e609b40c4717bfdcd59ff80381e/jetified-play-services-base-17.0.0/AndroidManifest.xml:25:13-37
+100            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+100-->[com.google.android.gms:play-services-base:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/3b0d1e609b40c4717bfdcd59ff80381e/jetified-play-services-base-17.0.0/AndroidManifest.xml:26:13-72
+101
+102        <provider
+102-->[androidx.lifecycle:lifecycle-process:2.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/a0150dbab62584e47d2faa97929ef07f/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:23:9-27:43
+103            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+103-->[androidx.lifecycle:lifecycle-process:2.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/a0150dbab62584e47d2faa97929ef07f/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:24:13-79
+104            android:authorities="com.google.mlkit.md.lifecycle-process"
+104-->[androidx.lifecycle:lifecycle-process:2.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/a0150dbab62584e47d2faa97929ef07f/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:25:13-69
+105            android:exported="false"
+105-->[androidx.lifecycle:lifecycle-process:2.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/a0150dbab62584e47d2faa97929ef07f/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:26:13-37
+106            android:multiprocess="true" />
+106-->[androidx.lifecycle:lifecycle-process:2.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/a0150dbab62584e47d2faa97929ef07f/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:27:13-40
+107    </application>
+108
+109</manifest>

@@ -58,17 +58,25 @@ class AppFirebaseHelper(
     override fun getAllProduct() = database.collection("products").get()
 
     override fun getProductByCode(code: String) =
-        database.collection("products").whereEqualTo("code", code).get()
+        database.collection("products").whereEqualTo("code", code).limit(1).get()
 
     override fun getProductByCategory(category: Category) =
         database.collection("products").whereEqualTo("category", category).get()
+
+    override fun updateProduct(product: Product): Task<Void> {
+        val data = ObjectMapper().convertValue(product, Map::class.java) as Map<String, Any>
+        return database.collection("products").document(product.id).update(data)
+    }
+
+    override fun removeProduct(product: Product) =
+        database.collection("products").document(product.id).delete()
 
     override fun createEvent(event: Event): Task<DocumentReference> {
         val data = ObjectMapper().convertValue(event, Map::class.java) as Map<String, Any>
         return database.collection("events").add(data)
     }
 
-    override fun getAllEvent(): Task<QuerySnapshot> = database.collection("events").get()
+    override fun getAllEvent() = database.collection("events").get()
 
     override fun logoutFirebase() {
         auth.signOut()

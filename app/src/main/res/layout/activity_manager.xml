@@ -68,7 +68,7 @@
                 android:onClick="@{(View) -> viewModel.onClick(View)}"
                 android:paddingStart="@dimen/_16ssp"
                 android:paddingEnd="@dimen/_16ssp"
-                android:text="@string/add_product"
+                android:text="@string/product"
                 android:textColor="@color/dark"
                 android:textSize="@dimen/_11ssp"
                 android:textStyle="bold"

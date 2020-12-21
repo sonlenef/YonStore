@@ -1,6 +1,6 @@
 buildscript {
   ext {
-    kotlin_version = "1.4.10"
+    kotlin_version = '1.4.20'
     // Sdk and tools
     minSdkVersion = 21
     targetSdkVersion = 30
@@ -13,12 +13,13 @@ buildscript {
 
     // View
     constraintLayoutVersion = '2.0.4'
-    recyclerViewVersion = '1.2.0-alpha06'
+    recyclerViewVersion = '1.2.0-beta01'
     koin_version = '2.2.0-rc-2'
     circleimageviewVersion = '3.1.0'
     materialVersion = '1.2.1'
     pageindicatorviewVersion = '1.0.3'
     viewPage2Version = '1.1.0-alpha01'
+    swiperefreshlayoutVersion = '1.1.0'
 
     // App
     supportLibraryVersion = '1.2.0'
@@ -28,8 +29,9 @@ buildscript {
     dataBindingVersion = '3.1.4'
     sdpAndroidVersion = '1.0.6'
     sspAndroidVersion = '1.0.6'
-    libphonenumberVersion = '8.12.10'
-    jackSonVersion = '2.12.0-rc1'
+    libphonenumberVersion = '8.12.13'
+    jackSonVersion = '2.12.0'
+    barcodeScanVersion = '1.9.13'
 
     rxjava3Version = '3.0.6'
     rxandroidVersion = '3.0.0'
@@ -40,7 +42,7 @@ buildscript {
     jcenter()
   }
   dependencies {
-    classpath 'com.android.tools.build:gradle:4.1.1'
+    classpath 'com.android.tools.build:gradle:4.2.0-beta02'
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
       classpath 'com.google.gms:google-services:4.3.4'
 

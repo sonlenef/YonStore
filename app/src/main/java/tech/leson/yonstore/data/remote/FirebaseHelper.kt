@@ -21,6 +21,8 @@ interface FirebaseHelper {
     fun getAllProduct(): Task<QuerySnapshot>
     fun getProductByCode(code: String): Task<QuerySnapshot>
     fun getProductByCategory(category: Category): Task<QuerySnapshot>
+    fun updateProduct(product: Product): Task<Void>
+    fun removeProduct(product: Product): Task<Void>
     fun createEvent(event: Event): Task<DocumentReference>
     fun getAllEvent(): Task<QuerySnapshot>
     fun logoutFirebase()

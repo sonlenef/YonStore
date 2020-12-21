@@ -4,6 +4,6 @@ import tech.leson.yonstore.data.model.Category
 
 interface AddCategoryNavigator {
     fun getCategoriesSuccess(data: MutableList<Category>)
-    fun onCategorySelection(category: Category)
+    fun onCategorySelected(category: Category)
     fun onError(msg: String)
 }

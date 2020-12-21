@@ -75,7 +75,10 @@
             android:launchMode="singleTop" />
         <activity android:name=".ui.addevent.AddEventActivity" />
         <activity android:name=".ui.listproducts.ListProductsActivity" />
-        <activity android:name=".ui.event.EventActivity" />
+        <activity android:name=".ui.eventmanager.EventManagerActivity" />
+        <activity android:name=".ui.productmanager.ProductManagerActivity" />
+        <activity android:name=".ui.scanbarcode.ScannerActivity" />
+        <activity android:name=".ui.editproduct.EditProductActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

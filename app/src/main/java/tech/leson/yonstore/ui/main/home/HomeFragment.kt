@@ -1,9 +1,11 @@
 package tech.leson.yonstore.ui.main.home
 
+import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import androidx.viewpager2.widget.ViewPager2
 import com.rd.animation.type.AnimationType
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -29,7 +31,7 @@ import tech.leson.yonstore.utils.OnProductClickListener
 
 class HomeFragment :
     BaseFragment<FragmentHomeBinding, HomeNavigator, HomeViewModel>(),
-    HomeNavigator, OnProductClickListener, OnCategoryClickListener {
+    HomeNavigator, OnProductClickListener, OnCategoryClickListener, SwipeRefreshLayout.OnRefreshListener {
 
     companion object {
         private var instance: HomeFragment? = null
@@ -55,6 +57,7 @@ class HomeFragment :
     override fun init() {
         viewModel.setNavigator(this)
 
+        srLayoutHome.setOnRefreshListener(this)
         setFlashSale()
         setMegaSale()
         setRecProduct()
@@ -62,23 +65,27 @@ class HomeFragment :
     }
 
     override fun setEvent(events: MutableList<Event>) {
-        mSlideShowAdapter.clearData()
-        mSlideShowAdapter.addAllData(events)
-        pageIndicatorView.setAnimationType(AnimationType.WORM)
-        slideShow.adapter = mSlideShowAdapter
+        if (events.size > 0) {
+            mSlideShowAdapter.clearData()
+            mSlideShowAdapter.addAllData(events)
+            pageIndicatorView.setAnimationType(AnimationType.WORM)
+            slideShow.adapter = mSlideShowAdapter
+            slideShow.visibility = View.VISIBLE
 
-        pageIndicatorView.radius = 4
-        pageIndicatorView.padding = 6
-        pageIndicatorView.count = mSlideShowAdapter.itemCount
-        pageIndicatorView.selection = slideShow.currentItem
-        slideShow.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-            override fun onPageSelected(position: Int) {
-                super.onPageSelected(position)
-                pageIndicatorView.selection = position
-                (slideShow.getChildAt(0) as RecyclerView).overScrollMode =
-                    RecyclerView.OVER_SCROLL_NEVER
-            }
-        })
+            pageIndicatorView.radius = 4
+            pageIndicatorView.padding = 6
+            pageIndicatorView.count = mSlideShowAdapter.itemCount
+            pageIndicatorView.selection = slideShow.currentItem
+            pageIndicatorView.visibility = View.VISIBLE
+            slideShow.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+                override fun onPageSelected(position: Int) {
+                    super.onPageSelected(position)
+                    pageIndicatorView.selection = position
+                    (slideShow.getChildAt(0) as RecyclerView).overScrollMode =
+                        RecyclerView.OVER_SCROLL_NEVER
+                }
+            })
+        }
     }
 
     override fun setCategory(categories: MutableList<Category>) {
@@ -90,6 +97,7 @@ class HomeFragment :
     }
 
     private fun setFlashSale() {
+        mFlashSaleAdapter.clearData()
         val product = Product()
         product.name = getString(R.string.name_product_demo)
         mFlashSaleAdapter.addData(product)
@@ -106,6 +114,7 @@ class HomeFragment :
     }
 
     private fun setMegaSale() {
+        mMegaSaleAdapter.clearData()
         val product = Product()
         product.name = getString(R.string.name_product_demo)
         mMegaSaleAdapter.addData(product)
@@ -120,6 +129,7 @@ class HomeFragment :
     }
 
     private fun setRecProduct() {
+        mRecProductAdapter.clearData()
         val product = Product()
         product.name = getString(R.string.name_product_demo)
         mRecProductAdapter.addData(product)
@@ -161,5 +171,13 @@ class HomeFragment :
             intent.putExtra(ListProductsActivity.CATEGORY, category)
             startActivity(intent)
         }
+    }
+
+    override fun onRefresh() {
+        setFlashSale()
+        setMegaSale()
+        setRecProduct()
+        viewModel.getData()
+        srLayoutHome.isRefreshing = false
     }
 }

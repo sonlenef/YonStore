@@ -9,8 +9,8 @@ import tech.leson.yonstore.R
 import tech.leson.yonstore.databinding.ActivityManagerBinding
 import tech.leson.yonstore.ui.addproduct.AddProductActivity
 import tech.leson.yonstore.ui.base.BaseActivity
-import tech.leson.yonstore.ui.addevent.AddEventActivity
-import tech.leson.yonstore.ui.event.EventActivity
+import tech.leson.yonstore.ui.eventmanager.EventManagerActivity
+import tech.leson.yonstore.ui.productmanager.ProductManagerActivity
 
 class ManagerActivity : BaseActivity<ActivityManagerBinding, ManagerNavigator, ManagerViewModel>(),
     ManagerNavigator {
@@ -35,12 +35,12 @@ class ManagerActivity : BaseActivity<ActivityManagerBinding, ManagerNavigator, M
         tvTitle.text = getString(R.string.manager)
     }
 
-    override fun onEvent() {
-        startActivity(EventActivity.getIntent(this))
+    override fun onEventManager() {
+        startActivity(EventManagerActivity.getIntent(this))
     }
 
-    override fun onAddProduct() {
-        startActivity(AddProductActivity.getIntent(this))
+    override fun onProductManager() {
+        startActivity(ProductManagerActivity.getIntent(this))
     }
 
     override fun onStatistic() {}

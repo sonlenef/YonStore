@@ -4,7 +4,6 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import tech.leson.yonstore.BR
 import tech.leson.yonstore.R
 import tech.leson.yonstore.databinding.DialogAddImageBinding
-import tech.leson.yonstore.ui.addproduct.AddProductNavigator
 import tech.leson.yonstore.ui.base.BaseFragmentDialog
 
 

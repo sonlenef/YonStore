@@ -1,8 +1,8 @@
 package tech.leson.yonstore.ui.manager
 
 interface ManagerNavigator {
-    fun onEvent()
-    fun onAddProduct()
+    fun onEventManager()
+    fun onProductManager()
     fun onStatistic()
     fun onBack()
 }

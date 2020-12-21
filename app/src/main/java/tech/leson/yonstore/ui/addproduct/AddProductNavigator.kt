@@ -1,6 +1,5 @@
 package tech.leson.yonstore.ui.addproduct
 
-import tech.leson.yonstore.data.model.Category
 import tech.leson.yonstore.data.model.ProductImage
 import tech.leson.yonstore.data.model.Style
 
@@ -12,7 +11,6 @@ interface AddProductNavigator {
     fun onAddProduct()
     fun onAddProductSuccess()
     fun onCategory()
-    fun categorySelect(category: Category)
     fun addStyle(style: Style)
     fun onRemoveStyle(position: Int)
     fun onBack()

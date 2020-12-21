@@ -57,10 +57,10 @@ class ProductActivity : BaseActivity<ActivityProductBinding, ProductNavigator, P
             tvTitle.text = it.name
             tvProductName.text = it.name
             setImages(it.images)
-            if (it.event != null && it.event!!.discount >= 0.0) {
-                tvProductPrice.text = "$${it.price / it.event!!.discount}"
+            if (it.discount > 0.0) {
+                tvProductPrice.text = "$${it.price * (1 - it.discount)}"
                 tvOldPrice.text = "$${it.price}"
-                tvDiscount.text = "${it.event!!.discount * 100}% Off"
+                tvDiscount.text = "${it.discount * 100}% Off"
                 layoutDiscount.visibility = View.VISIBLE
             } else {
                 layoutDiscount.visibility = View.GONE
@@ -68,8 +68,8 @@ class ProductActivity : BaseActivity<ActivityProductBinding, ProductNavigator, P
             }
             viewModel.setProductStyle(it)
             viewModel.setAverageRating(it)
-            rtProduct.rating = viewModel.averageRating.value ?: 0.0F
-            rtProductReview.rating = viewModel.averageRating.value ?: 0.0F
+            rtProduct.rating = viewModel.averageRating.value ?: 5.0F
+            rtProductReview.rating = viewModel.averageRating.value ?: 5.0F
             tvProductReview.text = "${viewModel.averageRating.value} (${it.reviews.size} review)"
             tvSpecificationText.text = it.specification
         }

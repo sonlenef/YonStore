@@ -1,0 +1,122 @@
+[
+    {
+        "merged": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/build/intermediates/res/merged/debug/layout_activity_static_object.xml.flat",
+        "source": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/res/layout/activity_static_object.xml"
+    },
+    {
+        "merged": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/build/intermediates/res/merged/debug/layout_activity_settings.xml.flat",
+        "source": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/res/layout/activity_settings.xml"
+    },
+    {
+        "merged": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/build/intermediates/res/merged/debug/drawable_logo_mlkit.xml.flat",
+        "source": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/res/drawable/logo_mlkit.xml"
+    },
+    {
+        "merged": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/build/intermediates/res/merged/debug/drawable_ic_settings_vd_white_24.xml.flat",
+        "source": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/res/drawable/ic_settings_vd_white_24.xml"
+    },
+    {
+        "merged": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/build/intermediates/res/merged/debug/layout_barcode_field.xml.flat",
+        "source": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/res/layout/barcode_field.xml"
+    },
+    {
+        "merged": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/build/intermediates/res/merged/debug/drawable_logo_google_cloud.png.flat",
+        "source": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/res/drawable/logo_google_cloud.png"
+    },
+    {
+        "merged": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/build/intermediates/res/merged/debug/drawable_ic_image_search_vd_black_24.xml.flat",
+        "source": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/res/drawable/ic_image_search_vd_black_24.xml"
+    },
+    {
+        "merged": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/build/intermediates/res/merged/debug/drawable_ic_flash_on_vd_white_24.xml.flat",
+        "source": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/res/drawable/ic_flash_on_vd_white_24.xml"
+    },
+    {
+        "merged": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/build/intermediates/res/merged/debug/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/res/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/build/intermediates/res/merged/debug/drawable_ic_close_vd_white_24.xml.flat",
+        "source": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/res/drawable/ic_close_vd_white_24.xml"
+    },
+    {
+        "merged": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/build/intermediates/res/merged/debug/layout_top_action_bar_in_static_image.xml.flat",
+        "source": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/res/layout/top_action_bar_in_static_image.xml"
+    },
+    {
+        "merged": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/build/intermediates/res/merged/debug/layout_activity_live_object.xml.flat",
+        "source": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/res/layout/activity_live_object.xml"
+    },
+    {
+        "merged": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/build/intermediates/res/merged/debug/layout_product_item.xml.flat",
+        "source": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/res/layout/product_item.xml"
+    },
+    {
+        "merged": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/build/intermediates/res/merged/debug/layout_detection_mode_item.xml.flat",
+        "source": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/res/layout/detection_mode_item.xml"
+    },
+    {
+        "merged": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/build/intermediates/res/merged/debug/layout_camera_preview_overlay.xml.flat",
+        "source": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/res/layout/camera_preview_overlay.xml"
+    },
+    {
+        "merged": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/build/intermediates/res/merged/debug/drawable_ic_photo_library_vd_white_24.xml.flat",
+        "source": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/res/drawable/ic_photo_library_vd_white_24.xml"
+    },
+    {
+        "merged": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/build/intermediates/res/merged/debug/layout_products_preview_card.xml.flat",
+        "source": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/res/layout/products_preview_card.xml"
+    },
+    {
+        "merged": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/build/intermediates/res/merged/debug/animator_bottom_prompt_chip_enter.xml.flat",
+        "source": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/res/animator/bottom_prompt_chip_enter.xml"
+    },
+    {
+        "merged": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/build/intermediates/res/merged/debug/layout_barcode_bottom_sheet.xml.flat",
+        "source": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/res/layout/barcode_bottom_sheet.xml"
+    },
+    {
+        "merged": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/build/intermediates/res/merged/debug/animator_static_image_dot_enter.xml.flat",
+        "source": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/res/animator/static_image_dot_enter.xml"
+    },
+    {
+        "merged": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/build/intermediates/res/merged/debug/drawable_barcode_field_box.xml.flat",
+        "source": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/res/drawable/barcode_field_box.xml"
+    },
+    {
+        "merged": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/build/intermediates/res/merged/debug/drawable_ic_flash_off_vd_white_24.xml.flat",
+        "source": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/res/drawable/ic_flash_off_vd_white_24.xml"
+    },
+    {
+        "merged": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/build/intermediates/res/merged/debug/xml_preferences.xml.flat",
+        "source": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/res/xml/preferences.xml"
+    },
+    {
+        "merged": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/build/intermediates/res/merged/debug/layout_activity_live_barcode.xml.flat",
+        "source": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/res/layout/activity_live_barcode.xml"
+    },
+    {
+        "merged": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/build/intermediates/res/merged/debug/layout_product_bottom_sheet.xml.flat",
+        "source": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/res/layout/product_bottom_sheet.xml"
+    },
+    {
+        "merged": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/build/intermediates/res/merged/debug/drawable_camera_flash.xml.flat",
+        "source": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/res/drawable/camera_flash.xml"
+    },
+    {
+        "merged": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/build/intermediates/res/merged/debug/drawable_top_action_bar_scrim.xml.flat",
+        "source": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/res/drawable/top_action_bar_scrim.xml"
+    },
+    {
+        "merged": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/build/intermediates/res/merged/debug/layout_top_action_bar_in_live_camera.xml.flat",
+        "source": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/res/layout/top_action_bar_in_live_camera.xml"
+    },
+    {
+        "merged": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/build/intermediates/res/merged/debug/animator_search_button_enter.xml.flat",
+        "source": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/res/animator/search_button_enter.xml"
+    },
+    {
+        "merged": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/build/intermediates/res/merged/debug/layout_activity_main.xml.flat",
+        "source": "/Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/res/layout/activity_main.xml"
+    }
+]

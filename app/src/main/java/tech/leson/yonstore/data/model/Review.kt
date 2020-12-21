@@ -7,5 +7,5 @@ class Review(
     var images: MutableList<ReviewImg>,
     var time: String,
 ) {
-    constructor() : this(0.0F, "", "", ArrayList(), "")
+    constructor() : this(5.0F, "", "", ArrayList(), "")
 }

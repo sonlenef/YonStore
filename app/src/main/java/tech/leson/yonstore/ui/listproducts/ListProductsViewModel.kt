@@ -18,6 +18,7 @@ class ListProductsViewModel(dataManager: DataManager, schedulerProvider: Schedul
                 val data: MutableList<Product> = ArrayList()
                 for (doc in it) {
                     val product = doc.toObject(Product::class.java)
+                    product.id = doc.id
                     data.add(product)
                 }
                 navigator?.onGetProductSuccess(data)
@@ -36,6 +37,7 @@ class ListProductsViewModel(dataManager: DataManager, schedulerProvider: Schedul
                 val data: MutableList<Product> = ArrayList()
                 for (doc in it) {
                     val product = doc.toObject(Product::class.java)
+                    product.id = doc.id
                     data.add(product)
                 }
                 navigator?.onGetProductSuccess(data)

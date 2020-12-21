@@ -4,10 +4,10 @@ import android.view.View
 import kotlinx.android.synthetic.main.item_product_style.view.*
 import tech.leson.yonstore.R
 import tech.leson.yonstore.data.model.Style
-import tech.leson.yonstore.ui.addproduct.AddProductNavigator
+import tech.leson.yonstore.ui.addproduct.adapter.StyleAdapter
 import tech.leson.yonstore.ui.base.BaseViewHolder
 
-class StyleViewHolder(itemView: View, private val addProductNavigator: AddProductNavigator) :
+class StyleViewHolder(itemView: View, private val addOnStyleClickListener: StyleAdapter.OnStyleClickListener) :
     BaseViewHolder<Style>(itemView) {
     override fun onBind(data: Style) {
         val title: StringBuilder = StringBuilder(itemView.context.getString(R.string.title_style))
@@ -28,7 +28,7 @@ class StyleViewHolder(itemView: View, private val addProductNavigator: AddProduc
             }
         }
         itemView.btnRemove.setOnClickListener {
-            addProductNavigator.onRemoveStyle(absoluteAdapterPosition)
+            addOnStyleClickListener.onRemoveStyle(absoluteAdapterPosition)
         }
     }
 }

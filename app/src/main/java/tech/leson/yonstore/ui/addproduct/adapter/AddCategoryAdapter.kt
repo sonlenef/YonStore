@@ -35,7 +35,7 @@ class AddCategoryAdapter(data: MutableList<Category>) :
 
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
         holder.onBind(data[position])
-        holder.itemView.setOnClickListener { addCategoryNavigator.onCategorySelection(data[position]) }
+        holder.itemView.setOnClickListener { addCategoryNavigator.onCategorySelected(data[position]) }
     }
 
     override fun getItemCount() = data.size

@@ -27,6 +27,7 @@ import tech.leson.yonstore.ui.addproduct.dialog.addCategory.AddCategoryDialog
 import tech.leson.yonstore.ui.addproduct.dialog.addImage.AddImageDialog
 import tech.leson.yonstore.ui.addproduct.dialog.addStyle.AddStyleDialog
 import tech.leson.yonstore.ui.base.BaseActivity
+import tech.leson.yonstore.ui.productmanager.ProductManagerActivity
 import tech.leson.yonstore.utils.OnItemClickListener
 import java.io.File
 import java.io.IOException
@@ -36,7 +37,8 @@ import kotlin.collections.ArrayList
 
 class AddProductActivity :
     BaseActivity<ActivityAddProductBinding, AddProductNavigator, AddProductViewModel>(),
-    AddProductNavigator, OnItemClickListener<Int>, AddImageDialog.OnSelectImage {
+    AddProductNavigator, OnItemClickListener<Int>, AddImageDialog.OnSelectImage,
+    AddCategoryDialog.OnCategory, StyleAdapter.OnStyleClickListener, AddStyleDialog.OnStyleListener {
 
     companion object {
         const val REQUEST_PERMISSIONS_CAMERA = 1111
@@ -65,13 +67,17 @@ class AddProductActivity :
         viewModel.setNavigator(this)
         tvTitle.text = getString(R.string.add_product)
 
+        intent.getStringExtra(ProductManagerActivity.PRODUCT_CODE)?.let {
+            viewModel.product.value!!.code = it
+        }
+
         mImageAdapter.onItemClickListener = this
         mImageAdapter.clearData()
         rcvImage.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         rcvImage.adapter = mImageAdapter
 
         mStyleAdapter.clearData()
-        mStyleAdapter.addProductNavigator = this
+        mStyleAdapter.addOnStyleClickListener = this
         rcvStyle.layoutManager = LinearLayoutManager(this)
         rcvStyle.adapter = mStyleAdapter
     }
@@ -86,7 +92,7 @@ class AddProductActivity :
 
     override fun onStyle() {
         val addStyleDialog = AddStyleDialog.newInstance()
-        addStyleDialog.addProductNavigator = this
+        addStyleDialog.addOnStyleListener = this
         addStyleDialog.show(supportFragmentManager)
     }
 
@@ -131,7 +137,7 @@ class AddProductActivity :
                     Toast.LENGTH_SHORT).show()
                 return
             }
-            viewModel.product.value!!.style.size == 0 -> {
+            viewModel.product.value!!.styles.size == 0 -> {
                 Toast.makeText(this,
                     getString(R.string.pls_enter_complete_info),
                     Toast.LENGTH_SHORT).show()
@@ -143,13 +149,21 @@ class AddProductActivity :
                     Toast.LENGTH_SHORT).show()
                 return
             }
+            edtProductDiscount.editText?.text?.toString()?.trim() == "" -> {
+                Toast.makeText(this,
+                    getString(R.string.pls_enter_complete_info),
+                    Toast.LENGTH_SHORT).show()
+                return
+            }
         }
-        val name = edtProductName.editText!!.text.toString().trim()
-        val code = edtSerialNumber.editText!!.text.toString().trim()
-        val price = edtProductPrice.editText!!.text.toString().trim()
-        viewModel.product.value!!.name = name
-        viewModel.product.value!!.code = code
-        viewModel.product.value!!.price = price.toDouble()
+        viewModel.product.value?.discount =
+            edtProductDiscount.editText?.text?.toString()?.trim()!!.toDouble() / 100
+        viewModel.product.value!!.name = edtProductName.editText!!.text.toString().trim()
+        viewModel.product.value!!.code = edtSerialNumber.editText!!.text.toString().trim()
+        viewModel.product.value!!.price =
+            edtProductPrice.editText!!.text.toString().trim().toDouble()
+        viewModel.product.value?.discount =
+            edtProductDiscount.editText?.text?.toString()?.trim()!!.toDouble() / 100
 
         viewModel.saveProduct()
     }
@@ -161,17 +175,17 @@ class AddProductActivity :
 
     override fun onCategory() {
         val addCategoryDialog = AddCategoryDialog.newInstance()
-        addCategoryDialog.mAddProductNavigator = this
+        addCategoryDialog.mOnCategory = this
         addCategoryDialog.show(supportFragmentManager)
     }
 
-    override fun categorySelect(category: Category) {
+    override fun onSelected(category: Category) {
         viewModel.product.value!!.category = category
         listCategory.text = category.name
     }
 
     override fun addStyle(style: Style) {
-        for (item in viewModel.product.value!!.style) {
+        for (item in viewModel.product.value!!.styles) {
             if (item == style) {
                 return
             } else if (item.size == style.size && item.color == style.color) {
@@ -180,12 +194,12 @@ class AddProductActivity :
                 return
             }
         }
-        viewModel.product.value!!.style.add(style)
+        viewModel.product.value!!.styles.add(style)
         mStyleAdapter.addData(style)
     }
 
     override fun onRemoveStyle(position: Int) {
-        viewModel.product.value!!.style.remove(mStyleAdapter.data[position])
+        viewModel.product.value!!.styles.remove(mStyleAdapter.data[position])
         mStyleAdapter.removeItem(position)
     }
 

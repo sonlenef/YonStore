@@ -1,8 +1,6 @@
 package tech.leson.yonstore.ui.adapter.viewholder
 
 import android.annotation.SuppressLint
-import android.os.Build
-import android.text.Html
 import android.view.View
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_product_horizontal.view.*
@@ -23,10 +21,10 @@ class ProductHorizontalViewHolder(itemView: View, onItemClickListener: OnProduct
                 .placeholder(R.drawable.default_image)
                 .into(itemView.imvProduct)
         itemView.tvProductName.text = data.name
-        if (data.event != null && data.event!!.discount >= 0.0) {
-            itemView.tvProductPrice.text = "$${data.price / data.event!!.discount}"
+        if (data.discount > 0.0) {
+            itemView.tvProductPrice.text = "$${data.price * (1 - data.discount)}"
             itemView.tvOldPrice.text = "$${data.price}"
-            itemView.tvDiscount.text = "${data.event!!.discount * 100}% Off"
+            itemView.tvDiscount.text = "${data.discount * 100}% Off"
             itemView.layoutDiscount.visibility = View.VISIBLE
         } else {
             itemView.layoutDiscount.visibility = View.INVISIBLE

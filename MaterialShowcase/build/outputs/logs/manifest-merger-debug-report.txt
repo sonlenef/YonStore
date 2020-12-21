@@ -1,0 +1,421 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:2:1-67:12
+INJECTED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:2:1-67:12
+INJECTED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:2:1-67:12
+INJECTED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:2:1-67:12
+MERGED from [androidx.multidex:multidex:2.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/f811ba7564d71a613c4203c836dd9990/multidex-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.volley:volley:1.1.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/41d2b7a6245a9f75cfa0b3d91b0c724d/jetified-volley-1.1.1/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.material:material:1.2.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/1e95c1086f50b5c918facc8d7138de50/material-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.mlkit:object-detection:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/4e00c06c05bac83fd72ef6e4cac346a5/jetified-object-detection-16.2.1/AndroidManifest.xml:2:1-17:12
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/0c38f5b0fb0634a3ce28f9451a26f223/lifecycle-extensions-2.1.0/AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.core:core-ktx:1.3.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/ed9f231ef62835aa5a9066370a67b4f8/jetified-core-ktx-1.3.1/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.preference:preference:1.1.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/cab5ec6f7f9be85df038fac0726919ee/preference-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/dc51170193c8f3b01c09a907b36335be/appcompat-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/0c9b5274d82870081f1c1325faf4d08e/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/afaf05aefab638df40d11c0e989812b1/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.2.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/1596f8de8f66ebd7773864ce1663db9b/transition-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/7d313c23450b806b3d9b6122a3a880c8/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/9ce9256d04f135e719ad8810ae10b50d/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/e53aa17c7cdf7b24eef80d654c57e3ec/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/7aaed441775f867ada27f52ab9da69af/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.mlkit:barcode-scanning:16.0.3] /Users/leson/.gradle/caches/transforms-2/files-2.1/f528f898b83688510ebf9635389ea2a9/jetified-barcode-scanning-16.0.3/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.mlkit:object-detection-custom:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/286ed8e4321b3404c63a15eae10c4768/jetified-object-detection-custom-16.2.1/AndroidManifest.xml:2:1-17:12
+MERGED from [com.google.android.gms:play-services-mlkit-barcode-scanning:16.1.2] /Users/leson/.gradle/caches/transforms-2/files-2.1/cad7cbcc3c2bb35de95e692b399f0356/jetified-play-services-mlkit-barcode-scanning-16.1.2/AndroidManifest.xml:2:1-18:12
+MERGED from [com.google.android.gms:play-services-vision:20.1.2] /Users/leson/.gradle/caches/transforms-2/files-2.1/160f58a78d4f121db96e64bf5f2f81d5/jetified-play-services-vision-20.1.2/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-vision-common:19.1.2] /Users/leson/.gradle/caches/transforms-2/files-2.1/620e9d6224cafb86c1788ab511ce4e5f/jetified-play-services-vision-common-19.1.2/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.mlkit:object-detection-common:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/71d840e11d8cb6a6194bdde479a83e8a/jetified-object-detection-common-16.2.1/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.mlkit:vision-internal-vkp:17.0.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/9bfbbb6c53925eee5eb69df7aea61404/jetified-vision-internal-vkp-17.0.1/AndroidManifest.xml:2:1-17:12
+MERGED from [com.google.mlkit:vision-common:16.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/13384cf9faf4709602da58728a3435a9/jetified-vision-common-16.1.0/AndroidManifest.xml:2:1-18:12
+MERGED from [com.google.mlkit:common:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/53e719a7c9e6aef5a7cc206f7756d030/jetified-common-17.0.0/AndroidManifest.xml:2:1-26:12
+MERGED from [com.google.android.gms:play-services-clearcut:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/a4728fa6812bd336ce402d2fc6d100a4/jetified-play-services-clearcut-17.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-flags:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/cc40c949b796489cdd1b0b30af6581b6/jetified-play-services-flags-17.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-phenotype:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/057ac0b57b478ae1f52a20181d6852b2/jetified-play-services-phenotype-17.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/3b0d1e609b40c4717bfdcd59ff80381e/jetified-play-services-base-17.0.0/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/a977e5fefde8eab5f345760c81d7f223/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/cb1b21a7e48c47bb6f7e8be86cddad31/jetified-play-services-basement-17.0.0/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.fragment:fragment:1.2.4] /Users/leson/.gradle/caches/transforms-2/files-2.1/a9d6b785cba417b084362ab20267330d/fragment-1.2.4/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/4bd9a87183761b18778ee7ea183d5a56/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/0e791c16bb774e82ae820b4b60456877/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/590681489bd1410fc142154b5ac5f28f/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/a81e78bbcd605d2a77cf07e79b5f7dfe/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/28f7c23e138fb20a75ca3d06a0427a59/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/651e43b1ac60a20c6d6dc9ac944aaa7a/jetified-activity-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.3.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/e53fc43734c2854b89ac592e12c0fa84/core-1.3.1/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/7d5feacc2f8b3b3202967c329792234d/jetified-lifecycle-viewmodel-ktx-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/30fe849f6f6a9d7820735a5d770c1ad9/jetified-lifecycle-viewmodel-savedstate-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/9d3c458759adeff3180cf673527e0c7c/lifecycle-viewmodel-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-components:16.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/4dc337c2d4585d5235a7021a1e176673/jetified-firebase-components-16.0.0/AndroidManifest.xml:15:1-23:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/d1c2aa08b2fc2b59887ca7c414ba6b17/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/57491bfc1193e41d27f1b0a59ebc6dfe/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/935200876d03a57fff93a8ff0b8c87cd/exifinterface-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/40d0d08bb2c4bfcb8db323a36c2cff22/lifecycle-livedata-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/f12292cf8393669b59ac91958950b4e5/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/86a6011c057fed0bd67dcbd911eca236/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/a0150dbab62584e47d2faa97929ef07f/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.lifecycle:lifecycle-service:2.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/7f862047ddabcbf33af345f19f7935b1/jetified-lifecycle-service-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/6e97bee239f953119097a6dd7ab1c8eb/lifecycle-runtime-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/b28d929441b2bae9460961485f12ee17/jetified-savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/e4f447b9abc6e84dabb0d2d0e80cadc6/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/89c2984e17d312d2988b8914a1131794/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:17:1-24:12
+INJECTED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:2:1-67:12
+INJECTED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:2:1-67:12
+INJECTED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:2:1-67:12
+	package
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:4:5-34
+		INJECTED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml
+		INJECTED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:2:1-67:12
+		INJECTED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:2:1-67:12
+		INJECTED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:2:11-69
+	android:installLocation
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:5:5-35
+uses-feature#android.hardware.camera
+ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:7:3-57
+	android:name
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:7:17-55
+uses-permission#android.permission.INTERNET
+ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:9:3-64
+	android:name
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:9:20-62
+uses-permission#android.permission.CAMERA
+ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:10:3-62
+	android:name
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:10:20-60
+application
+ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:12:3-65:17
+MERGED from [com.android.volley:volley:1.1.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/41d2b7a6245a9f75cfa0b3d91b0c724d/jetified-volley-1.1.1/AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/41d2b7a6245a9f75cfa0b3d91b0c724d/jetified-volley-1.1.1/AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.material:material:1.2.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/1e95c1086f50b5c918facc8d7138de50/material-1.2.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.2.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/1e95c1086f50b5c918facc8d7138de50/material-1.2.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.mlkit:object-detection:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/4e00c06c05bac83fd72ef6e4cac346a5/jetified-object-detection-16.2.1/AndroidManifest.xml:7:5-15:19
+MERGED from [com.google.mlkit:object-detection:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/4e00c06c05bac83fd72ef6e4cac346a5/jetified-object-detection-16.2.1/AndroidManifest.xml:7:5-15:19
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/0c38f5b0fb0634a3ce28f9451a26f223/lifecycle-extensions-2.1.0/AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/0c38f5b0fb0634a3ce28f9451a26f223/lifecycle-extensions-2.1.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.mlkit:object-detection-custom:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/286ed8e4321b3404c63a15eae10c4768/jetified-object-detection-custom-16.2.1/AndroidManifest.xml:7:5-15:19
+MERGED from [com.google.mlkit:object-detection-custom:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/286ed8e4321b3404c63a15eae10c4768/jetified-object-detection-custom-16.2.1/AndroidManifest.xml:7:5-15:19
+MERGED from [com.google.android.gms:play-services-mlkit-barcode-scanning:16.1.2] /Users/leson/.gradle/caches/transforms-2/files-2.1/cad7cbcc3c2bb35de95e692b399f0356/jetified-play-services-mlkit-barcode-scanning-16.1.2/AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.android.gms:play-services-mlkit-barcode-scanning:16.1.2] /Users/leson/.gradle/caches/transforms-2/files-2.1/cad7cbcc3c2bb35de95e692b399f0356/jetified-play-services-mlkit-barcode-scanning-16.1.2/AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.android.gms:play-services-vision:20.1.2] /Users/leson/.gradle/caches/transforms-2/files-2.1/160f58a78d4f121db96e64bf5f2f81d5/jetified-play-services-vision-20.1.2/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-vision:20.1.2] /Users/leson/.gradle/caches/transforms-2/files-2.1/160f58a78d4f121db96e64bf5f2f81d5/jetified-play-services-vision-20.1.2/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-vision-common:19.1.2] /Users/leson/.gradle/caches/transforms-2/files-2.1/620e9d6224cafb86c1788ab511ce4e5f/jetified-play-services-vision-common-19.1.2/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-vision-common:19.1.2] /Users/leson/.gradle/caches/transforms-2/files-2.1/620e9d6224cafb86c1788ab511ce4e5f/jetified-play-services-vision-common-19.1.2/AndroidManifest.xml:7:5-20
+MERGED from [com.google.mlkit:vision-internal-vkp:17.0.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/9bfbbb6c53925eee5eb69df7aea61404/jetified-vision-internal-vkp-17.0.1/AndroidManifest.xml:7:5-15:19
+MERGED from [com.google.mlkit:vision-internal-vkp:17.0.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/9bfbbb6c53925eee5eb69df7aea61404/jetified-vision-internal-vkp-17.0.1/AndroidManifest.xml:7:5-15:19
+MERGED from [com.google.mlkit:vision-common:16.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/13384cf9faf4709602da58728a3435a9/jetified-vision-common-16.1.0/AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.mlkit:vision-common:16.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/13384cf9faf4709602da58728a3435a9/jetified-vision-common-16.1.0/AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.mlkit:common:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/53e719a7c9e6aef5a7cc206f7756d030/jetified-common-17.0.0/AndroidManifest.xml:8:5-24:19
+MERGED from [com.google.mlkit:common:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/53e719a7c9e6aef5a7cc206f7756d030/jetified-common-17.0.0/AndroidManifest.xml:8:5-24:19
+MERGED from [com.google.android.gms:play-services-clearcut:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/a4728fa6812bd336ce402d2fc6d100a4/jetified-play-services-clearcut-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-clearcut:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/a4728fa6812bd336ce402d2fc6d100a4/jetified-play-services-clearcut-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-phenotype:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/057ac0b57b478ae1f52a20181d6852b2/jetified-play-services-phenotype-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-phenotype:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/057ac0b57b478ae1f52a20181d6852b2/jetified-play-services-phenotype-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/3b0d1e609b40c4717bfdcd59ff80381e/jetified-play-services-base-17.0.0/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/3b0d1e609b40c4717bfdcd59ff80381e/jetified-play-services-base-17.0.0/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/a977e5fefde8eab5f345760c81d7f223/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/a977e5fefde8eab5f345760c81d7f223/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/cb1b21a7e48c47bb6f7e8be86cddad31/jetified-play-services-basement-17.0.0/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/cb1b21a7e48c47bb6f7e8be86cddad31/jetified-play-services-basement-17.0.0/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.core:core:1.3.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/e53fc43734c2854b89ac592e12c0fa84/core-1.3.1/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.3.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/e53fc43734c2854b89ac592e12c0fa84/core-1.3.1/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/57491bfc1193e41d27f1b0a59ebc6dfe/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/57491bfc1193e41d27f1b0a59ebc6dfe/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/a0150dbab62584e47d2faa97929ef07f/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:22:5-28:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/a0150dbab62584e47d2faa97929ef07f/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:22:5-28:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.3.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/e53fc43734c2854b89ac592e12c0fa84/core-1.3.1/AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:16:7-33
+	android:label
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:15:7-39
+	tools:ignore
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:18:7-46
+	android:icon
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:14:7-42
+	android:allowBackup
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:13:7-34
+	android:theme
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:17:7-38
+meta-data#com.google.android.gms.version
+ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:20:5-22:64
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/cb1b21a7e48c47bb6f7e8be86cddad31/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/cb1b21a7e48c47bb6f7e8be86cddad31/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:22:9-62
+	android:name
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:21:9-54
+activity#com.google.mlkit.md.MainActivity
+ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:24:5-32:16
+	android:screenOrientation
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:27:9-45
+	android:exported
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:26:9-32
+	android:name
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:25:9-56
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:28:7-31:23
+action#android.intent.action.MAIN
+ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:29:9-60
+	android:name
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:29:17-58
+category#android.intent.category.LAUNCHER
+ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:30:9-68
+	android:name
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:30:19-66
+activity#com.google.mlkit.md.LiveObjectDetectionActivity
+ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:34:5-38:16
+	android:screenOrientation
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:37:9-45
+	android:exported
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:36:9-33
+	android:name
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:35:9-71
+activity#com.google.mlkit.md.LiveBarcodeScanningActivity
+ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:40:5-44:16
+	android:screenOrientation
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:43:9-45
+	android:exported
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:42:9-33
+	android:name
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:41:9-71
+activity#com.google.mlkit.md.StaticObjectDetectionActivity
+ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:46:5-50:16
+	android:screenOrientation
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:49:9-45
+	android:exported
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:48:9-33
+	android:name
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:47:9-73
+activity#com.google.mlkit.md.CustomModelObjectDetectionActivity
+ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:52:5-56:16
+	android:screenOrientation
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:55:9-45
+	android:exported
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:54:9-33
+	android:name
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:53:9-78
+activity#com.google.mlkit.md.settings.SettingsActivity
+ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:58:5-63:16
+	android:screenOrientation
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:62:9-45
+	android:label
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:61:9-47
+	android:exported
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:60:9-33
+	android:name
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml:59:9-69
+uses-sdk
+INJECTED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml
+INJECTED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml
+MERGED from [androidx.multidex:multidex:2.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/f811ba7564d71a613c4203c836dd9990/multidex-2.0.0/AndroidManifest.xml:20:5-43
+MERGED from [androidx.multidex:multidex:2.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/f811ba7564d71a613c4203c836dd9990/multidex-2.0.0/AndroidManifest.xml:20:5-43
+MERGED from [com.android.volley:volley:1.1.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/41d2b7a6245a9f75cfa0b3d91b0c724d/jetified-volley-1.1.1/AndroidManifest.xml:7:5-43
+MERGED from [com.android.volley:volley:1.1.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/41d2b7a6245a9f75cfa0b3d91b0c724d/jetified-volley-1.1.1/AndroidManifest.xml:7:5-43
+MERGED from [com.google.android.material:material:1.2.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/1e95c1086f50b5c918facc8d7138de50/material-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.2.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/1e95c1086f50b5c918facc8d7138de50/material-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.mlkit:object-detection:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/4e00c06c05bac83fd72ef6e4cac346a5/jetified-object-detection-16.2.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:object-detection:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/4e00c06c05bac83fd72ef6e4cac346a5/jetified-object-detection-16.2.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/0c38f5b0fb0634a3ce28f9451a26f223/lifecycle-extensions-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/0c38f5b0fb0634a3ce28f9451a26f223/lifecycle-extensions-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.3.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/ed9f231ef62835aa5a9066370a67b4f8/jetified-core-ktx-1.3.1/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.3.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/ed9f231ef62835aa5a9066370a67b4f8/jetified-core-ktx-1.3.1/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.preference:preference:1.1.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/cab5ec6f7f9be85df038fac0726919ee/preference-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.preference:preference:1.1.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/cab5ec6f7f9be85df038fac0726919ee/preference-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/dc51170193c8f3b01c09a907b36335be/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/dc51170193c8f3b01c09a907b36335be/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/0c9b5274d82870081f1c1325faf4d08e/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/0c9b5274d82870081f1c1325faf4d08e/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/afaf05aefab638df40d11c0e989812b1/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/afaf05aefab638df40d11c0e989812b1/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/1596f8de8f66ebd7773864ce1663db9b/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/1596f8de8f66ebd7773864ce1663db9b/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/7d313c23450b806b3d9b6122a3a880c8/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/7d313c23450b806b3d9b6122a3a880c8/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/9ce9256d04f135e719ad8810ae10b50d/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/9ce9256d04f135e719ad8810ae10b50d/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/e53aa17c7cdf7b24eef80d654c57e3ec/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/e53aa17c7cdf7b24eef80d654c57e3ec/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/7aaed441775f867ada27f52ab9da69af/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/7aaed441775f867ada27f52ab9da69af/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.mlkit:barcode-scanning:16.0.3] /Users/leson/.gradle/caches/transforms-2/files-2.1/f528f898b83688510ebf9635389ea2a9/jetified-barcode-scanning-16.0.3/AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:barcode-scanning:16.0.3] /Users/leson/.gradle/caches/transforms-2/files-2.1/f528f898b83688510ebf9635389ea2a9/jetified-barcode-scanning-16.0.3/AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:object-detection-custom:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/286ed8e4321b3404c63a15eae10c4768/jetified-object-detection-custom-16.2.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:object-detection-custom:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/286ed8e4321b3404c63a15eae10c4768/jetified-object-detection-custom-16.2.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-mlkit-barcode-scanning:16.1.2] /Users/leson/.gradle/caches/transforms-2/files-2.1/cad7cbcc3c2bb35de95e692b399f0356/jetified-play-services-mlkit-barcode-scanning-16.1.2/AndroidManifest.xml:6:5-44
+MERGED from [com.google.android.gms:play-services-mlkit-barcode-scanning:16.1.2] /Users/leson/.gradle/caches/transforms-2/files-2.1/cad7cbcc3c2bb35de95e692b399f0356/jetified-play-services-mlkit-barcode-scanning-16.1.2/AndroidManifest.xml:6:5-44
+MERGED from [com.google.android.gms:play-services-vision:20.1.2] /Users/leson/.gradle/caches/transforms-2/files-2.1/160f58a78d4f121db96e64bf5f2f81d5/jetified-play-services-vision-20.1.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-vision:20.1.2] /Users/leson/.gradle/caches/transforms-2/files-2.1/160f58a78d4f121db96e64bf5f2f81d5/jetified-play-services-vision-20.1.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-vision-common:19.1.2] /Users/leson/.gradle/caches/transforms-2/files-2.1/620e9d6224cafb86c1788ab511ce4e5f/jetified-play-services-vision-common-19.1.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-vision-common:19.1.2] /Users/leson/.gradle/caches/transforms-2/files-2.1/620e9d6224cafb86c1788ab511ce4e5f/jetified-play-services-vision-common-19.1.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:object-detection-common:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/71d840e11d8cb6a6194bdde479a83e8a/jetified-object-detection-common-16.2.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:object-detection-common:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/71d840e11d8cb6a6194bdde479a83e8a/jetified-object-detection-common-16.2.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:vision-internal-vkp:17.0.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/9bfbbb6c53925eee5eb69df7aea61404/jetified-vision-internal-vkp-17.0.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:vision-internal-vkp:17.0.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/9bfbbb6c53925eee5eb69df7aea61404/jetified-vision-internal-vkp-17.0.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:vision-common:16.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/13384cf9faf4709602da58728a3435a9/jetified-vision-common-16.1.0/AndroidManifest.xml:6:5-44
+MERGED from [com.google.mlkit:vision-common:16.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/13384cf9faf4709602da58728a3435a9/jetified-vision-common-16.1.0/AndroidManifest.xml:6:5-44
+MERGED from [com.google.mlkit:common:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/53e719a7c9e6aef5a7cc206f7756d030/jetified-common-17.0.0/AndroidManifest.xml:6:5-44
+MERGED from [com.google.mlkit:common:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/53e719a7c9e6aef5a7cc206f7756d030/jetified-common-17.0.0/AndroidManifest.xml:6:5-44
+MERGED from [com.google.android.gms:play-services-clearcut:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/a4728fa6812bd336ce402d2fc6d100a4/jetified-play-services-clearcut-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-clearcut:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/a4728fa6812bd336ce402d2fc6d100a4/jetified-play-services-clearcut-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-flags:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/cc40c949b796489cdd1b0b30af6581b6/jetified-play-services-flags-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-flags:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/cc40c949b796489cdd1b0b30af6581b6/jetified-play-services-flags-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-phenotype:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/057ac0b57b478ae1f52a20181d6852b2/jetified-play-services-phenotype-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-phenotype:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/057ac0b57b478ae1f52a20181d6852b2/jetified-play-services-phenotype-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/3b0d1e609b40c4717bfdcd59ff80381e/jetified-play-services-base-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/3b0d1e609b40c4717bfdcd59ff80381e/jetified-play-services-base-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/a977e5fefde8eab5f345760c81d7f223/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/a977e5fefde8eab5f345760c81d7f223/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/cb1b21a7e48c47bb6f7e8be86cddad31/jetified-play-services-basement-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/cb1b21a7e48c47bb6f7e8be86cddad31/jetified-play-services-basement-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.2.4] /Users/leson/.gradle/caches/transforms-2/files-2.1/a9d6b785cba417b084362ab20267330d/fragment-1.2.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.2.4] /Users/leson/.gradle/caches/transforms-2/files-2.1/a9d6b785cba417b084362ab20267330d/fragment-1.2.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/4bd9a87183761b18778ee7ea183d5a56/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/4bd9a87183761b18778ee7ea183d5a56/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/0e791c16bb774e82ae820b4b60456877/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/0e791c16bb774e82ae820b4b60456877/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/590681489bd1410fc142154b5ac5f28f/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/590681489bd1410fc142154b5ac5f28f/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/a81e78bbcd605d2a77cf07e79b5f7dfe/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/a81e78bbcd605d2a77cf07e79b5f7dfe/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/28f7c23e138fb20a75ca3d06a0427a59/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/28f7c23e138fb20a75ca3d06a0427a59/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/651e43b1ac60a20c6d6dc9ac944aaa7a/jetified-activity-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/651e43b1ac60a20c6d6dc9ac944aaa7a/jetified-activity-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.3.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/e53fc43734c2854b89ac592e12c0fa84/core-1.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.3.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/e53fc43734c2854b89ac592e12c0fa84/core-1.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/7d5feacc2f8b3b3202967c329792234d/jetified-lifecycle-viewmodel-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/7d5feacc2f8b3b3202967c329792234d/jetified-lifecycle-viewmodel-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/30fe849f6f6a9d7820735a5d770c1ad9/jetified-lifecycle-viewmodel-savedstate-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/30fe849f6f6a9d7820735a5d770c1ad9/jetified-lifecycle-viewmodel-savedstate-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/9d3c458759adeff3180cf673527e0c7c/lifecycle-viewmodel-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/9d3c458759adeff3180cf673527e0c7c/lifecycle-viewmodel-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-components:16.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/4dc337c2d4585d5235a7021a1e176673/jetified-firebase-components-16.0.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-components:16.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/4dc337c2d4585d5235a7021a1e176673/jetified-firebase-components-16.0.0/AndroidManifest.xml:19:5-21:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/d1c2aa08b2fc2b59887ca7c414ba6b17/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/d1c2aa08b2fc2b59887ca7c414ba6b17/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/57491bfc1193e41d27f1b0a59ebc6dfe/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/57491bfc1193e41d27f1b0a59ebc6dfe/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/935200876d03a57fff93a8ff0b8c87cd/exifinterface-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/935200876d03a57fff93a8ff0b8c87cd/exifinterface-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/40d0d08bb2c4bfcb8db323a36c2cff22/lifecycle-livedata-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/40d0d08bb2c4bfcb8db323a36c2cff22/lifecycle-livedata-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/f12292cf8393669b59ac91958950b4e5/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/f12292cf8393669b59ac91958950b4e5/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/86a6011c057fed0bd67dcbd911eca236/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/86a6011c057fed0bd67dcbd911eca236/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/a0150dbab62584e47d2faa97929ef07f/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/a0150dbab62584e47d2faa97929ef07f/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/7f862047ddabcbf33af345f19f7935b1/jetified-lifecycle-service-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/7f862047ddabcbf33af345f19f7935b1/jetified-lifecycle-service-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/6e97bee239f953119097a6dd7ab1c8eb/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/6e97bee239f953119097a6dd7ab1c8eb/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/b28d929441b2bae9460961485f12ee17/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/b28d929441b2bae9460961485f12ee17/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/e4f447b9abc6e84dabb0d2d0e80cadc6/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/e4f447b9abc6e84dabb0d2d0e80cadc6/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/89c2984e17d312d2988b8914a1131794/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/89c2984e17d312d2988b8914a1131794/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:20:5-22:41
+INJECTED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml
+INJECTED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml
+		INJECTED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml
+		ADDED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml
+		INJECTED from /Users/leson/Documents/AndroidStudioProjects/YonStore/MaterialShowcase/src/main/AndroidManifest.xml
+service#com.google.mlkit.common.internal.MlKitComponentDiscoveryService
+ADDED from [com.google.mlkit:object-detection:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/4e00c06c05bac83fd72ef6e4cac346a5/jetified-object-detection-16.2.1/AndroidManifest.xml:8:9-14:19
+MERGED from [com.google.mlkit:object-detection-custom:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/286ed8e4321b3404c63a15eae10c4768/jetified-object-detection-custom-16.2.1/AndroidManifest.xml:8:9-14:19
+MERGED from [com.google.mlkit:object-detection-custom:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/286ed8e4321b3404c63a15eae10c4768/jetified-object-detection-custom-16.2.1/AndroidManifest.xml:8:9-14:19
+MERGED from [com.google.android.gms:play-services-mlkit-barcode-scanning:16.1.2] /Users/leson/.gradle/caches/transforms-2/files-2.1/cad7cbcc3c2bb35de95e692b399f0356/jetified-play-services-mlkit-barcode-scanning-16.1.2/AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.android.gms:play-services-mlkit-barcode-scanning:16.1.2] /Users/leson/.gradle/caches/transforms-2/files-2.1/cad7cbcc3c2bb35de95e692b399f0356/jetified-play-services-mlkit-barcode-scanning-16.1.2/AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.mlkit:vision-internal-vkp:17.0.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/9bfbbb6c53925eee5eb69df7aea61404/jetified-vision-internal-vkp-17.0.1/AndroidManifest.xml:8:9-14:19
+MERGED from [com.google.mlkit:vision-internal-vkp:17.0.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/9bfbbb6c53925eee5eb69df7aea61404/jetified-vision-internal-vkp-17.0.1/AndroidManifest.xml:8:9-14:19
+MERGED from [com.google.mlkit:vision-common:16.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/13384cf9faf4709602da58728a3435a9/jetified-vision-common-16.1.0/AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.mlkit:vision-common:16.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/13384cf9faf4709602da58728a3435a9/jetified-vision-common-16.1.0/AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.mlkit:common:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/53e719a7c9e6aef5a7cc206f7756d030/jetified-common-17.0.0/AndroidManifest.xml:15:9-23:19
+MERGED from [com.google.mlkit:common:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/53e719a7c9e6aef5a7cc206f7756d030/jetified-common-17.0.0/AndroidManifest.xml:15:9-23:19
+	android:exported
+		ADDED from [com.google.mlkit:object-detection:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/4e00c06c05bac83fd72ef6e4cac346a5/jetified-object-detection-16.2.1/AndroidManifest.xml:10:13-37
+	tools:targetApi
+		ADDED from [com.google.mlkit:common:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/53e719a7c9e6aef5a7cc206f7756d030/jetified-common-17.0.0/AndroidManifest.xml:19:13-32
+	android:directBootAware
+		ADDED from [com.google.mlkit:common:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/53e719a7c9e6aef5a7cc206f7756d030/jetified-common-17.0.0/AndroidManifest.xml:17:13-43
+	android:name
+		ADDED from [com.google.mlkit:object-detection:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/4e00c06c05bac83fd72ef6e4cac346a5/jetified-object-detection-16.2.1/AndroidManifest.xml:9:13-91
+meta-data#com.google.firebase.components:com.google.mlkit.vision.objects.defaults.internal.DefaultObjectsRegistrar
+ADDED from [com.google.mlkit:object-detection:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/4e00c06c05bac83fd72ef6e4cac346a5/jetified-object-detection-16.2.1/AndroidManifest.xml:11:13-13:85
+	android:value
+		ADDED from [com.google.mlkit:object-detection:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/4e00c06c05bac83fd72ef6e4cac346a5/jetified-object-detection-16.2.1/AndroidManifest.xml:13:17-82
+	android:name
+		ADDED from [com.google.mlkit:object-detection:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/4e00c06c05bac83fd72ef6e4cac346a5/jetified-object-detection-16.2.1/AndroidManifest.xml:12:17-136
+meta-data#com.google.firebase.components:com.google.mlkit.vision.objects.custom.internal.CustomObjectsRegistrar
+ADDED from [com.google.mlkit:object-detection-custom:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/286ed8e4321b3404c63a15eae10c4768/jetified-object-detection-custom-16.2.1/AndroidManifest.xml:11:13-13:85
+	android:value
+		ADDED from [com.google.mlkit:object-detection-custom:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/286ed8e4321b3404c63a15eae10c4768/jetified-object-detection-custom-16.2.1/AndroidManifest.xml:13:17-82
+	android:name
+		ADDED from [com.google.mlkit:object-detection-custom:16.2.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/286ed8e4321b3404c63a15eae10c4768/jetified-object-detection-custom-16.2.1/AndroidManifest.xml:12:17-133
+meta-data#com.google.firebase.components:com.google.mlkit.vision.barcode.internal.BarcodeRegistrar
+ADDED from [com.google.android.gms:play-services-mlkit-barcode-scanning:16.1.2] /Users/leson/.gradle/caches/transforms-2/files-2.1/cad7cbcc3c2bb35de95e692b399f0356/jetified-play-services-mlkit-barcode-scanning-16.1.2/AndroidManifest.xml:12:13-14:85
+	android:value
+		ADDED from [com.google.android.gms:play-services-mlkit-barcode-scanning:16.1.2] /Users/leson/.gradle/caches/transforms-2/files-2.1/cad7cbcc3c2bb35de95e692b399f0356/jetified-play-services-mlkit-barcode-scanning-16.1.2/AndroidManifest.xml:14:17-82
+	android:name
+		ADDED from [com.google.android.gms:play-services-mlkit-barcode-scanning:16.1.2] /Users/leson/.gradle/caches/transforms-2/files-2.1/cad7cbcc3c2bb35de95e692b399f0356/jetified-play-services-mlkit-barcode-scanning-16.1.2/AndroidManifest.xml:13:17-120
+meta-data#com.google.firebase.components:com.google.mlkit.vision.vkp.VkpRegistrar
+ADDED from [com.google.mlkit:vision-internal-vkp:17.0.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/9bfbbb6c53925eee5eb69df7aea61404/jetified-vision-internal-vkp-17.0.1/AndroidManifest.xml:11:13-13:85
+	android:value
+		ADDED from [com.google.mlkit:vision-internal-vkp:17.0.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/9bfbbb6c53925eee5eb69df7aea61404/jetified-vision-internal-vkp-17.0.1/AndroidManifest.xml:13:17-82
+	android:name
+		ADDED from [com.google.mlkit:vision-internal-vkp:17.0.1] /Users/leson/.gradle/caches/transforms-2/files-2.1/9bfbbb6c53925eee5eb69df7aea61404/jetified-vision-internal-vkp-17.0.1/AndroidManifest.xml:12:17-103
+meta-data#com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar
+ADDED from [com.google.mlkit:vision-common:16.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/13384cf9faf4709602da58728a3435a9/jetified-vision-common-16.1.0/AndroidManifest.xml:12:13-14:85
+	android:value
+		ADDED from [com.google.mlkit:vision-common:16.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/13384cf9faf4709602da58728a3435a9/jetified-vision-common-16.1.0/AndroidManifest.xml:14:17-82
+	android:name
+		ADDED from [com.google.mlkit:vision-common:16.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/13384cf9faf4709602da58728a3435a9/jetified-vision-common-16.1.0/AndroidManifest.xml:13:17-124
+provider#com.google.mlkit.common.internal.MlKitInitProvider
+ADDED from [com.google.mlkit:common:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/53e719a7c9e6aef5a7cc206f7756d030/jetified-common-17.0.0/AndroidManifest.xml:9:9-13:38
+	android:authorities
+		ADDED from [com.google.mlkit:common:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/53e719a7c9e6aef5a7cc206f7756d030/jetified-common-17.0.0/AndroidManifest.xml:11:13-69
+	android:exported
+		ADDED from [com.google.mlkit:common:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/53e719a7c9e6aef5a7cc206f7756d030/jetified-common-17.0.0/AndroidManifest.xml:12:13-37
+	android:initOrder
+		ADDED from [com.google.mlkit:common:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/53e719a7c9e6aef5a7cc206f7756d030/jetified-common-17.0.0/AndroidManifest.xml:13:13-35
+	android:name
+		ADDED from [com.google.mlkit:common:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/53e719a7c9e6aef5a7cc206f7756d030/jetified-common-17.0.0/AndroidManifest.xml:10:13-78
+meta-data#com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar
+ADDED from [com.google.mlkit:common:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/53e719a7c9e6aef5a7cc206f7756d030/jetified-common-17.0.0/AndroidManifest.xml:20:13-22:85
+	android:value
+		ADDED from [com.google.mlkit:common:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/53e719a7c9e6aef5a7cc206f7756d030/jetified-common-17.0.0/AndroidManifest.xml:22:17-82
+	android:name
+		ADDED from [com.google.mlkit:common:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/53e719a7c9e6aef5a7cc206f7756d030/jetified-common-17.0.0/AndroidManifest.xml:21:17-120
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/3b0d1e609b40c4717bfdcd59ff80381e/jetified-play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/3b0d1e609b40c4717bfdcd59ff80381e/jetified-play-services-base-17.0.0/AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/3b0d1e609b40c4717bfdcd59ff80381e/jetified-play-services-base-17.0.0/AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/3b0d1e609b40c4717bfdcd59ff80381e/jetified-play-services-base-17.0.0/AndroidManifest.xml:24:13-79
+provider#androidx.lifecycle.ProcessLifecycleOwnerInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/a0150dbab62584e47d2faa97929ef07f/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:23:9-27:43
+	android:authorities
+		ADDED from [androidx.lifecycle:lifecycle-process:2.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/a0150dbab62584e47d2faa97929ef07f/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:25:13-69
+	android:multiprocess
+		ADDED from [androidx.lifecycle:lifecycle-process:2.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/a0150dbab62584e47d2faa97929ef07f/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:27:13-40
+	android:exported
+		ADDED from [androidx.lifecycle:lifecycle-process:2.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/a0150dbab62584e47d2faa97929ef07f/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:26:13-37
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.1.0] /Users/leson/.gradle/caches/transforms-2/files-2.1/a0150dbab62584e47d2faa97929ef07f/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:24:13-79

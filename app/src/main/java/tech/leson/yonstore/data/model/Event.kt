@@ -5,8 +5,7 @@ class Event(
     var startTime: Long,
     var endTime: Long,
     var description: String,
-    var image: String,
-    var discount: Double
+    var image: String
 ) {
-    constructor():this("", 0L, 0L, "", "", 0.0)
+    constructor():this("", 0L, 0L, "", "")
 }

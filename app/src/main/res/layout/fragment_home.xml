@@ -12,197 +12,206 @@
             type="tech.leson.yonstore.ui.main.home.HomeViewModel" />
     </data>
 
-    <androidx.core.widget.NestedScrollView
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/srLayoutHome"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/slideShow"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_200sdp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_height="wrap_content">
 
-            <com.rd.PageIndicatorView
-                android:id="@+id/pageIndicatorView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/slideShow"
-                app:piv_animationType="scale"
-                app:piv_dynamicCount="true"
-                app:piv_interactiveAnimation="true"
-                app:piv_selectedColor="@color/blue"
-                app:piv_unselectedColor="@color/light" />
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/slideShow"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_200sdp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_16sdp"
-                android:layout_marginTop="@dimen/_16sdp"
-                android:fontFamily="@font/poppins_bold"
-                android:text="@string/category"
-                android:textColor="@color/dark"
-                android:textSize="@dimen/_13ssp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/pageIndicatorView" />
+                <com.rd.PageIndicatorView
+                    android:id="@+id/pageIndicatorView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/slideShow"
+                    app:piv_animationType="scale"
+                    app:piv_dynamicCount="true"
+                    app:piv_interactiveAnimation="true"
+                    app:piv_selectedColor="@color/blue"
+                    app:piv_unselectedColor="@color/light" />
 
-            <TextView
-                android:id="@+id/btnCategoryMore"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_16sdp"
-                android:layout_marginEnd="@dimen/_16sdp"
-                android:background="@android:color/transparent"
-                android:fontFamily="@font/poppins_bold"
-                android:onClick="@{(View) -> viewModel.onClick(View)}"
-                android:text="@string/more_category"
-                android:textColor="@color/blue"
-                android:textSize="@dimen/_13ssp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/pageIndicatorView" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/category"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_13ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/pageIndicatorView" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rcvCategory"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:overScrollMode="never"
-                android:paddingStart="@dimen/_16sdp"
-                android:paddingEnd="@dimen/_16sdp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btnCategoryMore" />
+                <TextView
+                    android:id="@+id/btnCategoryMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/poppins_bold"
+                    android:onClick="@{(View) -> viewModel.onClick(View)}"
+                    android:text="@string/more_category"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/_13ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/pageIndicatorView" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_16sdp"
-                android:layout_marginTop="@dimen/_16sdp"
-                android:fontFamily="@font/poppins_bold"
-                android:text="@string/flash_sale"
-                android:textColor="@color/dark"
-                android:textSize="@dimen/_13ssp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rcvCategory" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:overScrollMode="never"
+                    android:paddingStart="@dimen/_16sdp"
+                    android:paddingEnd="@dimen/_16sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btnCategoryMore" />
 
-            <TextView
-                android:id="@+id/btnFlashSaleMore"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_16sdp"
-                android:layout_marginEnd="@dimen/_16sdp"
-                android:background="@android:color/transparent"
-                android:fontFamily="@font/poppins_bold"
-                android:onClick="@{(View) -> viewModel.onClick(View)}"
-                android:text="@string/see_more"
-                android:textColor="@color/blue"
-                android:textSize="@dimen/_13ssp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rcvCategory" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/flash_sale"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_13ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rcvCategory" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rcvFlashSale"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_16sdp"
-                android:overScrollMode="never"
-                android:paddingStart="@dimen/_16sdp"
-                android:paddingEnd="@dimen/_16sdp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btnFlashSaleMore" />
+                <TextView
+                    android:id="@+id/btnFlashSaleMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/poppins_bold"
+                    android:onClick="@{(View) -> viewModel.onClick(View)}"
+                    android:text="@string/see_more"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/_13ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rcvCategory" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_16sdp"
-                android:layout_marginTop="@dimen/_16sdp"
-                android:fontFamily="@font/poppins_bold"
-                android:text="@string/mega_sale"
-                android:textColor="@color/dark"
-                android:textSize="@dimen/_13ssp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rcvFlashSale" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvFlashSale"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:overScrollMode="never"
+                    android:paddingStart="@dimen/_16sdp"
+                    android:paddingEnd="@dimen/_16sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btnFlashSaleMore" />
 
-            <TextView
-                android:id="@+id/btnMegaSaleMore"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_16sdp"
-                android:layout_marginEnd="@dimen/_16sdp"
-                android:background="@android:color/transparent"
-                android:fontFamily="@font/poppins_bold"
-                android:onClick="@{(View) -> viewModel.onClick(View)}"
-                android:text="@string/see_more"
-                android:textColor="@color/blue"
-                android:textSize="@dimen/_13ssp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rcvFlashSale" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/mega_sale"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_13ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rcvFlashSale" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rcvMegaSale"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_16sdp"
-                android:overScrollMode="never"
-                android:paddingStart="@dimen/_16sdp"
-                android:paddingEnd="@dimen/_16sdp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btnMegaSaleMore" />
+                <TextView
+                    android:id="@+id/btnMegaSaleMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/poppins_bold"
+                    android:onClick="@{(View) -> viewModel.onClick(View)}"
+                    android:text="@string/see_more"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/_13ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rcvFlashSale" />
 
-            <ImageView
-                android:id="@+id/imvProduct"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_200sdp"
-                android:layout_marginStart="@dimen/_16sdp"
-                android:layout_marginEnd="@dimen/_16sdp"
-                android:src="@drawable/banner"
-                app:layout_constraintTop_toBottomOf="@+id/rcvMegaSale"
-                tools:ignore="ContentDescription" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvMegaSale"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:overScrollMode="never"
+                    android:paddingStart="@dimen/_16sdp"
+                    android:paddingEnd="@dimen/_16sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btnMegaSaleMore" />
 
-            <TextView
-                android:id="@+id/tvRecProduct"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginBottom="@dimen/_20sdp"
-                android:fontFamily="@font/poppins_bold"
-                android:text="@string/recomended_nproduct"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_22ssp"
-                app:layout_constraintBottom_toBottomOf="@id/imvProduct"
-                app:layout_constraintStart_toStartOf="@id/imvProduct"
-                app:layout_constraintTop_toTopOf="@id/imvProduct" />
+                <ImageView
+                    android:id="@+id/imvProduct"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_200sdp"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:src="@drawable/banner"
+                    app:layout_constraintTop_toBottomOf="@+id/rcvMegaSale"
+                    tools:ignore="ContentDescription" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:text="@string/we_recommend_the_best_for_you"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_11ssp"
-                app:layout_constraintStart_toStartOf="@id/tvRecProduct"
-                app:layout_constraintTop_toBottomOf="@id/tvRecProduct" />
+                <TextView
+                    android:id="@+id/tvRecProduct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/recomended_nproduct"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_22ssp"
+                    app:layout_constraintBottom_toBottomOf="@id/imvProduct"
+                    app:layout_constraintStart_toStartOf="@id/imvProduct"
+                    app:layout_constraintTop_toTopOf="@id/imvProduct" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rcvRecProduct"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_16sdp"
-                android:layout_marginBottom="@dimen/_48sdp"
-                android:overScrollMode="never"
-                android:paddingStart="@dimen/_16sdp"
-                android:paddingEnd="@dimen/_16sdp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/imvProduct" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="@string/we_recommend_the_best_for_you"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11ssp"
+                    app:layout_constraintStart_toStartOf="@id/tvRecProduct"
+                    app:layout_constraintTop_toBottomOf="@id/tvRecProduct" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvRecProduct"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_marginBottom="@dimen/_48sdp"
+                    android:overScrollMode="never"
+                    android:paddingStart="@dimen/_16sdp"
+                    android:paddingEnd="@dimen/_16sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/imvProduct" />
 
-    </androidx.core.widget.NestedScrollView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </layout>
