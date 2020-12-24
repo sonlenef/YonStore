@@ -29,34 +29,22 @@
             android:drawablePadding="@dimen/_15sdp"
             android:hint="@string/search_product"
             android:imeOptions="actionSearch"
-            android:focusable="false"
-            android:inputType="none"
+            android:inputType="text"
             android:paddingStart="@dimen/_10sdp"
             android:paddingEnd="@dimen/_10sdp"
             android:textColorHint="@color/grey"
             android:textSize="@dimen/_11ssp"
             android:transitionName="searchField"
+            app:drawableEndCompat="@drawable/ic_close"
             app:drawableStartCompat="@drawable/ic_search"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/btnHeart"
+            app:layout_constraintEnd_toStartOf="@id/btnMic"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="Autofill" />
 
         <ImageView
-            android:id="@+id/btnHeart"
-            android:layout_width="@dimen/_40sdp"
-            android:layout_height="@dimen/_40sdp"
-            android:background="@drawable/bg_btn_transparent"
-            android:onClick="@{(View) -> viewModel.onClick(View)}"
-            android:padding="@dimen/_12sdp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/btnNotification"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_heart" />
-
-        <ImageView
-            android:id="@+id/btnNotification"
+            android:id="@+id/btnMic"
             android:layout_width="@dimen/_40sdp"
             android:layout_height="@dimen/_40sdp"
             android:layout_marginEnd="@dimen/_4sdp"
@@ -66,7 +54,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_notification" />
+            app:srcCompat="@drawable/ic_mic" />
 
         <View
             android:layout_width="match_parent"

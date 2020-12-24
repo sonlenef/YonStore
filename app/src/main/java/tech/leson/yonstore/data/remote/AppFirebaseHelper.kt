@@ -12,6 +12,8 @@ import tech.leson.yonstore.data.model.Category
 import tech.leson.yonstore.data.model.Event
 import tech.leson.yonstore.data.model.Product
 import tech.leson.yonstore.data.model.User
+import tech.leson.yonstore.utils.AppUtils
+import java.util.*
 
 @Suppress("UNCHECKED_CAST")
 class AppFirebaseHelper(
@@ -51,7 +53,8 @@ class AppFirebaseHelper(
     override fun deleteImage(url: String) = storage.getReferenceFromUrl(url).delete()
 
     override fun createProduct(product: Product): Task<DocumentReference> {
-        val data = ObjectMapper().convertValue(product, Map::class.java) as Map<String, Any>
+        val data = ObjectMapper().convertValue(product, Map::class.java) as MutableMap<String, Any>
+        data["search"] = AppUtils.stringToArray(product.name)
         return database.collection("products").add(data)
     }
 
@@ -64,12 +67,16 @@ class AppFirebaseHelper(
         database.collection("products").whereEqualTo("category", category).get()
 
     override fun updateProduct(product: Product): Task<Void> {
-        val data = ObjectMapper().convertValue(product, Map::class.java) as Map<String, Any>
+        val data = ObjectMapper().convertValue(product, Map::class.java) as MutableMap<String, Any>
+        data["search"] = AppUtils.stringToArray(product.name)
         return database.collection("products").document(product.id).update(data)
     }
 
     override fun removeProduct(product: Product) =
         database.collection("products").document(product.id).delete()
+
+    override fun searchProduct(searchData: String) = database.collection("products")
+        .whereArrayContains("search", searchData.toLowerCase(Locale.ROOT)).get()
 
     override fun createEvent(event: Event): Task<DocumentReference> {
         val data = ObjectMapper().convertValue(event, Map::class.java) as Map<String, Any>

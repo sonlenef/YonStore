@@ -3,6 +3,7 @@ package tech.leson.yonstore.data
 import android.net.Uri
 import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.QuerySnapshot
 import tech.leson.yonstore.data.local.prefs.PreferencesHelper
 import tech.leson.yonstore.data.model.Category
@@ -48,6 +49,8 @@ class AppDataManager(firebaseHelper: FirebaseHelper, preferencesHelper: Preferen
     override fun updateProduct(product: Product) = mFirebaseHelper.updateProduct(product)
 
     override fun removeProduct(product: Product) = mFirebaseHelper.removeProduct(product)
+
+    override fun searchProduct(searchData: String) = mFirebaseHelper.searchProduct(searchData)
 
     override fun createEvent(event: Event) = mFirebaseHelper.createEvent(event)
 

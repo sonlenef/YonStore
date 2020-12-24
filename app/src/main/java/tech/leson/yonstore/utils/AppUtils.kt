@@ -13,6 +13,8 @@ import androidx.annotation.ColorInt
 import androidx.annotation.NonNull
 import com.google.i18n.phonenumbers.NumberParseException
 import com.google.i18n.phonenumbers.PhoneNumberUtil
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 class AppUtils {
@@ -42,6 +44,22 @@ class AppUtils {
             } else {
                 drawable.setColorFilter(color, PorterDuff.Mode.SRC_ATOP)
             }
+        }
+
+        fun stringToArray(s: String): MutableList<String> {
+            val splits = s.toLowerCase(Locale.ROOT).split(" ")
+            val array: MutableList<String> = ArrayList()
+            for (item: String in splits) {
+                array.add(item.trim())
+            }
+
+            var string = array[0]
+            val int = array.size
+            for (i in 1 until int) {
+                string = string + " " + array[i]
+                array.add(string)
+            }
+            return array
         }
     }
 }

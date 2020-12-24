@@ -1,8 +1,10 @@
 package tech.leson.yonstore.ui.main
 
+import android.app.ActivityOptions
 import android.content.Context
 import android.content.Intent
 import android.view.View
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
@@ -24,6 +26,7 @@ import tech.leson.yonstore.ui.main.cart.CartFragment
 import tech.leson.yonstore.ui.main.explore.ExploreFragment
 import tech.leson.yonstore.ui.main.home.HomeFragment
 import tech.leson.yonstore.ui.main.offer.OfferFragment
+import tech.leson.yonstore.ui.search.SearchActivity
 import tech.leson.yonstore.utils.AppUtils
 
 class MainActivity : BaseActivity<ActivityMainBinding, MainNavigator, MainViewModel>(),
@@ -137,7 +140,12 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainNavigator, MainViewMo
         edtSearch.setOnClickListener { onSearch() }
     }
 
-    override fun onSearch() {}
+    override fun onSearch() {
+        val i = SearchActivity.getIntent(this)
+        val options = ActivityOptions
+            .makeSceneTransitionAnimation(this, edtSearch, "searchField")
+        startActivity(i, options.toBundle())
+    }
 
     override fun onFavorite() {
         startActivity(FavoriteActivity.getIntent(this))

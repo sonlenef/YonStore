@@ -3,7 +3,9 @@ package tech.leson.yonstore.data.remote
 import android.net.Uri
 import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.QuerySnapshot
+import com.google.firebase.firestore.util.Util
 import tech.leson.yonstore.data.model.Category
 import tech.leson.yonstore.data.model.Event
 import tech.leson.yonstore.data.model.Product
@@ -23,6 +25,7 @@ interface FirebaseHelper {
     fun getProductByCategory(category: Category): Task<QuerySnapshot>
     fun updateProduct(product: Product): Task<Void>
     fun removeProduct(product: Product): Task<Void>
+    fun searchProduct(searchData: String): Task<QuerySnapshot>
     fun createEvent(event: Event): Task<DocumentReference>
     fun getAllEvent(): Task<QuerySnapshot>
     fun logoutFirebase()

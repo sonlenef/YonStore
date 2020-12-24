@@ -12,6 +12,7 @@ class MainViewModel(dataManager: DataManager, schedulerProvider: SchedulerProvid
     override fun onClick(view: View) {
         when (view.id) {
             R.id.btnHeart -> navigator?.onFavorite()
+            R.id.edtSearch -> navigator?.onSearch()
         }
     }
 }
