@@ -3,6 +3,7 @@ package tech.leson.yonstore.data.model
 import java.io.Serializable
 
 class User(
+    var id: String,
     var accountId: String,
     var fullName: String,
     var phoneNumber: String,
@@ -12,8 +13,23 @@ class User(
     var address: Address,
     var role: String,
     var avatar: String,
+    var favorite: MutableList<Product>,
+    var cart: MutableList<Cart>,
     var yonCoin: Int,
     var status: UserStatus,
 ) : Serializable {
-    constructor() : this("", "", "", "", "", "", Address(), "user", "", 0, UserStatus())
+    constructor() : this("",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        Address(),
+        "user",
+        "",
+        ArrayList(),
+        ArrayList(),
+        0,
+        UserStatus())
 }

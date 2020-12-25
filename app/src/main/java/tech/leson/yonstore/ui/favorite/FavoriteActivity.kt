@@ -2,6 +2,7 @@ package tech.leson.yonstore.ui.favorite
 
 import android.content.Context
 import android.content.Intent
+import android.widget.Toast
 import androidx.databinding.library.baseAdapters.BR
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -40,28 +41,31 @@ class FavoriteActivity :
     override fun init() {
         viewModel.setNavigator(this)
         tvTitle.text = getText(R.string.favorite_product)
-        setFevProduct()
-    }
 
-    private fun setFevProduct() {
-//        mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
-//        mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
-//        mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
-//        mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
-//        mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
-//        mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
-//        mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
-//        mFevProductAdapter.addData(Product(getString(R.string.name_product_demo), null))
         val layoutManager = GridLayoutManager(this, 2, RecyclerView.VERTICAL, false)
         rcvFavorite.layoutManager = layoutManager
         mFevProductAdapter.favoriteNavigator = this
         rcvFavorite.adapter = mFevProductAdapter
     }
 
+    override fun onStart() {
+        super.onStart()
+
+        viewModel.getFavProducts()
+    }
+
+    override fun setFavProduct(products: MutableList<Product>) {
+        mFevProductAdapter.addAllData(products)
+    }
+
     override fun onProductClick(product: Product) {
         val intent = ProductActivity.getIntent(this)
         intent.putExtra("product", product)
         startActivity(intent)
+    }
+
+    override fun onMsg(msg: String) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
     }
 
     override fun onBack() {

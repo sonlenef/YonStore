@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.view.View
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
@@ -46,16 +47,18 @@ class ProductActivity : BaseActivity<ActivityProductBinding, ProductNavigator, P
         get() = R.layout.activity_product
     override val viewModel: ProductViewModel by viewModel()
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "UseCompatLoadingForDrawables")
     override fun init() {
         viewModel.setNavigator(this)
         mProductSizeAdapter.listener = this
         mProductColorAdapter.listener = this
 
+        viewModel.getUserCurrent()
+
         val product: Product = intent.getSerializableExtra("product") as Product
         product.let {
+            viewModel.product.value = it
             tvTitle.text = it.name
-            tvProductName.text = it.name
             setImages(it.images)
             if (it.discount > 0.0) {
                 tvProductPrice.text = "$${it.price * (1 - it.discount)}"
@@ -73,6 +76,9 @@ class ProductActivity : BaseActivity<ActivityProductBinding, ProductNavigator, P
             tvProductReview.text = "${viewModel.averageRating.value} (${it.reviews.size} review)"
             tvSpecificationText.text = it.specification
         }
+
+        if (viewModel.favorite.value!!) btnHeart.setImageDrawable(getDrawable(R.drawable.ic_heart_red))
+        else btnHeart.setImageDrawable(getDrawable(R.drawable.ic_heart))
     }
 
     private fun setImages(images: MutableList<ProductImage>) {
@@ -104,6 +110,20 @@ class ProductActivity : BaseActivity<ActivityProductBinding, ProductNavigator, P
         rcvSize.adapter = mProductSizeAdapter
 
         setColor(viewModel.productStyles[0].colors)
+    }
+
+    @SuppressLint("UseCompatLoadingForDrawables")
+    override fun onLike() {
+        btnHeart.setImageDrawable(getDrawable(R.drawable.ic_heart_red))
+    }
+
+    @SuppressLint("UseCompatLoadingForDrawables")
+    override fun onUnlike() {
+        btnHeart.setImageDrawable(getDrawable(R.drawable.ic_heart))
+    }
+
+    override fun onMsg(msg: String) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
     }
 
     private fun setColor(colors: MutableList<ProductColor>) {

@@ -30,6 +30,11 @@ class AppFirebaseHelper(
     override fun getUser(uid: String): Task<QuerySnapshot> =
         database.collection("users").whereEqualTo("accountId", uid).get()
 
+    override fun updateUser(user: User): Task<Void> {
+        val data = ObjectMapper().convertValue(user, Map::class.java) as MutableMap<String, Any>
+        return database.collection("users").document(user.id).update(data)
+    }
+
     override fun getAllCategory() = database.collection("categories").get()
 
     override fun getLimitCategory(limit: Long): Task<QuerySnapshot> =

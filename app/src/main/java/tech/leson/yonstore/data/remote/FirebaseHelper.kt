@@ -14,6 +14,7 @@ import tech.leson.yonstore.data.model.User
 interface FirebaseHelper {
     fun register(registerData: User): Task<DocumentReference>
     fun getUser(uid: String): Task<QuerySnapshot>
+    fun updateUser(user: User): Task<Void>
     fun getAllCategory(): Task<QuerySnapshot>
     fun getLimitCategory(limit: Long): Task<QuerySnapshot>
     fun getCategoryByStyle(style: String): Task<QuerySnapshot>

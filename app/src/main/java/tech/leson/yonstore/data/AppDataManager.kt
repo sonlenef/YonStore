@@ -1,10 +1,6 @@
 package tech.leson.yonstore.data
 
 import android.net.Uri
-import com.google.android.gms.tasks.Task
-import com.google.firebase.firestore.DocumentReference
-import com.google.firebase.firestore.Query
-import com.google.firebase.firestore.QuerySnapshot
 import tech.leson.yonstore.data.local.prefs.PreferencesHelper
 import tech.leson.yonstore.data.model.Category
 import tech.leson.yonstore.data.model.Event
@@ -26,6 +22,8 @@ class AppDataManager(firebaseHelper: FirebaseHelper, preferencesHelper: Preferen
     override fun register(registerData: User) = mFirebaseHelper.register(registerData)
 
     override fun getUser(uid: String) = mFirebaseHelper.getUser(uid)
+
+    override fun updateUser(user: User) = mFirebaseHelper.updateUser(user)
 
     override fun getAllCategory() = mFirebaseHelper.getAllCategory()
 

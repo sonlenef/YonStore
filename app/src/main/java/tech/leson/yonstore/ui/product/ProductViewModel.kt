@@ -8,6 +8,7 @@ import kotlinx.coroutines.launch
 import tech.leson.yonstore.R
 import tech.leson.yonstore.data.DataManager
 import tech.leson.yonstore.data.model.Product
+import tech.leson.yonstore.data.model.User
 import tech.leson.yonstore.ui.base.BaseViewModel
 import tech.leson.yonstore.ui.product.model.ProductColor
 import tech.leson.yonstore.ui.product.model.ProductStyle
@@ -16,8 +17,59 @@ import tech.leson.yonstore.utils.rx.SchedulerProvider
 class ProductViewModel(dataManager: DataManager, schedulerProvider: SchedulerProvider) :
     BaseViewModel<ProductNavigator>(dataManager, schedulerProvider) {
 
+    val user: MutableLiveData<User> = MutableLiveData()
+    val product: MutableLiveData<Product> = MutableLiveData()
     val averageRating = MutableLiveData(5.0F)
     val productStyles: MutableList<ProductStyle> = ArrayList()
+    val favorite: MutableLiveData<Boolean> = MutableLiveData(false)
+
+    fun getUserCurrent() {
+        setIsLoading(true)
+        dataManager.getUser(dataManager.getUserUid())
+            .addOnSuccessListener {
+                for (doc in it) {
+                    val userData = doc.toObject(User::class.java)
+                    userData.id = doc.id
+                    user.postValue(userData)
+
+                    var check = 0
+                    userData.favorite.forEach { item ->
+                        if (item == product.value) check++
+                    }
+
+                    if (check == 0) {
+                        navigator?.onUnlike()
+                        favorite.postValue(false)
+                    } else {
+                        navigator?.onLike()
+                        favorite.postValue(true)
+                    }
+                }
+                setIsLoading(false)
+            }
+            .addOnFailureListener {
+                navigator?.onMsg(it.message.toString())
+                setIsLoading(false)
+            }
+    }
+
+    private fun changeFavorite() {
+        setIsLoading(true)
+        if (favorite.value!!) {
+            user.value!!.favorite.remove(product.value)
+        } else {
+            user.value!!.favorite.add(0, product.value!!)
+        }
+        dataManager.updateUser(user.value!!)
+            .addOnSuccessListener {
+                getUserCurrent()
+                setIsLoading(false)
+            }
+            .addOnFailureListener {
+                navigator?.onMsg(it.message.toString())
+                setIsLoading(false)
+            }
+    }
 
     fun setProductStyle(product: Product) {
         viewModelScope.launch(Dispatchers.IO) {
@@ -64,6 +116,9 @@ class ProductViewModel(dataManager: DataManager, schedulerProvider: SchedulerPro
 
     override fun onClick(view: View) {
         when (view.id) {
+            R.id.btnHeart -> {
+                changeFavorite()
+            }
             R.id.btnBack -> navigator?.onBack()
         }
     }

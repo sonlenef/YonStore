@@ -18,7 +18,9 @@ class ProfileViewModel(dataManager: DataManager, schedulerProvider: SchedulerPro
         dataManager.getUser(dataManager.getUserUid())
             .addOnSuccessListener {
                 for (doc in it) {
-                    user.postValue(doc.toObject(User::class.java))
+                    val userData = doc.toObject(User::class.java)
+                    userData.id = doc.id
+                    user.postValue(userData)
                 }
                 setIsLoading(false)
             }

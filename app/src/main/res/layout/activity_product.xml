@@ -79,6 +79,7 @@
                         android:ellipsize="end"
                         android:fontFamily="@font/poppins_bold"
                         android:maxLines="2"
+                        android:text="@{viewModel.product.name}"
                         android:textColor="@color/dark"
                         android:textSize="@dimen/_18ssp"
                         app:layout_constraintEnd_toStartOf="@id/btnHeart"
@@ -146,13 +147,13 @@
                             android:id="@+id/tvOldPrice"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/strikethrough_shape"
                             android:ellipsize="end"
                             android:fontFamily="@font/poppins_regular"
                             android:maxLines="1"
                             android:text="@string/price_demo"
                             android:textColor="@color/grey"
                             android:textSize="@dimen/_10ssp"
-                            android:background="@drawable/strikethrough_shape"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
