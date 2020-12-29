@@ -1,5 +1,5 @@
 package tech.leson.yonstore.data.model
 
-class Cart(var product: Product, var style: Style, var qty: Int) {
-    constructor() : this(Product(), Style(), 0)
+data class Cart(var productId: String, var style: Style, var qty: Int) {
+    constructor() : this("", Style(), 0)
 }

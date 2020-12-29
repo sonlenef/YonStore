@@ -5,13 +5,17 @@
     <item android:state_pressed="true">
         <shape>
             <solid android:color="@color/blueTransparent" />
-            <corners android:radius="@dimen/_36sdp" />
+            <corners
+                android:bottomRightRadius="@dimen/_3sdp"
+                android:topRightRadius="@dimen/_3sdp" />
         </shape>
     </item>
     <item>
         <shape android:shape="rectangle">
-            <solid android:color="@color/white" />
-            <corners android:radius="@dimen/_36sdp" />
+            <solid android:color="@color/blue" />
+            <corners
+                android:bottomRightRadius="@dimen/_3sdp"
+                android:topRightRadius="@dimen/_3sdp" />
         </shape>
     </item>
 

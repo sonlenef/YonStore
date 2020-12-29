@@ -151,6 +151,10 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainNavigator, MainViewMo
         startActivity(FavoriteActivity.getIntent(this))
     }
 
+    override fun onMsg(msg: String) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+    }
+
     fun onNavSearch() {
         navTitle.visibility = View.GONE
         navSearch.visibility = View.VISIBLE

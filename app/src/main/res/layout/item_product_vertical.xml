@@ -31,7 +31,7 @@
                 android:id="@+id/imvProduct"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="centerCrop"
+                android:background="@color/light"
                 app:srcCompat="@drawable/product"
                 tools:ignore="ContentDescription" />
 
@@ -44,7 +44,7 @@
             android:layout_marginTop="@dimen/_5sdp"
             android:ellipsize="end"
             android:fontFamily="@font/poppins_bold"
-            android:maxLines="2"
+            android:lines="2"
             android:text="@string/name_product_demo"
             android:textColor="@color/dark"
             android:textSize="@dimen/_11ssp"

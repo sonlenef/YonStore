@@ -2,14 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutProduct"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_16sdp"
         android:background="@drawable/bg_border"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -18,12 +18,12 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cvProduct"
-            android:layout_width="@dimen/_100sdp"
-            android:layout_height="@dimen/_100sdp"
-            android:layout_margin="@dimen/_12sdp"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_margin="@dimen/_10sdp"
             app:cardCornerRadius="@dimen/_5sdp"
             app:cardElevation="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -32,7 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/light"
-                app:srcCompat="@drawable/product"
+                app:srcCompat="@drawable/test"
                 tools:ignore="ContentDescription" />
 
         </androidx.cardview.widget.CardView>
@@ -41,16 +41,40 @@
             android:id="@+id/tvProductName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_10sdp"
             android:ellipsize="end"
             android:fontFamily="@font/poppins_bold"
             android:lines="2"
             android:text="@string/name_product_demo"
             android:textColor="@color/dark"
             android:textSize="@dimen/_11ssp"
-            app:layout_constraintEnd_toEndOf="@id/cvProduct"
-            app:layout_constraintStart_toStartOf="@id/cvProduct"
-            app:layout_constraintTop_toBottomOf="@id/cvProduct" />
+            app:layout_constraintEnd_toStartOf="@id/btnHeart"
+            app:layout_constraintStart_toEndOf="@id/cvProduct"
+            app:layout_constraintTop_toTopOf="@id/cvProduct" />
+
+        <ImageView
+            android:id="@+id/btnHeart"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:background="@drawable/bg_btn_transparent"
+            android:padding="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="@id/btnBin"
+            app:layout_constraintEnd_toStartOf="@id/btnBin"
+            app:layout_constraintTop_toTopOf="@id/btnBin"
+            app:srcCompat="@drawable/ic_heart"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/btnBin"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:background="@drawable/bg_btn_transparent"
+            android:padding="@dimen/_5sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/cvProduct"
+            app:srcCompat="@drawable/ic_bin"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/tvProductPrice"
@@ -62,6 +86,7 @@
             android:text="@string/price_demo"
             android:textColor="@color/blue"
             android:textSize="@dimen/_11ssp"
+            app:layout_constraintBottom_toTopOf="@id/layoutDiscount"
             app:layout_constraintEnd_toEndOf="@id/tvProductName"
             app:layout_constraintStart_toStartOf="@id/tvProductName"
             app:layout_constraintTop_toBottomOf="@id/tvProductName" />
@@ -70,8 +95,7 @@
             android:id="@+id/layoutDiscount"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/_12sdp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/cvProduct"
             app:layout_constraintEnd_toEndOf="@id/tvProductPrice"
             app:layout_constraintStart_toStartOf="@id/tvProductPrice"
             app:layout_constraintTop_toBottomOf="@id/tvProductPrice">
@@ -106,6 +130,45 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/btnPlus"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@drawable/bg_btn_border_right"
+            android:padding="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="@id/layoutDiscount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_plus_grey"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tvCount"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:background="@color/light"
+            android:ellipsize="end"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintBottom_toBottomOf="@id/btnPlus"
+            app:layout_constraintEnd_toStartOf="@id/btnPlus"
+            app:layout_constraintTop_toTopOf="@id/btnPlus" />
+
+        <ImageView
+            android:id="@+id/btnMinus"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:background="@drawable/bg_btn_border_left"
+            android:padding="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="@id/layoutDiscount"
+            app:layout_constraintEnd_toStartOf="@id/tvCount"
+            app:srcCompat="@drawable/ic_minus"
+            tools:ignore="ContentDescription" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

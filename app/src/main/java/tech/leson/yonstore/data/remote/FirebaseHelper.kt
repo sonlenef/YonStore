@@ -3,9 +3,8 @@ package tech.leson.yonstore.data.remote
 import android.net.Uri
 import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.DocumentReference
-import com.google.firebase.firestore.Query
+import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.QuerySnapshot
-import com.google.firebase.firestore.util.Util
 import tech.leson.yonstore.data.model.Category
 import tech.leson.yonstore.data.model.Event
 import tech.leson.yonstore.data.model.Product
@@ -22,6 +21,7 @@ interface FirebaseHelper {
     fun deleteImage(url: String): Task<Void>
     fun createProduct(product: Product): Task<DocumentReference>
     fun getAllProduct(): Task<QuerySnapshot>
+    fun getProductById(id: String): Task<DocumentSnapshot>
     fun getProductByCode(code: String): Task<QuerySnapshot>
     fun getProductByCategory(category: Category): Task<QuerySnapshot>
     fun updateProduct(product: Product): Task<Void>

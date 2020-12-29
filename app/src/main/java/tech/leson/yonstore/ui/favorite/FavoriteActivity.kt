@@ -51,11 +51,12 @@ class FavoriteActivity :
     override fun onStart() {
         super.onStart()
 
+        mFevProductAdapter.clearData()
         viewModel.getFavProducts()
     }
 
-    override fun setFavProduct(products: MutableList<Product>) {
-        mFevProductAdapter.addAllData(products)
+    override fun setFavProduct(product: Product) {
+        mFevProductAdapter.addData(product)
     }
 
     override fun onProductClick(product: Product) {

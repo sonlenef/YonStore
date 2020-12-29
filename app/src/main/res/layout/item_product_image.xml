@@ -10,7 +10,7 @@
         android:layout_width="@dimen/_80sdp"
         android:layout_height="@dimen/_80sdp"
         android:layout_marginEnd="@dimen/_5sdp"
-        android:scaleType="centerCrop"
+        android:background="@color/light"
         android:src="@drawable/default_image"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

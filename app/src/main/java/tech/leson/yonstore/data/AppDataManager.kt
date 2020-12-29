@@ -39,6 +39,8 @@ class AppDataManager(firebaseHelper: FirebaseHelper, preferencesHelper: Preferen
 
     override fun getAllProduct() = mFirebaseHelper.getAllProduct()
 
+    override fun getProductById(id: String) = mFirebaseHelper.getProductById(id)
+
     override fun getProductByCode(code: String) = mFirebaseHelper.getProductByCode(code)
 
     override fun getProductByCategory(category: Category) =

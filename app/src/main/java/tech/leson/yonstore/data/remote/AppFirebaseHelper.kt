@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.storage.FirebaseStorage
@@ -64,6 +65,9 @@ class AppFirebaseHelper(
     }
 
     override fun getAllProduct() = database.collection("products").get()
+
+    override fun getProductById(id: String): Task<DocumentSnapshot> =
+        database.collection("products").document(id).get()
 
     override fun getProductByCode(code: String) =
         database.collection("products").whereEqualTo("code", code).limit(1).get()

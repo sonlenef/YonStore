@@ -13,7 +13,7 @@ class User(
     var address: Address,
     var role: String,
     var avatar: String,
-    var favorite: MutableList<Product>,
+    var favorite: MutableList<String>,
     var cart: MutableList<Cart>,
     var yonCoin: Int,
     var status: UserStatus,

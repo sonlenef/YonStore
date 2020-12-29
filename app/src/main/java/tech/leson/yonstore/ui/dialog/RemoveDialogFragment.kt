@@ -1,4 +1,4 @@
-package tech.leson.yonstore.ui.editproduct.dialog
+package tech.leson.yonstore.ui.dialog
 
 import android.app.AlertDialog
 import android.app.Dialog

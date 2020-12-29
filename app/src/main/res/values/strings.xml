@@ -135,4 +135,10 @@
     <string name="product_code_exists">Product code already exists</string>
     <string name="product_not_found">Product not found</string>
     <string name="save_product">Save Product</string>
+    <string name="apply">Apply</string>
+    <string name="total_price">Total Price</string>
+    <string name="items">Items</string>
+    <string name="shipping">Shipping</string>
+    <string name="import_charges">Import Charges</string>
+    <string name="check_out">Check Out</string>
 </resources>

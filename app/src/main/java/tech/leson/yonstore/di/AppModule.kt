@@ -105,6 +105,7 @@ val mainModule = module {
     factory { ProductSizeAdapter(ArrayList()) }
     factory { ProductColorAdapter(ArrayList()) }
     factory { EventAdapter(ArrayList()) }
+    factory { ProductCartAdapter(ArrayList()) }
 
     viewModel { AccountViewModel(get(), get()) }
     viewModel { CartViewModel(get(), get()) }

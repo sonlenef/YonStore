@@ -29,7 +29,7 @@ import tech.leson.yonstore.ui.addproduct.dialog.addCategory.AddCategoryDialog
 import tech.leson.yonstore.ui.addproduct.dialog.addImage.AddImageDialog
 import tech.leson.yonstore.ui.addproduct.dialog.addStyle.AddStyleDialog
 import tech.leson.yonstore.ui.base.BaseActivity
-import tech.leson.yonstore.ui.editproduct.dialog.RemoveDialogFragment
+import tech.leson.yonstore.ui.dialog.RemoveDialogFragment
 import tech.leson.yonstore.utils.OnItemClickListener
 import java.io.File
 import java.io.IOException

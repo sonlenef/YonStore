@@ -15,8 +15,10 @@ import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import tech.leson.yonstore.BR
 import tech.leson.yonstore.R
+import tech.leson.yonstore.data.model.Cart
 import tech.leson.yonstore.data.model.Product
 import tech.leson.yonstore.data.model.ProductImage
+import tech.leson.yonstore.data.model.Style
 import tech.leson.yonstore.databinding.ActivityProductBinding
 import tech.leson.yonstore.ui.adapter.ProductColorAdapter
 import tech.leson.yonstore.ui.adapter.ProductImgAdapter
@@ -110,6 +112,16 @@ class ProductActivity : BaseActivity<ActivityProductBinding, ProductNavigator, P
         rcvSize.adapter = mProductSizeAdapter
 
         setColor(viewModel.productStyles[0].colors)
+    }
+
+    override fun onAddToCart() {
+        val style = Style(mProductSizeAdapter.data[mProductSizeAdapter.currentItem.value!!].size,
+            mProductColorAdapter.data[mProductColorAdapter.currentItem.value!!].color,
+            1,
+            1)
+        val cart = Cart(viewModel.product.value!!.id, style, 1)
+        if (isNetworkConnected()) viewModel.addToCart(cart)
+        else Toast.makeText(this, getString(R.string.network_not_connected), Toast.LENGTH_SHORT).show()
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")
