@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="tech.leson.yonstore.ui.paymentList.ListPaymentViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarMain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                app:cardUseCompatPadding="false"
+                app:elevation="@dimen/_5sdp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <include
+                        layout="@layout/navigation_header"
+                        app:viewModel="@{(tech.leson.yonstore.ui.base.BaseViewModel)viewModel}" />
+                </FrameLayout>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <TextView
+                    android:id="@+id/btnPayOnDelivery"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_48sdp"
+                    android:background="@drawable/bg_btn"
+                    android:drawablePadding="@dimen/_10ssp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="center_vertical"
+                    android:onClick="@{(View) -> viewModel.onClick(View)}"
+                    android:paddingStart="@dimen/_16ssp"
+                    android:paddingEnd="@dimen/_16ssp"
+                    android:text="@string/payment_on_delivery"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_11ssp"
+                    app:drawableStartCompat="@drawable/ic_pay_on_delivery"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/btnCreditCart"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_48sdp"
+                    android:background="@drawable/bg_btn"
+                    android:drawablePadding="@dimen/_10ssp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="center_vertical"
+                    android:onClick="@{(View) -> viewModel.onClick(View)}"
+                    android:paddingStart="@dimen/_16ssp"
+                    android:paddingEnd="@dimen/_16ssp"
+                    android:text="@string/credit_card_or_debit"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_11ssp"
+                    app:drawableStartCompat="@drawable/ic_credit_cart"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btnPayOnDelivery" />
+
+                <TextView
+                    android:id="@+id/btnPaypal"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_48sdp"
+                    android:background="@drawable/bg_btn"
+                    android:drawablePadding="@dimen/_10ssp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="center_vertical"
+                    android:onClick="@{(View) -> viewModel.onClick(View)}"
+                    android:paddingStart="@dimen/_16ssp"
+                    android:paddingEnd="@dimen/_16ssp"
+                    android:text="@string/paypal"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_11ssp"
+                    app:drawableStartCompat="@drawable/ic_paypal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btnCreditCart" />
+
+                <TextView
+                    android:id="@+id/btnBank"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_48sdp"
+                    android:background="@drawable/bg_btn"
+                    android:drawablePadding="@dimen/_10ssp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="center_vertical"
+                    android:onClick="@{(View) -> viewModel.onClick(View)}"
+                    android:paddingStart="@dimen/_16ssp"
+                    android:paddingEnd="@dimen/_16ssp"
+                    android:text="@string/bank_transfer"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_11ssp"
+                    app:drawableStartCompat="@drawable/ic_bank"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btnPaypal" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/loading"
+            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE}">
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/address_looking_up"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminateDrawable="@drawable/custom_progressbar" />
+        </FrameLayout>
+    </FrameLayout>
+
+</layout>

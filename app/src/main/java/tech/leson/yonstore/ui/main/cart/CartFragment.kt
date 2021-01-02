@@ -1,6 +1,7 @@
 package tech.leson.yonstore.ui.main.cart
 
 import android.annotation.SuppressLint
+import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_cart.*
@@ -8,19 +9,16 @@ import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import tech.leson.yonstore.BR
 import tech.leson.yonstore.R
-import tech.leson.yonstore.data.model.Cart
-import tech.leson.yonstore.data.model.Product
-import tech.leson.yonstore.data.model.Style
+import tech.leson.yonstore.data.model.*
 import tech.leson.yonstore.databinding.FragmentCartBinding
 import tech.leson.yonstore.ui.adapter.ProductCartAdapter
+import tech.leson.yonstore.ui.address.AddressActivity
 import tech.leson.yonstore.ui.base.BaseFragment
-import tech.leson.yonstore.ui.dialog.RemoveDialogFragment
-import tech.leson.yonstore.ui.main.MainActivity
-import tech.leson.yonstore.ui.main.cart.model.ProductInCart
+import tech.leson.yonstore.ui.dialog.ConfirmDialogFragment
 import tech.leson.yonstore.ui.product.ProductActivity
 
 class CartFragment : BaseFragment<FragmentCartBinding, CartNavigator, CartViewModel>(),
-    CartNavigator, ProductCartAdapter.SetOnBtnProductClick, RemoveDialogFragment.OnDialogListener {
+    CartNavigator, ProductCartAdapter.SetOnBtnProductClick, ConfirmDialogFragment.OnDialogListener {
 
     companion object {
         private var instance: CartFragment? = null
@@ -112,12 +110,12 @@ class CartFragment : BaseFragment<FragmentCartBinding, CartNavigator, CartViewMo
 
     override fun onBtnBinClick(productInCart: ProductInCart) {
         mItemRemove = productInCart
-        val removeDialog = RemoveDialogFragment()
+        val removeDialog = ConfirmDialogFragment()
         removeDialog.onDialogListener = this
         removeDialog.show(childFragmentManager, "removeProduct")
     }
 
-    override fun onRemove() {
+    override fun onConfirm() {
         mItemRemove?.let {
             mProductCartAdapter.data.indexOf(mItemRemove).let { position ->
                 if (position != -1) {
@@ -148,6 +146,12 @@ class CartFragment : BaseFragment<FragmentCartBinding, CartNavigator, CartViewMo
                 item += it.qty
                 price += it.product.price * (1 - it.product.discount) * it.qty
             }
+
+            if (item == 0) {
+                btnCheckOut.visibility = View.GONE
+                ship = 0.00
+            }
+
             discount = dis * (price + ship)
             total = price - discount - ship
 
@@ -157,6 +161,20 @@ class CartFragment : BaseFragment<FragmentCartBinding, CartNavigator, CartViewMo
             rowDis.text = "Discount (${dis}%)"
             rowDiscount.text = "$${discount}"
             rowTotal.text = "$${total}"
+        }
+    }
+
+    override fun onCheckOut() {
+        mProductCartAdapter.data.let {
+            it.forEachIndexed { index, productInCart ->
+                if (viewModel.checkRestProduct(productInCart, index)) return
+            }
+            activity?.let { activity ->
+                val i = AddressActivity.getInstance(activity)
+                i.putExtra("isOrder", true)
+                i.putExtra("order", Order(it, Address(), 0, 0L))
+                startActivity(i)
+            }
         }
     }
 }

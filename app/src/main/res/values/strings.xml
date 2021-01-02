@@ -93,8 +93,11 @@
     <string name="statistic">Statistic</string>
     <string name="take_photo">Take Photo</string>
     <string name="cancel">Cancel</string>
+    <string name="next">Next</string>
     <string name="yes">Yes</string>
     <string name="dialog_remove_product">Remove this product?</string>
+    <string name="dialog_remove_address">Remove this address?</string>
+    <string name="dialog_confirm_order">Confirm this order</string>
     <string name="choose_from_gallery">Choose from Gallery</string>
     <string name="title_style">#Style</string>
     <string name="product_size">Product Size:</string>
@@ -141,4 +144,19 @@
     <string name="shipping">Shipping</string>
     <string name="import_charges">Import Charges</string>
     <string name="check_out">Check Out</string>
+    <string name="add_address">Add Address</string>
+    <string name="edit">Edit</string>
+    <string name="country_or_region">Country or region</string>
+    <string name="street_address">Street Address</string>
+    <string name="street_address_2_optional">Street Address 2 (Optional)</string>
+    <string name="city">City</string>
+    <string name="state_province_region">State/Province/Region</string>
+    <string name="zip_code">Zip Code</string>
+    <string name="payment_on_delivery">Payment On Delivery</string>
+    <string name="credit_card_or_debit">Credit Card Or Debit</string>
+    <string name="paypal">Paypal</string>
+    <string name="bank_transfer">Bank Transfer</string>
+    <string name="coming_soon">Coming Soon</string>
+    <string name="thank_you_for_shopping_using_yonstore">thank you for shopping using yonstore</string>
+    <string name="back_to_order">Back To Order</string>
 </resources>

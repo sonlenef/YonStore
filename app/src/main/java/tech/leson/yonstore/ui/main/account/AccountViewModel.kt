@@ -31,6 +31,7 @@ class AccountViewModel(dataManager: DataManager, schedulerProvider: SchedulerPro
     override fun onClick(view: View) {
         when (view.id) {
             R.id.btnProfile -> navigator?.onProfile()
+            R.id.btnAddress -> navigator?.onAddress()
             R.id.btnManager -> navigator?.onManager()
             R.id.btnLogout -> logout()
         }

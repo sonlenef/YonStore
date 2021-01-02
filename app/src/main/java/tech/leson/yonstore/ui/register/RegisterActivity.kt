@@ -56,7 +56,7 @@ class RegisterActivity :
                     .show()
                 return
             }
-            if (!phone.isBlank() && !password.isBlank()) {
+            if (phone.isNotBlank() && password.isNotBlank()) {
                 if (password == passwordAgain) {
                     val intent = PhoneVerifyActivity.getIntent(this)
                     intent.putExtra("fullName", fullName)

@@ -14,7 +14,7 @@ import tech.leson.yonstore.data.model.Style
 import tech.leson.yonstore.data.model.User
 import tech.leson.yonstore.ui.base.BaseAdapter
 import tech.leson.yonstore.ui.base.BaseViewHolder
-import tech.leson.yonstore.ui.main.cart.model.ProductInCart
+import tech.leson.yonstore.data.model.ProductInCart
 
 class ProductCartAdapter(data: MutableList<ProductInCart>) :
     BaseAdapter<ProductCartAdapter.ViewHolder, ProductInCart>(data) {

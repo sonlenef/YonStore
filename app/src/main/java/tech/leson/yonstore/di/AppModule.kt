@@ -15,6 +15,7 @@ import tech.leson.yonstore.data.local.prefs.PreferencesHelper
 import tech.leson.yonstore.data.remote.AppFirebaseHelper
 import tech.leson.yonstore.data.remote.FirebaseHelper
 import tech.leson.yonstore.ui.adapter.*
+import tech.leson.yonstore.ui.addaddress.AddAddressViewModel
 import tech.leson.yonstore.ui.addevent.AddEventViewModel
 import tech.leson.yonstore.ui.addproduct.AddProductViewModel
 import tech.leson.yonstore.ui.addproduct.adapter.AddCategoryAdapter
@@ -24,6 +25,7 @@ import tech.leson.yonstore.ui.addproduct.dialog.addCategory.AddCategoryViewModel
 import tech.leson.yonstore.ui.addproduct.dialog.addImage.AddImageViewModel
 import tech.leson.yonstore.ui.addproduct.dialog.addStyle.AddStyleViewModel
 import tech.leson.yonstore.ui.addproduct.popup.ColorPopup
+import tech.leson.yonstore.ui.address.AddressViewModel
 import tech.leson.yonstore.ui.category.CategoryViewModel
 import tech.leson.yonstore.ui.editproduct.EditProductViewModel
 import tech.leson.yonstore.ui.eventmanager.EventManagerViewModel
@@ -40,6 +42,7 @@ import tech.leson.yonstore.ui.main.explore.ExploreViewModel
 import tech.leson.yonstore.ui.main.home.HomeViewModel
 import tech.leson.yonstore.ui.main.offer.OfferViewModel
 import tech.leson.yonstore.ui.manager.ManagerViewModel
+import tech.leson.yonstore.ui.paymentList.ListPaymentViewModel
 import tech.leson.yonstore.ui.product.ProductViewModel
 import tech.leson.yonstore.ui.productmanager.ProductManagerViewModel
 import tech.leson.yonstore.ui.profile.ProfileViewModel
@@ -106,6 +109,7 @@ val mainModule = module {
     factory { ProductColorAdapter(ArrayList()) }
     factory { EventAdapter(ArrayList()) }
     factory { ProductCartAdapter(ArrayList()) }
+    factory { AddressAdapter(ArrayList()) }
 
     viewModel { AccountViewModel(get(), get()) }
     viewModel { CartViewModel(get(), get()) }
@@ -129,4 +133,7 @@ val mainModule = module {
     viewModel { ProductManagerViewModel(get(), get()) }
     viewModel { EditProductViewModel(get(), get()) }
     viewModel { SearchViewModel(get(), get()) }
+    viewModel { AddressViewModel(get(), get()) }
+    viewModel { AddAddressViewModel(get(), get()) }
+    viewModel { ListPaymentViewModel(get(), get()) }
 }

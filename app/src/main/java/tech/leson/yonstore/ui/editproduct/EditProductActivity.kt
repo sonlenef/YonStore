@@ -29,7 +29,7 @@ import tech.leson.yonstore.ui.addproduct.dialog.addCategory.AddCategoryDialog
 import tech.leson.yonstore.ui.addproduct.dialog.addImage.AddImageDialog
 import tech.leson.yonstore.ui.addproduct.dialog.addStyle.AddStyleDialog
 import tech.leson.yonstore.ui.base.BaseActivity
-import tech.leson.yonstore.ui.dialog.RemoveDialogFragment
+import tech.leson.yonstore.ui.dialog.ConfirmDialogFragment
 import tech.leson.yonstore.utils.OnItemClickListener
 import java.io.File
 import java.io.IOException
@@ -40,7 +40,7 @@ class EditProductActivity :
     BaseActivity<ActivityEditProductBinding, EditProductNavigator, EditProductViewModel>(),
     EditProductNavigator, AddCategoryDialog.OnCategory, OnItemClickListener<Int>,
     StyleAdapter.OnStyleClickListener, AddImageDialog.OnSelectImage,
-    AddStyleDialog.OnStyleListener, RemoveDialogFragment.OnDialogListener {
+    AddStyleDialog.OnStyleListener, ConfirmDialogFragment.OnDialogListener {
 
     companion object {
         const val PRODUCT = "PRODUCT"
@@ -166,7 +166,7 @@ class EditProductActivity :
     }
 
     override fun onRemoveProduct() {
-        val removeDialog = RemoveDialogFragment()
+        val removeDialog = ConfirmDialogFragment()
         removeDialog.onDialogListener = this
         removeDialog.show(supportFragmentManager, "remove")
     }
@@ -333,7 +333,7 @@ class EditProductActivity :
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
     }
 
-    override fun onRemove() {
+    override fun onConfirm() {
         viewModel.removeProduct()
     }
 }

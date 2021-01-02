@@ -6,9 +6,9 @@ import tech.leson.yonstore.R
 import tech.leson.yonstore.data.DataManager
 import tech.leson.yonstore.data.model.Cart
 import tech.leson.yonstore.data.model.Product
+import tech.leson.yonstore.data.model.ProductInCart
 import tech.leson.yonstore.data.model.User
 import tech.leson.yonstore.ui.base.BaseViewModel
-import tech.leson.yonstore.ui.main.cart.model.ProductInCart
 import tech.leson.yonstore.utils.rx.SchedulerProvider
 
 class CartViewModel(dataManager: DataManager, schedulerProvider: SchedulerProvider) :
@@ -77,7 +77,8 @@ class CartViewModel(dataManager: DataManager, schedulerProvider: SchedulerProvid
             }
     }
 
-    fun checkRestProduct(productInCart: ProductInCart, positionInCart: Int) {
+    fun checkRestProduct(productInCart: ProductInCart, positionInCart: Int): Boolean {
+        var isStocking = false
         dataManager.getProductById(productInCart.product.id)
             .addOnSuccessListener {
                 val product = it.toObject(Product::class.java)
@@ -87,10 +88,12 @@ class CartViewModel(dataManager: DataManager, schedulerProvider: SchedulerProvid
                             user.value!!.cart[positionInCart].qty = item.rest
                             updateUser()
                             navigator?.maxItem(productInCart, positionInCart)
-                            navigator?.onMsg("This product is only ${item.rest} pieces left")
+                            navigator?.onMsg("Product '${product.name}' is only ${item.rest} pieces left")
+                            isStocking = false
                         } else {
                             user.value!!.cart[positionInCart].qty = productInCart.qty
                             updateUser()
+                            isStocking = true
                         }
                     }
                 }
@@ -98,12 +101,14 @@ class CartViewModel(dataManager: DataManager, schedulerProvider: SchedulerProvid
             .addOnFailureListener {
                 navigator?.onMsg(it.message.toString())
             }
+        return isStocking
     }
 
     override fun onClick(view: View) {
-        when(view.id) {
-            R.id.btnApply -> {}
-            R.id.btnCheckOut -> {}
+        when (view.id) {
+            R.id.btnApply -> {
+            }
+            R.id.btnCheckOut -> navigator?.onCheckOut()
         }
     }
 }

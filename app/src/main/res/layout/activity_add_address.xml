@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tool="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -9,7 +8,7 @@
 
         <variable
             name="viewModel"
-            type="tech.leson.yonstore.ui.editproduct.EditProductViewModel" />
+            type="tech.leson.yonstore.ui.addaddress.AddAddressViewModel" />
     </data>
 
     <FrameLayout
@@ -46,250 +45,257 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:padding="@dimen/_16sdp">
 
                     <TextView
-                        android:id="@+id/tvProductName"
+                        android:id="@+id/tvNation"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_bold"
-                        android:text="@string/product_name"
+                        android:text="@string/country_or_region"
                         android:textColor="@color/dark"
                         android:textSize="@dimen/_11ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/edtProductName"
+                        android:id="@+id/edtNation"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/name"
                         android:textAppearance="@font/poppins_regular"
                         android:textColorHint="@color/grey"
                         app:boxStrokeColor="@drawable/input_state_checked"
                         app:boxStrokeErrorColor="@color/red"
-                        app:layout_constraintTop_toBottomOf="@id/tvProductName"
+                        app:layout_constraintTop_toBottomOf="@id/tvNation"
                         app:startIconTint="@drawable/input_state_checked">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="textCapWords"
-                            android:text="@{viewModel.product.name}" />
+                            android:inputType="textCapWords" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <TextView
-                        android:id="@+id/tvSerialNumber"
+                        android:id="@+id/tvFullName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_16sdp"
                         android:fontFamily="@font/poppins_bold"
-                        android:text="@string/product_code"
+                        android:text="@string/full_name"
                         android:textColor="@color/dark"
                         android:textSize="@dimen/_11ssp"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/edtProductName" />
-
-                    <TextView
-                        android:id="@+id/edtSerialNumber"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/_40sdp"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:background="@drawable/bg_border"
-                        android:gravity="center_vertical"
-                        android:paddingStart="@dimen/_10sdp"
-                        android:paddingEnd="@dimen/_10sdp"
-                        android:text="@{viewModel.product.code}"
-                        app:layout_constraintTop_toBottomOf="@id/tvSerialNumber" />
-
-                    <TextView
-                        android:id="@+id/tvListCategory"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_16sdp"
-                        android:fontFamily="@font/poppins_bold"
-                        android:text="@string/category"
-                        android:textColor="@color/dark"
-                        android:textSize="@dimen/_11ssp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/edtSerialNumber" />
-
-                    <TextView
-                        android:id="@+id/listCategory"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/_40sdp"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:background="@drawable/bg_border"
-                        android:gravity="center_vertical"
-                        android:onClick="@{(View) -> viewModel.onClick(View)}"
-                        android:paddingStart="@dimen/_10sdp"
-                        android:paddingEnd="@dimen/_10sdp"
-                        android:text="@{viewModel.product.category.name}"
-                        app:drawableEndCompat="@drawable/ic_arrow_down"
-                        app:layout_constraintTop_toBottomOf="@id/tvListCategory"
-                        tool:text="@string/man_shirt" />
-
-                    <TextView
-                        android:id="@+id/tvSpecification"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_16sdp"
-                        android:fontFamily="@font/poppins_bold"
-                        android:text="@string/specification"
-                        android:textColor="@color/dark"
-                        android:textSize="@dimen/_11ssp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/listCategory" />
+                        app:layout_constraintTop_toBottomOf="@id/edtNation" />
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/edtSpecification"
+                        android:id="@+id/edtFullName"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/write_something"
                         android:textAppearance="@font/poppins_regular"
                         android:textColorHint="@color/grey"
                         app:boxStrokeColor="@drawable/input_state_checked"
                         app:boxStrokeErrorColor="@color/red"
-                        app:layout_constraintTop_toBottomOf="@id/tvSpecification"
-                        app:startIconTint="@drawable/input_state_checked">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/_120sdp"
-                            android:inputType="textMultiLine"
-                            android:text="@{viewModel.product.specification}" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <TextView
-                        android:id="@+id/tvImage"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_16sdp"
-                        android:background="@drawable/bg_btn"
-                        android:fontFamily="@font/poppins_bold"
-                        android:onClick="@{(View) -> viewModel.onClick(View)}"
-                        android:text="@string/image"
-                        android:textColor="@color/dark"
-                        android:textSize="@dimen/_11ssp"
-                        app:drawableEndCompat="@drawable/ic_plus"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/edtSpecification" />
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rcvImage"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:overScrollMode="never"
-                        app:layout_constraintTop_toBottomOf="@id/tvImage" />
-
-                    <TextView
-                        android:id="@+id/tvStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_16sdp"
-                        android:background="@drawable/bg_btn"
-                        android:fontFamily="@font/poppins_bold"
-                        android:onClick="@{(View) -> viewModel.onClick(View)}"
-                        android:text="@string/style"
-                        android:textColor="@color/dark"
-                        android:textSize="@dimen/_11ssp"
-                        app:drawableEndCompat="@drawable/ic_plus"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/rcvImage" />
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rcvStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:overScrollMode="never"
-                        app:layout_constraintTop_toBottomOf="@id/tvStyle" />
-
-                    <TextView
-                        android:id="@+id/tvProductPrice"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_16sdp"
-                        android:fontFamily="@font/poppins_bold"
-                        android:text="@string/product_price"
-                        android:textColor="@color/dark"
-                        android:textSize="@dimen/_11ssp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/rcvStyle" />
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/edtProductPrice"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/price"
-                        android:textAppearance="@font/poppins_regular"
-                        android:textColorHint="@color/grey"
-                        app:boxStrokeColor="@drawable/input_state_checked"
-                        app:boxStrokeErrorColor="@color/red"
-                        app:layout_constraintTop_toBottomOf="@id/tvProductPrice"
+                        app:layout_constraintTop_toBottomOf="@id/tvFullName"
                         app:startIconTint="@drawable/input_state_checked">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:imeOptions="actionDone"
-                            android:inputType="number|numberDecimal"
-                            android:text="@{Double.toString(viewModel.product.price)}" />
+                            android:inputType="textCapWords" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <TextView
-                        android:id="@+id/tvProductDiscount"
+                        android:id="@+id/tvAddress1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_16sdp"
                         android:fontFamily="@font/poppins_bold"
-                        android:text="@string/product_discount"
+                        android:text="@string/street_address"
                         android:textColor="@color/dark"
                         android:textSize="@dimen/_11ssp"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/edtProductPrice" />
+                        app:layout_constraintTop_toBottomOf="@id/edtFullName" />
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/edtProductDiscount"
+                        android:id="@+id/edtAddress1"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/discount"
                         android:textAppearance="@font/poppins_regular"
                         android:textColorHint="@color/grey"
                         app:boxStrokeColor="@drawable/input_state_checked"
                         app:boxStrokeErrorColor="@color/red"
-                        app:layout_constraintTop_toBottomOf="@id/tvProductDiscount"
+                        app:layout_constraintTop_toBottomOf="@id/tvAddress1"
                         app:startIconTint="@drawable/input_state_checked">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:imeOptions="actionDone"
-                            android:inputType="number|numberDecimal" />
+                            android:inputType="textCapWords" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <ImageButton
-                        android:id="@+id/btnRemove"
+                    <TextView
+                        android:id="@+id/tvAddress2"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_40sdp"
-                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="@string/street_address_2_optional"
+                        android:textColor="@color/dark"
+                        android:textSize="@dimen/_11ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/edtAddress1" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/edtAddress2"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@font/poppins_regular"
+                        android:textColorHint="@color/grey"
+                        app:boxStrokeColor="@drawable/input_state_checked"
+                        app:boxStrokeErrorColor="@color/red"
+                        app:layout_constraintTop_toBottomOf="@id/tvAddress2"
+                        app:startIconTint="@drawable/input_state_checked">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textCapWords" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/tvCity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="@string/city"
+                        android:textColor="@color/dark"
+                        android:textSize="@dimen/_11ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/edtAddress2" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/edtCity"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@font/poppins_regular"
+                        android:textColorHint="@color/grey"
+                        app:boxStrokeColor="@drawable/input_state_checked"
+                        app:boxStrokeErrorColor="@color/red"
+                        app:layout_constraintTop_toBottomOf="@id/tvCity"
+                        app:startIconTint="@drawable/input_state_checked">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textCapWords" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/tvRegion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="@string/state_province_region"
+                        android:textColor="@color/dark"
+                        android:textSize="@dimen/_11ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/edtCity" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/edtRegion"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@font/poppins_regular"
+                        android:textColorHint="@color/grey"
+                        app:boxStrokeColor="@drawable/input_state_checked"
+                        app:boxStrokeErrorColor="@color/red"
+                        app:layout_constraintTop_toBottomOf="@id/tvRegion"
+                        app:startIconTint="@drawable/input_state_checked">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textCapWords" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/tvZipCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="@string/zip_code"
+                        android:textColor="@color/dark"
+                        android:textSize="@dimen/_11ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/edtRegion" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/edtZipCode"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@font/poppins_regular"
+                        android:textColorHint="@color/grey"
+                        app:boxStrokeColor="@drawable/input_state_checked"
+                        app:boxStrokeErrorColor="@color/red"
+                        app:layout_constraintTop_toBottomOf="@id/tvZipCode"
+                        app:startIconTint="@drawable/input_state_checked">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textCapWords" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/tvPhoneNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="@string/phone_number"
+                        android:textColor="@color/dark"
+                        android:textSize="@dimen/_11ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/edtZipCode" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/edtPhoneNumber"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginBottom="@dimen/_80sdp"
-                        android:background="@drawable/bg_btn_border"
-                        android:onClick="@{(View) -> viewModel.onClick(View)}"
-                        android:src="@drawable/ic_bin"
+                        android:textAppearance="@font/poppins_regular"
+                        android:textColorHint="@color/grey"
+                        app:boxStrokeColor="@drawable/input_state_checked"
+                        app:boxStrokeErrorColor="@color/red"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/edtProductDiscount"
-                        tool:ignore="ContentDescription" />
+                        app:layout_constraintTop_toBottomOf="@id/tvPhoneNumber"
+                        app:startIconTint="@drawable/input_state_checked">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textCapWords" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -298,7 +304,7 @@
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
         <Button
-            android:id="@+id/btnSaveProduct"
+            android:id="@+id/btnAddAddress"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_48sdp"
             android:layout_gravity="bottom"
@@ -307,7 +313,7 @@
             android:layout_marginBottom="@dimen/_20sdp"
             android:fontFamily="@font/poppins_bold"
             android:onClick="@{(View) -> viewModel.onClick(View)}"
-            android:text="@string/save_product"
+            android:text="@string/add_address"
             android:textAllCaps="false"
             android:textSize="@dimen/_13ssp"
             app:backgroundTint="@color/blue" />
@@ -326,7 +332,5 @@
                 android:layout_gravity="center"
                 android:indeterminateDrawable="@drawable/custom_progressbar" />
         </FrameLayout>
-
     </FrameLayout>
-
 </layout>

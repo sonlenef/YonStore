@@ -5,6 +5,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import tech.leson.yonstore.BR
 import tech.leson.yonstore.R
 import tech.leson.yonstore.databinding.FragmentAccountBinding
+import tech.leson.yonstore.ui.address.AddressActivity
 import tech.leson.yonstore.ui.base.BaseFragment
 import tech.leson.yonstore.ui.login.LoginActivity
 import tech.leson.yonstore.ui.manager.ManagerActivity
@@ -35,6 +36,10 @@ class AccountFragment : BaseFragment<FragmentAccountBinding, AccountNavigator, A
 
     override fun onProfile() {
         activity?.let { startActivity(ProfileActivity.getIntent(it)) }
+    }
+
+    override fun onAddress() {
+        activity?.let { startActivity(AddressActivity.getInstance(it)) }
     }
 
     override fun onManager() {
