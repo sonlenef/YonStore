@@ -159,4 +159,17 @@
     <string name="coming_soon">Coming Soon</string>
     <string name="thank_you_for_shopping_using_yonstore">thank you for shopping using yonstore</string>
     <string name="back_to_order">Back To Order</string>
+    <string name="default_notification_channel_id">Default Notification Channel Id</string>
+    <string name="fcm_message">FCM Message</string>
+    <string name="default_notification_channel_name">Default Notification Channel Name</string>
+    <string name="order_status">Order Status</string>
+    <string name="pending">Pending</string>
+    <string name="packing">Packing</string>
+    <string name="arriving">Arriving</string>
+    <string name="shipping_details">Shipping Details</string>
+    <string name="date_shipping">Date Shipping</string>
+    <string name="no_resi">No. Resi</string>
+    <string name="notify_me">Notify Me</string>
+    <string name="order_details">Order Details</string>
+    <string name="unknown">unknown</string>
 </resources>

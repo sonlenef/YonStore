@@ -15,7 +15,6 @@ class User(
     var avatar: String,
     var favorite: MutableList<String>,
     var cart: MutableList<Cart>,
-    var order: MutableList<Order>,
     var yonCoin: Int,
     var status: UserStatus,
 ) : Serializable {
@@ -29,7 +28,6 @@ class User(
         ArrayList(),
         "user",
         "",
-        ArrayList(),
         ArrayList(),
         ArrayList(),
         0,

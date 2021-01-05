@@ -5,10 +5,7 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.QuerySnapshot
-import tech.leson.yonstore.data.model.Category
-import tech.leson.yonstore.data.model.Event
-import tech.leson.yonstore.data.model.Product
-import tech.leson.yonstore.data.model.User
+import tech.leson.yonstore.data.model.*
 
 interface FirebaseHelper {
     fun register(registerData: User): Task<DocumentReference>
@@ -27,6 +24,8 @@ interface FirebaseHelper {
     fun updateProduct(product: Product): Task<Void>
     fun removeProduct(product: Product): Task<Void>
     fun searchProduct(searchData: String): Task<QuerySnapshot>
+    fun onOrder(order: Order): Task<DocumentReference>
+    fun getOrderByUserId(userId: String): Task<QuerySnapshot>
     fun createEvent(event: Event): Task<DocumentReference>
     fun getAllEvent(): Task<QuerySnapshot>
     fun logoutFirebase()

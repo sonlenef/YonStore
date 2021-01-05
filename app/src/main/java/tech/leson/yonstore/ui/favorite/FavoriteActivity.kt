@@ -62,6 +62,7 @@ class FavoriteActivity :
     override fun onProductClick(product: Product) {
         val intent = ProductActivity.getIntent(this)
         intent.putExtra("product", product)
+        intent.putExtra("inOrder", false)
         startActivity(intent)
     }
 

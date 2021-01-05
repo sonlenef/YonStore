@@ -31,6 +31,7 @@ import tech.leson.yonstore.ui.editproduct.EditProductViewModel
 import tech.leson.yonstore.ui.eventmanager.EventManagerViewModel
 import tech.leson.yonstore.ui.favorite.FavoriteViewModel
 import tech.leson.yonstore.ui.favorite.adapter.ProductFavoriteAdapter
+import tech.leson.yonstore.ui.listOrder.ListOrderViewModel
 import tech.leson.yonstore.ui.listproducts.ListProductsViewModel
 import tech.leson.yonstore.ui.login.LoginViewModel
 import tech.leson.yonstore.ui.main.MainActivity
@@ -42,6 +43,7 @@ import tech.leson.yonstore.ui.main.explore.ExploreViewModel
 import tech.leson.yonstore.ui.main.home.HomeViewModel
 import tech.leson.yonstore.ui.main.offer.OfferViewModel
 import tech.leson.yonstore.ui.manager.ManagerViewModel
+import tech.leson.yonstore.ui.order.OrderDetailsViewModel
 import tech.leson.yonstore.ui.paymentList.ListPaymentViewModel
 import tech.leson.yonstore.ui.product.ProductViewModel
 import tech.leson.yonstore.ui.productmanager.ProductManagerViewModel
@@ -110,6 +112,8 @@ val mainModule = module {
     factory { EventAdapter(ArrayList()) }
     factory { ProductCartAdapter(ArrayList()) }
     factory { AddressAdapter(ArrayList()) }
+    factory { OrderAdapter(ArrayList()) }
+    factory { ProductOrderAdapter(ArrayList()) }
 
     viewModel { AccountViewModel(get(), get()) }
     viewModel { CartViewModel(get(), get()) }
@@ -136,4 +140,6 @@ val mainModule = module {
     viewModel { AddressViewModel(get(), get()) }
     viewModel { AddAddressViewModel(get(), get()) }
     viewModel { ListPaymentViewModel(get(), get()) }
+    viewModel { ListOrderViewModel(get(), get()) }
+    viewModel { OrderDetailsViewModel(get(), get()) }
 }

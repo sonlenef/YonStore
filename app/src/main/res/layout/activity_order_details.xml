@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="tech.leson.yonstore.ui.order.OrderDetailsViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarMain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                app:cardUseCompatPadding="false"
+                app:elevation="@dimen/_5sdp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <include
+                        layout="@layout/navigation_header"
+                        app:viewModel="@{(tech.leson.yonstore.ui.base.BaseViewModel)viewModel}" />
+                </FrameLayout>
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/pacing"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_marginEnd="@dimen/_16sdp"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/pacingPending"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_marginStart="@dimen/_16sdp"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_pacing_blue"
+                            tools:ignore="ContentDescription" />
+
+                        <View
+                            android:id="@+id/line0"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:background="@color/light"
+                            app:layout_constraintBottom_toBottomOf="@id/pacingPending"
+                            app:layout_constraintEnd_toStartOf="@id/pacingPacking"
+                            app:layout_constraintStart_toEndOf="@id/pacingPending"
+                            app:layout_constraintTop_toTopOf="@id/pacingPending" />
+
+                        <ImageView
+                            android:id="@+id/pacingPacking"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            app:layout_constraintEnd_toStartOf="@id/line1"
+                            app:layout_constraintStart_toEndOf="@id/line0"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_pacing_light"
+                            tools:ignore="ContentDescription" />
+
+                        <View
+                            android:id="@+id/line1"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:background="@color/light"
+                            app:layout_constraintBottom_toBottomOf="@id/pacingPacking"
+                            app:layout_constraintEnd_toStartOf="@id/pacingShipping"
+                            app:layout_constraintStart_toEndOf="@id/pacingPacking"
+                            app:layout_constraintTop_toTopOf="@id/pacingPacking" />
+
+                        <ImageView
+                            android:id="@+id/pacingShipping"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            app:layout_constraintEnd_toStartOf="@id/line2"
+                            app:layout_constraintStart_toEndOf="@id/line1"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_pacing_light"
+                            tools:ignore="ContentDescription" />
+
+                        <View
+                            android:id="@+id/line2"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:background="@color/light"
+                            app:layout_constraintBottom_toBottomOf="@id/pacingShipping"
+                            app:layout_constraintEnd_toStartOf="@id/pacingArriving"
+                            app:layout_constraintStart_toEndOf="@id/pacingShipping"
+                            app:layout_constraintTop_toTopOf="@id/pacingShipping" />
+
+                        <ImageView
+                            android:id="@+id/pacingArriving"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            app:layout_constraintEnd_toStartOf="@id/line3"
+                            app:layout_constraintStart_toEndOf="@id/line2"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_pacing_light"
+                            tools:ignore="ContentDescription" />
+
+                        <View
+                            android:id="@+id/line3"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:background="@color/light"
+                            app:layout_constraintBottom_toBottomOf="@id/pacingArriving"
+                            app:layout_constraintEnd_toStartOf="@id/pacingSuccess"
+                            app:layout_constraintStart_toEndOf="@id/pacingArriving"
+                            app:layout_constraintTop_toTopOf="@id/pacingArriving" />
+
+                        <ImageView
+                            android:id="@+id/pacingSuccess"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:layout_marginEnd="@dimen/_16sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/line3"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_pacing_light"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/pending"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintEnd_toEndOf="@id/pacingPending"
+                            app:layout_constraintStart_toStartOf="@id/pacingPending"
+                            app:layout_constraintTop_toBottomOf="@id/pacingPending" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/packing"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintEnd_toEndOf="@id/pacingPacking"
+                            app:layout_constraintStart_toStartOf="@id/pacingPacking"
+                            app:layout_constraintTop_toBottomOf="@id/pacingPacking" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/shipping"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintEnd_toEndOf="@id/pacingShipping"
+                            app:layout_constraintStart_toStartOf="@id/pacingShipping"
+                            app:layout_constraintTop_toBottomOf="@id/pacingShipping" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/arriving"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintEnd_toEndOf="@id/pacingArriving"
+                            app:layout_constraintStart_toStartOf="@id/pacingArriving"
+                            app:layout_constraintTop_toBottomOf="@id/pacingArriving" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/success"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintEnd_toEndOf="@id/pacingSuccess"
+                            app:layout_constraintStart_toStartOf="@id/pacingSuccess"
+                            app:layout_constraintTop_toBottomOf="@id/pacingSuccess" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/tvTitleProduct"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="@string/product"
+                        android:textColor="@color/dark"
+                        android:textSize="@dimen/_13ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/pacing" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcvProducts"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_marginEnd="@dimen/_16sdp"
+                        android:overScrollMode="never"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitleProduct" />
+
+                    <TextView
+                        android:id="@+id/tvShippingDetails"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="@string/shipping_details"
+                        android:textColor="@color/dark"
+                        android:textSize="@dimen/_13ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/rcvProducts" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/shipping"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:layout_marginEnd="@dimen/_16sdp"
+                        android:background="@drawable/bg_border"
+                        app:layout_constraintTop_toBottomOf="@id/tvShippingDetails">
+
+                        <TextView
+                            android:id="@+id/tvTitleDateShipping"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_16sdp"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/date_shipping"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvDateShipping"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_16sdp"
+                            android:layout_marginEnd="@dimen/_16sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="end"
+                            android:textColor="@color/dark"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tvTitleDateShipping"
+                            app:layout_constraintTop_toTopOf="@id/tvTitleDateShipping"
+                            tools:text="January 16, 2015" />
+
+                        <TextView
+                            android:id="@+id/tvTitleShipping"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_16sdp"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/shipping"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvDateShipping" />
+
+                        <TextView
+                            android:id="@+id/tvShipping"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_16sdp"
+                            android:layout_marginEnd="@dimen/_16sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="end"
+                            android:textColor="@color/dark"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tvTitleDateShipping"
+                            app:layout_constraintTop_toTopOf="@id/tvTitleShipping"
+                            tools:text="POS Reggular" />
+
+                        <TextView
+                            android:id="@+id/tvTitleNoResi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_16sdp"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/no_resi"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvShipping" />
+
+                        <TextView
+                            android:id="@+id/tvNoResi"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_16sdp"
+                            android:layout_marginEnd="@dimen/_16sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="end"
+                            android:textColor="@color/dark"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tvTitleDateShipping"
+                            app:layout_constraintTop_toTopOf="@id/tvTitleNoResi"
+                            tools:text="000192848573" />
+
+                        <TextView
+                            android:id="@+id/tvTitleAddress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_16sdp"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/address"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvNoResi" />
+
+                        <TextView
+                            android:id="@+id/tvAddress"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_16sdp"
+                            android:layout_marginEnd="@dimen/_16sdp"
+                            android:layout_marginBottom="@dimen/_16ssp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="end"
+                            android:textColor="@color/dark"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tvTitleDateShipping"
+                            app:layout_constraintTop_toTopOf="@id/tvTitleAddress"
+                            tools:text="2727 Lakeshore Rd undefined Nampa, Tennessee 78410" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/tvPaymentDetails"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="@string/shipping_details"
+                        android:textColor="@color/dark"
+                        android:textSize="@dimen/_13ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/shipping" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginEnd="@dimen/_16sdp"
+                        android:layout_marginBottom="@dimen/_80sdp"
+                        android:background="@drawable/bg_border"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvPaymentDetails">
+
+                        <TextView
+                            android:id="@+id/rowItems"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_16sdp"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/items"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/rowPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_16sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textColor="@color/dark"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/rowItems"
+                            tools:text="$598.89" />
+
+                        <TextView
+                            android:id="@+id/rowShipping"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_16sdp"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/shipping"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/rowItems" />
+
+                        <TextView
+                            android:id="@+id/rowShip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_16sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textColor="@color/dark"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/rowShipping"
+                            tools:text="$40.00" />
+
+                        <TextView
+                            android:id="@+id/rowDis"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_16sdp"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/discount"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/rowShipping" />
+
+                        <TextView
+                            android:id="@+id/rowDiscount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_16sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textColor="@color/dark"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/rowDis"
+                            tools:text="$0.00" />
+
+                        <View
+                            android:id="@+id/line"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginStart="@dimen/_16sdp"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:layout_marginEnd="@dimen/_16sdp"
+                            android:background="@drawable/dotted"
+                            app:layout_constraintTop_toBottomOf="@id/rowDis" />
+
+                        <TextView
+                            android:id="@+id/rowTt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_16sdp"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:layout_marginBottom="@dimen/_16sdp"
+                            android:fontFamily="@font/poppins_bold"
+                            android:text="@string/total_price"
+                            android:textColor="@color/dark"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/line" />
+
+                        <TextView
+                            android:id="@+id/rowTotal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_16sdp"
+                            android:fontFamily="@font/poppins_bold"
+                            android:textColor="@color/blue"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/rowTt"
+                            tools:text="$638.89" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <Button
+            android:id="@+id/btnNotifyMe"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_48sdp"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:fontFamily="@font/poppins_bold"
+            android:onClick="@{(View) -> viewModel.onClick(View)}"
+            android:text="@string/notify_me"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_13ssp"
+            app:backgroundTint="@color/blue" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/loading"
+            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE}">
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/address_looking_up"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminateDrawable="@drawable/custom_progressbar" />
+        </FrameLayout>
+    </FrameLayout>
+
+</layout>

@@ -83,9 +83,10 @@ class ListPaymentActivity :
     override fun onConfirm() {
         mOrder?.let {
             it.date = Date().time
+            it.userId = viewModel.user.value!!.id
             viewModel.user.value!!.cart.clear()
-            viewModel.user.value!!.order.add(0, it)
             viewModel.updateUser()
+            viewModel.onOrder(it)
         }
     }
 }

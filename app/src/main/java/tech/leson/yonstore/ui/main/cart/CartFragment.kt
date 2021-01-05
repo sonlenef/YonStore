@@ -98,6 +98,7 @@ class CartFragment : BaseFragment<FragmentCartBinding, CartNavigator, CartViewMo
         product.styles.add(style)
         val intent = ProductActivity.getIntent(requireActivity())
         intent.putExtra("product", product)
+        intent.putExtra("inOrder", false)
         startActivity(intent)
     }
 
@@ -172,7 +173,7 @@ class CartFragment : BaseFragment<FragmentCartBinding, CartNavigator, CartViewMo
             activity?.let { activity ->
                 val i = AddressActivity.getInstance(activity)
                 i.putExtra("isOrder", true)
-                i.putExtra("order", Order(it, Address(), 0, 0L))
+                i.putExtra("order", Order("", "", it, Address(), 0, 0L, 0L, "", ""))
                 startActivity(i)
             }
         }

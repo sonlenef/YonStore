@@ -80,6 +80,7 @@ class ListProductsActivity :
     override fun onClick(product: Product) {
         val intent = ProductActivity.getIntent(this)
         intent.putExtra("product", product)
+        intent.putExtra("inOrder", false)
         startActivity(intent)
     }
 }

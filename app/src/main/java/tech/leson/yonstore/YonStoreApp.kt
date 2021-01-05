@@ -1,6 +1,9 @@
 package tech.leson.yonstore
 
 import android.app.Application
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.os.Build
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidFileProperties
 import org.koin.android.ext.koin.androidLogger
@@ -17,6 +20,14 @@ class YonStoreApp : Application() {
     override fun onCreate() {
         super.onCreate()
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channelId = getString(R.string.default_notification_channel_id)
+            val channelName = getString(R.string.default_notification_channel_name)
+            val notificationManager = getSystemService(NotificationManager::class.java)
+            notificationManager?.createNotificationChannel(NotificationChannel(channelId,
+                channelName, NotificationManager.IMPORTANCE_LOW))
+        }
+
         startKoin {
             androidLogger(Level.DEBUG)
             androidContext(this@YonStoreApp)
@@ -24,5 +35,6 @@ class YonStoreApp : Application() {
             fragmentFactory()
             loadKoinModules(listOf(appModule, mainModule))
         }
+
     }
 }

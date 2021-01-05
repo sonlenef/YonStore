@@ -81,6 +81,9 @@ class ProductActivity : BaseActivity<ActivityProductBinding, ProductNavigator, P
 
         if (viewModel.favorite.value!!) btnHeart.setImageDrawable(getDrawable(R.drawable.ic_heart_red))
         else btnHeart.setImageDrawable(getDrawable(R.drawable.ic_heart))
+
+        if (intent.getBooleanExtra("inOrder", false)) btnConfirm.visibility = View.GONE
+        else btnConfirm.visibility = View.VISIBLE
     }
 
     private fun setImages(images: MutableList<ProductImage>) {
@@ -121,7 +124,8 @@ class ProductActivity : BaseActivity<ActivityProductBinding, ProductNavigator, P
             1)
         val cart = Cart(viewModel.product.value!!.id, style, 1)
         if (isNetworkConnected()) viewModel.addToCart(cart)
-        else Toast.makeText(this, getString(R.string.network_not_connected), Toast.LENGTH_SHORT).show()
+        else Toast.makeText(this, getString(R.string.network_not_connected), Toast.LENGTH_SHORT)
+            .show()
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")

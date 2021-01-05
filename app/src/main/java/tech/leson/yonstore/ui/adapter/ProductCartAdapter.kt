@@ -10,11 +10,11 @@ import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_product_in_cart.view.*
 import tech.leson.yonstore.R
 import tech.leson.yonstore.data.model.Product
+import tech.leson.yonstore.data.model.ProductInCart
 import tech.leson.yonstore.data.model.Style
 import tech.leson.yonstore.data.model.User
 import tech.leson.yonstore.ui.base.BaseAdapter
 import tech.leson.yonstore.ui.base.BaseViewHolder
-import tech.leson.yonstore.data.model.ProductInCart
 
 class ProductCartAdapter(data: MutableList<ProductInCart>) :
     BaseAdapter<ProductCartAdapter.ViewHolder, ProductInCart>(data) {

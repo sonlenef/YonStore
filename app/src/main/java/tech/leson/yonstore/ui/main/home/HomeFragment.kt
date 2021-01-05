@@ -161,6 +161,7 @@ class HomeFragment :
     override fun onClick(product: Product) {
         val intent = activity?.let { ProductActivity.getIntent(it) }
         intent?.putExtra("product", product)
+        intent?.putExtra("inOrder", false)
         startActivity(intent)
     }
 

@@ -12,12 +12,14 @@ class AccountViewModel(dataManager: DataManager, schedulerProvider: SchedulerPro
     BaseViewModel<AccountNavigator>(dataManager, schedulerProvider) {
 
     val manager: MutableLiveData<Boolean> = MutableLiveData(false)
+    val userId: MutableLiveData<String> = MutableLiveData()
 
     fun getUserRole() {
         dataManager.getUser(dataManager.getUserUid())
             .addOnSuccessListener {
                 for (doc in it) {
                     manager.postValue(doc.toObject(User::class.java).role == "admin")
+                    userId.postValue(doc.id)
                 }
             }
             .addOnFailureListener { navigator?.onError(it.message.toString()) }
@@ -31,6 +33,7 @@ class AccountViewModel(dataManager: DataManager, schedulerProvider: SchedulerPro
     override fun onClick(view: View) {
         when (view.id) {
             R.id.btnProfile -> navigator?.onProfile()
+            R.id.btnOrder -> navigator?.onOrder()
             R.id.btnAddress -> navigator?.onAddress()
             R.id.btnManager -> navigator?.onManager()
             R.id.btnLogout -> logout()

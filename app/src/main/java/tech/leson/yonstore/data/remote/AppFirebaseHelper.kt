@@ -9,10 +9,7 @@ import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.storage.FirebaseStorage
-import tech.leson.yonstore.data.model.Category
-import tech.leson.yonstore.data.model.Event
-import tech.leson.yonstore.data.model.Product
-import tech.leson.yonstore.data.model.User
+import tech.leson.yonstore.data.model.*
 import tech.leson.yonstore.utils.AppUtils
 import java.util.*
 
@@ -86,6 +83,14 @@ class AppFirebaseHelper(
 
     override fun searchProduct(searchData: String) = database.collection("products")
         .whereArrayContains("search", searchData.toLowerCase(Locale.ROOT)).get()
+
+    override fun onOrder(order: Order): Task<DocumentReference> {
+        val data = ObjectMapper().convertValue(order, Map::class.java) as MutableMap<String, Any>
+        return database.collection("orders").add(data)
+    }
+
+    override fun getOrderByUserId(userId: String) =
+        database.collection("orders").whereEqualTo("userId", userId).get()
 
     override fun createEvent(event: Event): Task<DocumentReference> {
         val data = ObjectMapper().convertValue(event, Map::class.java) as Map<String, Any>

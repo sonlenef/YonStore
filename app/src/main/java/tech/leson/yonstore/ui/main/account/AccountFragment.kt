@@ -7,6 +7,7 @@ import tech.leson.yonstore.R
 import tech.leson.yonstore.databinding.FragmentAccountBinding
 import tech.leson.yonstore.ui.address.AddressActivity
 import tech.leson.yonstore.ui.base.BaseFragment
+import tech.leson.yonstore.ui.listOrder.ListOrderActivity
 import tech.leson.yonstore.ui.login.LoginActivity
 import tech.leson.yonstore.ui.manager.ManagerActivity
 import tech.leson.yonstore.ui.profile.ProfileActivity
@@ -36,6 +37,12 @@ class AccountFragment : BaseFragment<FragmentAccountBinding, AccountNavigator, A
 
     override fun onProfile() {
         activity?.let { startActivity(ProfileActivity.getIntent(it)) }
+    }
+
+    override fun onOrder() {
+        val i = ListOrderActivity.getIntent(requireActivity())
+        i.putExtra("userId", viewModel.userId.value!!)
+        startActivity(i)
     }
 
     override fun onAddress() {

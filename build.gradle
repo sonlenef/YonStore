@@ -10,6 +10,8 @@ buildscript {
     firebaseAuthVersion = '20.0.1'
     firebaseDbVersion = '22.0.1'
     firebaseStoreVersion = '19.2.1'
+    firebaseMessagingVersion = '21.0.1'
+    workGcmVersion = '2.5.0-beta02'
 
     // View
     constraintLayoutVersion = '2.0.4'

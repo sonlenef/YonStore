@@ -1,11 +1,11 @@
 package tech.leson.yonstore.data
 
 import android.net.Uri
+import com.google.android.gms.tasks.Task
+import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.QuerySnapshot
 import tech.leson.yonstore.data.local.prefs.PreferencesHelper
-import tech.leson.yonstore.data.model.Category
-import tech.leson.yonstore.data.model.Event
-import tech.leson.yonstore.data.model.Product
-import tech.leson.yonstore.data.model.User
+import tech.leson.yonstore.data.model.*
 import tech.leson.yonstore.data.remote.FirebaseHelper
 
 class AppDataManager(firebaseHelper: FirebaseHelper, preferencesHelper: PreferencesHelper) :
@@ -51,6 +51,10 @@ class AppDataManager(firebaseHelper: FirebaseHelper, preferencesHelper: Preferen
     override fun removeProduct(product: Product) = mFirebaseHelper.removeProduct(product)
 
     override fun searchProduct(searchData: String) = mFirebaseHelper.searchProduct(searchData)
+
+    override fun onOrder(order: Order) = mFirebaseHelper.onOrder(order)
+
+    override fun getOrderByUserId(userId: String) = mFirebaseHelper.getOrderByUserId(userId)
 
     override fun createEvent(event: Event) = mFirebaseHelper.createEvent(event)
 

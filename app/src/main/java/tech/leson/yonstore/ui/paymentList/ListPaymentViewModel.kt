@@ -4,6 +4,7 @@ import android.view.View
 import androidx.lifecycle.MutableLiveData
 import tech.leson.yonstore.R
 import tech.leson.yonstore.data.DataManager
+import tech.leson.yonstore.data.model.Order
 import tech.leson.yonstore.data.model.User
 import tech.leson.yonstore.ui.base.BaseViewModel
 import tech.leson.yonstore.utils.rx.SchedulerProvider
@@ -33,8 +34,20 @@ class ListPaymentViewModel(dataManager: DataManager, schedulerProvider: Schedule
         dataManager.updateUser(user.value!!)
             .addOnSuccessListener {
                 getUserCurrent()
-                navigator?.onSuccess()
                 setIsLoading(false)
+            }
+            .addOnFailureListener {
+                setIsLoading(false)
+                navigator?.onMsg(it.message.toString())
+            }
+    }
+
+    fun onOrder(order: Order) {
+        setIsLoading(true)
+        dataManager.onOrder(order)
+            .addOnSuccessListener {
+                setIsLoading(false)
+                navigator?.onSuccess()
             }
             .addOnFailureListener {
                 setIsLoading(false)
