@@ -12,8 +12,7 @@ data class Product(
     var styles: MutableList<Style>,
     var price: Double,
     var discount: Double,
-    var event: Event?,
-    var reviews: MutableList<Review>
+    var event: Event?
 ) : Serializable {
     constructor() : this("",
         "",
@@ -24,7 +23,6 @@ data class Product(
         ArrayList(),
         0.0,
         0.0,
-        null,
-        ArrayList()
+        null
     )
 }

@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
+import com.bumptech.glide.Glide
 import com.rd.animation.type.AnimationType
 import kotlinx.android.synthetic.main.activity_product.*
 import kotlinx.android.synthetic.main.navigation_header.*
@@ -15,17 +16,17 @@ import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import tech.leson.yonstore.BR
 import tech.leson.yonstore.R
-import tech.leson.yonstore.data.model.Cart
-import tech.leson.yonstore.data.model.Product
-import tech.leson.yonstore.data.model.ProductImage
-import tech.leson.yonstore.data.model.Style
+import tech.leson.yonstore.data.model.*
 import tech.leson.yonstore.databinding.ActivityProductBinding
 import tech.leson.yonstore.ui.adapter.ProductColorAdapter
 import tech.leson.yonstore.ui.adapter.ProductImgAdapter
 import tech.leson.yonstore.ui.adapter.ProductSizeAdapter
+import tech.leson.yonstore.ui.adapter.ReviewImageAdapter
 import tech.leson.yonstore.ui.base.BaseActivity
 import tech.leson.yonstore.ui.product.model.ProductColor
 import tech.leson.yonstore.ui.product.model.ProductStyle
+import java.text.SimpleDateFormat
+import java.util.*
 
 class ProductActivity : BaseActivity<ActivityProductBinding, ProductNavigator, ProductViewModel>(),
     ProductNavigator, ProductSizeAdapter.OnSizeStyleClick, ProductColorAdapter.OnStyleColorClick {
@@ -42,6 +43,7 @@ class ProductActivity : BaseActivity<ActivityProductBinding, ProductNavigator, P
     private val mProductImgAdapter: ProductImgAdapter by inject()
     private val mProductSizeAdapter: ProductSizeAdapter by inject()
     private val mProductColorAdapter: ProductColorAdapter by inject()
+    private val mReviewImageAdapter: ReviewImageAdapter by inject()
 
     override val bindingVariable: Int
         get() = BR.viewModel
@@ -60,6 +62,7 @@ class ProductActivity : BaseActivity<ActivityProductBinding, ProductNavigator, P
         val product: Product = intent.getSerializableExtra("product") as Product
         product.let {
             viewModel.product.value = it
+            viewModel.getReviews(it.id)
             tvTitle.text = it.name
             setImages(it.images)
             if (it.discount > 0.0) {
@@ -72,10 +75,6 @@ class ProductActivity : BaseActivity<ActivityProductBinding, ProductNavigator, P
                 tvProductPrice.text = "$${it.price}"
             }
             viewModel.setProductStyle(it)
-            viewModel.setAverageRating(it)
-            rtProduct.rating = viewModel.averageRating.value ?: 5.0F
-            rtProductReview.rating = viewModel.averageRating.value ?: 5.0F
-            tvProductReview.text = "${viewModel.averageRating.value} (${it.reviews.size} review)"
             tvSpecificationText.text = it.specification
         }
 
@@ -136,6 +135,33 @@ class ProductActivity : BaseActivity<ActivityProductBinding, ProductNavigator, P
     @SuppressLint("UseCompatLoadingForDrawables")
     override fun onUnlike() {
         btnHeart.setImageDrawable(getDrawable(R.drawable.ic_heart))
+    }
+
+    @SuppressLint("SetTextI18n", "SimpleDateFormat")
+    override fun setReviews(reviews: MutableList<Review>, averageRating: Float) {
+
+        rtProduct.rating = averageRating
+        rtProductReview.rating = averageRating
+        tvProductReview.text =
+            "$averageRating (${reviews.size} review)"
+
+        layoutReview.visibility = View.VISIBLE
+
+        Glide.with(this).load(reviews[0].avatar).placeholder(R.drawable.default_image).into(imvAvatar)
+        tvFullName.text = reviews[0].name
+        rtPersonReview.rating = reviews[0].rating
+        tvDescription.text = reviews[0].description
+
+        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        rcvImgReview.layoutManager = layoutManager
+        mReviewImageAdapter.addAllData(reviews[0].images)
+        rcvImgReview.adapter = mReviewImageAdapter
+
+        tvDateReview.text = SimpleDateFormat("MMMM dd,yyyy").format(Date(reviews[0].time))
+    }
+
+    override fun reviewNone() {
+        layoutReview.visibility = View.GONE
     }
 
     override fun onMsg(msg: String) {

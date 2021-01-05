@@ -60,6 +60,10 @@ class AppDataManager(firebaseHelper: FirebaseHelper, preferencesHelper: Preferen
 
     override fun getAllEvent() = mFirebaseHelper.getAllEvent()
 
+    override fun createReview(review: Review) = mFirebaseHelper.createReview(review)
+
+    override fun getReviewByProductId(productId: String) = mFirebaseHelper.getReviewByProductId(productId)
+
     override fun logoutFirebase() = mFirebaseHelper.logoutFirebase()
 
     override fun setUserUid(uid: String) {

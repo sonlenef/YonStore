@@ -114,6 +114,7 @@ val mainModule = module {
     factory { AddressAdapter(ArrayList()) }
     factory { OrderAdapter(ArrayList()) }
     factory { ProductOrderAdapter(ArrayList()) }
+    factory { ReviewImageAdapter(ArrayList()) }
 
     viewModel { AccountViewModel(get(), get()) }
     viewModel { CartViewModel(get(), get()) }

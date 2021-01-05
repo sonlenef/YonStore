@@ -28,5 +28,7 @@ interface FirebaseHelper {
     fun getOrderByUserId(userId: String): Task<QuerySnapshot>
     fun createEvent(event: Event): Task<DocumentReference>
     fun getAllEvent(): Task<QuerySnapshot>
+    fun createReview(review: Review): Task<DocumentReference>
+    fun getReviewByProductId(productId: String): Task<QuerySnapshot>
     fun logoutFirebase()
 }

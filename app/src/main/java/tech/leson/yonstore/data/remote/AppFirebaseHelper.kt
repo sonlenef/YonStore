@@ -99,6 +99,14 @@ class AppFirebaseHelper(
 
     override fun getAllEvent() = database.collection("events").get()
 
+    override fun createReview(review: Review): Task<DocumentReference> {
+        val data = ObjectMapper().convertValue(review, Map::class.java) as Map<String, Any>
+        return database.collection("reviews").add(data)
+    }
+
+    override fun getReviewByProductId(productId: String) =
+        database.collection("reviews").whereEqualTo("productId", productId).get()
+
     override fun logoutFirebase() {
         auth.signOut()
     }

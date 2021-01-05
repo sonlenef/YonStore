@@ -9,6 +9,7 @@ import tech.leson.yonstore.R
 import tech.leson.yonstore.data.DataManager
 import tech.leson.yonstore.data.model.Cart
 import tech.leson.yonstore.data.model.Product
+import tech.leson.yonstore.data.model.Review
 import tech.leson.yonstore.data.model.User
 import tech.leson.yonstore.ui.base.BaseViewModel
 import tech.leson.yonstore.ui.product.model.ProductColor
@@ -20,7 +21,6 @@ class ProductViewModel(dataManager: DataManager, schedulerProvider: SchedulerPro
 
     val user: MutableLiveData<User> = MutableLiveData()
     val product: MutableLiveData<Product> = MutableLiveData()
-    val averageRating = MutableLiveData(5.0F)
     val productStyles: MutableList<ProductStyle> = ArrayList()
     val favorite: MutableLiveData<Boolean> = MutableLiveData(false)
 
@@ -45,6 +45,27 @@ class ProductViewModel(dataManager: DataManager, schedulerProvider: SchedulerPro
                         navigator?.onLike()
                         favorite.postValue(true)
                     }
+                }
+                setIsLoading(false)
+            }
+            .addOnFailureListener {
+                navigator?.onMsg(it.message.toString())
+                setIsLoading(false)
+            }
+    }
+
+    fun getReviews(productId: String) {
+        setIsLoading(true)
+        dataManager.getReviewByProductId(productId)
+            .addOnSuccessListener {
+                val data: MutableList<Review> = ArrayList()
+                for (doc in it) {
+                    data.add(doc.toObject(Review::class.java))
+                }
+                if (data.size > 0) {
+                    setAverageRating(data)
+                } else {
+                    navigator?.reviewNone()
                 }
                 setIsLoading(false)
             }
@@ -143,20 +164,18 @@ class ProductViewModel(dataManager: DataManager, schedulerProvider: SchedulerPro
         }
     }
 
-    fun setAverageRating(product: Product) {
+    private fun setAverageRating(reviews: MutableList<Review>) {
         var average = 5.0F
-        viewModelScope.launch(Dispatchers.IO) {
-            if (product.reviews.size > 0) {
-                for (review in product.reviews) {
-                    average = if (review == product.reviews[0]) {
-                        review.rating
-                    } else {
-                        (average + review.rating) / 2
-                    }
+        if (reviews.size > 0) {
+            for (review in reviews) {
+                average = if (review == reviews[0]) {
+                    review.rating
+                } else {
+                    (average + review.rating) / 2
                 }
             }
-            averageRating.postValue(average)
         }
+        navigator?.setReviews(reviews, average)
     }
 
     override fun onClick(view: View) {
