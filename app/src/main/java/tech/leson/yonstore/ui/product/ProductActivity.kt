@@ -23,6 +23,7 @@ import tech.leson.yonstore.ui.adapter.ProductImgAdapter
 import tech.leson.yonstore.ui.adapter.ProductSizeAdapter
 import tech.leson.yonstore.ui.adapter.ReviewImageAdapter
 import tech.leson.yonstore.ui.base.BaseActivity
+import tech.leson.yonstore.ui.listReview.ListReviewActivity
 import tech.leson.yonstore.ui.product.model.ProductColor
 import tech.leson.yonstore.ui.product.model.ProductStyle
 import java.text.SimpleDateFormat
@@ -147,7 +148,8 @@ class ProductActivity : BaseActivity<ActivityProductBinding, ProductNavigator, P
 
         layoutReview.visibility = View.VISIBLE
 
-        Glide.with(this).load(reviews[0].avatar).placeholder(R.drawable.default_image).into(imvAvatar)
+        Glide.with(this).load(reviews[0].avatar).placeholder(R.drawable.default_image)
+            .into(imvAvatar)
         tvFullName.text = reviews[0].name
         rtPersonReview.rating = reviews[0].rating
         tvDescription.text = reviews[0].description
@@ -162,6 +164,13 @@ class ProductActivity : BaseActivity<ActivityProductBinding, ProductNavigator, P
 
     override fun reviewNone() {
         layoutReview.visibility = View.GONE
+    }
+
+    override fun onReviewModer() {
+        val i = ListReviewActivity.getIntent(this)
+        i.putExtra("countReview", viewModel.countReview.value)
+        i.putExtra("productId", viewModel.product.value!!.id)
+        startActivity(i)
     }
 
     override fun onMsg(msg: String) {

@@ -32,6 +32,7 @@ import tech.leson.yonstore.ui.eventmanager.EventManagerViewModel
 import tech.leson.yonstore.ui.favorite.FavoriteViewModel
 import tech.leson.yonstore.ui.favorite.adapter.ProductFavoriteAdapter
 import tech.leson.yonstore.ui.listOrder.ListOrderViewModel
+import tech.leson.yonstore.ui.listReview.ListReviewViewModel
 import tech.leson.yonstore.ui.listproducts.ListProductsViewModel
 import tech.leson.yonstore.ui.login.LoginViewModel
 import tech.leson.yonstore.ui.main.MainActivity
@@ -115,6 +116,7 @@ val mainModule = module {
     factory { OrderAdapter(ArrayList()) }
     factory { ProductOrderAdapter(ArrayList()) }
     factory { ReviewImageAdapter(ArrayList()) }
+    factory { ReviewAdapter(ArrayList()) }
 
     viewModel { AccountViewModel(get(), get()) }
     viewModel { CartViewModel(get(), get()) }
@@ -143,4 +145,5 @@ val mainModule = module {
     viewModel { ListPaymentViewModel(get(), get()) }
     viewModel { ListOrderViewModel(get(), get()) }
     viewModel { OrderDetailsViewModel(get(), get()) }
+    viewModel { ListReviewViewModel(get(), get()) }
 }

@@ -172,4 +172,12 @@
     <string name="notify_me">Notify Me</string>
     <string name="order_details">Order Details</string>
     <string name="unknown">unknown</string>
+    <string name="write_review">Write Review</string>
+    <string name="all_review">All Review</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="_4">4</string>
+    <string name="_5">5</string>
+    <string name="review">Review</string>
 </resources>

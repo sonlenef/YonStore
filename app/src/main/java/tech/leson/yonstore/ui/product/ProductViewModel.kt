@@ -23,6 +23,7 @@ class ProductViewModel(dataManager: DataManager, schedulerProvider: SchedulerPro
     val product: MutableLiveData<Product> = MutableLiveData()
     val productStyles: MutableList<ProductStyle> = ArrayList()
     val favorite: MutableLiveData<Boolean> = MutableLiveData(false)
+    val countReview = MutableLiveData(0)
 
     fun getUserCurrent() {
         setIsLoading(true)
@@ -62,6 +63,7 @@ class ProductViewModel(dataManager: DataManager, schedulerProvider: SchedulerPro
                 for (doc in it) {
                     data.add(doc.toObject(Review::class.java))
                 }
+                countReview.postValue(data.size)
                 if (data.size > 0) {
                     setAverageRating(data)
                 } else {
@@ -182,6 +184,7 @@ class ProductViewModel(dataManager: DataManager, schedulerProvider: SchedulerPro
         when (view.id) {
             R.id.btnHeart -> changeFavorite()
             R.id.btnConfirm -> navigator?.onAddToCart()
+            R.id.btnReviewMore -> navigator?.onReviewModer()
             R.id.btnBack -> navigator?.onBack()
         }
     }

@@ -10,6 +10,7 @@ interface ProductNavigator {
     fun onUnlike()
     fun setReviews(reviews: MutableList<Review>, averageRating: Float)
     fun reviewNone()
+    fun onReviewModer()
     fun onMsg(msg: String)
     fun onBack()
 }
