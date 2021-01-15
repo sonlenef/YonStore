@@ -182,6 +182,7 @@ class EditProductActivity :
 
     override fun onSelected(category: Category) {
         viewModel.product.value!!.category = category
+        viewModel.product.value!!.categoryId = category.uid
         listCategory.text = category.name
     }
 

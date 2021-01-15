@@ -181,7 +181,8 @@ class AddProductActivity :
 
     override fun onSelected(category: Category) {
         viewModel.product.value!!.category = category
-        listCategory.text = category.name
+        viewModel.product.value!!.categoryId = category.uid
+            listCategory.text = category.name
     }
 
     override fun addStyle(style: Style) {

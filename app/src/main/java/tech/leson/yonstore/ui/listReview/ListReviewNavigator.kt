@@ -10,6 +10,7 @@ interface ListReviewNavigator {
     fun getReviewFourStart()
     fun getReviewFiveStart()
     fun setReviews(reviews: MutableList<Review>)
+    fun onWriteReview()
     fun onMsg(msg: String)
     fun onBack()
 }

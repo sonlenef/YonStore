@@ -102,7 +102,7 @@ class PhoneVerifyActivity :
     override fun onConfirm() {
         if (isNetworkConnected()) {
             val code = edtCode.editText?.text.toString().trim()
-            if (!code.isBlank()) {
+            if (code.isNotBlank()) {
                 viewModel.verifyPhoneNumberWithCode(this, storedVerificationId, code)
             } else {
                 Toast.makeText(this, getText(R.string.code_empty), Toast.LENGTH_SHORT).show()

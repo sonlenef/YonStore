@@ -116,6 +116,7 @@ class ListReviewViewModel(dataManager: DataManager, schedulerProvider: Scheduler
                 navigator?.getReviewFiveStart()
                 getReviewsByStart(5)
             }
+            R.id.btnWriteReview -> navigator?.onWriteReview()
             R.id.btnBack -> navigator?.onBack()
         }
     }

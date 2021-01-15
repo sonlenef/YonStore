@@ -66,9 +66,9 @@
                                 android:layout_height="wrap_content"
                                 android:layout_margin="@dimen/_16sdp"
                                 android:background="@drawable/bg_btn_review"
+                                android:onClick="@{(View) -> viewModel.onClick(View)}"
                                 android:padding="@dimen/_10sdp"
                                 android:text="@string/all_review"
-                                android:onClick="@{(View) -> viewModel.onClick(View)}"
                                 android:textColor="@color/grey"
                                 android:textSize="@dimen/_11ssp"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -81,10 +81,10 @@
                                 android:layout_margin="@dimen/_16sdp"
                                 android:background="@drawable/bg_btn_review"
                                 android:drawablePadding="@dimen/_5sdp"
+                                android:onClick="@{(View) -> viewModel.onClick(View)}"
                                 android:padding="@dimen/_10sdp"
                                 android:text="@string/_1"
                                 android:textColor="@color/grey"
-                                android:onClick="@{(View) -> viewModel.onClick(View)}"
                                 android:textSize="@dimen/_11ssp"
                                 app:drawableStartCompat="@drawable/ic_start"
                                 app:layout_constraintStart_toEndOf="@id/btnAllReview"
@@ -97,10 +97,10 @@
                                 android:layout_margin="@dimen/_16sdp"
                                 android:background="@drawable/bg_btn_review"
                                 android:drawablePadding="@dimen/_5sdp"
+                                android:onClick="@{(View) -> viewModel.onClick(View)}"
                                 android:padding="@dimen/_10sdp"
                                 android:text="@string/_2"
                                 android:textColor="@color/grey"
-                                android:onClick="@{(View) -> viewModel.onClick(View)}"
                                 android:textSize="@dimen/_11ssp"
                                 app:drawableStartCompat="@drawable/ic_start"
                                 app:layout_constraintStart_toEndOf="@id/btnOneStart"
@@ -113,10 +113,10 @@
                                 android:layout_margin="@dimen/_16sdp"
                                 android:background="@drawable/bg_btn_review"
                                 android:drawablePadding="@dimen/_5sdp"
+                                android:onClick="@{(View) -> viewModel.onClick(View)}"
                                 android:padding="@dimen/_10sdp"
                                 android:text="@string/_3"
                                 android:textColor="@color/grey"
-                                android:onClick="@{(View) -> viewModel.onClick(View)}"
                                 android:textSize="@dimen/_11ssp"
                                 app:drawableStartCompat="@drawable/ic_start"
                                 app:layout_constraintStart_toEndOf="@id/btnTwoStart"
@@ -129,10 +129,10 @@
                                 android:layout_margin="@dimen/_16sdp"
                                 android:background="@drawable/bg_btn_review"
                                 android:drawablePadding="@dimen/_5sdp"
+                                android:onClick="@{(View) -> viewModel.onClick(View)}"
                                 android:padding="@dimen/_10sdp"
                                 android:text="@string/_4"
                                 android:textColor="@color/grey"
-                                android:onClick="@{(View) -> viewModel.onClick(View)}"
                                 android:textSize="@dimen/_11ssp"
                                 app:drawableStartCompat="@drawable/ic_start"
                                 app:layout_constraintStart_toEndOf="@id/btnThreeStart"
@@ -146,10 +146,10 @@
                                 android:layout_marginEnd="@dimen/_16sdp"
                                 android:background="@drawable/bg_btn_review"
                                 android:drawablePadding="@dimen/_5sdp"
+                                android:onClick="@{(View) -> viewModel.onClick(View)}"
                                 android:padding="@dimen/_10sdp"
                                 android:text="@string/_5"
                                 android:textColor="@color/grey"
-                                android:onClick="@{(View) -> viewModel.onClick(View)}"
                                 android:textSize="@dimen/_11ssp"
                                 app:drawableStartCompat="@drawable/ic_start"
                                 app:layout_constraintEnd_toEndOf="parent"
@@ -186,6 +186,22 @@
             android:textAllCaps="false"
             android:textSize="@dimen/_13ssp"
             app:backgroundTint="@color/blue" />
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/loading"
+            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE}">
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/address_looking_up"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminateDrawable="@drawable/custom_progressbar" />
+        </FrameLayout>
     </FrameLayout>
 
 </layout>

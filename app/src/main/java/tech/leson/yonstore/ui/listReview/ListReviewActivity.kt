@@ -16,6 +16,7 @@ import tech.leson.yonstore.data.model.Review
 import tech.leson.yonstore.databinding.ActivityListReviewBinding
 import tech.leson.yonstore.ui.adapter.ReviewAdapter
 import tech.leson.yonstore.ui.base.BaseActivity
+import tech.leson.yonstore.ui.review.ReviewActivity
 
 class ListReviewActivity :
     BaseActivity<ActivityListReviewBinding, ListReviewNavigator, ListReviewViewModel>(),
@@ -38,17 +39,20 @@ class ListReviewActivity :
         get() = R.layout.activity_list_review
     override val viewModel: ListReviewViewModel by viewModel()
 
-    @SuppressLint("SetTextI18n")
     override fun init() {
         viewModel.setNavigator(this)
-        tvTitle.text = "${intent.getIntExtra("countReview", 0)} ${getString(R.string.review)}"
         onBtnSelect(0)
+
+        rcvReview.layoutManager = LinearLayoutManager(this)
+        rcvReview.adapter = mReviewAdapter
+    }
+
+    override fun onStart() {
+        super.onStart()
 
         intent.getStringExtra("productId")?.let {
             viewModel.getReviews(it)
         }
-        rcvReview.layoutManager = LinearLayoutManager(this)
-        rcvReview.adapter = mReviewAdapter
     }
 
     override fun getAllReviews() {
@@ -75,8 +79,21 @@ class ListReviewActivity :
         onBtnSelect(5)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun setReviews(reviews: MutableList<Review>) {
+        tvTitle.text = "${reviews.size} ${getString(R.string.review)}"
         mReviewAdapter.addAllData(reviews)
+    }
+
+    override fun onWriteReview() {
+        intent.getStringExtra("userId")?.let { userId ->
+            intent.getStringExtra("productId")?.let { productId ->
+                val i = ReviewActivity.getIntent(this)
+                i.putExtra("userId", userId)
+                i.putExtra("productId", productId)
+                startActivity(i)
+            }
+        }
     }
 
     override fun onMsg(msg: String) {

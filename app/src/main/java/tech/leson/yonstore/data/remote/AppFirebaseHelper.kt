@@ -70,7 +70,7 @@ class AppFirebaseHelper(
         database.collection("products").whereEqualTo("code", code).limit(1).get()
 
     override fun getProductByCategory(category: Category) =
-        database.collection("products").whereEqualTo("category", category).get()
+        database.collection("products").whereEqualTo("categoryId", category.uid).get()
 
     override fun updateProduct(product: Product): Task<Void> {
         val data = ObjectMapper().convertValue(product, Map::class.java) as MutableMap<String, Any>
@@ -106,6 +106,15 @@ class AppFirebaseHelper(
 
     override fun getReviewByProductId(productId: String) =
         database.collection("reviews").whereEqualTo("productId", productId).get()
+
+    override fun getMyReviewByProductId(userId: String, productId: String) =
+        database.collection("reviews").whereEqualTo("productId", productId)
+            .whereEqualTo("userId", userId).get()
+
+    override fun updateReview(review: Review): Task<Void> {
+        val data = ObjectMapper().convertValue(review, Map::class.java) as Map<String, Any>
+        return database.collection("reviews").document(review.id).update(data)
+    }
 
     override fun logoutFirebase() {
         auth.signOut()

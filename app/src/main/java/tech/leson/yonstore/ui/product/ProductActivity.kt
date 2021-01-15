@@ -86,6 +86,11 @@ class ProductActivity : BaseActivity<ActivityProductBinding, ProductNavigator, P
         else btnConfirm.visibility = View.VISIBLE
     }
 
+    override fun onStart() {
+        super.onStart()
+        viewModel.getReviews(viewModel.product.value!!.id)
+    }
+
     private fun setImages(images: MutableList<ProductImage>) {
 
         mProductImgAdapter.addAllData(images)
@@ -168,7 +173,7 @@ class ProductActivity : BaseActivity<ActivityProductBinding, ProductNavigator, P
 
     override fun onReviewModer() {
         val i = ListReviewActivity.getIntent(this)
-        i.putExtra("countReview", viewModel.countReview.value)
+        i.putExtra("userId", viewModel.user.value!!.id)
         i.putExtra("productId", viewModel.product.value!!.id)
         startActivity(i)
     }

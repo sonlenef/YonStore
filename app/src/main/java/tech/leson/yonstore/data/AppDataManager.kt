@@ -2,8 +2,6 @@ package tech.leson.yonstore.data
 
 import android.net.Uri
 import com.google.android.gms.tasks.Task
-import com.google.firebase.firestore.DocumentReference
-import com.google.firebase.firestore.QuerySnapshot
 import tech.leson.yonstore.data.local.prefs.PreferencesHelper
 import tech.leson.yonstore.data.model.*
 import tech.leson.yonstore.data.remote.FirebaseHelper
@@ -62,7 +60,13 @@ class AppDataManager(firebaseHelper: FirebaseHelper, preferencesHelper: Preferen
 
     override fun createReview(review: Review) = mFirebaseHelper.createReview(review)
 
-    override fun getReviewByProductId(productId: String) = mFirebaseHelper.getReviewByProductId(productId)
+    override fun getReviewByProductId(productId: String) =
+        mFirebaseHelper.getReviewByProductId(productId)
+
+    override fun getMyReviewByProductId(userId: String, productId: String) =
+        mFirebaseHelper.getMyReviewByProductId(userId, productId)
+
+    override fun updateReview(review: Review) = mFirebaseHelper.updateReview(review)
 
     override fun logoutFirebase() = mFirebaseHelper.logoutFirebase()
 

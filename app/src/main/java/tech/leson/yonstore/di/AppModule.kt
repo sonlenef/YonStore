@@ -50,6 +50,7 @@ import tech.leson.yonstore.ui.product.ProductViewModel
 import tech.leson.yonstore.ui.productmanager.ProductManagerViewModel
 import tech.leson.yonstore.ui.profile.ProfileViewModel
 import tech.leson.yonstore.ui.register.RegisterViewModel
+import tech.leson.yonstore.ui.review.ReviewViewModel
 import tech.leson.yonstore.ui.search.SearchViewModel
 import tech.leson.yonstore.ui.splash.SplashViewModel
 import tech.leson.yonstore.ui.verify.PhoneVerifyViewModel
@@ -146,4 +147,5 @@ val mainModule = module {
     viewModel { ListOrderViewModel(get(), get()) }
     viewModel { OrderDetailsViewModel(get(), get()) }
     viewModel { ListReviewViewModel(get(), get()) }
+    viewModel { ReviewViewModel(get(), get()) }
 }

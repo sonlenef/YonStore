@@ -180,4 +180,8 @@
     <string name="_4">4</string>
     <string name="_5">5</string>
     <string name="review">Review</string>
+    <string name="write_review_title">Please write Overall level of satisfaction with your shipping / Delivery Service</string>
+    <string name="write_your_review">Write Your Review</string>
+    <string name="add_photo">Add Photo</string>
+    <string name="save">Save</string>
 </resources>
