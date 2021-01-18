@@ -118,6 +118,7 @@
         <activity android:name=".ui.order.OrderDetailsActivity" />
         <activity android:name=".ui.listReview.ListReviewActivity" />
         <activity android:name=".ui.review.ReviewActivity" />
+        <activity android:name=".ui.checkOrder.CheckOrderActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

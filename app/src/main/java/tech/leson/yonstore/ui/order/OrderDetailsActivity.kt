@@ -1,8 +1,10 @@
 package tech.leson.yonstore.ui.order
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.view.View
 import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -43,12 +45,15 @@ class OrderDetailsActivity :
         get() = R.layout.activity_order_details
     override val viewModel: OrderDetailsViewModel by viewModel()
 
+    private var mOrder: Order? = null
+
     @SuppressLint("SetTextI18n", "SimpleDateFormat")
     override fun init() {
         viewModel.setNavigator(this)
         tvTitle.text = getString(R.string.order_details)
 
         (intent.getSerializableExtra("order") as Order).let {
+            mOrder = it
             setPacing(it.status)
 
             val city: String = if (it.address.city == it.address.region)
@@ -96,7 +101,7 @@ class OrderDetailsActivity :
             }
 
             discount = dis * (price + ship)
-            total = price - discount - ship
+            total = price - discount + ship
 
             rowItems.text = "Items (${item})"
             rowPrice.text = "$${price}"
@@ -104,7 +109,33 @@ class OrderDetailsActivity :
             rowDis.text = "Discount (${dis}%)"
             rowDiscount.text = "$${discount}"
             rowTotal.text = "$${total}"
+
+            if (intent.getBooleanExtra("isCheck", false)) {
+                if (it.status < 4) {
+                    btnNotifyMe.visibility = View.VISIBLE
+                    btnNotifyMe.text = getString(R.string.next)
+                } else {
+                    btnNotifyMe.visibility = View.GONE
+                }
+            }
         }
+    }
+
+    override fun onBtnBottomClick() {
+        mOrder?.let {
+            if (intent.getBooleanExtra("isCheck", false)) {
+                if (it.status < 4) {
+                    it.status++
+                    viewModel.onSaveOrder(it)
+                }
+            }
+        }
+    }
+
+    override fun onSaveSuccess() {
+        Toast.makeText(this, getString(R.string.success), Toast.LENGTH_SHORT).show()
+        setResult(Activity.RESULT_OK)
+        finish()
     }
 
     override fun onMsg(msg: String) {

@@ -92,6 +92,16 @@ class AppFirebaseHelper(
     override fun getOrderByUserId(userId: String) =
         database.collection("orders").whereEqualTo("userId", userId).get()
 
+    override fun getAllOrder() = database.collection("orders").get()
+
+    override fun getOrderByStatus(status: Int) =
+        database.collection("orders").whereEqualTo("status", status).get()
+
+    override fun updateOrder(order: Order): Task<Void> {
+        val data = ObjectMapper().convertValue(order, Map::class.java) as MutableMap<String, Any>
+        return database.collection("orders").document(order.id).update(data)
+    }
+
     override fun createEvent(event: Event): Task<DocumentReference> {
         val data = ObjectMapper().convertValue(event, Map::class.java) as Map<String, Any>
         return database.collection("events").add(data)

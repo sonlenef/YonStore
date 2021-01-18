@@ -2,6 +2,7 @@ package tech.leson.yonstore.data
 
 import android.net.Uri
 import com.google.android.gms.tasks.Task
+import com.google.firebase.firestore.QuerySnapshot
 import tech.leson.yonstore.data.local.prefs.PreferencesHelper
 import tech.leson.yonstore.data.model.*
 import tech.leson.yonstore.data.remote.FirebaseHelper
@@ -53,6 +54,12 @@ class AppDataManager(firebaseHelper: FirebaseHelper, preferencesHelper: Preferen
     override fun onOrder(order: Order) = mFirebaseHelper.onOrder(order)
 
     override fun getOrderByUserId(userId: String) = mFirebaseHelper.getOrderByUserId(userId)
+
+    override fun getAllOrder() = mFirebaseHelper.getAllOrder()
+
+    override fun getOrderByStatus(status: Int) = mFirebaseHelper.getOrderByStatus(status)
+
+    override fun updateOrder(order: Order) = mFirebaseHelper.updateOrder(order)
 
     override fun createEvent(event: Event) = mFirebaseHelper.createEvent(event)
 

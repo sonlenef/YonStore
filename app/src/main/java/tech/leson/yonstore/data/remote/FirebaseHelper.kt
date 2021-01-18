@@ -26,6 +26,9 @@ interface FirebaseHelper {
     fun searchProduct(searchData: String): Task<QuerySnapshot>
     fun onOrder(order: Order): Task<DocumentReference>
     fun getOrderByUserId(userId: String): Task<QuerySnapshot>
+    fun getAllOrder(): Task<QuerySnapshot>
+    fun getOrderByStatus(status: Int): Task<QuerySnapshot>
+    fun updateOrder(order: Order): Task<Void>
     fun createEvent(event: Event): Task<DocumentReference>
     fun getAllEvent(): Task<QuerySnapshot>
     fun createReview(review: Review): Task<DocumentReference>

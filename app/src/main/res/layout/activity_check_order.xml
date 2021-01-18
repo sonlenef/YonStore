@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="tech.leson.yonstore.ui.checkOrder.CheckOrderViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarMain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                app:cardUseCompatPadding="false"
+                app:elevation="@dimen/_5sdp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <include
+                        layout="@layout/navigation_header"
+                        app:viewModel="@{(tech.leson.yonstore.ui.base.BaseViewModel)viewModel}" />
+                </FrameLayout>
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <HorizontalScrollView
+                        android:id="@+id/layoutStart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:overScrollMode="never"
+                        android:scrollbars="none"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/btnAllOrder"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_16sdp"
+                                android:background="@drawable/bg_btn_review"
+                                android:onClick="@{(View) -> viewModel.onClick(View)}"
+                                android:padding="@dimen/_10sdp"
+                                android:text="@string/all_order"
+                                android:textColor="@color/grey"
+                                android:textSize="@dimen/_11ssp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/btnPending"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_16sdp"
+                                android:background="@drawable/bg_btn_review"
+                                android:drawablePadding="@dimen/_5sdp"
+                                android:onClick="@{(View) -> viewModel.onClick(View)}"
+                                android:padding="@dimen/_10sdp"
+                                android:text="@string/pending"
+                                android:textColor="@color/grey"
+                                android:textSize="@dimen/_11ssp"
+                                app:layout_constraintStart_toEndOf="@id/btnAllOrder"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/btnPacking"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_16sdp"
+                                android:background="@drawable/bg_btn_review"
+                                android:drawablePadding="@dimen/_5sdp"
+                                android:onClick="@{(View) -> viewModel.onClick(View)}"
+                                android:padding="@dimen/_10sdp"
+                                android:text="@string/packing"
+                                android:textColor="@color/grey"
+                                android:textSize="@dimen/_11ssp"
+                                app:layout_constraintStart_toEndOf="@id/btnPending"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/btnShipping"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_16sdp"
+                                android:background="@drawable/bg_btn_review"
+                                android:drawablePadding="@dimen/_5sdp"
+                                android:onClick="@{(View) -> viewModel.onClick(View)}"
+                                android:padding="@dimen/_10sdp"
+                                android:text="@string/shipping"
+                                android:textColor="@color/grey"
+                                android:textSize="@dimen/_11ssp"
+                                app:layout_constraintStart_toEndOf="@id/btnPacking"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/btnArriving"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_16sdp"
+                                android:background="@drawable/bg_btn_review"
+                                android:drawablePadding="@dimen/_5sdp"
+                                android:onClick="@{(View) -> viewModel.onClick(View)}"
+                                android:padding="@dimen/_10sdp"
+                                android:text="@string/arriving"
+                                android:textColor="@color/grey"
+                                android:textSize="@dimen/_11ssp"
+                                app:layout_constraintStart_toEndOf="@id/btnShipping"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/btnSuccess"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_16sdp"
+                                android:layout_marginEnd="@dimen/_16sdp"
+                                android:background="@drawable/bg_btn_review"
+                                android:drawablePadding="@dimen/_5sdp"
+                                android:onClick="@{(View) -> viewModel.onClick(View)}"
+                                android:padding="@dimen/_10sdp"
+                                android:text="@string/success"
+                                android:textColor="@color/grey"
+                                android:textSize="@dimen/_11ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/btnArriving"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </HorizontalScrollView>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcvOrder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_marginEnd="@dimen/_16sdp"
+                        android:overScrollMode="never"
+                        app:layout_constraintTop_toBottomOf="@id/layoutStart" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.core.widget.NestedScrollView>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/loading"
+            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE}">
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/address_looking_up"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminateDrawable="@drawable/custom_progressbar" />
+        </FrameLayout>
+    </FrameLayout>
+
+</layout>

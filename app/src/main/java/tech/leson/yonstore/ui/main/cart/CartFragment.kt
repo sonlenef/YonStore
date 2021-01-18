@@ -154,7 +154,7 @@ class CartFragment : BaseFragment<FragmentCartBinding, CartNavigator, CartViewMo
             }
 
             discount = dis * (price + ship)
-            total = price - discount - ship
+            total = price - discount + ship
 
             rowItems.text = "Items (${item})"
             rowPrice.text = "$${price}"

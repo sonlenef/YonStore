@@ -27,6 +27,7 @@ import tech.leson.yonstore.ui.addproduct.dialog.addStyle.AddStyleViewModel
 import tech.leson.yonstore.ui.addproduct.popup.ColorPopup
 import tech.leson.yonstore.ui.address.AddressViewModel
 import tech.leson.yonstore.ui.category.CategoryViewModel
+import tech.leson.yonstore.ui.checkOrder.CheckOrderViewModel
 import tech.leson.yonstore.ui.editproduct.EditProductViewModel
 import tech.leson.yonstore.ui.eventmanager.EventManagerViewModel
 import tech.leson.yonstore.ui.favorite.FavoriteViewModel
@@ -148,4 +149,5 @@ val mainModule = module {
     viewModel { OrderDetailsViewModel(get(), get()) }
     viewModel { ListReviewViewModel(get(), get()) }
     viewModel { ReviewViewModel(get(), get()) }
+    viewModel { CheckOrderViewModel(get(), get()) }
 }

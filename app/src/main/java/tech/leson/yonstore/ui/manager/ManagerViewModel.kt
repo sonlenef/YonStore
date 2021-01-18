@@ -12,7 +12,7 @@ class ManagerViewModel(dataManager: DataManager, schedulerProvider: SchedulerPro
         when (view.id) {
             R.id.btnEvent -> navigator?.onEventManager()
             R.id.btnAddProduct -> navigator?.onProductManager()
-            R.id.btnStatistic -> navigator?.onStatistic()
+            R.id.btnOrder -> navigator?.onOrder()
             R.id.btnBack -> navigator?.onBack()
         }
     }

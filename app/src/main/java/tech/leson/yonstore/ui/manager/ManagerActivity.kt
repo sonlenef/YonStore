@@ -7,8 +7,8 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import tech.leson.yonstore.BR
 import tech.leson.yonstore.R
 import tech.leson.yonstore.databinding.ActivityManagerBinding
-import tech.leson.yonstore.ui.addproduct.AddProductActivity
 import tech.leson.yonstore.ui.base.BaseActivity
+import tech.leson.yonstore.ui.checkOrder.CheckOrderActivity
 import tech.leson.yonstore.ui.eventmanager.EventManagerActivity
 import tech.leson.yonstore.ui.productmanager.ProductManagerActivity
 
@@ -43,7 +43,9 @@ class ManagerActivity : BaseActivity<ActivityManagerBinding, ManagerNavigator, M
         startActivity(ProductManagerActivity.getIntent(this))
     }
 
-    override fun onStatistic() {}
+    override fun onOrder() {
+        startActivity(CheckOrderActivity.getIntent(this))
+    }
 
     override fun onBack() {
         finish()

@@ -76,7 +76,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/btnEvent" />
 
             <TextView
-                android:id="@+id/btnStatistic"
+                android:id="@+id/btnOrder"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_48sdp"
                 android:background="@drawable/bg_btn"
@@ -86,7 +86,7 @@
                 android:onClick="@{(View) -> viewModel.onClick(View)}"
                 android:paddingStart="@dimen/_16ssp"
                 android:paddingEnd="@dimen/_16ssp"
-                android:text="@string/statistic"
+                android:text="@string/order"
                 android:textColor="@color/dark"
                 android:textSize="@dimen/_11ssp"
                 android:textStyle="bold"

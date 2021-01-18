@@ -44,6 +44,7 @@ class ProductManagerActivity :
     override fun onNewProduct() {
         edtProductCode.text.toString().trim().let {
             if (it != "") viewModel.searchProduct(it, false)
+            else startActivity(AddProductActivity.getIntent(this))
         }
     }
 
