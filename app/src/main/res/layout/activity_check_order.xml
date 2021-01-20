@@ -161,7 +161,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_16sdp"
                         android:layout_marginEnd="@dimen/_16sdp"
+                        android:layout_marginBottom="@dimen/_80sdp"
                         android:overScrollMode="never"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/layoutStart" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>

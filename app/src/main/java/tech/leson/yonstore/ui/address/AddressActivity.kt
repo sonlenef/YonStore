@@ -49,7 +49,7 @@ class AddressActivity : BaseActivity<ActivityAddressBinding, AddressNavigator, A
         viewModel.getUser()
 
         isOrder = intent.getBooleanExtra("isOrder", false)
-        if (isOrder) {
+        if (intent.getBooleanExtra("isOrder", false)) {
             btnAddress.text = getString(R.string.next)
         }
 
@@ -59,7 +59,7 @@ class AddressActivity : BaseActivity<ActivityAddressBinding, AddressNavigator, A
     }
 
     override fun onAddAddress() {
-        if (isOrder) {
+        if (intent.getBooleanExtra("isOrder", false)) {
             val order = intent.getSerializableExtra("order") as Order
             order.address = mAddressAdapter.data[mCurrentItem]
             val i = ListPaymentActivity.getIntent(this)
